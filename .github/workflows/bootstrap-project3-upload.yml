@@ -21,7 +21,6 @@ jobs:
           echo "0b359d9f4612c8c02a70761a8f49b698ff203c230aa61f7c3ab993abafa261a2  Project3/phd_project3_payload.tar.gz" | sha256sum --check
           tar -xzf Project3/phd_project3_payload.tar.gz
           rm Project3/phd_project3_payload.tar.gz
-          rm .github/workflows/bootstrap-project3-upload.yml
       - uses: r-lib/actions/setup-r@v2
         with:
           use-public-rspm: true
@@ -33,6 +32,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A Project3 .github/workflows
+          git add -A Project3
           git commit -m "Add Project3 directional PLEIO classification workflow"
           git push
