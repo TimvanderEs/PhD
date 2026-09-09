@@ -1,0 +1,5 @@
+file	trait	N	sample_prev	population_prev
+MDD_EAS_for_LDSC.sumstats_noINFO.gz	MDD_EAS	NA	0.5	0.15
+Edu_EAS_for_LDSC.sumstats_noINFO.gz	Edu_EAS	NA	NA	NA
+SCZ_EAS_for_LDSC_withN.sumstats.gz	SCZ_EAS	NA	0.5	0.01
+10k_HELIOS_EAS_clean_for_MTAG.txt	HEL10k_EAS	NA	NA	NA

@@ -1,0 +1,18 @@
+workflow	component	version_or_revision	notes
+LDSC	R	4.4.3	EC2 r_env
+LDSC	GenomicSEM	0.0.5	EC2 r_env
+LDSC	Matrix	1.7-3	EC2 r_env
+LDSC	ggplot2	4.0.3	EC2 r_env
+LAVA	R	4.2.2	EC2 coloc_reporter environment
+LAVA	LAVA	0.1.5	Git commit 4738b097bf929ec8af40225c196c57d46d3d8a22
+LAVA	data.table	1.17.8	EC2 coloc_reporter environment
+PLEIO	PLEIO	b18d507533ae39dcb6284573d3b36b91cdc13603	Internal log version 2.0
+PLEIO	ldsc_preprocess	1.0	Bundled upstream preprocessing script
+PLEIO-preprocess	Python	2.7.18	EC2 pleio_env
+PLEIO-preprocess	NumPy	1.16.5	EC2 pleio_env
+PLEIO-preprocess	pandas	0.24.2	EC2 pleio_env
+PLEIO-preprocess	SciPy	1.2.1	EC2 pleio_env
+PLEIO-model	Python	3.9.25	EC2 pleio3_env created 2025-12-10
+PLEIO-model	NumPy	2.0.2	EC2 pleio3_env
+PLEIO-model	pandas	2.3.3	EC2 pleio3_env
+PLEIO-model	SciPy	1.13.1	EC2 pleio3_env

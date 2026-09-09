@@ -2,7 +2,7 @@
 
 [![Project 3 synthetic test](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml/badge.svg)](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml)
 
-This directory contains analysis code supporting an upcoming molecular psychiatry manuscript. The current release includes the post-hoc directional classification and single-trait overlap audit of PLEIO/FUMA loci, together with the SMR/HEIDI threshold and sensitivity reanalysis. Additional analysis scripts will be added as the manuscript workflow is finalised.
+This directory contains analysis code supporting an upcoming molecular psychiatry manuscript. It includes the ancestry-specific LDSC, LAVA, and PLEIO preparation/run workflows; the post-hoc directional classification and single-trait overlap audit of PLEIO/FUMA loci; and the SMR/HEIDI threshold and sensitivity reanalysis.
 
 ## Contents
 
@@ -10,7 +10,11 @@ This directory contains analysis code supporting an upcoming molecular psychiatr
 | --- | --- |
 | `scripts/classify_PLEIO_FUMA_loci_v2.R` | Classifies independent significant SNPs and collapses those labels to PLEIO loci; compares corrected and legacy classifications; audits overlap with model-relevant single-trait FUMA loci. |
 | `scripts/run_PLEIO_reclassification_audit.sh` | Command-line wrapper that runs the R workflow and prints the main summaries and QC results. |
+| `scripts/ldsc/` | Primary EAS/EUR GenomicSEM-LDSC matrices plus the clean EAS pairwise LDSC rerun, with exact trait/prevalence configs. |
+| `scripts/lava/` | Four-trait EAS/EUR LAVA workflow with the retained overlap matrices and locus definitions. |
+| `scripts/pleio/` | Four-trait preparation, nested three-trait derivation, PLEIO run wrapper, model manifests, and retained inverse-CDF calibrations. |
 | `scripts/smr_heidi/` | Reanalyses merged webSMR/HEIDI outputs using trait-specific and study-wide multiple-testing thresholds, sensitivity definitions, QC checks, and optional PLEIO/LAVA integration. |
+| `provenance/` | EC2 software versions, final-output fingerprints, and compact expected summaries used to distinguish final from QC runs. |
 | `examples/synthetic/` | Small, artificial input files that document the required directory layout and column names. They contain no study data. |
 | `examples/run_synthetic_example.sh` | Runs the complete workflow on the synthetic example. |
 | `tests/validate_synthetic_output.R` | Checks the synthetic run against its expected locus labels, overlaps, and QC values. |
@@ -32,7 +36,10 @@ The corrected prioritisation audit compares a PLEIO locus only with the single-t
 
 ## Requirements
 
-- R with the `data.table` package (synthetic workflow validated with R 4.2.3)
+- R with the `data.table` package (directional classification)
+- GenomicSEM, Matrix, and ggplot2 (LDSC workflow)
+- LAVA 0.1.5 (local genetic-correlation workflow)
+- PLEIO at the revision recorded in `scripts/pleio/README.md`
 - Python 3.8 or later (SMR/HEIDI workflow; no third-party Python packages)
 - Bash for the convenience wrapper
 
@@ -53,6 +60,20 @@ bash examples/run_synthetic_example.sh
 The example writes ignored output files to `examples/synthetic/output/`. The input identifiers and values are entirely synthetic and are provided only to demonstrate the workflow.
 
 The same example and its expected outputs are checked automatically on GitHub whenever Project 3 files change.
+
+## Reproducing the upstream analyses
+
+Each upstream workflow has a self-contained guide:
+
+- [LDSC](scripts/ldsc/README.md)
+- [LAVA](scripts/lava/README.md)
+- [PLEIO preparation and model runs](scripts/pleio/README.md)
+- [SMR/HEIDI](scripts/smr_heidi/README.md)
+
+The ancestry/model configurations preserve the executed trait order, disease
+prevalences, thresholds, overlap matrices, and output names. The
+[provenance record](REPRODUCIBILITY.md) gives software revisions, successful
+run dates, row counts, and SHA-256 fingerprints for the retained final outputs.
 
 ## Running the workflow on study outputs
 
@@ -116,7 +137,7 @@ Each filename begins with `<ANCESTRY>_<MODEL>`:
 
 ## Data availability and privacy
 
-No individual-level participant data, credentials, or study summary statistics are included here. The synthetic example is not derived from the study. Access to the source GWAS data and downstream FUMA files remains subject to the terms of their original providers.
+No individual-level participant data, credentials, or study summary statistics are included here. The synthetic example is not derived from the study. The included LAVA overlap matrices, locus definitions, PLEIO inverse-CDF calibrations, and compact output summaries are non-individual-level analysis metadata. Access to the source GWAS data and downstream FUMA files remains subject to the terms of their original providers.
 
 ## Citation and licence
 

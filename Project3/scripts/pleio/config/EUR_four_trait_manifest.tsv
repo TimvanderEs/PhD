@@ -1,0 +1,5 @@
+file	type	sample_prev	population_prev	name
+MDD_EUR.aligned.tsv.gz	cc	0.5	0.15	MDD_EUR
+EDU_EUR.aligned.tsv.gz	quant	NA	NA	Edu_EUR
+SCZ_EUR.aligned.tsv.gz	cc	0.5	0.01	SCZ_EUR
+COGENT_EUR.aligned.tsv.gz	quant	NA	NA	G_COGENT
