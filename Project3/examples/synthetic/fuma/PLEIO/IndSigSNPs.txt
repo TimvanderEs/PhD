@@ -1,0 +1,5 @@
+SNP	chr	pos	GenomicLocus
+rsSynthetic1	1	150	1
+rsSynthetic2	2	350	2
+rsSynthetic3	3	550	3
+rsSynthetic4	4	750	4

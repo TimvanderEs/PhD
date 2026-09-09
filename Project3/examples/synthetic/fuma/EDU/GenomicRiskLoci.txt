@@ -1,0 +1,2 @@
+GenomicLocus	chr	start	end
+101	1	120	180

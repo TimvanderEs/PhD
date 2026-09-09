@@ -1,0 +1,2 @@
+GenomicLocus	chr	start	end
+201	2	320	380
