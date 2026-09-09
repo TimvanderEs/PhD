@@ -1,4 +1,5 @@
 .DS_Store
+._*
 .Rhistory
 examples/synthetic/output/
 SMR_REANALYSIS/
