@@ -1,27 +1,41 @@
-name: Project 3 synthetic test
+name: Project 3 release publisher
 
 on:
   push:
     paths:
-      - "Project3/**"
+      - "Project3/project3_smr_release.tar.gz"
       - ".github/workflows/project3-synthetic-test.yml"
-  pull_request:
-    paths:
-      - "Project3/**"
-      - ".github/workflows/project3-synthetic-test.yml"
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  synthetic-test:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: r-lib/actions/setup-r@v2
         with:
           use-public-rspm: true
+      - name: Extract verified Project3 files
+        run: |
+          test -f Project3/project3_smr_release.tar.gz
+          tar -xzf Project3/project3_smr_release.tar.gz
+          rm Project3/project3_smr_release.tar.gz
       - name: Install R dependencies
         run: Rscript -e 'install.packages("data.table")'
-      - name: Run and validate the synthetic example
-        run: bash Project3/tests/run_synthetic_test.sh
+      - name: Run Project3 checks
+        run: |
+          bash Project3/tests/run_synthetic_test.sh
+          python3 -m py_compile Project3/scripts/smr_heidi/reanalyse_smr_heidi.py
+          python3 Project3/scripts/smr_heidi/reanalyse_smr_heidi.py --help
+          bash -n Project3/scripts/smr_heidi/run_smr_reanalysis.sh
+      - name: Publish verified Project3 files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Project3
+          git diff --cached --quiet && exit 0
+          git commit -m "Add verified SMR HEIDI reanalysis workflow"
+          git push
