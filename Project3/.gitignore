@@ -1,4 +1,8 @@
 .DS_Store
 .Rhistory
 examples/synthetic/output/
+SMR_REANALYSIS/
+__pycache__/
+*.pyc
+*.pem
 *.log

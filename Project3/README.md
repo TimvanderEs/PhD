@@ -2,7 +2,7 @@
 
 [![Project 3 synthetic test](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml/badge.svg)](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml)
 
-This directory contains analysis code supporting an upcoming molecular psychiatry manuscript. The current release focuses on the post-hoc directional classification and single-trait overlap audit of PLEIO/FUMA loci. Additional analysis scripts will be added as the manuscript workflow is finalised.
+This directory contains analysis code supporting an upcoming molecular psychiatry manuscript. The current release includes the post-hoc directional classification and single-trait overlap audit of PLEIO/FUMA loci, together with the SMR/HEIDI threshold and sensitivity reanalysis. Additional analysis scripts will be added as the manuscript workflow is finalised.
 
 ## Contents
 
@@ -10,6 +10,7 @@ This directory contains analysis code supporting an upcoming molecular psychiatr
 | --- | --- |
 | `scripts/classify_PLEIO_FUMA_loci_v2.R` | Classifies independent significant SNPs and collapses those labels to PLEIO loci; compares corrected and legacy classifications; audits overlap with model-relevant single-trait FUMA loci. |
 | `scripts/run_PLEIO_reclassification_audit.sh` | Command-line wrapper that runs the R workflow and prints the main summaries and QC results. |
+| `scripts/smr_heidi/` | Reanalyses merged webSMR/HEIDI outputs using trait-specific and study-wide multiple-testing thresholds, sensitivity definitions, QC checks, and optional PLEIO/LAVA integration. |
 | `examples/synthetic/` | Small, artificial input files that document the required directory layout and column names. They contain no study data. |
 | `examples/run_synthetic_example.sh` | Runs the complete workflow on the synthetic example. |
 | `tests/validate_synthetic_output.R` | Checks the synthetic run against its expected locus labels, overlaps, and QC values. |
@@ -32,6 +33,7 @@ The corrected prioritisation audit compares a PLEIO locus only with the single-t
 ## Requirements
 
 - R with the `data.table` package (synthetic workflow validated with R 4.2.3)
+- Python 3.8 or later (SMR/HEIDI workflow; no third-party Python packages)
 - Bash for the convenience wrapper
 
 Install the R dependency with:
@@ -80,6 +82,15 @@ The R script can also be called directly. Run the following for its argument sum
 ```bash
 Rscript scripts/classify_PLEIO_FUMA_loci_v2.R --help
 ```
+
+## SMR/HEIDI reanalysis
+
+The SMR workflow replaces a single fixed primary threshold with a
+trait-specific Bonferroni threshold while retaining `P_SMR < 5e-8` and other
+HEIDI/instrument definitions as sensitivity analyses. It can optionally rebuild
+PLEIO–SMR and PLEIO–LAVA convergence tables from the canonical supplementary
+TSVs. See [`scripts/smr_heidi/README.md`](scripts/smr_heidi/README.md) for the
+input layout, command, outputs, and interpretation caveat.
 
 ### Required input fields
 

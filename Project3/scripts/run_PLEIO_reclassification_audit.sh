@@ -11,10 +11,10 @@ Usage:
 Example:
   bash run_PLEIO_reclassification_audit.sh \
     EUR FOURTRAIT \
-    /home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/PLEIO \
-    /home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR \
-    /home/ec2-user/project2/RESULTS/PLEIO/EU/HELIOS_PLEIO_EUR_summary_all_merged.tsv \
-    /home/ec2-user/project2/RESULTS/PLEIO/reclassification_audit/EUR_FOURTRAIT \
+    /path/to/FUMA/EUR/PLEIO \
+    /path/to/FUMA/EUR \
+    /path/to/raw_merged_PLEIO.tsv.gz \
+    /path/to/output/EUR_FOURTRAIT \
     G
 
 MODEL must be FOURTRAIT, MDD_3TRAIT, or SCZ_3TRAIT.
