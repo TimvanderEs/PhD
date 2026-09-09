@@ -15,7 +15,7 @@ jobs:
       - name: Extract verified release
         run: |
           test -f project3_repo_update_1469be3.tar.gz
-          tar -xzf project3_repo_update_1469be3.tar.gz
+          tar -xzf project3_repo_update_1469be3.tar.gz Project3
           rm project3_repo_update_1469be3.tar.gz
       - name: Commit release contents
         run: |
