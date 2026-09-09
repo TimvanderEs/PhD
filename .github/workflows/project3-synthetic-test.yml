@@ -1,26 +1,43 @@
-name: Apply verified Project3 release
+name: Project 3 checks
 
 on:
   push:
-  workflow_dispatch:
+    paths:
+      - "Project3/**"
+      - ".github/workflows/project3-synthetic-test.yml"
+  pull_request:
+    paths:
+      - "Project3/**"
+      - ".github/workflows/project3-synthetic-test.yml"
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  apply-release:
+  synthetic-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Extract verified release
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - name: Install R dependencies
+        run: Rscript -e 'install.packages("data.table")'
+      - name: Run and validate the synthetic example
+        run: bash Project3/tests/run_synthetic_test.sh
+      - name: Check the SMR/HEIDI command-line workflow
         run: |
-          test -f project3_repo_update_1469be3.tar.gz
-          tar -xzf project3_repo_update_1469be3.tar.gz Project3
-          rm project3_repo_update_1469be3.tar.gz
-      - name: Commit release contents
+          python3 -m py_compile Project3/scripts/smr_heidi/reanalyse_smr_heidi.py
+          python3 Project3/scripts/smr_heidi/reanalyse_smr_heidi.py --help
+          bash -n Project3/scripts/smr_heidi/run_smr_reanalysis.sh
+      - name: Check upstream-analysis wrappers
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "Add LDSC LAVA and PLEIO reproducibility workflows"
-          git push
+          bash -n Project3/scripts/ldsc/run_eas_clean_ldsc.sh
+          bash -n Project3/scripts/pleio/align_eur_pleio_inputs.sh
+          bash -n Project3/scripts/pleio/prepare_four_trait_inputs.sh
+          bash -n Project3/scripts/pleio/run_pleio.sh
+          Rscript Project3/scripts/ldsc/run_genomicsem_ldsc.R --help
+          Rscript Project3/scripts/lava/run_lava.R --help
+          Rscript Project3/scripts/pleio/derive_three_trait_inputs.R --help
+          Rscript Project3/tests/test_pleio_input_derivation.R Project3
+          bash Project3/tests/test_eur_pleio_alignment.sh Project3
