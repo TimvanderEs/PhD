@@ -1,15 +1,15 @@
-workflow	ancestry	model	output_file	completed_utc	data_rows	sha256
-LDSC	EAS	four_trait	EAS_MDD_EDU_SCZ_HEL10k_genetic_correlations.csv	2025-12-09T03:10:39Z	4	96ae7f51c8173d8db20450ad2efa577275029e5f1af7c5fc01e40a905c37645f
-LDSC	EAS	four_trait	EAS_MDD_EDU_SCZ_HEL10k_genetic_covariance.csv	2025-12-09T03:10:39Z	4	14efbbdb8f9f37557c670d5ba4d80c7326beb571751c1b550c2ff2b84c0fa2d4
-LDSC	EUR	four_trait	EUR_EDU_SCZ_COG_genetic_correlations.csv	2026-01-06T06:58:19Z	4	be99df86681d8eaf8065ce21cc09c456b04a24f4cbd47ec67ab9cdb02098e441
-LDSC	EUR	four_trait	EUR_EDU_SCZ_COG_genetic_covariance.csv	2026-01-06T06:58:19Z	4	65d3592e88c50a2deef0deb84e5bdcd2a211621e1e796d10e3d3f525c3b2134c
-LAVA	EAS	four_trait	EAS_MDD_Edu_SCZ_HELIOS.univ.lava	2025-12-15T14:14:35Z	11057	3b8ac33c7aadc92d73be1b01e990db4bdf2347d71897996929f8999f1f428191
-LAVA	EAS	four_trait	EAS_MDD_Edu_SCZ_HELIOS.bivar.lava	2025-12-15T14:14:35Z	726	31b3f6fa54deae1fc074fe970ff475c619ea004be4835df3f9a41cf18392e6f4
-LAVA	EUR	four_trait	EUR_MDD_Edu_SCZ_G.univ.lava	2026-01-08T09:03:25Z	9579	38232abab079c61cb32e69b1f8ec841da40877205b29343e146e00bc2b942256
-LAVA	EUR	four_trait	EUR_MDD_Edu_SCZ_G.bivar.lava	2026-01-08T09:03:25Z	3142	533a8ce997136bc838ae4ab1d1523eb39d4d9419a8dc096a1789787ba1bc2bf0
-PLEIO	EAS	four_trait	HELIOS_PLEIO_results.txt.gz	2025-12-16T04:07:31Z	4556091	d83d09a87ec820201feaef35c880512b1501be150d77a54f3c46b2eadadb060e
-PLEIO	EAS	MDD_EA_CF	HELIOS_PLEIO_EAS_MDD_EA_G_results.txt.gz	2026-06-09T13:51:35Z	4556091	9736a39bdf5bce4f89cd2e8ac761dbd8c253304b35e914e08d9624d12ba1fa79
-PLEIO	EAS	SCZ_EA_CF	HELIOS_PLEIO_EAS_SCZ_EA_G_results.txt.gz	2026-06-09T13:54:19Z	4556091	903598578d287f7f42d5e519c5485c26c954395beb5da4328f6c2890283e48b3
-PLEIO	EUR	four_trait	HELIOS_PLEIO_EUR_results.txt.gz	2026-01-12T06:41:16Z	4930902	45ae8ed3a4fc2a8a61b8f61066807a9dfd58149c2562e5f335e5dc27b3ffcd31
-PLEIO	EUR	MDD_EA_CF	HELIOS_PLEIO_EUR_MDD_EA_CF_results.txt.gz	2026-06-05T15:29:32Z	4930902	8e0fd9d31b3c08c02aaecb16436204cdab1932cffa46c5cb1f5ff18037f719ad
-PLEIO	EUR	SCZ_EA_CF	HELIOS_PLEIO_EUR_SCZ_EA_CF_results.txt.gz	2026-06-05T17:24:55Z	4930902	f5953d22668d922fd33258123a319fe99190a2fc41bd7b88924b64905f0961b2
+workflow	ancestry	model	output_file	completed_utc	data_rows	sha256	provenance_status	interpretation
+LDSC	EAS	four_trait	EAS_MDD_EDU_SCZ_HEL10k_genetic_correlations.csv	2025-12-09T03:10:39Z	4	96ae7f51c8173d8db20450ad2efa577275029e5f1af7c5fc01e40a905c37645f	historical_verified	Correlation matrix was derived from nearPD-adjusted covariance despite ambiguous historical filename
+LDSC	EAS	four_trait	EAS_MDD_EDU_SCZ_HEL10k_genetic_covariance.csv	2025-12-09T03:10:39Z	4	14efbbdb8f9f37557c670d5ba4d80c7326beb571751c1b550c2ff2b84c0fa2d4	historical_verified	Raw GenomicSEM S covariance matrix; new runner uses an explicit raw suffix
+LDSC	EUR	four_trait	EUR_EDU_SCZ_COG_genetic_correlations.csv	2026-01-06T06:58:19Z	4	be99df86681d8eaf8065ce21cc09c456b04a24f4cbd47ec67ab9cdb02098e441	historical_verified	Correlation matrix was derived from nearPD-adjusted covariance despite ambiguous historical filename
+LDSC	EUR	four_trait	EUR_EDU_SCZ_COG_genetic_covariance.csv	2026-01-06T06:58:19Z	4	65d3592e88c50a2deef0deb84e5bdcd2a211621e1e796d10e3d3f525c3b2134c	historical_verified	Raw GenomicSEM S covariance matrix; new runner uses an explicit raw suffix
+LAVA	EAS	four_trait	EAS_MDD_Edu_SCZ_HELIOS.univ.lava	2025-12-15T14:14:35Z	11057	3b8ac33c7aadc92d73be1b01e990db4bdf2347d71897996929f8999f1f428191	archived_requires_rerun	Historical 2e-5 threshold and incorrect recovered input-info case/control fields
+LAVA	EAS	four_trait	EAS_MDD_Edu_SCZ_HELIOS.bivar.lava	2025-12-15T14:14:35Z	726	31b3f6fa54deae1fc074fe970ff475c619ea004be4835df3f9a41cf18392e6f4	archived_requires_rerun	Raw runner rows; not the manuscript eligibility denominator
+LAVA	EUR	four_trait	EUR_MDD_Edu_SCZ_G.univ.lava	2026-01-08T09:03:25Z	9579	38232abab079c61cb32e69b1f8ec841da40877205b29343e146e00bc2b942256	archived_requires_rerun	Historical 2e-5 threshold and incorrect recovered input-info case/control fields
+LAVA	EUR	four_trait	EUR_MDD_Edu_SCZ_G.bivar.lava	2026-01-08T09:03:25Z	3142	533a8ce997136bc838ae4ab1d1523eb39d4d9419a8dc096a1789787ba1bc2bf0	archived_requires_rerun	Historical runner output retained as provenance; rerun with corrected input-info
+PLEIO	EAS	four_trait	HELIOS_PLEIO_results.txt.gz	2025-12-16T04:07:31Z	4556091	d83d09a87ec820201feaef35c880512b1501be150d77a54f3c46b2eadadb060e	verified	Final four-trait model output
+PLEIO	EAS	MDD_EA_CF	HELIOS_PLEIO_EAS_MDD_EA_G_results.txt.gz	2026-06-09T13:51:35Z	4556091	9736a39bdf5bce4f89cd2e8ac761dbd8c253304b35e914e08d9624d12ba1fa79	verified	Historical G in filename denotes publication trait CF
+PLEIO	EAS	SCZ_EA_CF	HELIOS_PLEIO_EAS_SCZ_EA_G_results.txt.gz	2026-06-09T13:54:19Z	4556091	903598578d287f7f42d5e519c5485c26c954395beb5da4328f6c2890283e48b3	verified	Historical G in filename denotes publication trait CF
+PLEIO	EUR	four_trait	HELIOS_PLEIO_EUR_results.txt.gz	2026-01-12T06:41:16Z	4930902	45ae8ed3a4fc2a8a61b8f61066807a9dfd58149c2562e5f335e5dc27b3ffcd31	verified	Final four-trait model output
+PLEIO	EUR	MDD_EA_CF	HELIOS_PLEIO_EUR_MDD_EA_CF_results.txt.gz	2026-06-05T15:29:32Z	4930902	8e0fd9d31b3c08c02aaecb16436204cdab1932cffa46c5cb1f5ff18037f719ad	verified	Final nested model output
+PLEIO	EUR	SCZ_EA_CF	HELIOS_PLEIO_EUR_SCZ_EA_CF_results.txt.gz	2026-06-05T17:24:55Z	4930902	f5953d22668d922fd33258123a319fe99190a2fc41bd7b88924b64905f0961b2	verified	Final nested model output

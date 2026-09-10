@@ -9,7 +9,7 @@ usage <- function(status = 0L) {
     "    --locus-file FILE --ref-prefix PREFIX --phenos ID1,ID2,... \\\n",
     "    --sumstats-dir DIR --out-dir DIR --out-prefix NAME [options]\n\n",
     "Options:\n",
-    "  --univ-threshold P  Univariate screening P threshold (default: 2e-5)\n",
+    "  --univ-threshold P  Override the default 0.05 / number-of-regions screen\n",
     "  --validate-only     Validate all inputs without running LAVA\n",
     "  --help              Show this help\n",
     sep = ""
@@ -40,14 +40,11 @@ phenos <- trimws(strsplit(flag_value("--phenos"), ",", fixed = TRUE)[[1L]])
 sumstats_dir <- normalizePath(flag_value("--sumstats-dir"), mustWork = TRUE)
 out_dir <- flag_value("--out-dir")
 out_prefix <- flag_value("--out-prefix")
-univ_threshold <- suppressWarnings(as.numeric(flag_value("--univ-threshold", FALSE, "2e-5")))
+univ_threshold_arg <- flag_value("--univ-threshold", FALSE, NA_character_)
 validate_only <- "--validate-only" %in% args
 
 if (!length(phenos) || any(!nzchar(phenos)) || anyDuplicated(phenos)) {
   stop("--phenos must contain unique comma-separated IDs.", call. = FALSE)
-}
-if (is.na(univ_threshold) || univ_threshold <= 0 || univ_threshold > 1) {
-  stop("--univ-threshold must be in (0,1].", call. = FALSE)
 }
 
 input_info <- read.delim(input_info_file, sep = "\t", header = TRUE, check.names = FALSE)
@@ -89,9 +86,29 @@ if (any(!is.finite(overlap_sub)) || !isTRUE(all.equal(overlap_sub, t(overlap_sub
   stop("Selected sample-overlap matrix must be finite and symmetric.", call. = FALSE)
 }
 
-locus_header <- names(read.table(locus_file, header = TRUE, nrows = 1, check.names = FALSE))
+locus_config <- read.table(
+  locus_file,
+  header = TRUE,
+  check.names = FALSE,
+  quote = "",
+  comment.char = ""
+)
+locus_header <- names(locus_config)
 if (!all(c("LOC", "CHR", "START", "STOP") %in% locus_header)) {
   stop("Locus file must contain LOC, CHR, START, and STOP.", call. = FALSE)
+}
+n_loci_configured <- nrow(locus_config)
+if (n_loci_configured < 1L) stop("Locus file contains no regions.", call. = FALSE)
+
+if (is.na(univ_threshold_arg)) {
+  univ_threshold <- 0.05 / n_loci_configured
+  threshold_source <- "0.05 / number of configured regions"
+} else {
+  univ_threshold <- suppressWarnings(as.numeric(univ_threshold_arg))
+  threshold_source <- "explicit --univ-threshold override"
+}
+if (is.na(univ_threshold) || univ_threshold <= 0 || univ_threshold > 1) {
+  stop("--univ-threshold must be in (0,1].", call. = FALSE)
 }
 missing_ref <- paste0(ref_prefix, c(".bed", ".bim", ".fam"))
 missing_ref <- missing_ref[!file.exists(missing_ref)]
@@ -101,6 +118,8 @@ if (length(missing_ref)) {
 
 cat("Validated phenotypes:", paste(phenos, collapse = ", "), "\n")
 cat("Univariate threshold:", format(univ_threshold, scientific = TRUE), "\n")
+cat("Threshold source:", threshold_source, "\n")
+cat("Configured regions:", n_loci_configured, "\n")
 cat("Reference prefix:", ref_prefix, "\n")
 if (validate_only) quit(save = "no", status = 0L)
 
@@ -123,6 +142,10 @@ write.table(
 cat("Reading loci from:", locus_file, "\n")
 loci <- LAVA::read.loci(locus_file)
 n_loci <- nrow(loci)
+if (n_loci != n_loci_configured) {
+  stop("LAVA read ", n_loci, " loci but the configuration contains ",
+       n_loci_configured, ".", call. = FALSE)
+}
 cat("Number of loci:", n_loci, "\n")
 
 input <- LAVA::process.input(

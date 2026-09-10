@@ -12,22 +12,27 @@ archive from steps that require provider-controlled GWAS or webSMR inputs.
 | Analysis | Public record included here | What a reader can reproduce |
 | --- | --- | --- |
 | Directional PLEIO/FUMA classification | Complete R workflow, command-line wrapper, synthetic inputs, and expected outputs | Run the full synthetic example immediately; rerun the study analysis after supplying the authorised PLEIO/FUMA and summary-statistics inputs. |
-| LDSC, LAVA, and PLEIO | Executed scripts, trait/model configurations, selected non-individual-level matrices and calibrations, and final-output fingerprints | Recreate the workflows after obtaining the source GWAS and required reference resources. |
+| Summary-statistics QC | Recovered settings and checksummed run-log provenance for five of eight ancestry-by-trait runs | Audit recovered thresholds and counts; three missing logs and two EAS sample-definition discrepancies are explicitly identified. |
+| LDSC and PLEIO | Executed scripts, trait/model configurations, selected non-individual-level matrices and calibrations, and final-output fingerprints | Recreate the workflows after obtaining the source GWAS and required reference resources. |
+| LAVA | Portable runner, manuscript-target and recovered input-info files, exact-threshold/FDR post-processing, and archived-output fingerprints | Audit the historical result now; verify the exact EAS SCZ input identity and rerun. The archived 726, exact-threshold 698, and workbook 697 EAS row sets are not conflated. |
 | SMR/HEIDI | Complete threshold/sensitivity reanalysis code, input contract, and run provenance | Rerun after supplying the seven merged webSMR files listed in its guide. |
 | FUMA/MAGMA and GTEx v8 | Exact FUMA parameters, raw term-level results, reviewed manifests, and processed tables | Rebuild and compare all 13 archived runs directly from this repository. |
 | g:Profiler | Exact query lists, available custom backgrounds, original exports, checksums, and processed tables | Validate all 12 archived queries and rebuild the 61 significant-term table without calling a changing live database. |
 
-Two gaps are documented rather than silently reconstructed: no EAS cognitive
-function single-trait FUMA run was recovered, and the original
-g:Profiler database release and EAS background option were not recorded. The
-relevant manifests and workflow guides mark these limitations explicitly.
+Unrecovered or conflicting provenance is documented rather than silently
+reconstructed. This includes the EAS cognitive-function single-trait FUMA run,
+three SumstatsQC logs, two EAS sample-definition discrepancies, the original
+g:Profiler database release and EAS background option, and the webSMR portal
+job/version identifiers. The LAVA guide also records the clean-rerun blocker.
 
-The badge above runs the synthetic workflow and rebuilds the archived
-FUMA/MAGMA and g:Profiler results on every Project 3 change.
+The badge above runs the directional and LAVA synthetic workflows, repository
+consistency checks, and archived FUMA/MAGMA and g:Profiler rebuilds on every
+Project 3 change.
 
 ## Analysis guides
 
 - [Directional PLEIO/FUMA classification](scripts/classify_pleio_locus_direction.R)
+- [Summary-statistics QC](scripts/sumstats_qc/README.md)
 - [LDSC](scripts/ldsc/README.md)
 - [LAVA](scripts/lava/README.md)
 - [PLEIO preparation and model runs](scripts/pleio/README.md)
@@ -40,7 +45,7 @@ FUMA/MAGMA and g:Profiler results on every Project 3 change.
 | Path | Contents |
 | --- | --- |
 | `scripts/` | Analysis code, per-workflow instructions, upstream configurations, and selected workflow inputs. |
-| `inputs/` | FUMA/MAGMA run manifests and g:Profiler query, background, and settings records. |
+| `inputs/` | FUMA/MAGMA, g:Profiler, and SMR/HEIDI run manifests plus retained query/background records. |
 | `results/` | Archived FUMA/MAGMA and g:Profiler raw exports and compact processed results. |
 | `provenance/` | Software versions, checksums, final-output fingerprints, and expected run summaries. |
 | `examples/` and `tests/` | Privacy-safe synthetic inputs plus automated integrity and workflow checks. |
@@ -114,16 +119,18 @@ The same example and its expected outputs are checked automatically on GitHub wh
 Each upstream workflow has a self-contained guide:
 
 - [LDSC](scripts/ldsc/README.md)
+- [Summary-statistics QC](scripts/sumstats_qc/README.md)
 - [LAVA](scripts/lava/README.md)
 - [PLEIO preparation and model runs](scripts/pleio/README.md)
 - [SMR/HEIDI](scripts/smr_heidi/README.md)
 - [FUMA/MAGMA and GTEx v8 enrichment](scripts/fuma_magma/README.md)
 - [g:Profiler over-representation analysis](scripts/gprofiler/README.md)
 
-The ancestry/model configurations preserve the executed trait order, disease
-prevalences, thresholds, overlap matrices, and output names. The
-[provenance record](REPRODUCIBILITY.md) gives software revisions, successful
-run dates, row counts, and SHA-256 fingerprints for the retained final outputs.
+The ancestry/model configurations preserve the executed trait order, overlap
+matrices, and output names. Where an executed configuration conflicts with the
+manuscript, the historical and corrected-target files are kept separately. The
+[provenance record](REPRODUCIBILITY.md) gives software revisions, run dates,
+row counts, SHA-256 fingerprints, and verification status.
 
 ## Running the directional classifier on study outputs
 
@@ -196,4 +203,7 @@ No individual-level participant data, credentials, or source GWAS summary statis
 
 ## Citation and licence
 
-The manuscript citation and DOI will be added when available. Until then, please cite this repository and the specific Git commit used for an analysis. The repository is distributed under the [MIT License](../LICENSE).
+See the manuscript-ready [Code Availability statement](CODE_AVAILABILITY.md).
+The manuscript citation and archival DOI will be added when available. Until
+then, cite this repository and the specific Git commit used for an analysis.
+The repository is distributed under the [MIT License](../LICENSE).

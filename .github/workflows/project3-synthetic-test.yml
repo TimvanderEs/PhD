@@ -29,7 +29,13 @@ jobs:
       - name: Run and validate the synthetic example
         run: bash Project3/tests/run_synthetic_test.sh
       - name: Check publication terminology and references
-        run: python3 Project3/tests/test_repository_consistency.py
+        run: |
+          python3 -m py_compile \
+            Project3/scripts/lava/postprocess_lava.py \
+            Project3/tests/test_lava_postprocessing.py \
+            Project3/tests/test_repository_consistency.py
+          python3 Project3/tests/test_lava_postprocessing.py
+          python3 Project3/tests/test_repository_consistency.py
       - name: Check the SMR/HEIDI command-line workflow
         run: |
           python3 -m py_compile Project3/scripts/smr_heidi/reanalyse_smr_heidi.py

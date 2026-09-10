@@ -1,4 +1,5 @@
 workflow	component	version_or_revision	notes
+SumstatsQC	SumstatsQC	0.1	Version reported in manuscript; five retained logs do not expose a machine-readable version field
 LDSC	R	4.4.3	EC2 r_env
 LDSC	GenomicSEM	0.0.5	EC2 r_env
 LDSC	Matrix	1.7-3	EC2 r_env

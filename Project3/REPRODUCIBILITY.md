@@ -10,15 +10,19 @@ and explicitly labelled QC/older outputs were excluded.
 Readers with access to the governed GWAS summary statistics and the cited
 reference panels can rerun:
 
-1. EAS and EUR genome-wide LDSC/GenomicSEM covariance analyses;
-2. the clean EAS pairwise LDSC rerun used for final figure-facing estimates;
-3. four-trait EAS and EUR LAVA analyses;
-4. EAS and EUR four-trait PLEIO input preparation and association tests;
-5. the nested MDD and SCZ three-trait PLEIO models;
-6. downstream PLEIO directional classification and SMR/HEIDI reanalysis;
-7. consolidation and comparison of the archived FUMA/MAGMA and GTEx v8
+1. the five recovered SumstatsQC runs and the documented QC settings for the
+   remaining ancestry-trait combinations, conditional on source data;
+2. EAS and EUR genome-wide LDSC/GenomicSEM covariance analyses, with raw and
+   nearPD-adjusted matrices kept distinct;
+3. the clean EAS pairwise LDSC sensitivity analysis;
+4. four-trait EAS and EUR LAVA analyses after the exact EAS SCZ input identity
+   is verified;
+5. EAS and EUR four-trait PLEIO input preparation and association tests;
+6. the nested MDD and SCZ three-trait PLEIO models;
+7. downstream PLEIO directional classification and SMR/HEIDI reanalysis;
+8. consolidation and comparison of the archived FUMA/MAGMA and GTEx v8
    enrichment outputs;
-8. checksum-validated reconstruction of the significant g:Profiler tables and
+9. checksum-validated reconstruction of the significant g:Profiler tables and
    Supplementary Figure S7 source data.
 
 The repository cannot make controlled or third-party GWAS data public. It
@@ -28,11 +32,26 @@ example.
 
 ## Decisions made during the audit
 
-- The primary EAS LAVA files are the four-trait `HELIOS` outputs. They contain
-  all six pairings and 726 eligible bivariate tests. Older EAS outputs with
-  three pairings were marked as QC and are not represented as final.
+- The four-trait EAS `HELIOS` LAVA files are the relevant archived outputs, but
+  their 726 bivariate rows were generated with a rounded `2e-5` screen and an
+  incorrect input-info configuration. They are historical provenance, not a
+  verified publication denominator. Applying `P <= 0.05/3064` to the archived
+  files yields 698 rows. The publication workbook has 697 because one valid
+  EA--SCZ row with a univariate P value of zero is absent. A corrected rerun is
+  required; all three count sets remain separately labelled.
+- Manuscript-target LAVA configurations use the disease counts in manuscript
+  Table 1 and `1/0` for continuous traits. Exact recovered configurations are
+  retained alongside them. The manuscript and Lam et al. primary GWAS report
+  22,778 EAS SCZ cases, whereas the recovered SumstatsQC log reports 27,888;
+  the exact summary-statistics file identity/header must be verified before
+  rerunning.
 - The primary EAS LDSC matrix contains HELIOS-10k. A later five-trait file that
   also added HELIOS-12k is retained only as a sensitivity/QC configuration.
+- The primary LDSC workflow is `GenomicSEM::ldsc()` (GenomicSEM 0.0.5), and the
+  publication workbook applies BH correction across all 12 ancestry-specific
+  genetic correlations. The later standalone pairwise EAS run remains a
+  sensitivity analysis. New outputs explicitly distinguish the raw covariance
+  matrix from its nearPD transformation.
 - The first EUR PLEIO preprocessing attempts failed because the input schema
   was not valid. The successful model used the `full_aligned_hdr` inputs with
   4,930,902 shared variants and no allele mismatches.
@@ -48,6 +67,12 @@ example.
   terms and reconcile with the final publication workbook. EUR query and custom
   background lists were recovered. The EAS background option and exact
   g:Profiler database release were not retained and are marked `not_recorded`.
+- Five SumstatsQC logs were recovered. EUR EA, EUR MDD, and EAS CF logs were
+  not. The EAS MDD and SCZ sample-definition differences are preserved in the
+  manifest rather than reconciled by assumption.
+- All seven SMR/HEIDI merged inputs were recovered and checksummed. Original
+  webSMR portal job IDs, software version, and access dates were not recovered;
+  available file timestamps are not represented as portal run times.
 
 ## Verification files
 
@@ -61,7 +86,10 @@ example.
 - `provenance/pleio_isf_fingerprints.tsv` verifies the six retained
   importance-sampling calibration files.
 - `provenance/lava_pair_test_counts.tsv` records the bivariate-test counts by
-  trait pair.
+  trait pair for the archived runner, exact-threshold audit, and publication
+  workbook as separate analysis sets.
+- `provenance/sumstatsqc_runs.tsv` records recovered QC settings, row counts,
+  log hashes, and missing/conflicting sample metadata.
 - `inputs/fuma_magma/*.tsv` identify the exact archived FUMA runs used in the
   enrichment comparisons; their complete web settings are stored in the
   corresponding `results/fuma_magma/raw/*/*/params.config` files.
@@ -70,9 +98,13 @@ example.
 - `inputs/gprofiler/run_manifest.tsv` records the query/background files, raw
   row counts, analysis settings, timestamps, and both compressed and original
   CSV SHA-256 hashes.
+- `inputs/smr_heidi/run_manifest.tsv` records the seven input hashes and the
+  limits of retained portal provenance.
 
-These fingerprints establish which retained EC2 files were treated as final.
-They are not checksums of raw participant or GWAS input data.
+These fingerprints establish which EC2 files were retained and how each is now
+interpreted. The `provenance_status` field prevents an archived output from
+being mistaken for a verified final analysis. They are not checksums of raw
+participant or GWAS input data.
 
 Publication-facing traits are labelled `EA` and `CF`. Historical identifiers
 such as `Edu`, `G`, `COGENT`, and `HEL10k` remain only in source filenames or

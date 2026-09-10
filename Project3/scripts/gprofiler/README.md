@@ -28,6 +28,8 @@ The original web exports also do not identify the g:Profiler database release,
 ordered-query option, or electronic-GO-annotation option. Because g:Profiler's
 underlying databases change, a new live query may not return byte-identical
 results. The archived exports are the primary record of the reported analysis.
+These two missing settings—the database release and EAS background
+configuration—should also be stated in the Supplementary Methods.
 
 ## Validate and rebuild the processed tables
 

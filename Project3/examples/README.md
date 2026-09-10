@@ -20,3 +20,13 @@ Expected locus labels are:
 
 The example also exercises the single-trait overlap audit: loci 1 and 2 overlap
 single-trait FUMA loci, while loci 3, 4, and 5 do not.
+
+The `synthetic/lava/` files separately exercise LAVA consolidation. Run:
+
+```bash
+python3 tests/test_lava_postprocessing.py
+```
+
+That test verifies the exact `0.05 / number of regions` eligibility rule,
+retention of a valid zero P value, canonical EA/CF labels when input trait order
+is reversed, and BH correction within trait-pair families.

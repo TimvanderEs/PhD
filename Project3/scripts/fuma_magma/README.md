@@ -26,6 +26,9 @@ matched LD, GRCh37 coordinates, protein-coding Ensembl v102 genes, MHC
 exclusion, a 10 kb positional-mapping window, no eQTL or chromatin-interaction
 mapping, and GTEx v8 expression panels. Exact per-run differences, including
 input field mappings and sample-size fields, remain in each `params.config`.
+These archived parameter files are the version authority for the reported
+runs; manuscript or supplement references to FUMA v2.0.0, FUMA v1.8.3, or
+MAGMA v1.10 would not describe these analyses.
 
 ## Rebuild the extracted tables
 

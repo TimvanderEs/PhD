@@ -1,0 +1,5 @@
+phenotype	cases	controls	filename
+EA	1	0	EA4_Edu.qc.LAVA.txt.gz
+MDD	525197	3362335	MDD_EUR.LAVA.txt.gz
+SCZ	53386	77258	SCZ_EUR.LAVA.txt.gz
+CF	1	0	Cognition_MTAG.qc.LAVA.txt.gz

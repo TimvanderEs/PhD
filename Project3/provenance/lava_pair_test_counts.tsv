@@ -1,13 +1,25 @@
-ancestry	trait_pair	n_bivariate_tests
-EAS	EA--CF	92
-EAS	EA--SCZ	335
-EAS	MDD--EA	134
-EAS	MDD--CF	34
-EAS	MDD--SCZ	83
-EAS	SCZ--CF	48
-EUR	EA--CF	529
-EUR	EA--SCZ	501
-EUR	MDD--EA	696
-EUR	MDD--CF	515
-EUR	MDD--SCZ	520
-EUR	SCZ--CF	381
+analysis_set	ancestry	trait_pair	n_bivariate_tests	n_FDR_significant	status	note
+archived_runner_output	EAS	EA--CF	92	NA	recovered	Generated with the historical 2e-5 runner threshold
+archived_runner_output	EAS	MDD--EA	134	NA	recovered	Generated with the historical 2e-5 runner threshold
+archived_runner_output	EAS	MDD--CF	34	NA	recovered	Generated with the historical 2e-5 runner threshold
+archived_runner_output	EAS	MDD--SCZ	83	NA	recovered	Generated with the historical 2e-5 runner threshold
+archived_runner_output	EAS	EA--SCZ	335	NA	recovered	Generated with the historical 2e-5 runner threshold
+archived_runner_output	EAS	SCZ--CF	48	NA	recovered	Generated with the historical 2e-5 runner threshold
+exact_threshold_recalculation	EAS	EA--CF	84	0	audit_only	Recalculated from archived univariate and bivariate output at P <= 0.05/3064
+exact_threshold_recalculation	EAS	MDD--EA	127	0	audit_only	Recalculated from archived univariate and bivariate output at P <= 0.05/3064
+exact_threshold_recalculation	EAS	MDD--CF	32	1	audit_only	Recalculated from archived univariate and bivariate output at P <= 0.05/3064
+exact_threshold_recalculation	EAS	MDD--SCZ	80	2	audit_only	Recalculated from archived univariate and bivariate output at P <= 0.05/3064
+exact_threshold_recalculation	EAS	EA--SCZ	329	3	audit_only	Recalculated from archived univariate and bivariate output at P <= 0.05/3064
+exact_threshold_recalculation	EAS	SCZ--CF	46	0	audit_only	Recalculated from archived univariate and bivariate output at P <= 0.05/3064
+publication_workbook	EAS	EA--CF	84	0	manuscript_snapshot	Current Supplementary Table S19/S20 source
+publication_workbook	EAS	MDD--EA	127	0	manuscript_snapshot	Current Supplementary Table S19/S20 source
+publication_workbook	EAS	MDD--CF	32	1	manuscript_snapshot	Current Supplementary Table S19/S20 source
+publication_workbook	EAS	MDD--SCZ	80	2	manuscript_snapshot	Current Supplementary Table S19/S20 source
+publication_workbook	EAS	EA--SCZ	328	3	manuscript_snapshot	One exact-threshold row with univariate P=0 is absent
+publication_workbook	EAS	SCZ--CF	46	0	manuscript_snapshot	Current Supplementary Table S19/S20 source
+archived_runner_output	EUR	EA--CF	529	NA	recovered	Generated with historical 2e-5 runner threshold; manuscript reports 3142 total
+archived_runner_output	EUR	MDD--EA	696	NA	recovered	Generated with historical 2e-5 runner threshold; manuscript reports 3142 total
+archived_runner_output	EUR	MDD--CF	515	NA	recovered	Generated with historical 2e-5 runner threshold; manuscript reports 3142 total
+archived_runner_output	EUR	MDD--SCZ	520	NA	recovered	Generated with historical 2e-5 runner threshold; manuscript reports 3142 total
+archived_runner_output	EUR	EA--SCZ	501	NA	recovered	Generated with historical 2e-5 runner threshold; manuscript reports 3142 total
+archived_runner_output	EUR	SCZ--CF	381	NA	recovered	Generated with historical 2e-5 runner threshold; manuscript reports 3142 total

@@ -70,3 +70,14 @@ its command-line options.
 
 The EC2 analysis run completed all recorded QC checks, including confirmation
 that the EAS MDD and SCZ source files were not duplicates.
+
+## Portal provenance
+
+[`inputs/smr_heidi/run_manifest.tsv`](../../inputs/smr_heidi/run_manifest.tsv)
+records the seven retained inputs, row counts, SHA-256 hashes, and available
+file timestamps. The original webSMR job identifiers, portal version, and
+access dates were not recoverable and are explicitly marked `not_recovered`.
+ZIP member and local file timestamps are retained only as file provenance; they
+are not represented as portal run times. If job records can be recovered from
+the portal account, add them to the manifest before creating the archival
+release.

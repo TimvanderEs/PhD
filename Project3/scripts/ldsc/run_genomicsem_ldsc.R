@@ -141,18 +141,45 @@ LDSC_INT_save <- ldsc_result
 save(LDSC_INT_save, file = file.path(out_dir, paste0(out_prefix, "_LDSC_INT.RData")))
 
 if (!("S" %in% names(ldsc_result))) stop("LDSC result has no S covariance matrix.", call. = FALSE)
-S <- as.matrix(ldsc_result$S)
-if (nrow(S) != length(trait_names)) stop("Unexpected covariance-matrix dimensions.", call. = FALSE)
-write.csv(S, file.path(out_dir, paste0(out_prefix, "_genetic_covariance.csv")), quote = FALSE)
+S_raw <- as.matrix(ldsc_result$S)
+if (nrow(S_raw) != length(trait_names)) stop("Unexpected covariance-matrix dimensions.", call. = FALSE)
+if (any(!is.finite(S_raw)) || any(diag(S_raw) <= 0)) {
+  stop("Raw covariance matrix must be finite with positive diagonal entries.", call. = FALSE)
+}
+rownames(S_raw) <- colnames(S_raw) <- trait_names
+write.csv(
+  S_raw,
+  file.path(out_dir, paste0(out_prefix, "_genetic_covariance_raw.csv")),
+  quote = FALSE
+)
 
-S_pd <- as.matrix(Matrix::nearPD(S)$mat)
-rg <- stats::cov2cor(S_pd)
-rg_file <- file.path(out_dir, paste0(out_prefix, "_genetic_correlations.csv"))
-write.csv(rg, rg_file, quote = FALSE)
+near_pd <- Matrix::nearPD(S_raw)
+S_nearPD <- as.matrix(near_pd$mat)
+rownames(S_nearPD) <- colnames(S_nearPD) <- trait_names
+write.csv(
+  S_nearPD,
+  file.path(out_dir, paste0(out_prefix, "_genetic_covariance_nearPD.csv")),
+  quote = FALSE
+)
+
+rg_raw <- stats::cov2cor(S_raw)
+rg_nearPD <- stats::cov2cor(S_nearPD)
+write.csv(
+  rg_raw,
+  file.path(out_dir, paste0(out_prefix, "_genetic_correlations_raw.csv")),
+  quote = FALSE
+)
+write.csv(
+  rg_nearPD,
+  file.path(out_dir, paste0(out_prefix, "_genetic_correlations_nearPD.csv")),
+  quote = FALSE
+)
 
 h2 <- data.frame(
   trait = trait_names,
-  SNP_h2 = diag(S_pd),
+  SNP_h2_raw = diag(S_raw),
+  SNP_h2_nearPD = diag(S_nearPD),
+  nearPD_change = diag(S_nearPD) - diag(S_raw),
   SNP_h2_SE = NA_real_,
   stringsAsFactors = FALSE
 )
@@ -163,8 +190,32 @@ write.csv(
   quote = FALSE
 )
 
+eigenvalues <- eigen(S_raw, symmetric = TRUE, only.values = TRUE)$values
+matrix_qc <- data.frame(
+  metric = c(
+    "nearPD_converged",
+    "raw_minimum_eigenvalue",
+    "nearPD_frobenius_norm",
+    "maximum_absolute_covariance_change"
+  ),
+  value = c(
+    as.character(near_pd$converged),
+    format(min(eigenvalues), digits = 16),
+    format(near_pd$normF, digits = 16),
+    format(max(abs(S_nearPD - S_raw)), digits = 16)
+  ),
+  stringsAsFactors = FALSE
+)
+write.table(
+  matrix_qc,
+  file.path(out_dir, paste0(out_prefix, "_matrix_adjustment_QC.tsv")),
+  sep = "\t",
+  row.names = FALSE,
+  quote = FALSE
+)
+
 if (make_heatmap) {
-  heatmap_df <- as.data.frame(as.table(rg))
+  heatmap_df <- as.data.frame(as.table(rg_nearPD))
   names(heatmap_df) <- c("Trait1", "Trait2", "rg")
   heatmap_df$Trait1 <- factor(heatmap_df$Trait1, levels = trait_names)
   heatmap_df$Trait2 <- factor(heatmap_df$Trait2, levels = trait_names)
@@ -176,7 +227,11 @@ if (make_heatmap) {
       axis.text.x = ggplot2::element_text(angle = 45, hjust = 1, vjust = 1),
       panel.grid = ggplot2::element_blank()
     ) +
-    ggplot2::labs(x = NULL, y = NULL, title = "Genetic correlations (LDSC / GenomicSEM)")
+    ggplot2::labs(
+      x = NULL,
+      y = NULL,
+      title = "Genetic correlations (GenomicSEM LDSC; nearPD matrix)"
+    )
   ggplot2::ggsave(
     file.path(out_dir, paste0(out_prefix, "_rg_heatmap.png")),
     p,

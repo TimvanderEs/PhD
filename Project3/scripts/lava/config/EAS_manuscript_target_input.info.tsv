@@ -1,0 +1,5 @@
+phenotype	cases	controls	filename
+MDD	15771	178777	MDD_EAS_for_LAVA.sumstats.gz
+EA	1	0	Edu_EAS_for_LAVA.sumstats.gz
+SCZ	22778	35362	SCZ_EAS_for_LAVA.sumstats.gz
+CF	1	0	HELIOS_10k_for_LAVA.sumstats.gz
