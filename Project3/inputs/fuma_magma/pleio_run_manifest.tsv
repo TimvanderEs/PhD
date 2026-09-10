@@ -1,0 +1,7 @@
+ancestry	canonical_label_final	run_relative_path	run_dir
+EUR	FOURTRAIT	EUR/PLEIO	results/fuma_magma/raw/EUR/FOURTRAIT
+EUR	MDD_3TRAIT	EUR/FUMA_PLEIO_MDD_EA_CF	results/fuma_magma/raw/EUR/MDD_3TRAIT
+EUR	SCZ_3TRAIT	EUR/FUMA_PLEIO_SCZ_EA_CF	results/fuma_magma/raw/EUR/SCZ_3TRAIT
+EAS	FOURTRAIT	EAS/FUMA_EAS_4traitPLEIO	results/fuma_magma/raw/EAS/FOURTRAIT
+EAS	MDD_3TRAIT	EAS/FUMA_EAS_3traitPLEIO_MDD_EA_CF	results/fuma_magma/raw/EAS/MDD_3TRAIT
+EAS	SCZ_3TRAIT	EAS/FUMA_EAS_3traitPLEIO_SCZ_EA_CF	results/fuma_magma/raw/EAS/SCZ_3TRAIT

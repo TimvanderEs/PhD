@@ -1,0 +1,36 @@
+# MEAN_SAMPLE_SIZE = 123285
+# TOTAL_GENES = 17211
+# TEST_DIRECTION = one-sided, positive (set), one-sided, positive (covar)
+# CONDITIONED_INTERNAL = gene size, gene density, sample size, inverse mac, log(gene size), log(gene density), log(sample size), log(inverse mac)
+# CONDITIONED_HIDDEN = Average (covar)
+VARIABLE             TYPE  NGENES         BETA     BETA_STD           SE            P
+Adipose_Tissue      COVAR   17211    -0.041763    -0.081861     0.016901      0.99326
+Adrenal_Gland       COVAR   17211     0.020546      0.03961     0.013075     0.058049
+Bladder             COVAR   17211    -0.059865     -0.11645     0.020566       0.9982
+Blood               COVAR   17211    0.0089251     0.016026    0.0078024      0.12634
+Blood_Vessel        COVAR   17211      0.02104     0.042635     0.014879      0.07868
+Brain               COVAR   17211     0.082032      0.14224    0.0086686   1.6997e-21
+Breast              COVAR   17211    -0.079596     -0.15277     0.020061      0.99996
+Cervix_Uteri        COVAR   17211    -0.032889    -0.064478     0.018032      0.96591
+Colon               COVAR   17211     0.022979     0.042941     0.019978      0.12504
+Esophagus           COVAR   17211    -0.030876    -0.058067       0.0217       0.9226
+Fallopian_Tube      COVAR   17211    -0.046062    -0.089152      0.01766      0.99545
+Heart               COVAR   17211    0.0017626    0.0030309     0.012036      0.44179
+Kidney              COVAR   17211    -0.041176    -0.072356     0.011966      0.99971
+Liver               COVAR   17211    -0.020695    -0.037245    0.0082236      0.99407
+Lung                COVAR   17211     -0.03405    -0.065686     0.013381      0.99452
+Muscle              COVAR   17211     0.012972     0.024534    0.0086915     0.067791
+Nerve               COVAR   17211   -0.0043684   -0.0087752      0.01309       0.6307
+Ovary               COVAR   17211    0.0021243    0.0043001     0.013048      0.43534
+Pancreas            COVAR   17211    -0.011743    -0.019625     0.011036      0.85633
+Pituitary           COVAR   17211     0.078047      0.14519     0.010443   4.1089e-14
+Prostate            COVAR   17211    -0.058418     -0.11059     0.017507      0.99958
+Salivary_Gland      COVAR   17211    -0.035102    -0.065205     0.013623      0.99501
+Skin                COVAR   17211     -0.02392    -0.045529     0.012734      0.96983
+Small_Intestine     COVAR   17211    -0.012228    -0.022443     0.013619      0.81537
+Spleen              COVAR   17211   -0.0069717    -0.013797    0.0099486      0.75827
+Stomach             COVAR   17211    -0.037359    -0.067769      0.01721      0.98502
+Testis              COVAR   17211     0.017141     0.029525    0.0070291     0.007378
+Thyroid             COVAR   17211   -0.0083552    -0.016515     0.013674      0.72941
+Uterus              COVAR   17211   -0.0048875   -0.0099414     0.015144      0.62655
+Vagina              COVAR   17211    -0.051701    -0.098658     0.016036      0.99937

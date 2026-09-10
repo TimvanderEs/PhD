@@ -2,7 +2,7 @@
 
 [![Project 3 synthetic test](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml/badge.svg)](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml)
 
-This directory contains analysis code supporting an upcoming molecular psychiatry manuscript. It includes the ancestry-specific LDSC, LAVA, and PLEIO preparation/run workflows; the post-hoc directional classification and single-trait overlap audit of PLEIO/FUMA loci; and the SMR/HEIDI threshold and sensitivity reanalysis.
+This directory contains analysis code supporting an upcoming Molecular Psychiatry manuscript. It includes the ancestry-specific LDSC, LAVA, and PLEIO preparation/run workflows; the post-hoc directional classification and single-trait overlap audit of PLEIO/FUMA loci; FUMA/MAGMA, GTEx v8, and g:Profiler enrichment analyses; and the SMR/HEIDI threshold and sensitivity reanalysis.
 
 ## Contents
 
@@ -14,6 +14,12 @@ This directory contains analysis code supporting an upcoming molecular psychiatr
 | `scripts/lava/` | Four-trait EAS/EUR LAVA workflow with the retained overlap matrices and locus definitions. |
 | `scripts/pleio/` | Four-trait preparation, nested three-trait derivation, PLEIO run wrapper, model manifests, and retained inverse-CDF calibrations. |
 | `scripts/smr_heidi/` | Reanalyses merged webSMR/HEIDI outputs using trait-specific and study-wide multiple-testing thresholds, sensitivity definitions, QC checks, and optional PLEIO/LAVA integration. |
+| `scripts/fuma_magma/` | Audits raw FUMA/MAGMA/GTEx v8 exports and compares PLEIO enrichment with available constituent single-trait results. |
+| `scripts/gprofiler/` | Validates and consolidates the 12 archived g:Profiler exports and rebuilds Supplementary Figure S8. |
+| `inputs/fuma_magma/` | Reviewed manifests locking the six PLEIO and seven available single-trait FUMA runs to canonical labels. |
+| `inputs/gprofiler/` | Exact query lists, EUR custom backgrounds, and the run/settings/checksum manifest. |
+| `results/fuma_magma/` | Exact parameter files and raw MAGMA/GTEx output tables plus compact processed publication results. |
+| `results/gprofiler/` | Compressed original CSV exports and checksum-validated processed tables. |
 | `provenance/` | EC2 software versions, final-output fingerprints, and compact expected summaries used to distinguish final from QC runs. |
 | `examples/synthetic/` | Small, artificial input files that document the required directory layout and column names. They contain no study data. |
 | `examples/run_synthetic_example.sh` | Runs the complete workflow on the synthetic example. |
@@ -40,7 +46,9 @@ The corrected prioritisation audit compares a PLEIO locus only with the single-t
 - GenomicSEM, Matrix, and ggplot2 (LDSC workflow)
 - LAVA 0.1.5 (local genetic-correlation workflow)
 - PLEIO at the revision recorded in `scripts/pleio/README.md`
-- Python 3.8 or later (SMR/HEIDI workflow; no third-party Python packages)
+- Python 3.9 or later (SMR/HEIDI and g:Profiler consolidation use only the standard library)
+- NumPy and pandas (FUMA/MAGMA extraction and comparison)
+- `data.table`, `ggplot2`, and `patchwork` (optional Supplementary Figure S8 rebuild)
 - Bash for the convenience wrapper
 
 Install the R dependency with:
@@ -69,6 +77,8 @@ Each upstream workflow has a self-contained guide:
 - [LAVA](scripts/lava/README.md)
 - [PLEIO preparation and model runs](scripts/pleio/README.md)
 - [SMR/HEIDI](scripts/smr_heidi/README.md)
+- [FUMA/MAGMA and GTEx v8 enrichment](scripts/fuma_magma/README.md)
+- [g:Profiler over-representation analysis](scripts/gprofiler/README.md)
 
 The ancestry/model configurations preserve the executed trait order, disease
 prevalences, thresholds, overlap matrices, and output names. The
@@ -137,7 +147,7 @@ Each filename begins with `<ANCESTRY>_<MODEL>`:
 
 ## Data availability and privacy
 
-No individual-level participant data, credentials, or study summary statistics are included here. The synthetic example is not derived from the study. The included LAVA overlap matrices, locus definitions, PLEIO inverse-CDF calibrations, and compact output summaries are non-individual-level analysis metadata. Access to the source GWAS data and downstream FUMA files remains subject to the terms of their original providers.
+No individual-level participant data, credentials, or source GWAS summary statistics are included here. The synthetic example is not derived from the study. The included LAVA overlap matrices, locus definitions, PLEIO inverse-CDF calibrations, FUMA parameter files, MAGMA/GTEx enrichment outputs, g:Profiler gene lists/exports, and compact summaries are non-individual-level analysis metadata or derived results. Access to source GWAS data and any unarchived FUMA output remains subject to the terms of the original providers.
 
 ## Citation and licence
 

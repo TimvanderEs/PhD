@@ -1,0 +1,14 @@
+source	ancestry	run_relative_path	canonical_label_final	run_dir
+single_trait	EAS	EDU	EA	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/EDU
+single_trait	EAS	MDD	MDD	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/MDD
+single_trait	EAS	SCZ	SCZ	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/SCZ
+single_trait	EUR	EDU	EA	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/EDU
+single_trait	EUR	G	CF	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/G
+single_trait	EUR	MDD	MDD	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/MDD
+single_trait	EUR	SCZ	SCZ	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/SCZ
+pleio	EUR	EUR/PLEIO	FOURTRAIT	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/PLEIO
+pleio	EUR	EUR/FUMA_PLEIO_MDD_EA_CF	MDD_3TRAIT	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/FUMA_PLEIO_MDD_EA_CF
+pleio	EUR	EUR/FUMA_PLEIO_SCZ_EA_CF	SCZ_3TRAIT	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/FUMA_PLEIO_SCZ_EA_CF
+pleio	EAS	EAS/FUMA_EAS_4traitPLEIO	FOURTRAIT	/home/ec2-user/project2/RESULTS/PLEIO/EAS_summary/FUMA_EAS_4traitPLEIO
+pleio	EAS	EAS/FUMA_EAS_3traitPLEIO_MDD_EA_CF	MDD_3TRAIT	/home/ec2-user/project2/RESULTS/PLEIO/EAS_summary/FUMA_EAS_3traitPLEIO_MDD_EA_CF
+pleio	EAS	EAS/FUMA_EAS_3traitPLEIO_SCZ_EA_CF	SCZ_3TRAIT	/home/ec2-user/project2/RESULTS/PLEIO/EAS_summary/FUMA_EAS_3traitPLEIO_SCZ_EA_CF

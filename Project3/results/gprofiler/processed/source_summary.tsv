@@ -1,0 +1,133 @@
+run_id	ancestry	model	direction_class	source	source_label	n_returned_terms	n_significant_terms	min_adjusted_p
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	GO:BP	GO biological process	2204	0	0.051925557184442965
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	GO:MF	GO molecular function	453	3	0.004817372742938979
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	GO:CC	GO cellular component	351	0	0.09750562078164941
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	REAC	Reactome	461	1	0.02100700281061303
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	KEGG	KEGG pathway	150	1	0.010554814527398326
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	WP	WikiPathways	169	0	0.1368484243286475
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	HP	Human phenotype	1774	0	1.0
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	HPA	Human Protein Atlas	544	2	0.04659890495989183
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	CORUM	CORUM	44	0	1.0
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	TF	Transcription factor target	6870	0	0.07356139722448664
+EAS_FOURTRAIT_all	EAS	EAS_4TRAIT	all_mapped_genes	MIRNA	miRNA target	2141	0	0.8614419955243454
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	GO:BP	GO biological process	380	0	0.1178506086351175
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	GO:MF	GO molecular function	79	14	0.00025317144244638515
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	GO:CC	GO cellular component	95	0	0.35574666574577085
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	REAC	Reactome	163	0	1.0
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	KEGG	KEGG pathway	32	0	0.3747475979473484
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	WP	WikiPathways	30	0	1.0
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	HP	Human phenotype	118	0	0.19928258270226537
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	HPA	Human Protein Atlas	330	15	0.0023070785733027067
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	CORUM	CORUM	4	0	0.0998486229324061
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	TF	Transcription factor target	5070	2	0.03372640704663696
+EAS_MDD_3TRAIT_all	EAS	EAS_MDD_EA_CF	all_mapped_genes	MIRNA	miRNA target	913	0	1.0
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	GO:BP	GO biological process	2336	4	3.866494611619882e-05
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	GO:MF	GO molecular function	514	3	0.005128853289953606
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	GO:CC	GO cellular component	356	0	0.49530112565483325
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	REAC	Reactome	499	1	0.024452579434129207
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	KEGG	KEGG pathway	166	1	0.014995181888250941
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	WP	WikiPathways	194	0	0.09020167437761875
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	HP	Human phenotype	2101	0	0.3273420241703185
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	HPA	Human Protein Atlas	590	2	0.021907433546529215
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	CORUM	CORUM	47	0	1.0
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	TF	Transcription factor target	6966	0	0.10470633180975479
+EAS_SCZ_3TRAIT_all	EAS	EAS_SCZ_EA_CF	all_mapped_genes	MIRNA	miRNA target	2178	0	0.17527401862805816
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	GO:BP	GO biological process	6473	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	GO:MF	GO molecular function	1532	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	GO:CC	GO cellular component	938	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	REAC	Reactome	1494	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	KEGG	KEGG pathway	329	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	WP	WikiPathways	672	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	HP	Human phenotype	5319	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	HPA	Human Protein Atlas	724	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	CORUM	CORUM	597	0	1.0
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	TF	Transcription factor target	8788	0	0.1061098185234586
+EUR_FOURTRAIT_concordant	EUR	FOURTRAIT	concordant	MIRNA	miRNA target	2888	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	GO:BP	GO biological process	3932	1	9.089633699765223e-07
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	GO:MF	GO molecular function	957	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	GO:CC	GO cellular component	591	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	REAC	Reactome	911	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	KEGG	KEGG pathway	264	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	WP	WikiPathways	419	1	1.0874776781721665e-06
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	HP	Human phenotype	3514	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	HPA	Human Protein Atlas	674	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	CORUM	CORUM	173	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	TF	Transcription factor target	7987	0	1.0
+EUR_FOURTRAIT_discordant	EUR	FOURTRAIT	discordant	MIRNA	miRNA target	2683	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	GO:BP	GO biological process	4672	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	GO:MF	GO molecular function	1070	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	GO:CC	GO cellular component	667	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	REAC	Reactome	1073	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	KEGG	KEGG pathway	278	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	WP	WikiPathways	466	0	0.9264978902296019
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	HP	Human phenotype	3745	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	HPA	Human Protein Atlas	677	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	CORUM	CORUM	351	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	TF	Transcription factor target	8141	0	1.0
+EUR_FOURTRAIT_dual	EUR	FOURTRAIT	dual	MIRNA	miRNA target	2747	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	GO:BP	GO biological process	6275	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	GO:MF	GO molecular function	1522	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	GO:CC	GO cellular component	942	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	REAC	Reactome	1473	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	KEGG	KEGG pathway	325	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	WP	WikiPathways	629	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	HP	Human phenotype	5550	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	HPA	Human Protein Atlas	734	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	CORUM	CORUM	557	0	1.0
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	TF	Transcription factor target	8822	0	0.0750586441032399
+EUR_MDD_3TRAIT_concordant	EUR	MDD_3TRAIT	concordant	MIRNA	miRNA target	2896	0	0.18373624167507877
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	GO:BP	GO biological process	3886	2	1.0757972331815111e-13
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	GO:MF	GO molecular function	869	1	6.808442276525194e-06
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	GO:CC	GO cellular component	530	0	1.0
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	REAC	Reactome	855	0	1.0
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	KEGG	KEGG pathway	246	1	2.6698118318996105e-08
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	WP	WikiPathways	356	1	0.03312795591048972
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	HP	Human phenotype	3174	0	1.0
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	HPA	Human Protein Atlas	662	0	1.0
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	CORUM	CORUM	189	0	1.0
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	TF	Transcription factor target	7901	0	1.0
+EUR_MDD_3TRAIT_discordant	EUR	MDD_3TRAIT	discordant	MIRNA	miRNA target	2567	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	GO:BP	GO biological process	3990	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	GO:MF	GO molecular function	945	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	GO:CC	GO cellular component	582	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	REAC	Reactome	906	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	KEGG	KEGG pathway	265	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	WP	WikiPathways	407	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	HP	Human phenotype	3251	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	HPA	Human Protein Atlas	661	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	CORUM	CORUM	257	0	1.0
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	TF	Transcription factor target	7880	0	0.1203533476447063
+EUR_MDD_3TRAIT_dual	EUR	MDD_3TRAIT	dual	MIRNA	miRNA target	2578	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	GO:BP	GO biological process	5609	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	GO:MF	GO molecular function	1250	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	GO:CC	GO cellular component	835	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	REAC	Reactome	1313	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	KEGG	KEGG pathway	299	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	WP	WikiPathways	547	0	0.07022304004859091
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	HP	Human phenotype	4641	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	HPA	Human Protein Atlas	708	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	CORUM	CORUM	501	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	TF	Transcription factor target	8462	0	1.0
+EUR_SCZ_3TRAIT_concordant	EUR	SCZ_3TRAIT	concordant	MIRNA	miRNA target	2826	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	GO:BP	GO biological process	4277	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	GO:MF	GO molecular function	1004	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	GO:CC	GO cellular component	650	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	REAC	Reactome	1019	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	KEGG	KEGG pathway	280	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	WP	WikiPathways	461	1	2.4137678985488723e-05
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	HP	Human phenotype	3537	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	HPA	Human Protein Atlas	684	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	CORUM	CORUM	193	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	TF	Transcription factor target	8079	0	1.0
+EUR_SCZ_3TRAIT_discordant	EUR	SCZ_3TRAIT	discordant	MIRNA	miRNA target	2717	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	GO:BP	GO biological process	4590	2	6.825258463627083e-11
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	GO:MF	GO molecular function	1113	1	0.03366616902992189
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	GO:CC	GO cellular component	720	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	REAC	Reactome	1098	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	KEGG	KEGG pathway	282	1	3.144068969890206e-07
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	WP	WikiPathways	468	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	HP	Human phenotype	3948	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	HPA	Human Protein Atlas	680	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	CORUM	CORUM	340	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	TF	Transcription factor target	8201	0	1.0
+EUR_SCZ_3TRAIT_dual	EUR	SCZ_3TRAIT	dual	MIRNA	miRNA target	2724	0	1.0

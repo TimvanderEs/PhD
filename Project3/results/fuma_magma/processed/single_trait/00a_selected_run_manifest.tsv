@@ -1,0 +1,8 @@
+ancestry	run_relative_path	run_label_raw	canonical_label_final	canonical_label_status_final	canonical_label_reason_final	run_dir
+EAS	EDU	EDU	EA	strict_path_allowlist	exact single-trait directory allowlist: EAS/EDU	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/EDU
+EAS	MDD	MDD	MDD	strict_path_allowlist	exact single-trait directory allowlist: EAS/MDD	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/MDD
+EAS	SCZ	SCZ	SCZ	strict_path_allowlist	exact single-trait directory allowlist: EAS/SCZ	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/SCZ
+EUR	EDU	EDU	EA	strict_path_allowlist	exact single-trait directory allowlist: EUR/EDU	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/EDU
+EUR	G	G	CF	strict_path_allowlist	exact single-trait directory allowlist: EUR/G	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/G
+EUR	MDD	MDD	MDD	strict_path_allowlist	exact single-trait directory allowlist: EUR/MDD	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/MDD
+EUR	SCZ	SCZ	SCZ	strict_path_allowlist	exact single-trait directory allowlist: EUR/SCZ	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/SCZ

@@ -16,3 +16,7 @@ PLEIO-model	Python	3.9.25	EC2 pleio3_env created 2025-12-10
 PLEIO-model	NumPy	2.0.2	EC2 pleio3_env
 PLEIO-model	pandas	2.3.3	EC2 pleio3_env
 PLEIO-model	SciPy	1.13.1	EC2 pleio3_env
+FUMA-single-trait	FUMA	v1.5.2	Exact version in archived params.config files
+FUMA-PLEIO	FUMA	v1.8.2	Exact version in archived params.config files
+FUMA-MAGMA	MAGMA	v1.08	All 13 archived FUMA runs
+gProfiler	web service	not_recorded	Exact database release absent from original CSV exports

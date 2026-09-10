@@ -15,7 +15,11 @@ reference panels can rerun:
 3. four-trait EAS and EUR LAVA analyses;
 4. EAS and EUR four-trait PLEIO input preparation and association tests;
 5. the nested MDD and SCZ three-trait PLEIO models;
-6. downstream PLEIO directional classification and SMR/HEIDI reanalysis.
+6. downstream PLEIO directional classification and SMR/HEIDI reanalysis;
+7. consolidation and comparison of the archived FUMA/MAGMA and GTEx v8
+   enrichment outputs;
+8. checksum-validated reconstruction of the significant g:Profiler tables and
+   Supplementary Figure S8 source data.
 
 The repository cannot make controlled or third-party GWAS data public. It
 therefore supports computational reproduction conditional on lawful data
@@ -36,6 +40,14 @@ example.
   submatrix selection from each successful four-trait preparation.
 - PLEIO itself is referenced by commit rather than copied because the checked
   out software reports no redistribution licence.
+- Six model-wide PLEIO and seven available single-trait FUMA SNP2GENE runs were
+  selected with explicit reviewed manifests. EAS cognitive performance was not
+  available as a single-trait FUMA run, so every affected comparison remains
+  labelled incomplete.
+- The 12 g:Profiler raw exports produce exactly 61 g:SCS-adjusted P < 0.05
+  terms and reconcile with the final publication workbook. EUR query and custom
+  background lists were recovered. The EAS background option and exact
+  g:Profiler database release were not retained and are marked `not_recorded`.
 
 ## Verification files
 
@@ -50,6 +62,14 @@ example.
   importance-sampling calibration files.
 - `provenance/lava_pair_test_counts.tsv` records the bivariate-test counts by
   trait pair.
+- `inputs/fuma_magma/*.tsv` identify the exact archived FUMA runs used in the
+  enrichment comparisons; their complete web settings are stored in the
+  corresponding `results/fuma_magma/raw/*/*/params.config` files.
+- `provenance/fuma_magma_raw_files.sha256` fingerprints all 52 archived FUMA
+  parameter and raw MAGMA/GTEx files.
+- `inputs/gprofiler/run_manifest.tsv` records the query/background files, raw
+  row counts, analysis settings, timestamps, and both compressed and original
+  CSV SHA-256 hashes.
 
 These fingerprints establish which retained EC2 files were treated as final.
 They are not checksums of raw participant or GWAS input data.

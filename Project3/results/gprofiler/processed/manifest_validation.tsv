@@ -1,0 +1,13 @@
+run_id	query_count_match	query_unique	query_sha256_match	background_count_match	background_unique	background_sha256_match	original_csv_sha256_match	compressed_sha256_match	raw_row_count_match	significant_row_count_match	background_contains_query	status
+EAS_FOURTRAIT_all	True	True	True	True	True	True	True	True	True	True	NA	PASS
+EAS_MDD_3TRAIT_all	True	True	True	True	True	True	True	True	True	True	NA	PASS
+EAS_SCZ_3TRAIT_all	True	True	True	True	True	True	True	True	True	True	NA	PASS
+EUR_FOURTRAIT_concordant	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_FOURTRAIT_discordant	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_FOURTRAIT_dual	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_MDD_3TRAIT_concordant	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_MDD_3TRAIT_discordant	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_MDD_3TRAIT_dual	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_SCZ_3TRAIT_concordant	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_SCZ_3TRAIT_discordant	True	True	True	True	True	True	True	True	True	True	True	PASS
+EUR_SCZ_3TRAIT_dual	True	True	True	True	True	True	True	True	True	True	True	PASS
