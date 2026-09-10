@@ -1,5 +1,5 @@
 phenotype	cases	controls	filename
-MDD_EAS	NA	NA	MDD_EAS_for_LAVA.sumstats.gz
-Edu_EAS	15771	178777	Edu_EAS_for_LAVA.sumstats.gz
+Edu_EAS	NA	NA	Edu_EAS_for_LAVA.sumstats.gz
+MDD_EAS	15771	178777	MDD_EAS_for_LAVA.sumstats.gz
 SCZ_EAS	13305	16244	SCZ_EAS_for_LAVA.sumstats.gz
 HEL10k_EAS	NA	NA	HELIOS_10k_for_LAVA.sumstats.gz
