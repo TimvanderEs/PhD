@@ -1,7 +1,6 @@
 name: Apply verified Project3 enrichment release
 
 on:
-  push:
   workflow_dispatch:
 
 permissions:
@@ -15,8 +14,8 @@ jobs:
       - name: Extract verified release
         run: |
           test -f project3_enrichment_8a8c28d.tar.gz
-          tar -xzf project3_enrichment_8a8c28d.tar.gz
-          find .github Project3 -name '._*' -type f -delete
+          tar -xzf project3_enrichment_8a8c28d.tar.gz Project3
+          find Project3 -name '._*' -type f -delete
           rm project3_enrichment_8a8c28d.tar.gz
       - name: Commit release contents
         run: |
