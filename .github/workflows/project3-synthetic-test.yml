@@ -16,6 +16,7 @@ jobs:
         run: |
           test -f project3_enrichment_8a8c28d.tar.gz
           tar -xzf project3_enrichment_8a8c28d.tar.gz
+          find .github Project3 -name '._*' -type f -delete
           rm project3_enrichment_8a8c28d.tar.gz
       - name: Commit release contents
         run: |
