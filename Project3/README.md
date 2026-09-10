@@ -1,29 +1,49 @@
 # Project 3: multivariate pleiotropy and directional locus classification
 
-[![Project 3 synthetic test](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml/badge.svg)](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml)
+[![Project 3 checks](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml/badge.svg)](https://github.com/TimvanderEs/PhD/actions/workflows/project3-synthetic-test.yml)
 
 This directory contains analysis code supporting an upcoming Molecular Psychiatry manuscript. It includes the ancestry-specific LDSC, LAVA, and PLEIO preparation/run workflows; the post-hoc directional classification and single-trait overlap audit of PLEIO/FUMA loci; FUMA/MAGMA, GTEx v8, and g:Profiler enrichment analyses; and the SMR/HEIDI threshold and sensitivity reanalysis.
 
-## Contents
+## Reproducibility scope
 
-| Path | Purpose |
+The repository separates analyses that can be rebuilt entirely from the public
+archive from steps that require provider-controlled GWAS or webSMR inputs.
+
+| Analysis | Public record included here | What a reader can reproduce |
+| --- | --- | --- |
+| Directional PLEIO/FUMA classification | Complete R workflow, command-line wrapper, synthetic inputs, and expected outputs | Run the full synthetic example immediately; rerun the study analysis after supplying the authorised PLEIO/FUMA and summary-statistics inputs. |
+| LDSC, LAVA, and PLEIO | Executed scripts, trait/model configurations, selected non-individual-level matrices and calibrations, and final-output fingerprints | Recreate the workflows after obtaining the source GWAS and required reference resources. |
+| SMR/HEIDI | Complete threshold/sensitivity reanalysis code, input contract, and run provenance | Rerun after supplying the seven merged webSMR files listed in its guide. |
+| FUMA/MAGMA and GTEx v8 | Exact FUMA parameters, raw term-level results, reviewed manifests, and processed tables | Rebuild and compare all 13 archived runs directly from this repository. |
+| g:Profiler | Exact query lists, available custom backgrounds, original exports, checksums, and processed tables | Validate all 12 archived queries and rebuild the 61 significant-term table without calling a changing live database. |
+
+Two gaps are documented rather than silently reconstructed: no EAS
+cognitive-performance single-trait FUMA run was recovered, and the original
+g:Profiler database release and EAS background option were not recorded. The
+relevant manifests and workflow guides mark these limitations explicitly.
+
+The badge above runs the synthetic workflow and rebuilds the archived
+FUMA/MAGMA and g:Profiler results on every Project 3 change.
+
+## Analysis guides
+
+- [Directional PLEIO/FUMA classification](scripts/classify_PLEIO_FUMA_loci_v2.R)
+- [LDSC](scripts/ldsc/README.md)
+- [LAVA](scripts/lava/README.md)
+- [PLEIO preparation and model runs](scripts/pleio/README.md)
+- [SMR/HEIDI](scripts/smr_heidi/README.md)
+- [FUMA/MAGMA and GTEx v8 enrichment](scripts/fuma_magma/README.md)
+- [g:Profiler over-representation analysis](scripts/gprofiler/README.md)
+
+## Repository layout
+
+| Path | Contents |
 | --- | --- |
-| `scripts/classify_PLEIO_FUMA_loci_v2.R` | Classifies independent significant SNPs and collapses those labels to PLEIO loci; compares corrected and legacy classifications; audits overlap with model-relevant single-trait FUMA loci. |
-| `scripts/run_PLEIO_reclassification_audit.sh` | Command-line wrapper that runs the R workflow and prints the main summaries and QC results. |
-| `scripts/ldsc/` | Primary EAS/EUR GenomicSEM-LDSC matrices plus the clean EAS pairwise LDSC rerun, with exact trait/prevalence configs. |
-| `scripts/lava/` | Four-trait EAS/EUR LAVA workflow with the retained overlap matrices and locus definitions. |
-| `scripts/pleio/` | Four-trait preparation, nested three-trait derivation, PLEIO run wrapper, model manifests, and retained inverse-CDF calibrations. |
-| `scripts/smr_heidi/` | Reanalyses merged webSMR/HEIDI outputs using trait-specific and study-wide multiple-testing thresholds, sensitivity definitions, QC checks, and optional PLEIO/LAVA integration. |
-| `scripts/fuma_magma/` | Audits raw FUMA/MAGMA/GTEx v8 exports and compares PLEIO enrichment with available constituent single-trait results. |
-| `scripts/gprofiler/` | Validates and consolidates the 12 archived g:Profiler exports and rebuilds Supplementary Figure S8. |
-| `inputs/fuma_magma/` | Reviewed manifests locking the six PLEIO and seven available single-trait FUMA runs to canonical labels. |
-| `inputs/gprofiler/` | Exact query lists, EUR custom backgrounds, and the run/settings/checksum manifest. |
-| `results/fuma_magma/` | Exact parameter files and raw MAGMA/GTEx output tables plus compact processed publication results. |
-| `results/gprofiler/` | Compressed original CSV exports and checksum-validated processed tables. |
-| `provenance/` | EC2 software versions, final-output fingerprints, and compact expected summaries used to distinguish final from QC runs. |
-| `examples/synthetic/` | Small, artificial input files that document the required directory layout and column names. They contain no study data. |
-| `examples/run_synthetic_example.sh` | Runs the complete workflow on the synthetic example. |
-| `tests/validate_synthetic_output.R` | Checks the synthetic run against its expected locus labels, overlaps, and QC values. |
+| `scripts/` | Analysis code, per-workflow instructions, upstream configurations, and selected workflow inputs. |
+| `inputs/` | FUMA/MAGMA run manifests and g:Profiler query, background, and settings records. |
+| `results/` | Archived FUMA/MAGMA and g:Profiler raw exports and compact processed results. |
+| `provenance/` | Software versions, checksums, final-output fingerprints, and expected run summaries. |
+| `examples/` and `tests/` | Privacy-safe synthetic inputs plus automated integrity and workflow checks. |
 
 ## Directional classification
 
@@ -40,22 +60,21 @@ SNP-level labels are collapsed to each locus as `concordant`, `discordant`, `mix
 
 The corrected prioritisation audit compares a PLEIO locus only with the single-trait FUMA results included in that model. The output retains the earlier four-trait/same-sign classification so that changes can be inspected explicitly.
 
-## Requirements
+## Software requirements
 
-- R with the `data.table` package (directional classification)
-- GenomicSEM, Matrix, and ggplot2 (LDSC workflow)
-- LAVA 0.1.5 (local genetic-correlation workflow)
-- PLEIO at the revision recorded in `scripts/pleio/README.md`
-- Python 3.9 or later (SMR/HEIDI and g:Profiler consolidation use only the standard library)
-- NumPy and pandas (FUMA/MAGMA extraction and comparison)
-- `data.table`, `ggplot2`, and `patchwork` (optional Supplementary Figure S8 rebuild)
-- Bash for the convenience wrapper
+The privacy-safe synthetic check requires Bash, R, and the R package
+`data.table`. The archived enrichment checks additionally require Python 3.9
+or later, NumPy, and pandas. Install these public-validation dependencies with:
 
-Install the R dependency with:
-
-```r
-install.packages("data.table")
+```bash
+Rscript -e 'install.packages("data.table")'
+python3 -m pip install -r scripts/fuma_magma/requirements.txt
 ```
+
+Rebuilding Supplementary Figure S8 also requires the R packages `ggplot2` and
+`patchwork`. Upstream reruns require GenomicSEM, LAVA 0.1.5, and PLEIO at the
+revision recorded in its guide. Each analysis guide lists its additional
+reference files and workflow-specific requirements.
 
 ## Quick validation with synthetic data
 
@@ -85,7 +104,7 @@ prevalences, thresholds, overlap matrices, and output names. The
 [provenance record](REPRODUCIBILITY.md) gives software revisions, successful
 run dates, row counts, and SHA-256 fingerprints for the retained final outputs.
 
-## Running the workflow on study outputs
+## Running the directional classifier on study outputs
 
 ```bash
 bash scripts/run_PLEIO_reclassification_audit.sh \
@@ -114,15 +133,6 @@ The R script can also be called directly. Run the following for its argument sum
 Rscript scripts/classify_PLEIO_FUMA_loci_v2.R --help
 ```
 
-## SMR/HEIDI reanalysis
-
-The SMR workflow replaces a single fixed primary threshold with a
-trait-specific Bonferroni threshold while retaining `P_SMR < 5e-8` and other
-HEIDI/instrument definitions as sensitivity analyses. It can optionally rebuild
-PLEIO–SMR and PLEIO–LAVA convergence tables from the canonical supplementary
-TSVs. See [`scripts/smr_heidi/README.md`](scripts/smr_heidi/README.md) for the
-input layout, command, outputs, and interpretation caveat.
-
 ### Required input fields
 
 | Input | Required fields |
@@ -133,7 +143,7 @@ input layout, command, outputs, and interpretation caveat.
 
 Several common FUMA and analysis-pipeline column aliases are accepted. If a required field is absent or ambiguous, the script stops with a diagnostic message.
 
-## Main outputs
+## Directional-classification outputs
 
 Each filename begins with `<ANCESTRY>_<MODEL>`:
 
@@ -144,6 +154,15 @@ Each filename begins with `<ANCESTRY>_<MODEL>`:
 - `_prioritisation_transition.tsv`: changes caused by using model-relevant comparators;
 - `_classification_QC.tsv`: run-level counts and missingness checks;
 - `_run.log`: console output captured by the Bash wrapper.
+
+## SMR/HEIDI reanalysis
+
+The SMR workflow replaces a single fixed primary threshold with a
+trait-specific Bonferroni threshold while retaining `P_SMR < 5e-8` and other
+HEIDI/instrument definitions as sensitivity analyses. It can optionally rebuild
+PLEIO–SMR and PLEIO–LAVA convergence tables from the canonical supplementary
+TSVs. See [`scripts/smr_heidi/README.md`](scripts/smr_heidi/README.md) for the
+input layout, command, outputs, and interpretation caveat.
 
 ## Data availability and privacy
 
