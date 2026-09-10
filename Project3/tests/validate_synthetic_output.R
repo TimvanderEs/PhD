@@ -14,16 +14,18 @@ master <- fread(file.path(out_dir, paste0(prefix, "_PLEIO_locus_master.tsv")))
 qc <- fread(file.path(out_dir, paste0(prefix, "_classification_QC.tsv")))
 
 expected_direction <- c(
-  PLEIO_1 = "concordant",
-  PLEIO_2 = "mixed",
-  PLEIO_3 = "discordant",
-  PLEIO_4 = "trait_dominant_or_unclear"
+  PLEIO_1 = "Concordant",
+  PLEIO_2 = "Mixed",
+  PLEIO_3 = "Discordant",
+  PLEIO_4 = "Unassigned",
+  PLEIO_5 = "Dual"
 )
 expected_prioritised <- c(
   PLEIO_1 = FALSE,
   PLEIO_2 = FALSE,
   PLEIO_3 = TRUE,
-  PLEIO_4 = TRUE
+  PLEIO_4 = TRUE,
+  PLEIO_5 = TRUE
 )
 
 if (!setequal(master$locus_key, names(expected_direction))) {
@@ -32,7 +34,7 @@ if (!setequal(master$locus_key, names(expected_direction))) {
 
 observed_direction <- setNames(master$locus_direction_class, master$locus_key)
 observed_prioritised <- setNames(
-  master$pleio_prioritised_vs_relevant_single_trait_FUMA,
+  master$pleio_prioritised,
   master$locus_key
 )
 
@@ -47,12 +49,12 @@ if (!identical(
 }
 
 expected_qc <- list(
-  n_pleio_loci = 4L,
-  n_ind_sig_snps = 4L,
+  n_pleio_loci = 5L,
+  n_ind_sig_snps = 6L,
   n_ind_sig_snps_missing_raw_match = 0L,
   n_ind_sig_snps_unassigned_locus = 0L,
-  n_loci_unassigned_corrected = 0L,
-  n_corrected_prioritised = 2L
+  n_loci_unassigned = 1L,
+  n_pleio_prioritised = 3L
 )
 
 for (field in names(expected_qc)) {
@@ -61,4 +63,4 @@ for (field in names(expected_qc)) {
   }
 }
 
-message("Synthetic validation passed: 4 loci and all expected classifications confirmed.")
+message("Synthetic validation passed: all five locus classes were confirmed.")

@@ -19,7 +19,7 @@ reference panels can rerun:
 7. consolidation and comparison of the archived FUMA/MAGMA and GTEx v8
    enrichment outputs;
 8. checksum-validated reconstruction of the significant g:Profiler tables and
-   Supplementary Figure S8 source data.
+   Supplementary Figure S7 source data.
 
 The repository cannot make controlled or third-party GWAS data public. It
 therefore supports computational reproduction conditional on lawful data
@@ -41,7 +41,7 @@ example.
 - PLEIO itself is referenced by commit rather than copied because the checked
   out software reports no redistribution licence.
 - Six model-wide PLEIO and seven available single-trait FUMA SNP2GENE runs were
-  selected with explicit reviewed manifests. EAS cognitive performance was not
+  selected with explicit reviewed manifests. EAS cognitive function was not
   available as a single-trait FUMA run, so every affected comparison remains
   labelled incomplete.
 - The 12 g:Profiler raw exports produce exactly 61 g:SCS-adjusted P < 0.05
@@ -73,3 +73,7 @@ example.
 
 These fingerprints establish which retained EC2 files were treated as final.
 They are not checksums of raw participant or GWAS input data.
+
+Publication-facing traits are labelled `EA` and `CF`. Historical identifiers
+such as `Edu`, `G`, `COGENT`, and `HEL10k` remain only in source filenames or
+upstream input identifiers when changing them would obscure exact provenance.

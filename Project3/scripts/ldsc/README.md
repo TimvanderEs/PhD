@@ -21,7 +21,7 @@ Rscript run_genomicsem_ldsc.R \
   --hm3 /path/to/eas_ldscores/w_hm3.snplist \
   --ld /path/to/eas_ldscores \
   --out-dir /path/to/output/EAS \
-  --out-prefix EAS_MDD_EDU_SCZ_HEL10k
+  --out-prefix EAS_MDD_EA_SCZ_CF
 ```
 
 Use `config/EUR_primary_traits.tsv` with the EUR summary-statistics and LD-score
@@ -49,7 +49,7 @@ bash run_eas_clean_ldsc.sh \
 
 The exact rerun settings were sample/population prevalence `0.4503/0.01` for
 SCZ and `0.1278/0.15` for MDD. All six pairwise correlations among MDD, SCZ,
-educational attainment, and HELIOS-10k cognitive performance are run.
+educational attainment (EA), and HELIOS-10k cognitive function (CF) are run.
 
 ## EC2 software environment
 

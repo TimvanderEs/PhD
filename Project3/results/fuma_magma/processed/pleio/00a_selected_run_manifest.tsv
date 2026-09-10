@@ -1,4 +1,4 @@
-ancestry	run_relative_path	run_label_raw	canonical_label_final	canonical_label_status_final	canonical_label_reason_final	run_dir
+ancestry	run_relative_path	source_run_label	analysis_label	analysis_label_status	analysis_label_reason	run_dir
 EUR	EUR/PLEIO	PLEIO	FOURTRAIT	explicit_manifest	user-reviewed explicit run manifest	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/PLEIO
 EUR	EUR/FUMA_PLEIO_MDD_EA_CF	FUMA_PLEIO_MDD_EA_CF	MDD_3TRAIT	explicit_manifest	user-reviewed explicit run manifest	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/FUMA_PLEIO_MDD_EA_CF
 EUR	EUR/FUMA_PLEIO_SCZ_EA_CF	FUMA_PLEIO_SCZ_EA_CF	SCZ_3TRAIT	explicit_manifest	user-reviewed explicit run manifest	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EUR/FUMA_PLEIO_SCZ_EA_CF

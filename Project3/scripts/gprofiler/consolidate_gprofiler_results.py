@@ -19,7 +19,6 @@ from collections import defaultdict
 from pathlib import Path
 
 
-SCRIPT_VERSION = "1.0.0"
 REQUIRED_RAW_COLUMNS = {
     "source",
     "term_name",
@@ -66,7 +65,6 @@ def parse_args() -> argparse.Namespace:
         description=__doc__,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
-    parser.add_argument("--version", action="version", version=SCRIPT_VERSION)
     parser.add_argument(
         "--project-root",
         type=Path,

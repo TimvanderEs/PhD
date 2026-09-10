@@ -3,8 +3,7 @@
 Compare model-wide FUMA SNP2GENE MAGMA/GTEx results from PLEIO models with
 their constituent single-trait analyses.
 
-Inputs are the output directories produced by extract_fuma_magma_gtex_v2_5.py
-(or a compatible earlier extractor).
+Inputs are the output directories produced by extract_fuma_magma_gtex.py.
 
 The comparison is term-level and ancestry-stratified. It compares:
   FOURTRAIT    versus EA, CF, MDD, SCZ
@@ -32,8 +31,6 @@ import numpy as np
 import pandas as pd
 
 
-SCRIPT_VERSION = "1.0.0"
-
 RESULT_FILES = {
     "competitive_gene_set": "02_MAGMA_competitive_gene_sets_all.tsv",
     "gtex_v8_specific_tissue": "06_GTEx_v8_specific_tissues_all.tsv",
@@ -52,7 +49,6 @@ SINGLE_TRAITS = ["EA", "CF", "MDD", "SCZ"]
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser()
-    p.add_argument("--version", action="version", version=f"%(prog)s {SCRIPT_VERSION}")
     p.add_argument("--single-dir", required=True, type=Path)
     p.add_argument("--pleio-dir", required=True, type=Path)
     p.add_argument("--outdir", required=True, type=Path)
@@ -90,7 +86,7 @@ def bool_series(x: pd.Series) -> pd.Series:
 def normalise_result_table(df: pd.DataFrame, source_class: str) -> pd.DataFrame:
     required = {
         "ancestry",
-        "canonical_label_final",
+        "analysis_label",
         "VARIABLE",
         "p_numeric",
         "beta_numeric",
@@ -106,7 +102,7 @@ def normalise_result_table(df: pd.DataFrame, source_class: str) -> pd.DataFrame:
     out = df.copy()
     out["source_class"] = source_class
     out["ancestry"] = out["ancestry"].astype(str)
-    out["canonical_label_final"] = out["canonical_label_final"].astype(str)
+    out["analysis_label"] = out["analysis_label"].astype(str)
     out["term"] = out["VARIABLE"].astype(str)
 
     for col in [
@@ -131,7 +127,7 @@ def normalise_result_table(df: pd.DataFrame, source_class: str) -> pd.DataFrame:
     if "included_in_correction" in out:
         out = out[bool_series(out["included_in_correction"])].copy()
 
-    key = ["ancestry", "canonical_label_final", "term"]
+    key = ["ancestry", "analysis_label", "term"]
     duplicate = out.duplicated(key, keep=False)
     if duplicate.any():
         examples = out.loc[duplicate, key].drop_duplicates().head(10)
@@ -222,7 +218,7 @@ def compare_one_model(
 
     psub = pleio[
         (pleio["ancestry"] == ancestry)
-        & (pleio["canonical_label_final"] == model)
+        & (pleio["analysis_label"] == model)
     ].copy()
     if psub.empty:
         return pd.DataFrame(), {
@@ -242,7 +238,7 @@ def compare_one_model(
     for trait in constituents:
         ssub = single[
             (single["ancestry"] == ancestry)
-            & (single["canonical_label_final"] == trait)
+            & (single["analysis_label"] == trait)
         ].copy()
         if ssub.empty:
             missing_traits.append(trait)
@@ -427,17 +423,17 @@ def compare_one_model(
 def pleio_recurrence(pleio: pd.DataFrame, result_type: str) -> pd.DataFrame:
     rows: List[dict] = []
     for (ancestry, term), group in pleio.groupby(["ancestry", "term"], sort=True):
-        tested_models = sorted(group["canonical_label_final"].astype(str).unique())
+        tested_models = sorted(group["analysis_label"].astype(str).unique())
         bonf_models = sorted(
             group.loc[
                 group["significant_bonferroni_positive"],
-                "canonical_label_final",
+                "analysis_label",
             ].astype(str).unique()
         )
         fdr_models = sorted(
             group.loc[
                 group["significant_fdr_positive"],
-                "canonical_label_final",
+                "analysis_label",
             ].astype(str).unique()
         )
         rows.append(
@@ -484,13 +480,13 @@ def main() -> int:
                     "source": source,
                     "ancestry": row.get("ancestry"),
                     "run_relative_path": row.get("run_relative_path"),
-                    "canonical_label_final": row.get("canonical_label_final"),
+                    "analysis_label": row.get("analysis_label"),
                     "run_dir": row.get("run_dir"),
                 }
             )
     write_tsv(pd.DataFrame(audit_rows), outdir / "00_input_run_audit.tsv")
 
-    single_labels = set(single_manifest["canonical_label_final"].astype(str))
+    single_labels = set(single_manifest["analysis_label"].astype(str))
     bad_single = sorted(single_labels.difference(SINGLE_TRAITS))
     if bad_single:
         print(
@@ -500,7 +496,7 @@ def main() -> int:
         )
         return 3
 
-    pleio_labels = set(pleio_manifest["canonical_label_final"].astype(str))
+    pleio_labels = set(pleio_manifest["analysis_label"].astype(str))
     bad_pleio = sorted(pleio_labels.difference(set(PLEIO_MODELS + ["UNRESOLVED"])))
     if bad_pleio:
         print(
@@ -511,7 +507,7 @@ def main() -> int:
         return 4
 
     unresolved = pleio_manifest[
-        pleio_manifest["canonical_label_final"].astype(str).eq("UNRESOLVED")
+        pleio_manifest["analysis_label"].astype(str).eq("UNRESOLVED")
     ].copy()
     write_tsv(unresolved, outdir / "00b_unresolved_pleio_runs.tsv")
 
@@ -529,8 +525,8 @@ def main() -> int:
             print(f"ERROR loading {result_type}: {exc}", file=sys.stderr)
             return 5
 
-        single = single_raw[single_raw["canonical_label_final"].isin(SINGLE_TRAITS)].copy()
-        pleio_known = pleio_raw[pleio_raw["canonical_label_final"].isin(PLEIO_MODELS)].copy()
+        single = single_raw[single_raw["analysis_label"].isin(SINGLE_TRAITS)].copy()
+        pleio_known = pleio_raw[pleio_raw["analysis_label"].isin(PLEIO_MODELS)].copy()
 
         for ancestry in ["EUR", "EAS"]:
             for model in PLEIO_MODELS:
@@ -615,7 +611,7 @@ def main() -> int:
 
     readme = f"""# MAGMA single-trait versus PLEIO comparison
 
-Generated by `compare_magma_single_vs_pleio.py` version {SCRIPT_VERSION}.
+Generated by `compare_magma_single_vs_pleio.py`.
 
 ## Classification
 
@@ -640,7 +636,7 @@ SNP2GENE result, so EAS comparisons involving CF are incomplete.
 3. Gene-set databases are highly redundant; collapse related terms into themes
    after examining overlapping member genes.
 4. These are model-wide PLEIO SNP2GENE results. They are distinct from the later
-   directional Concordant/Discordant/DUAL Gene2Func and g:Profiler analyses.
+   directional Concordant/Discordant/Dual GENE2FUNC and g:Profiler analyses.
 5. Generic `EAS/PLEIO` results remain outside model-specific comparisons until
    assigned with a reviewed run map.
 """

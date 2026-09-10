@@ -1,4 +1,4 @@
-ancestry	canonical_label_final	run_relative_path	run_dir
+ancestry	analysis_label	run_relative_path	run_dir
 EAS	EA	EDU	results/fuma_magma/raw/EAS/EA
 EAS	MDD	MDD	results/fuma_magma/raw/EAS/MDD
 EAS	SCZ	SCZ	results/fuma_magma/raw/EAS/SCZ

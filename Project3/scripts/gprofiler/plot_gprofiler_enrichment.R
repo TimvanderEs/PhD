@@ -4,7 +4,7 @@ args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 2L || any(args %in% c("-h", "--help"))) {
   cat(
     paste0(
-      "Usage: Rscript plot_gprofiler_s8.R SIGNIFICANT_TERMS.tsv OUTPUT_DIR ",
+      "Usage: Rscript plot_gprofiler_enrichment.R SIGNIFICANT_TERMS.tsv OUTPUT_DIR ",
       "[TOP_PER_QUERY=8] [PLOT_ALL=false]\n"
     )
   )
@@ -125,20 +125,20 @@ p_eas <- make_ora_plot(
   "EAS model-wide over-representation results",
   "Model-wide mapped-gene queries; original background option was not recorded"
 )
-figure_s8 <- p_eur / p_eas + plot_annotation(tag_levels = "A")
+enrichment_figure <- p_eur / p_eas + plot_annotation(tag_levels = "A")
 height <- max(15, 5 + 0.23 * (nrow(eur) + nrow(eas)))
-stem <- file.path(output_dir, "Supplementary_Figure_S8_gProfiler_overrepresentation")
-ggsave(paste0(stem, ".pdf"), figure_s8, width = 14, height = height, units = "in")
-ggsave(paste0(stem, ".png"), figure_s8, width = 14, height = height, units = "in", dpi = 600)
+stem <- file.path(output_dir, "Supplementary_Figure_S7_gProfiler_overrepresentation")
+ggsave(paste0(stem, ".pdf"), enrichment_figure, width = 14, height = height, units = "in")
+ggsave(paste0(stem, ".png"), enrichment_figure, width = 14, height = height, units = "in", dpi = 600)
 ggsave(
-  paste0(stem, ".tiff"), figure_s8, width = 14, height = height,
+  paste0(stem, ".tiff"), enrichment_figure, width = 14, height = height,
   units = "in", dpi = 600, compression = "lzw"
 )
 
 setorder(gp, ancestry, model_plot, direction_plot, adjusted_p_value)
 setorder(eur, query, adjusted_p_value)
 setorder(eas, query, adjusted_p_value)
-fwrite(gp, file.path(output_dir, "S8_all_significant_gProfiler_terms.csv"))
-fwrite(rbindlist(list(eur, eas), use.names = TRUE), file.path(output_dir, "S8_terms_plotted.csv"))
+fwrite(gp, file.path(output_dir, "gprofiler_all_significant_terms.csv"))
+fwrite(rbindlist(list(eur, eas), use.names = TRUE), file.path(output_dir, "gprofiler_terms_plotted.csv"))
 
-message("Wrote S8 files to: ", normalizePath(output_dir))
+message("Wrote g:Profiler figure files to: ", normalizePath(output_dir))

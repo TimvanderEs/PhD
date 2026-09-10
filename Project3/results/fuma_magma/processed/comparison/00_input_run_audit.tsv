@@ -1,4 +1,4 @@
-source	ancestry	run_relative_path	canonical_label_final	run_dir
+source	ancestry	run_relative_path	analysis_label	run_dir
 single_trait	EAS	EDU	EA	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/EDU
 single_trait	EAS	MDD	MDD	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/MDD
 single_trait	EAS	SCZ	SCZ	/home/ec2-user/project2/RESULTS/FUMA/FUMA/EAS/SCZ

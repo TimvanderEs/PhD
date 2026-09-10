@@ -3,3 +3,4 @@ GenomicLocus	chr	start	end
 2	2	300	400
 3	3	500	600
 4	4	700	800
+5	5	900	1000

@@ -57,9 +57,14 @@ Compact retained outputs are in `results/fuma_magma/processed/`. Absolute EC2
 paths in their provenance columns identify the original files; a local rerun
 will naturally record local paths instead.
 
+The analysis-level FUMA/MAGMA inventory corresponds to Supplementary Table
+S10, mapped-gene records to Supplementary Table S11, and GENE2FUNC run and
+input-gene records to Supplementary Tables S12A and S12B. Publication-facing
+labels use EA for educational attainment and CF for cognitive function.
+
 ## Interpretation limit
 
-No EAS cognitive-performance single-trait SNP2GENE run was available. The EAS
+No EAS cognitive function single-trait SNP2GENE run was available. The EAS
 four-trait and nested three-trait comparisons are therefore explicitly marked
 incomplete in
 `results/fuma_magma/processed/comparison/11_missing_or_incomplete_comparisons.tsv`.

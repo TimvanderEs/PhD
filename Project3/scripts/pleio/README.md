@@ -96,12 +96,12 @@ bash run_pleio.sh \
 
 bash run_pleio.sh \
   --pleio-py /path/to/pleio/pleio.py \
-  --input-dir /path/to/analysis/EAS_three_trait/MDD_EA_G \
-  --out-prefix /path/to/results/HELIOS_PLEIO_EAS_MDD_EA_G_results \
+  --input-dir /path/to/analysis/EAS_three_trait/MDD_EA_CF \
+  --out-prefix /path/to/results/HELIOS_PLEIO_EAS_MDD_EA_CF_results \
   --python /path/to/project3-pleio-model/bin/python
 ```
 
-Repeat the second command for `SCZ_EA_G` and for the EUR `MDD_EA_CF` and
+Repeat the second command for `SCZ_EA_CF` and for the EUR `MDD_EA_CF` and
 `SCZ_EA_CF` directories. The EUR four-trait output prefix used on EC2 was
 `HELIOS_PLEIO_EUR_results`. All six final models used `--parallel --create` and
 100,000 importance samples (the PLEIO default, made explicit by the wrapper).
@@ -113,8 +113,8 @@ importance-sampling approximation:
 | Analysis | Calibration file |
 | --- | --- |
 | EAS four-trait | `isf/EAS_FOURTRAIT.isf` |
-| EAS MDD-EA-G | `isf/EAS_MDD_EA_G.isf` |
-| EAS SCZ-EA-G | `isf/EAS_SCZ_EA_G.isf` |
+| EAS MDD-EA-CF | `isf/EAS_MDD_EA_CF.isf` |
+| EAS SCZ-EA-CF | `isf/EAS_SCZ_EA_CF.isf` |
 | EUR four-trait | `isf/EUR_FOURTRAIT.isf` |
 | EUR MDD-EA-CF | `isf/EUR_MDD_EA_CF.isf` |
 | EUR SCZ-EA-CF | `isf/EUR_SCZ_EA_CF.isf` |

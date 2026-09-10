@@ -3,3 +3,5 @@ rsSynthetic1	1	150	1
 rsSynthetic2	2	350	2
 rsSynthetic3	3	550	3
 rsSynthetic4	4	750	4
+rsSynthetic5a	5	925	5
+rsSynthetic5b	5	975	5

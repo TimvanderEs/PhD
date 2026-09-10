@@ -5,10 +5,10 @@ usage() {
   cat <<'EOF'
 Usage:
   bash align_eur_pleio_inputs.sh [--validate-only] \
-    MDD_TAB.gz EDU_TAB.gz SCZ_TAB.gz COG_TAB.gz OUT_DIR
+    MDD_TAB.gz EA_TAB.gz SCZ_TAB.gz CF_TAB.gz OUT_DIR
 
 Expected source columns:
-  MDD/EDU/COG: SNP=1, A1=4, A2=5, Z=6, N=7
+  MDD/EA/CF: SNP=1, A1=4, A2=5, Z=6, N=7
   SCZ:         SNP=1, A1=4, A2=5, N=11, Z=12
 EOF
 }
@@ -28,11 +28,11 @@ if [[ $# -ne 5 ]]; then
 fi
 
 MDD="$1"
-EDU="$2"
+EA="$2"
 SCZ="$3"
-COG="$4"
+CF="$4"
 OUT_DIR="$5"
-for path in "$MDD" "$EDU" "$SCZ" "$COG"; do
+for path in "$MDD" "$EA" "$SCZ" "$CF"; do
   if [[ ! -s "$path" ]]; then
     echo "ERROR: missing input: $path" >&2
     exit 1
@@ -66,8 +66,8 @@ check_header() {
 standard_header=$'SNP\tCHR\tBP\tA1\tA2\tZ\tN\tP'
 scz_header=$'SNP\tCHR\tBP\tA1\tA2\tMAF\tINFO\tBETA\tSE\tP\tN\tZ'
 check_header MDD "$MDD" "$standard_header"
-check_header EDU "$EDU" "$standard_header"
-check_header COG "$COG" "$standard_header"
+check_header EA "$EA" "$standard_header"
+check_header CF "$CF" "$standard_header"
 check_header SCZ "$SCZ" "$scz_header"
 
 echo "Validated EUR PLEIO source headers."
@@ -89,25 +89,25 @@ trap 'rm -rf "$WORK_DIR"' EXIT
 STD_DIR="$WORK_DIR/std"
 mkdir -p "$STD_DIR"
 
-gzip -cd "$MDD" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$6,$7}' | gzip -c > "$STD_DIR/MDD_EUR.full.std.tsv.gz"
-gzip -cd "$EDU" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$6,$7}' | gzip -c > "$STD_DIR/EDU_EUR.full.std.tsv.gz"
-gzip -cd "$SCZ" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$12,$11}' | gzip -c > "$STD_DIR/SCZ_EUR.full.std.tsv.gz"
-gzip -cd "$COG" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$6,$7}' | gzip -c > "$STD_DIR/COGENT_EUR.full.std.tsv.gz"
+gzip -cd "$MDD" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$6,$7}' | gzip -c > "$STD_DIR/MDD.full.std.tsv.gz"
+gzip -cd "$EA" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$6,$7}' | gzip -c > "$STD_DIR/EA.full.std.tsv.gz"
+gzip -cd "$SCZ" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$12,$11}' | gzip -c > "$STD_DIR/SCZ.full.std.tsv.gz"
+gzip -cd "$CF" | awk 'BEGIN{FS=OFS="\t"} NR==1{print "SNP","A1","A2","Z","N";next} {print $1,$4,$5,$6,$7}' | gzip -c > "$STD_DIR/CF.full.std.tsv.gz"
 
-for trait in MDD_EUR EDU_EUR SCZ_EUR COGENT_EUR; do
+for trait in MDD EA SCZ CF; do
   gzip -cd "$STD_DIR/${trait}.full.std.tsv.gz" |
     awk 'NR>1 {print $1}' |
     LC_ALL=C sort -u > "$WORK_DIR/${trait}.snps"
 done
 
-comm -12 "$WORK_DIR/MDD_EUR.snps" "$WORK_DIR/EDU_EUR.snps" > "$WORK_DIR/common.1"
-comm -12 "$WORK_DIR/common.1" "$WORK_DIR/SCZ_EUR.snps" > "$WORK_DIR/common.2"
-comm -12 "$WORK_DIR/common.2" "$WORK_DIR/COGENT_EUR.snps" > "$WORK_DIR/common.snps"
+comm -12 "$WORK_DIR/MDD.snps" "$WORK_DIR/EA.snps" > "$WORK_DIR/common.1"
+comm -12 "$WORK_DIR/common.1" "$WORK_DIR/SCZ.snps" > "$WORK_DIR/common.2"
+comm -12 "$WORK_DIR/common.2" "$WORK_DIR/CF.snps" > "$WORK_DIR/common.snps"
 
-gzip -cd "$STD_DIR/EDU_EUR.full.std.tsv.gz" |
+gzip -cd "$STD_DIR/EA.full.std.tsv.gz" |
   awk 'BEGIN{FS=OFS="\t"} NR>1 {print $1,toupper($2),toupper($3)}' |
-  LC_ALL=C sort -k1,1 > "$WORK_DIR/edu.alleles.tsv"
-join -t $'\t' -1 1 -2 1 "$WORK_DIR/common.snps" "$WORK_DIR/edu.alleles.tsv" \
+  LC_ALL=C sort -k1,1 > "$WORK_DIR/ea.alleles.tsv"
+join -t $'\t' -1 1 -2 1 "$WORK_DIR/common.snps" "$WORK_DIR/ea.alleles.tsv" \
   > "$WORK_DIR/anchor_alleles.tsv"
 
 harmonize() {
@@ -117,21 +117,21 @@ harmonize() {
   gzip -cd "$input" | awk -f "$HARMONIZE_AWK" "$anchor" - | gzip -c > "$no_header"
 }
 
-harmonize "$WORK_DIR/anchor_alleles.tsv" "$STD_DIR/MDD_EUR.full.std.tsv.gz" "$WORK_DIR/MDD_EUR.no_header.gz"
-harmonize "$WORK_DIR/edu.alleles.tsv" "$STD_DIR/EDU_EUR.full.std.tsv.gz" "$WORK_DIR/EDU_EUR.no_header.gz"
-harmonize "$WORK_DIR/anchor_alleles.tsv" "$STD_DIR/SCZ_EUR.full.std.tsv.gz" "$WORK_DIR/SCZ_EUR.no_header.gz"
-harmonize "$WORK_DIR/anchor_alleles.tsv" "$STD_DIR/COGENT_EUR.full.std.tsv.gz" "$WORK_DIR/COGENT_EUR.no_header.gz"
+harmonize "$WORK_DIR/anchor_alleles.tsv" "$STD_DIR/MDD.full.std.tsv.gz" "$WORK_DIR/MDD.no_header.gz"
+harmonize "$WORK_DIR/ea.alleles.tsv" "$STD_DIR/EA.full.std.tsv.gz" "$WORK_DIR/EA.no_header.gz"
+harmonize "$WORK_DIR/anchor_alleles.tsv" "$STD_DIR/SCZ.full.std.tsv.gz" "$WORK_DIR/SCZ.no_header.gz"
+harmonize "$WORK_DIR/anchor_alleles.tsv" "$STD_DIR/CF.full.std.tsv.gz" "$WORK_DIR/CF.no_header.gz"
 
-for trait in MDD_EUR EDU_EUR SCZ_EUR COGENT_EUR; do
+for trait in MDD EA SCZ CF; do
   {
     printf 'SNP\tA1\tA2\tZ\tN\n'
     gzip -cd "$WORK_DIR/${trait}.no_header.gz" | awk -f "$HEADER_AWK"
-  } | gzip -c > "$OUT_DIR/${trait%%_EUR}.tmp.gz"
+  } | gzip -c > "$OUT_DIR/${trait}.tmp.gz"
 done
 
 mv "$OUT_DIR/MDD.tmp.gz" "$OUT_DIR/MDD_EUR.aligned.tsv.gz"
-mv "$OUT_DIR/EDU.tmp.gz" "$OUT_DIR/EDU_EUR.aligned.tsv.gz"
+mv "$OUT_DIR/EA.tmp.gz" "$OUT_DIR/EA_EUR.aligned.tsv.gz"
 mv "$OUT_DIR/SCZ.tmp.gz" "$OUT_DIR/SCZ_EUR.aligned.tsv.gz"
-mv "$OUT_DIR/COGENT.tmp.gz" "$OUT_DIR/COGENT_EUR.aligned.tsv.gz"
+mv "$OUT_DIR/CF.tmp.gz" "$OUT_DIR/CF_EUR.aligned.tsv.gz"
 
 echo "Completed EUR PLEIO alignment: $OUT_DIR"

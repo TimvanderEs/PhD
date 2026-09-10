@@ -1,5 +1,5 @@
 file	type	sample_prev	population_prev	name
-Edu_EAS_for_PLEIO.sumstats.gz	quantitative	NA	NA	EDU
-HELIOS_10k_for_LAVA.sumstats.gz	quantitative	NA	NA	HELIOS10K
+Edu_EAS_for_PLEIO.sumstats.gz	quantitative	NA	NA	EA
+HELIOS_10k_for_LAVA.sumstats.gz	quantitative	NA	NA	CF
 MDD_EAS_for_PLEIO.sumstats.gz	binary	0.5	0.15	MDD
 SCZ_EAS_for_PLEIO_fixed.sumstats.gz	binary	0.5	0.01	SCZ

@@ -12,10 +12,10 @@ Rscript run_lava.R \
   --sample-overlap config/EAS_sample_overlap.tsv \
   --locus-file config/EAS_LAVA.locfile \
   --ref-prefix /path/to/g1000_eas \
-  --phenos MDD_EAS,Edu_EAS,SCZ_EAS,HEL10k_EAS \
+  --phenos MDD,EA,SCZ,CF \
   --sumstats-dir /path/to/EAS/summary_statistics \
   --out-dir /path/to/results_EAS \
-  --out-prefix EAS_MDD_Edu_SCZ_HELIOS
+  --out-prefix EAS_MDD_EA_SCZ_CF
 ```
 
 ## EUR
@@ -26,10 +26,10 @@ Rscript run_lava.R \
   --sample-overlap config/EUR_sample_overlap.tsv \
   --locus-file config/blocks_s2500_m25_f1_w200.GRCh37_hg19.LOCFILE \
   --ref-prefix /path/to/g1000_eur \
-  --phenos MDD_EUR,Edu_EUR,SCZ_EUR,G_EUR \
+  --phenos MDD,EA,SCZ,CF \
   --sumstats-dir /path/to/EUR/summary_statistics \
   --out-dir /path/to/results_EUR \
-  --out-prefix EUR_MDD_Edu_SCZ_G
+  --out-prefix EUR_MDD_EA_SCZ_CF
 ```
 
 The input-info filenames are resolved relative to `--sumstats-dir`. LAVA input

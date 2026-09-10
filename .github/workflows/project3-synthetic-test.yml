@@ -28,6 +28,8 @@ jobs:
         run: Rscript -e 'install.packages("data.table")'
       - name: Run and validate the synthetic example
         run: bash Project3/tests/run_synthetic_test.sh
+      - name: Check publication terminology and references
+        run: python3 Project3/tests/test_repository_consistency.py
       - name: Check the SMR/HEIDI command-line workflow
         run: |
           python3 -m py_compile Project3/scripts/smr_heidi/reanalyse_smr_heidi.py
@@ -53,4 +55,4 @@ jobs:
             Project3/scripts/gprofiler/consolidate_gprofiler_results.py \
             Project3/tests/test_enrichment_archives.py
           python3 Project3/tests/test_enrichment_archives.py Project3
-          Rscript Project3/scripts/gprofiler/plot_gprofiler_s8.R --help
+          Rscript Project3/scripts/gprofiler/plot_gprofiler_enrichment.R --help

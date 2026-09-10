@@ -1,5 +1,7 @@
-SNP	CHR	BP	EDU_Z	G_Z	MDD_Z	SCZ_Z
+SNP	CHR	BP	EA_Z	CF_Z	MDD_Z	SCZ_Z
 rsSynthetic1	1	150	2.50	2.20	-3.00	-2.10
 rsSynthetic2	2	350	2.50	1.00	-2.50	2.30
 rsSynthetic3	3	550	-2.50	-2.20	-3.00	-2.10
 rsSynthetic4	4	750	1.00	0.50	-3.00	1.00
+rsSynthetic5a	5	925	2.50	2.20	-3.00	-2.10
+rsSynthetic5b	5	975	2.50	2.20	3.00	2.10

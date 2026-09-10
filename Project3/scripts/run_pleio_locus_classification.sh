@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ $# -lt 6 || $# -gt 7 ]]; then
+if [[ $# -lt 6 || $# -gt 8 ]]; then
   cat >&2 <<'USAGE'
 Usage:
-  bash run_PLEIO_reclassification_audit.sh \
+  bash run_pleio_locus_classification.sh \
     <ANCESTRY> <MODEL> <PLEIO_FUMA_DIR> <SINGLE_TRAIT_FUMA_ROOT> \
-    <RAW_MERGED_PLEIO_FILE> <OUTPUT_DIR> [CF_FOLDER]
+    <RAW_MERGED_PLEIO_FILE> <OUTPUT_DIR> [EA_FOLDER] [CF_FOLDER]
 
-Example:
-  bash run_PLEIO_reclassification_audit.sh \
+Example with canonical source-directory names:
+  bash run_pleio_locus_classification.sh \
     EUR FOURTRAIT \
     /path/to/FUMA/EUR/PLEIO \
     /path/to/FUMA/EUR \
     /path/to/raw_merged_PLEIO.tsv.gz \
-    /path/to/output/EUR_FOURTRAIT \
-    G
+    /path/to/output/EUR_FOURTRAIT
 
 MODEL must be FOURTRAIT, MDD_3TRAIT, or SCZ_3TRAIT.
+EA_FOLDER and CF_FOLDER default to EA and CF. Supply different values only when
+the source archive uses historical directory names; output fields remain EA/CF.
 USAGE
   exit 2
 fi
@@ -28,10 +29,11 @@ PLEIO_DIR=$3
 SINGLE_ROOT=$4
 RAW_FILE=$5
 OUT_DIR=$6
-CF_FOLDER=${7:-G}
+EA_FOLDER=${7:-EA}
+CF_FOLDER=${8:-CF}
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-R_SCRIPT="${SCRIPT_DIR}/classify_PLEIO_FUMA_loci_v2.R"
+R_SCRIPT="${SCRIPT_DIR}/classify_pleio_locus_direction.R"
 PREFIX="${ANCESTRY}_${MODEL}"
 
 if [[ ! -f "$R_SCRIPT" ]]; then
@@ -48,27 +50,23 @@ Rscript "$R_SCRIPT" \
   --single-trait-root "$SINGLE_ROOT" \
   --raw-file "$RAW_FILE" \
   --out-dir "$OUT_DIR" \
+  --ea-folder "$EA_FOLDER" \
   --cf-folder "$CF_FOLDER" \
   --zthr 1.96 \
   --prefix "$PREFIX" \
   2>&1 | tee "${OUT_DIR}/${PREFIX}_run.log"
 
 echo
-echo "===== Corrected direction summary ====="
+echo "===== Locus direction summary ====="
 column -t -s $'\t' "${OUT_DIR}/${PREFIX}_PLEIO_locus_direction_summary.tsv" || \
-  cat "${OUT_DIR}/${PREFIX}_PLEIO_locus_direction_summary.tsv"
+  sed -n '1,40p' "${OUT_DIR}/${PREFIX}_PLEIO_locus_direction_summary.tsv"
 
 echo
-echo "===== Legacy -> corrected locus transitions ====="
-column -t -s $'\t' "${OUT_DIR}/${PREFIX}_locus_direction_transition.tsv" || \
-  cat "${OUT_DIR}/${PREFIX}_locus_direction_transition.tsv"
-
-echo
-echo "===== Prioritisation transitions ====="
-column -t -s $'\t' "${OUT_DIR}/${PREFIX}_prioritisation_transition.tsv" || \
-  cat "${OUT_DIR}/${PREFIX}_prioritisation_transition.tsv"
+echo "===== Locus prioritisation summary ====="
+column -t -s $'\t' "${OUT_DIR}/${PREFIX}_PLEIO_locus_prioritisation_summary.tsv" || \
+  sed -n '1,20p' "${OUT_DIR}/${PREFIX}_PLEIO_locus_prioritisation_summary.tsv"
 
 echo
 echo "===== QC ====="
 column -t -s $'\t' "${OUT_DIR}/${PREFIX}_classification_QC.tsv" || \
-  cat "${OUT_DIR}/${PREFIX}_classification_QC.tsv"
+  sed -n '1,20p' "${OUT_DIR}/${PREFIX}_classification_QC.tsv"

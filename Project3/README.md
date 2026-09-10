@@ -17,8 +17,8 @@ archive from steps that require provider-controlled GWAS or webSMR inputs.
 | FUMA/MAGMA and GTEx v8 | Exact FUMA parameters, raw term-level results, reviewed manifests, and processed tables | Rebuild and compare all 13 archived runs directly from this repository. |
 | g:Profiler | Exact query lists, available custom backgrounds, original exports, checksums, and processed tables | Validate all 12 archived queries and rebuild the 61 significant-term table without calling a changing live database. |
 
-Two gaps are documented rather than silently reconstructed: no EAS
-cognitive-performance single-trait FUMA run was recovered, and the original
+Two gaps are documented rather than silently reconstructed: no EAS cognitive
+function single-trait FUMA run was recovered, and the original
 g:Profiler database release and EAS background option were not recorded. The
 relevant manifests and workflow guides mark these limitations explicitly.
 
@@ -27,7 +27,7 @@ FUMA/MAGMA and g:Profiler results on every Project 3 change.
 
 ## Analysis guides
 
-- [Directional PLEIO/FUMA classification](scripts/classify_PLEIO_FUMA_loci_v2.R)
+- [Directional PLEIO/FUMA classification](scripts/classify_pleio_locus_direction.R)
 - [LDSC](scripts/ldsc/README.md)
 - [LAVA](scripts/lava/README.md)
 - [PLEIO preparation and model runs](scripts/pleio/README.md)
@@ -49,16 +49,37 @@ FUMA/MAGMA and g:Profiler results on every Project 3 change.
 
 For each independent significant SNP, the script applies an absolute Z-score threshold (default: `1.96`) and determines the sign represented in each domain:
 
-- cognitive domain: educational attainment (`EDU_Z`) and cognitive performance (`G_Z` or an accepted alias);
+- cognitive/educational domain: educational attainment (`EA_Z`) and cognitive function (`CF_Z`);
 - psychiatric domain: MDD, SCZ, or both, according to the PLEIO model;
 - opposite cognitive and psychiatric signs are labelled `concordant_raw` under the phenotype/sign convention used for these analyses;
 - matching signs are labelled `discordant_raw`;
 - contradictory signs within a domain are labelled `mixed_within_domain`;
-- a domain without a qualifying Z score is labelled `trait_dominant_or_unclear`.
+- a domain without a qualifying Z score is labelled `Unassigned`.
 
-SNP-level labels are collapsed to each locus as `concordant`, `discordant`, `mixed`, `mixed_dual`, or `trait_dominant_or_unclear`. Full definitions and the collapse precedence are implemented in the R script.
+SNP-level labels are collapsed to the manuscript locus classes `Concordant`,
+`Discordant`, `Dual`, `Mixed`, and `Unassigned`. A Mixed SNP takes precedence;
+otherwise, a locus containing both Concordant and Discordant SNPs is Dual, a
+locus containing only one informative class inherits that class, and all
+remaining loci are Unassigned.
 
-The corrected prioritisation audit compares a PLEIO locus only with the single-trait FUMA results included in that model. The output retains the earlier four-trait/same-sign classification so that changes can be inspected explicitly.
+The prioritisation step compares a PLEIO locus only with the single-trait FUMA
+results included in that model. A locus with no overlap is marked
+`pleio_prioritised`; this does not imply complete biological novelty.
+
+## Terminology and supplementary material
+
+The repository uses the manuscript abbreviations throughout: `EA` means
+educational attainment and `CF` means cognitive function. Some original source
+filenames and upstream phenotype identifiers contain `Edu`, `G`, `COGENT`, or
+`HEL10k`; those identifiers are retained only where needed to locate or verify
+the executed source files. Reader-facing outputs use `EA` and `CF`.
+
+The directional locus outputs correspond to Supplementary Tables S1-S3, the
+sensitivity and audit outputs are reported in Supplementary Tables S7-S9, and
+Supplementary Table S8 is specifically the locus-level directional audit.
+FUMA/MAGMA and GENE2FUNC results are reported in Supplementary Tables S10-S12,
+and g:Profiler results in Supplementary Tables S13-S14 and Supplementary Figure
+S7.
 
 ## Software requirements
 
@@ -71,7 +92,7 @@ Rscript -e 'install.packages("data.table")'
 python3 -m pip install -r scripts/fuma_magma/requirements.txt
 ```
 
-Rebuilding Supplementary Figure S8 also requires the R packages `ggplot2` and
+Rebuilding Supplementary Figure S7 also requires the R packages `ggplot2` and
 `patchwork`. Upstream reruns require GenomicSEM, LAVA 0.1.5, and PLEIO at the
 revision recorded in its guide. Each analysis guide lists its additional
 reference files and workflow-specific requirements.
@@ -107,14 +128,13 @@ run dates, row counts, and SHA-256 fingerprints for the retained final outputs.
 ## Running the directional classifier on study outputs
 
 ```bash
-bash scripts/run_PLEIO_reclassification_audit.sh \
+bash scripts/run_pleio_locus_classification.sh \
   EUR \
   FOURTRAIT \
   /path/to/FUMA/EUR/PLEIO \
   /path/to/FUMA/EUR \
   /path/to/raw_merged_PLEIO.tsv.gz \
-  /path/to/output/EUR_FOURTRAIT \
-  G
+  /path/to/output/EUR_FOURTRAIT
 ```
 
 Arguments, in order, are:
@@ -122,15 +142,20 @@ Arguments, in order, are:
 1. ancestry label;
 2. model: `FOURTRAIT`, `MDD_3TRAIT`, or `SCZ_3TRAIT`;
 3. PLEIO FUMA directory containing one `GenomicRiskLoci*.txt` and one `IndSigSNPs*.txt` file;
-4. single-trait FUMA root containing `EDU`, `G` (or the name supplied as argument 7), `MDD`, and `SCZ` subdirectories;
+4. single-trait FUMA root containing the model-relevant `EA`, `CF`, `MDD`, and/or `SCZ` subdirectories;
 5. raw merged PLEIO summary-statistics file;
 6. output directory;
-7. optional cognitive-factor folder name (default: `G`).
+7. optional source folder name for EA (default: `EA`);
+8. optional source folder name for CF (default: `CF`).
+
+The optional folder arguments support historical archives whose directory
+names differ from the publication labels; they do not change output variable
+names.
 
 The R script can also be called directly. Run the following for its argument summary:
 
 ```bash
-Rscript scripts/classify_PLEIO_FUMA_loci_v2.R --help
+Rscript scripts/classify_pleio_locus_direction.R --help
 ```
 
 ### Required input fields
@@ -139,19 +164,20 @@ Rscript scripts/classify_PLEIO_FUMA_loci_v2.R --help
 | --- | --- |
 | PLEIO and single-trait `GenomicRiskLoci` files | chromosome, start, and end; a genomic-locus identifier is recommended |
 | PLEIO `IndSigSNPs` file | SNP identifier; a genomic-locus identifier or genomic coordinates |
-| Raw merged PLEIO file | SNP identifier, `EDU_Z`, a cognitive Z-score column, and the psychiatric Z-score column(s) used by the selected model |
+| Raw merged PLEIO file | SNP identifier, `EA_Z`, `CF_Z`, and the psychiatric Z-score column(s) used by the selected model |
 
-Several common FUMA and analysis-pipeline column aliases are accepted. If a required field is absent or ambiguous, the script stops with a diagnostic message.
+Several source-pipeline aliases are accepted and normalised to `EA_Z` and
+`CF_Z`. If a required field is absent or ambiguous, the script stops with a
+diagnostic message.
 
 ## Directional-classification outputs
 
 Each filename begins with `<ANCESTRY>_<MODEL>`:
 
-- `_PLEIO_locus_master.tsv`: corrected locus labels, single-trait overlaps, and retained legacy/audit fields;
+- `_PLEIO_locus_master.tsv`: locus classes, class counts, single-trait overlaps, and PLEIO-prioritisation fields;
 - `_PLEIO_IndSigSNPs_with_direction.tsv`: SNP-level Z scores and direction labels;
-- `_PLEIO_locus_direction_summary.tsv`: corrected counts by direction and prioritisation status;
-- `_locus_direction_transition.tsv`: legacy-to-corrected locus transitions;
-- `_prioritisation_transition.tsv`: changes caused by using model-relevant comparators;
+- `_PLEIO_locus_direction_summary.tsv`: counts and proportions for each manuscript locus class;
+- `_PLEIO_locus_prioritisation_summary.tsv`: counts of overlaps and PLEIO-prioritised loci;
 - `_classification_QC.tsv`: run-level counts and missingness checks;
 - `_run.log`: console output captured by the Bash wrapper.
 

@@ -80,13 +80,13 @@ def check_fuma_manifest(root: Path, manifest_name: str, expected_runs: int) -> N
         root / f"results/fuma_magma/processed/{manifest_name}/01_run_level_summary.tsv"
     )
     expected_magma_rows = {
-        (row["ancestry"], row["canonical_label_final"]): int(row["n_rows_total"])
+        (row["ancestry"], row["analysis_label"]): int(row["n_rows_total"])
         for row in summary_rows
         if row["result_type"] == "competitive_gene_set"
     }
     seen: set[tuple[str, str]] = set()
     for row in manifest:
-        key = (row["ancestry"], row["canonical_label_final"])
+        key = (row["ancestry"], row["analysis_label"])
         assert key not in seen, key
         seen.add(key)
         run_dir = root / row["run_dir"]
@@ -113,7 +113,7 @@ def check_fuma_manifest(root: Path, manifest_name: str, expected_runs: int) -> N
 def compare_significant_tables(committed: Path, rebuilt: Path) -> None:
     committed_rows = read_tsv(committed)
     rebuilt_rows = read_tsv(rebuilt)
-    key_fields = ("ancestry", "canonical_label_final", "VARIABLE")
+    key_fields = ("ancestry", "analysis_label", "VARIABLE")
     key = lambda row: tuple(row[field] for field in key_fields)
     left = {key(row): row for row in committed_rows}
     right = {key(row): row for row in rebuilt_rows}
@@ -221,7 +221,7 @@ def main() -> int:
     )
     eas_cf = [
         row for row in availability
-        if row["ancestry"] == "EAS" and row["canonical_label_final"] == "CF"
+        if row["ancestry"] == "EAS" and row["analysis_label"] == "CF"
     ]
     assert len(eas_cf) == 1 and eas_cf[0]["observed_magma_gsa"] == "False"
     print("PASS: FUMA/MAGMA and g:Profiler archive integrity")

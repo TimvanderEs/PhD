@@ -17,9 +17,10 @@ WikiPathways; Human Phenotype Ontology; Human Protein Atlas; CORUM; TRANSFAC;
 and miRTarBase.
 
 For EUR, each directional gene list was tested using all mapped genes from the
-corresponding PLEIO model as a custom background. The publication label `dual`
-corresponds to the `mixed_dual` input lists created by the directional locus
-classification. For EAS, the complete model-wide mapped-gene list was queried.
+corresponding PLEIO model as a custom background. The publication label `Dual`
+corresponds to the archived input lists whose source filenames contain
+`mixed_dual`; this is an archived source filename only, and its publication
+class is `Dual`. For EAS, the complete model-wide mapped-gene list was queried.
 No EAS custom-background file or original web request payload was recovered,
 so the EAS background option is explicitly marked `not_recorded`.
 
@@ -47,18 +48,19 @@ row and significant-term counts, and writes:
 - `manifest_validation.tsv`: checksum, row-count, uniqueness, and background
   containment checks.
 
-The 61 significant terms reproduce worksheet `18_gProfiler_sig_terms` in the
-publication supplement by ancestry, model, direction class, source label, term
-identifier, adjusted P value, and intersection size.
+`run_summary.tsv` and `source_summary.tsv` supply the g:Profiler overview in
+Supplementary Table S13. The 61 significant terms reproduce Supplementary
+Table S14 by ancestry, model, direction class, source label, term identifier,
+adjusted P value, and intersection size.
 
-## Rebuild Supplementary Figure S8
+## Rebuild Supplementary Figure S7
 
 With R packages `data.table`, `ggplot2`, and `patchwork` installed:
 
 ```bash
-Rscript scripts/gprofiler/plot_gprofiler_s8.R \
+Rscript scripts/gprofiler/plot_gprofiler_enrichment.R \
   results/gprofiler/processed/significant_terms.tsv \
-  work/gprofiler_s8 \
+  work/gprofiler_enrichment \
   8 false
 ```
 

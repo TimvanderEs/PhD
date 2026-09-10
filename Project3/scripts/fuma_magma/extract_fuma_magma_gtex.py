@@ -14,7 +14,7 @@ Primary files:
 Key safeguards
 --------------
 * Raw ancestry, directory labels, file paths and MAGMA columns are preserved.
-* Canonical model labels are stored in separate audit columns.
+* Publication analysis labels are stored separately from source directory names.
 * Ambiguous generic directories such as EAS/PLEIO are NOT silently assigned.
 * An optional run-map TSV can override labels explicitly.
 * Bonferroni and BH-FDR corrections are calculated within each output file.
@@ -23,7 +23,7 @@ Key safeguards
 * Only direct FUMA SNP2GENE run directories under BASE/EUR and BASE/EAS are analysed.
 * Single-trait and PLEIO scopes both use exact ancestry/path allowlists.
 * An explicit run manifest can bypass discovery and lock extraction to reviewed directories.
-* Gene2Func, archive, backup and other post-FUMA directories are excluded.
+* GENE2FUNC, archive, backup and other post-FUMA directories are excluded.
 """
 
 from __future__ import annotations
@@ -53,7 +53,7 @@ EXPECTED_TYPE = {
     "gtex_v8_general_tissue": "COVAR",
 }
 
-CANONICAL_LABELS = {
+ANALYSIS_LABELS = {
     "EA",
     "CF",
     "MDD",
@@ -63,9 +63,6 @@ CANONICAL_LABELS = {
     "SCZ_3TRAIT",
     "UNRESOLVED",
 }
-
-SCRIPT_VERSION = "2.6.0"
-
 
 # Exact FUMA SNP2GENE directories to include for the single-trait audit.
 # This deliberately avoids inferring scope from params.config or filenames.
@@ -107,11 +104,6 @@ def parse_args() -> argparse.Namespace:
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument(
-        "--version",
-        action="version",
-        version=f"%(prog)s {SCRIPT_VERSION}",
-    )
-    parser.add_argument(
         "--base",
         required=False,
         type=Path,
@@ -127,7 +119,7 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Explicit TSV of FUMA SNP2GENE run directories. Required columns: "
-            "ancestry, canonical_label_final, run_dir. This bypasses directory "
+            "ancestry, analysis_label, run_dir. This bypasses directory "
             "discovery and path allowlists."
         ),
     )
@@ -142,8 +134,8 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help=(
-            "Optional TSV overriding canonical labels. Required columns: ancestry, "
-            "run_relative_path, canonical_label_manual."
+            "Optional TSV overriding inferred labels. Required columns: ancestry, "
+            "run_relative_path, analysis_label_override."
         ),
     )
     parser.add_argument(
@@ -240,7 +232,7 @@ def compact_text(text: str, max_chars: int = 4000) -> str:
 def discover_runs(base: Path) -> tuple[list[dict], list[dict]]:
     """
     Discover only direct child directories of BASE/EUR and BASE/EAS that contain
-    FUMA SNP2GENE MAGMA outputs. Nested Gene2Func/post-FUMA folders and archive
+    FUMA SNP2GENE MAGMA outputs. Nested GENE2FUNC/post-FUMA folders and archive
     trees are deliberately excluded from analysis.
     """
     excluded_name_tokens = {
@@ -298,16 +290,16 @@ def discover_runs(base: Path) -> tuple[list[dict], list[dict]]:
         runs.append(
             {
                 "ancestry": ancestry,
-                "run_label_raw": raw_run,
+                "source_run_label": raw_run,
                 "run_relative_path": run_relative,
                 "run_key": f"{ancestry}/{run_relative}",
                 "run_dir": run_dir,
-                "canonical_label_auto": label,
-                "canonical_label_status_auto": status,
-                "canonical_label_reason_auto": reason,
-                "canonical_label_final": label,
-                "canonical_label_status_final": status,
-                "canonical_label_reason_final": reason,
+                "inferred_label": label,
+                "inferred_label_status": status,
+                "inferred_label_reason": reason,
+                "analysis_label": label,
+                "analysis_label_status": status,
+                "analysis_label_reason": reason,
                 "top_level_files": "|".join(top_files),
                 "params_config_compact": compact_text(params_text),
             }
@@ -322,15 +314,15 @@ def discover_runs(base: Path) -> tuple[list[dict], list[dict]]:
 
     for ancestry, group in by_ancestry.items():
         known = {
-            r["canonical_label_auto"]
+            r["inferred_label"]
             for r in group
-            if r["canonical_label_auto"] != "UNRESOLVED"
+            if r["inferred_label"] != "UNRESOLVED"
         }
         generic = [
             r
             for r in group
-            if normalise(r["run_label_raw"]) == "pleio"
-            and r["canonical_label_auto"] == "UNRESOLVED"
+            if normalise(r["source_run_label"]) == "pleio"
+            and r["inferred_label"] == "UNRESOLVED"
         ]
         if (
             len(generic) == 1
@@ -338,15 +330,15 @@ def discover_runs(base: Path) -> tuple[list[dict], list[dict]]:
             and {"MDD_3TRAIT", "SCZ_3TRAIT"}.issubset(known)
         ):
             r = generic[0]
-            r["canonical_label_auto"] = "FOURTRAIT"
-            r["canonical_label_status_auto"] = "inferred_sibling_context"
-            r["canonical_label_reason_auto"] = (
+            r["inferred_label"] = "FOURTRAIT"
+            r["inferred_label_status"] = "inferred_sibling_context"
+            r["inferred_label_reason"] = (
                 "generic PLEIO is the remaining model beside explicit MDD_3TRAIT "
                 "and SCZ_3TRAIT runs"
             )
-            r["canonical_label_final"] = r["canonical_label_auto"]
-            r["canonical_label_status_final"] = r["canonical_label_status_auto"]
-            r["canonical_label_reason_final"] = r["canonical_label_reason_auto"]
+            r["analysis_label"] = r["inferred_label"]
+            r["analysis_label_status"] = r["inferred_label_status"]
+            r["analysis_label_reason"] = r["inferred_label_reason"]
 
     return runs, skipped
 
@@ -358,7 +350,7 @@ def runs_from_manifest(manifest_path: Path) -> tuple[list[dict], list[dict]]:
         raise FileNotFoundError(f"Run manifest not found: {manifest_path}")
 
     manifest = pd.read_csv(manifest_path, sep="\t", dtype=str).fillna("")
-    required = {"ancestry", "canonical_label_final", "run_dir"}
+    required = {"ancestry", "analysis_label", "run_dir"}
     missing = required.difference(manifest.columns)
     if missing:
         raise ValueError(
@@ -370,17 +362,17 @@ def runs_from_manifest(manifest_path: Path) -> tuple[list[dict], list[dict]]:
 
     for i, row in manifest.iterrows():
         ancestry = row["ancestry"].strip().upper()
-        label = row["canonical_label_final"].strip().upper()
+        label = row["analysis_label"].strip().upper()
         run_dir = Path(row["run_dir"]).expanduser().resolve()
 
         if ancestry not in {"EUR", "EAS"}:
             raise ValueError(
                 f"Manifest row {i + 2}: ancestry must be EUR or EAS, got {ancestry!r}"
             )
-        if label not in CANONICAL_LABELS:
+        if label not in ANALYSIS_LABELS:
             raise ValueError(
-                f"Manifest row {i + 2}: invalid canonical label {label!r}; "
-                f"allowed: {sorted(CANONICAL_LABELS)}"
+                f"Manifest row {i + 2}: invalid analysis label {label!r}; "
+                f"allowed: {sorted(ANALYSIS_LABELS)}"
             )
         if label == "UNRESOLVED":
             raise ValueError(
@@ -418,16 +410,16 @@ def runs_from_manifest(manifest_path: Path) -> tuple[list[dict], list[dict]]:
         runs.append(
             {
                 "ancestry": ancestry,
-                "run_label_raw": raw_run,
+                "source_run_label": raw_run,
                 "run_relative_path": run_relative,
                 "run_key": f"{ancestry}/{label}",
                 "run_dir": run_dir,
-                "canonical_label_auto": label,
-                "canonical_label_status_auto": "explicit_manifest",
-                "canonical_label_reason_auto": "user-reviewed explicit run manifest",
-                "canonical_label_final": label,
-                "canonical_label_status_final": "explicit_manifest",
-                "canonical_label_reason_final": "user-reviewed explicit run manifest",
+                "inferred_label": label,
+                "inferred_label_status": "explicit_manifest",
+                "inferred_label_reason": "user-reviewed explicit run manifest",
+                "analysis_label": label,
+                "analysis_label_status": "explicit_manifest",
+                "analysis_label_reason": "user-reviewed explicit run manifest",
                 "top_level_files": "|".join(top_files),
                 "params_config_compact": compact_text(params_text),
             }
@@ -444,7 +436,7 @@ def apply_manual_map(runs: list[dict], run_map_path: Path | None) -> None:
         raise FileNotFoundError(f"Run-map file not found: {run_map_path}")
 
     mapping = pd.read_csv(run_map_path, sep="\t", dtype=str).fillna("")
-    required = {"ancestry", "run_relative_path", "canonical_label_manual"}
+    required = {"ancestry", "run_relative_path", "analysis_label_override"}
     missing = required.difference(mapping.columns)
     if missing:
         raise ValueError(
@@ -453,12 +445,12 @@ def apply_manual_map(runs: list[dict], run_map_path: Path | None) -> None:
 
     lookup: dict[tuple[str, str], str] = {}
     for _, row in mapping.iterrows():
-        label = row["canonical_label_manual"].strip().upper()
+        label = row["analysis_label_override"].strip().upper()
         if not label:
             continue
-        if label not in CANONICAL_LABELS:
+        if label not in ANALYSIS_LABELS:
             raise ValueError(
-                f"Invalid canonical label {label!r}; allowed: {sorted(CANONICAL_LABELS)}"
+                f"Invalid analysis label {label!r}; allowed: {sorted(ANALYSIS_LABELS)}"
             )
         key = (row["ancestry"].strip(), row["run_relative_path"].strip())
         if key in lookup and lookup[key] != label:
@@ -468,9 +460,9 @@ def apply_manual_map(runs: list[dict], run_map_path: Path | None) -> None:
     for run in runs:
         key = (run["ancestry"], run["run_relative_path"])
         if key in lookup:
-            run["canonical_label_final"] = lookup[key]
-            run["canonical_label_status_final"] = "manual_override"
-            run["canonical_label_reason_final"] = str(run_map_path)
+            run["analysis_label"] = lookup[key]
+            run["analysis_label_status"] = "manual_override"
+            run["analysis_label_reason"] = str(run_map_path)
 
 
 def check_outdir(outdir: Path) -> tuple[bool, str]:
@@ -535,13 +527,13 @@ def add_metadata(df: pd.DataFrame, run: dict, file_type: str, path: Path) -> pd.
     out = df.copy()
     metadata = {
         "ancestry": run["ancestry"],
-        "run_label_raw": run["run_label_raw"],
+        "source_run_label": run["source_run_label"],
         "run_relative_path": run["run_relative_path"],
         "run_key": run["run_key"],
-        "canonical_label_auto": run["canonical_label_auto"],
-        "canonical_label_status_auto": run["canonical_label_status_auto"],
-        "canonical_label_final": run["canonical_label_final"],
-        "canonical_label_status_final": run["canonical_label_status_final"],
+        "inferred_label": run["inferred_label"],
+        "inferred_label_status": run["inferred_label_status"],
+        "analysis_label": run["analysis_label"],
+        "analysis_label_status": run["analysis_label_status"],
         "result_type": file_type,
         "source_file": str(path),
     }
@@ -680,7 +672,7 @@ def recurrence_table(frames: list[pd.DataFrame]) -> pd.DataFrame:
                 "n_significant_runs",
                 "ancestries",
                 "run_keys",
-                "canonical_labels",
+                "analysis_labels",
                 "minimum_p",
             ]
         )
@@ -694,8 +686,8 @@ def recurrence_table(frames: list[pd.DataFrame]) -> pd.DataFrame:
                 "n_significant_runs": grp["run_key"].nunique(),
                 "ancestries": ";".join(sorted(set(grp["ancestry"].astype(str)))),
                 "run_keys": ";".join(sorted(set(grp["run_key"].astype(str)))),
-                "canonical_labels": ";".join(
-                    sorted(set(grp["canonical_label_final"].astype(str)))
+                "analysis_labels": ";".join(
+                    sorted(set(grp["analysis_label"].astype(str)))
                 ),
                 "minimum_p": pd.to_numeric(grp["p_numeric"], errors="coerce").min(),
             }
@@ -757,7 +749,7 @@ def main() -> int:
         multivariate_labels = {"FOURTRAIT", "MDD_3TRAIT", "SCZ_3TRAIT", "UNRESOLVED"}
 
         if explicit_manifest_mode:
-            labels = {r["canonical_label_final"] for r in runs}
+            labels = {r["analysis_label"] for r in runs}
             single_labels = {"EA", "CF", "MDD", "SCZ"}
             pleio_labels = {"FOURTRAIT", "MDD_3TRAIT", "SCZ_3TRAIT"}
 
@@ -780,9 +772,9 @@ def main() -> int:
                 if key not in SINGLE_TRAIT_RUN_ALLOWLIST:
                     continue
                 expected_label = SINGLE_TRAIT_RUN_ALLOWLIST[key]
-                r["canonical_label_final"] = expected_label
-                r["canonical_label_status_final"] = "strict_path_allowlist"
-                r["canonical_label_reason_final"] = (
+                r["analysis_label"] = expected_label
+                r["analysis_label_status"] = "strict_path_allowlist"
+                r["analysis_label_reason"] = (
                     f"exact single-trait directory allowlist: {r['ancestry']}/{r['run_relative_path']}"
                 )
                 selected.append(r)
@@ -811,22 +803,22 @@ def main() -> int:
 
                 # A reviewed manual mapping is allowed only for the generic EAS/PLEIO run.
                 if expected_label == "UNRESOLVED":
-                    manual_label = r.get("canonical_label_final", "UNRESOLVED")
+                    manual_label = r.get("analysis_label", "UNRESOLVED")
                     if manual_label in {"MDD_3TRAIT", "SCZ_3TRAIT"}:
-                        r["canonical_label_status_final"] = "manual_reviewed"
-                        r["canonical_label_reason_final"] = (
+                        r["analysis_label_status"] = "manual_reviewed"
+                        r["analysis_label_reason"] = (
                             "reviewed manual mapping for generic EAS/PLEIO directory"
                         )
                     else:
-                        r["canonical_label_final"] = "UNRESOLVED"
-                        r["canonical_label_status_final"] = "strict_path_unresolved"
-                        r["canonical_label_reason_final"] = (
+                        r["analysis_label"] = "UNRESOLVED"
+                        r["analysis_label_status"] = "strict_path_unresolved"
+                        r["analysis_label_reason"] = (
                             "exact PLEIO directory allowlist; model identity requires --run-map"
                         )
                 else:
-                    r["canonical_label_final"] = expected_label
-                    r["canonical_label_status_final"] = "strict_path_allowlist"
-                    r["canonical_label_reason_final"] = (
+                    r["analysis_label"] = expected_label
+                    r["analysis_label_status"] = "strict_path_allowlist"
+                    r["analysis_label_reason"] = (
                         f"exact PLEIO directory allowlist: "
                         f"{r['ancestry']}/{r['run_relative_path']}"
                     )
@@ -859,14 +851,14 @@ def main() -> int:
             {
                 "ancestry": r["ancestry"],
                 "run_relative_path": r["run_relative_path"],
-                "run_label_raw": r["run_label_raw"],
-                "canonical_label_auto": r["canonical_label_auto"],
-                "canonical_label_status_auto": r["canonical_label_status_auto"],
-                "canonical_label_reason_auto": r["canonical_label_reason_auto"],
-                "canonical_label_manual": "",
+                "source_run_label": r["source_run_label"],
+                "inferred_label": r["inferred_label"],
+                "inferred_label_status": r["inferred_label_status"],
+                "inferred_label_reason": r["inferred_label_reason"],
+                "analysis_label_override": "",
                 "notes": (
                     "REVIEW REQUIRED"
-                    if r["canonical_label_final"] == "UNRESOLVED"
+                    if r["analysis_label"] == "UNRESOLVED"
                     else ""
                 ),
             }
@@ -891,10 +883,10 @@ def main() -> int:
             {
                 "ancestry": r["ancestry"],
                 "run_relative_path": r["run_relative_path"],
-                "run_label_raw": r["run_label_raw"],
-                "canonical_label_final": r["canonical_label_final"],
-                "canonical_label_status_final": r["canonical_label_status_final"],
-                "canonical_label_reason_final": r["canonical_label_reason_final"],
+                "source_run_label": r["source_run_label"],
+                "analysis_label": r["analysis_label"],
+                "analysis_label_status": r["analysis_label_status"],
+                "analysis_label_reason": r["analysis_label_reason"],
                 "run_dir": str(r["run_dir"]),
             }
             for r in runs
@@ -921,13 +913,13 @@ def main() -> int:
             path = run_dir / filename
             inv = {
                 "ancestry": run["ancestry"],
-                "run_label_raw": run["run_label_raw"],
+                "source_run_label": run["source_run_label"],
                 "run_relative_path": run["run_relative_path"],
                 "run_key": run["run_key"],
-                "canonical_label_auto": run["canonical_label_auto"],
-                "canonical_label_status_auto": run["canonical_label_status_auto"],
-                "canonical_label_final": run["canonical_label_final"],
-                "canonical_label_status_final": run["canonical_label_status_final"],
+                "inferred_label": run["inferred_label"],
+                "inferred_label_status": run["inferred_label_status"],
+                "analysis_label": run["analysis_label"],
+                "analysis_label_status": run["analysis_label_status"],
                 "file_type": file_type,
                 "filename": filename,
                 "source_file": str(path),
@@ -979,16 +971,16 @@ def main() -> int:
                     summaries.append(
                         {
                             "ancestry": run["ancestry"],
-                            "run_label_raw": run["run_label_raw"],
+                            "source_run_label": run["source_run_label"],
                             "run_relative_path": run["run_relative_path"],
                             "run_key": run["run_key"],
-                            "canonical_label_auto": run["canonical_label_auto"],
-                            "canonical_label_status_auto": run[
-                                "canonical_label_status_auto"
+                            "inferred_label": run["inferred_label"],
+                            "inferred_label_status": run[
+                                "inferred_label_status"
                             ],
-                            "canonical_label_final": run["canonical_label_final"],
-                            "canonical_label_status_final": run[
-                                "canonical_label_status_final"
+                            "analysis_label": run["analysis_label"],
+                            "analysis_label_status": run[
+                                "analysis_label_status"
                             ],
                             "result_type": file_type,
                             "source_file": str(path),
@@ -1007,15 +999,15 @@ def main() -> int:
                 & inventory["exists"]
             ]
             .groupby(
-                ["ancestry", "canonical_label_final"], dropna=False
+                ["ancestry", "analysis_label"], dropna=False
             )
             .size()
-            .rename("n_run_dirs_per_ancestry_canonical")
+            .rename("n_run_dirs_per_ancestry_analysis")
             .reset_index()
         )
         inventory = inventory.merge(
             counts,
-            on=["ancestry", "canonical_label_final"],
+            on=["ancestry", "analysis_label"],
             how="left",
         )
 
@@ -1123,20 +1115,20 @@ def main() -> int:
 
     expected = pd.MultiIndex.from_product(
         [["EUR", "EAS"], expected_labels],
-        names=["ancestry", "canonical_label_final"],
+        names=["ancestry", "analysis_label"],
     ).to_frame(index=False)
     observed = (
         inventory[
             (inventory["file_type"] == "competitive_gene_set")
             & inventory["exists"]
-            & (inventory["canonical_label_final"] != "UNRESOLVED")
-        ][["ancestry", "canonical_label_final"]]
+            & (inventory["analysis_label"] != "UNRESOLVED")
+        ][["ancestry", "analysis_label"]]
         .drop_duplicates()
         .assign(observed_magma_gsa=True)
     )
     expected_audit = expected.merge(
         observed,
-        on=["ancestry", "canonical_label_final"],
+        on=["ancestry", "analysis_label"],
         how="left",
     )
     expected_audit["observed_magma_gsa"] = expected_audit[
@@ -1145,14 +1137,14 @@ def main() -> int:
     write_tsv(expected_audit, outdir / "12_expected_run_audit.tsv")
 
     unresolved_df = run_audit[
-        run_audit["canonical_label_final"].eq("UNRESOLVED")
+        run_audit["analysis_label"].eq("UNRESOLVED")
     ].copy()
     write_tsv(unresolved_df, outdir / "12b_unresolved_run_labels.tsv")
 
     recurrence = recurrence_table([comp, gtex_specific, gtex_general])
     write_tsv(recurrence, outdir / "13_bonferroni_cross_run_recurrence.tsv")
 
-    unresolved = [r for r in runs if r["canonical_label_final"] == "UNRESOLVED"]
+    unresolved = [r for r in runs if r["analysis_label"] == "UNRESOLVED"]
     print(f"Wrote outputs to: {outdir}")
     print(f"Extraction scope: {args.scope}")
     print(f"Discovered direct SNP2GENE run directories in scope: {len(runs)}")
@@ -1161,14 +1153,14 @@ def main() -> int:
         for r in sorted(runs, key=lambda x: (x["ancestry"], x["run_relative_path"])):
             print(
                 f"  - {r['ancestry']}/{r['run_relative_path']} "
-                f"-> {r['canonical_label_final']}"
+                f"-> {r['analysis_label']}"
             )
     elif args.scope == "multivariate":
         print("Strict PLEIO SNP2GENE directories included:")
         for r in sorted(runs, key=lambda x: (x["ancestry"], x["run_relative_path"])):
             print(
                 f"  - {r['ancestry']}/{r['run_relative_path']} "
-                f"-> {r['canonical_label_final']}"
+                f"-> {r['analysis_label']}"
             )
     if skipped_runs:
         print(
@@ -1188,7 +1180,7 @@ def main() -> int:
         for run in unresolved:
             print(f"  - {run['run_key']}", file=sys.stderr)
         print(
-            "Use 00_run_mapping_template.tsv only if canonical manuscript labels are needed; "
+            "Use 00_run_mapping_template.tsv only if publication analysis labels are needed; "
             "raw SNP2GENE results have already been extracted.",
             file=sys.stderr,
         )

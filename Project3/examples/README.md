@@ -10,11 +10,13 @@ bash examples/run_synthetic_example.sh
 
 Expected locus labels are:
 
-| Locus | Expected corrected label | Reason |
+| Locus | Expected locus class | Reason |
 | --- | --- | --- |
-| 1 | `concordant` | Cognitive Z scores are positive and psychiatric Z scores are negative. |
-| 2 | `mixed` | The psychiatric domain contains both positive and negative qualifying Z scores. |
-| 3 | `discordant` | Cognitive and psychiatric domains are both negative. |
-| 4 | `trait_dominant_or_unclear` | No cognitive Z score reaches the default threshold. |
+| 1 | `Concordant` | EA and CF Z scores are positive and the psychiatric Z scores are negative. |
+| 2 | `Mixed` | The psychiatric domain contains both positive and negative qualifying Z scores. |
+| 3 | `Discordant` | The cognitive/educational and psychiatric domains are both negative. |
+| 4 | `Unassigned` | Neither EA nor CF reaches the default directional-information threshold. |
+| 5 | `Dual` | One SNP is Concordant and the other is Discordant, with no Mixed SNP. |
 
-The example also exercises the single-trait overlap audit: loci 1 and 2 overlap single-trait FUMA loci, while loci 3 and 4 do not.
+The example also exercises the single-trait overlap audit: loci 1 and 2 overlap
+single-trait FUMA loci, while loci 3, 4, and 5 do not.
