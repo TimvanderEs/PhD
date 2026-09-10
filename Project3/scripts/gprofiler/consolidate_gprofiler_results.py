@@ -285,7 +285,11 @@ def main() -> int:
                             "term_id": raw["term_id"],
                             "term_name": raw["term_name"],
                             "adjusted_p_value": raw["adjusted_p_value"],
-                            "negative_log10_adjP": -math.log10(p_value),
+                            # Explicit precision keeps this derived display value
+                            # byte-identical across supported Python/libm builds.
+                            "negative_log10_adjP": format(
+                                -math.log10(p_value), ".12g"
+                            ),
                             "term_size": raw["term_size"],
                             "query_size": raw["query_size"],
                             "intersection_size": raw["intersection_size"],
@@ -349,8 +353,8 @@ def main() -> int:
                     "ancestry": meta["ancestry"],
                     "model": meta["model"],
                     "direction_class": meta["direction_class"],
-                            "source": source,
-                            "source_label": source_label(source),
+                    "source": source,
+                    "source_label": source_label(source),
                     "n_returned_terms": stats["n_returned_terms"],
                     "n_significant_terms": stats["n_significant_terms"],
                     "min_adjusted_p": stats["min_adjusted_p"],
