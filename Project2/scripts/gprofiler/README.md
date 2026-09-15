@@ -1,7 +1,8 @@
 # g:Profiler over-representation analysis
 
-This directory makes the publication g:Profiler analysis auditable without
-silently replacing it with a query against a newer database release.
+This directory documents the publication g:Profiler analysis and reconstructs
+its reported tables from the archived exports. It does not query a later
+database release.
 
 ## Archived analysis
 
@@ -24,16 +25,16 @@ class is `Dual`. For EAS, the complete model-wide mapped-gene list was queried.
 No EAS custom-background file or original web request payload was recovered,
 so the EAS background option is explicitly marked `not_recorded`.
 
-The original web exports also do not identify the g:Profiler database release,
+The original web exports do not identify the g:Profiler database release,
 ordered-query option, or electronic-GO-annotation option. Because g:Profiler's
 underlying databases change, a new live query may not return byte-identical
 results. The archived exports are the primary record of the reported analysis.
-These two missing settings—the database release and EAS background
-configuration—should also be stated in the Supplementary Methods.
+The Supplementary Methods should therefore note that the database release and
+EAS background configuration were not retained.
 
 ## Validate and rebuild the processed tables
 
-Run from the `Project3` directory:
+Run from the `Project2` directory:
 
 ```bash
 python3 scripts/gprofiler/consolidate_gprofiler_results.py \

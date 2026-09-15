@@ -1,6 +1,6 @@
 # FUMA SNP2GENE, MAGMA, and GTEx v8 enrichment
 
-This directory contains the Python scripts used to audit and consolidate the
+This directory contains the Python scripts used to validate and consolidate the
 model-wide PLEIO and constituent single-trait FUMA/MAGMA results.
 
 ## What is archived
@@ -33,7 +33,7 @@ MAGMA v1.10 would not describe these analyses.
 ## Rebuild the extracted tables
 
 Create an environment with Python 3, NumPy, and pandas, then run these commands
-from the `Project3` directory:
+from the `Project2` directory:
 
 ```bash
 python3 scripts/fuma_magma/extract_fuma_magma_gtex.py \

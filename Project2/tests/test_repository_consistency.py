@@ -43,7 +43,7 @@ def main() -> int:
         "scripts/sumstats_qc/README.md",
         "provenance/sumstatsqc_runs.tsv",
         "inputs/smr_heidi/run_manifest.tsv",
-        "CODE_AVAILABILITY.md",
+        "DATA_AND_CODE_AVAILABILITY.md",
     )
     for relative_path in required_files:
         assert (ROOT / relative_path).is_file(), relative_path
@@ -189,13 +189,14 @@ def main() -> int:
     assert 'paste0(out_prefix, "_genetic_covariance.csv")' not in ldsc_runner
     assert 'paste0(out_prefix, "_genetic_correlations.csv")' not in ldsc_runner
 
-    code_availability = read("CODE_AVAILABILITY.md")
-    assert "https://github.com/TimvanderEs/PhD/tree/main/Project3" in code_availability
-    assert "exact reviewed version is identified by its Git commit" in code_availability
+    availability = read("DATA_AND_CODE_AVAILABILITY.md")
+    assert "https://github.com/TimvanderEs/PhD/tree/main/Project2" in availability
+    assert "The repository contains no individual-level participant data" in availability
+    assert "Git commit" in availability
 
     check_local_markdown_links()
 
-    print("PASS: repository terminology and supplementary references are consistent")
+    print("PASS: publication terminology, links and provenance are consistent")
     return 0
 
 

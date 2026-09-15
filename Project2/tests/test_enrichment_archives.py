@@ -43,7 +43,7 @@ def check_fuma_checksums(root: Path) -> None:
 
 def check_gprofiler(root: Path) -> None:
     committed = root / "results/gprofiler/processed"
-    with tempfile.TemporaryDirectory(prefix="project3_gprofiler_") as tmp:
+    with tempfile.TemporaryDirectory(prefix="project2_gprofiler_") as tmp:
         generated = Path(tmp)
         subprocess.run(
             [
@@ -129,7 +129,7 @@ def compare_significant_tables(committed: Path, rebuilt: Path) -> None:
 
 
 def check_fuma_rebuild(root: Path) -> None:
-    with tempfile.TemporaryDirectory(prefix="project3_fuma_") as tmp:
+    with tempfile.TemporaryDirectory(prefix="project2_fuma_") as tmp:
         tmp_path = Path(tmp)
         single = tmp_path / "single"
         pleio = tmp_path / "pleio"

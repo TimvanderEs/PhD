@@ -84,7 +84,7 @@ done
 
 mkdir -p "$OUT_DIR"
 OUT_DIR="$(cd "$OUT_DIR" && pwd)"
-WORK_DIR="$(mktemp -d "${TMPDIR:-/tmp}/project3_eur_pleio_align.XXXXXX")"
+WORK_DIR="$(mktemp -d "${TMPDIR:-/tmp}/project2_eur_pleio_align.XXXXXX")"
 trap 'rm -rf "$WORK_DIR"' EXIT
 STD_DIR="$WORK_DIR/std"
 mkdir -p "$STD_DIR"

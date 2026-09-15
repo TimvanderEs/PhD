@@ -7,10 +7,10 @@ locus. `postprocess_lava.py` independently reapplies that eligibility rule and
 performs Benjamini-Hochberg correction within each ancestry-by-trait-pair
 family.
 
-## Important audit status
+## Status of the archived output
 
-The archived outputs are evidence of the executed historical analysis, not a
-clean final rerun:
+The archived outputs preserve the executed analysis but do not constitute the
+corrected final rerun:
 
 - the historical runner used the rounded threshold `2e-5`;
 - the archived EAS bivariate file has 726 rows;
@@ -21,11 +21,11 @@ clean final rerun:
 - the recovered input-info files contain shifted or incorrect disease
   case/control fields.
 
-For those reasons, the repository does **not** relabel 726 or 697 as the
-verified final denominator. The clean resolution is to verify that the exact
-EAS SCZ file is the Lam et al. dataset, rerun both ancestries with the corrected
-input-info files, and regenerate the manuscript tables with
-`postprocess_lava.py`. The three count sets are preserved separately in
+The three counts refer to different processing stages and are retained
+separately. A final analysis requires confirmation that the EAS SCZ input is
+the Lam et al. dataset, rerunning both ancestries with the corrected input-info
+files, and regenerating the manuscript tables with `postprocess_lava.py`. The
+corresponding counts are recorded in
 [`provenance/lava_pair_test_counts.tsv`](../../provenance/lava_pair_test_counts.tsv).
 
 ## Input configurations
@@ -36,7 +36,7 @@ the current manuscript. They are clearly named as targets, not executed-run
 records. Continuous traits use `cases=1` and `controls=0`, as required by LAVA
 input processing.
 
-| Ancestry | Trait | Active cases / controls | Audit note |
+| Ancestry | Trait | Active cases / controls | Source note |
 | --- | --- | --- | --- |
 | EUR | MDD | 525,197 / 3,362,335 | Matches manuscript Table 1. |
 | EUR | SCZ | 53,386 / 77,258 | Matches manuscript Table 1 and recovered QC log. |
@@ -49,10 +49,11 @@ which states 22,778 cases and 35,362 controls. The conflicting QC-log value is
 retained because file-specific provenance should not be overwritten by the
 publication-level count.
 
-The exact configurations inferred from the archived run are retained as
+The configurations inferred from the archived run are retained as
 `EAS_recovered_run_input.info.tsv` and `EUR_recovered_run_input.info.tsv`.
-They must not be used for a clean rerun. They explain why the archived EAS
-univariate output has a liability-scale estimate for EA but not MDD.
+They document the historical output and are not the inputs for a corrected
+rerun. They explain why the archived EAS univariate output has a liability-
+scale estimate for EA but not MDD.
 
 ## Run EAS
 
@@ -107,7 +108,7 @@ zero, records all thresholds and row counts, and writes:
 
 - `lava_bivariate_eligible.tsv`, the eligible row-level result;
 - `lava_pair_summary.tsv`, test and FDR-significant counts by pair; and
-- `lava_postprocess_qc.tsv`, the machine-readable audit record.
+- `lava_postprocess_qc.tsv`, the machine-readable processing record.
 
 The synthetic check in `tests/test_lava_postprocessing.py` verifies the exact
 threshold, zero-P retention, reversed trait order, and within-pair BH logic.

@@ -2,12 +2,12 @@
 
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) != 1L) {
-  stop("Usage: Rscript test_pleio_input_derivation.R /path/to/Project3", call. = FALSE)
+  stop("Usage: Rscript test_pleio_input_derivation.R /path/to/Project2", call. = FALSE)
 }
 project_dir <- normalizePath(args[1L], mustWork = TRUE)
 derive_script <- file.path(project_dir, "scripts", "pleio", "derive_three_trait_inputs.R")
 
-tmp <- tempfile("project3_pleio_test_")
+tmp <- tempfile("project2_pleio_test_")
 dir.create(tmp, recursive = TRUE)
 input_dir <- file.path(tmp, "four_trait")
 output_dir <- file.path(tmp, "three_trait")

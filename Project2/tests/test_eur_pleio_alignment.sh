@@ -2,11 +2,11 @@
 set -euo pipefail
 
 if [[ $# -ne 1 ]]; then
-  echo "Usage: bash test_eur_pleio_alignment.sh /path/to/Project3" >&2
+  echo "Usage: bash test_eur_pleio_alignment.sh /path/to/Project2" >&2
   exit 2
 fi
 PROJECT_DIR="$(cd "$1" && pwd)"
-TMP="$(mktemp -d "${TMPDIR:-/tmp}/project3_align_test.XXXXXX")"
+TMP="$(mktemp -d "${TMPDIR:-/tmp}/project2_align_test.XXXXXX")"
 trap 'rm -rf "$TMP"' EXIT
 
 printf 'SNP\tCHR\tBP\tA1\tA2\tZ\tN\tP\nrs1\t1\t1\tA\tG\t1\t100\t0.3\nrs2\t1\t2\tC\tT\t2\t100\t0.2\nrs3\t1\t3\tA\tT\t3\t100\t0.1\nrs4\t1\t4\tA\tC\t4\t100\t0.05\n' | gzip -c > "$TMP/mdd.gz"

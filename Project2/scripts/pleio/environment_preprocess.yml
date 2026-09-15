@@ -1,4 +1,4 @@
-name: project3-pleio-preprocess
+name: project2-pleio-preprocess
 channels:
   - defaults
 dependencies:

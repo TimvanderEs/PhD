@@ -6,9 +6,8 @@ the standalone LDSC command-line program. The portable R workflow preserves
 the executed trait order, disease prevalences, and standardisation settings.
 It records GenomicSEM 0.0.5 and R 4.4.3 in the EC2 environment.
 
-Calling this workflow only “LDSC v1.0.1” is therefore incomplete. Manuscript
-Methods and software reporting should identify GenomicSEM and its version,
-while citing LDSC as the underlying method.
+The software citation for this workflow is GenomicSEM 0.0.5, with LDSC as the
+underlying method.
 
 ## Raw and adjusted matrices
 
@@ -53,10 +52,9 @@ path/schema check or `--skip-munge` to reuse existing munged files.
 ## Multiple-testing family
 
 The publication workbook applies Benjamini-Hochberg correction once across all
-12 cross-trait genetic-correlation tests (six EUR plus six EAS). It does not
-apply two separate six-test corrections. Text, captions, and future scripts
-should use the wording “BH correction across the 12 ancestry-specific genetic
-correlations.”
+12 cross-trait genetic-correlation tests (six EUR plus six EAS), rather than
+separately within each ancestry. The corresponding reporting term is “BH
+correction across the 12 ancestry-specific genetic correlations.”
 
 ## Clean EAS pairwise sensitivity rerun
 

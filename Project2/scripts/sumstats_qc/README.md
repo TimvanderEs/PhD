@@ -2,8 +2,8 @@
 
 The manuscript reports SumstatsQC v0.1 before ancestry-specific harmonisation.
 Five of the eight ancestry-by-trait run logs were recovered locally. This
-directory records the exact settings visible in those logs and marks the three
-missing logs explicitly; it does not invent commands or counts for them.
+directory records the settings visible in those logs and identifies the three
+logs that were not recovered.
 
 The machine-readable record is
 [`provenance/sumstatsqc_runs.tsv`](../../provenance/sumstatsqc_runs.tsv).
@@ -33,7 +33,7 @@ The retained logs record the following SumstatsQC stages for each input:
 recovered EUR runs and 0.40 for recovered EAS runs. Quantitative and binary
 settings are recorded per trait in the manifest.
 
-## Audit findings that require manuscript clarification
+## Provenance limitations
 
 - The recovered EAS MDD log treats the file as quantitative with `N=194,542`,
   whereas the manuscript describes 15,771 cases and 178,777 controls
@@ -44,12 +44,9 @@ settings are recorded per trait in the manifest.
   circulation package or the accessible archive.
 - The manuscript's post-QC shared variant sets (5,601,717 EUR and 4,717,676
   EAS) are not the same quantity as the variants ultimately tested by PLEIO
-  (4,930,902 EUR and 4,556,091 EAS). The Methods should name the latter as the
-  post-alignment PLEIO analysis universe rather than presenting both numbers
-  as interchangeable.
+  (4,930,902 EUR and 4,556,091 EAS). The latter are the post-alignment PLEIO
+  analysis universe; the two quantities are retained separately.
 
-Before submission, resolve the two EAS phenotype/count discrepancies against
-the source GWAS documentation and recover the three missing logs if possible.
-The repository remains transparent and executable without those controlled
-inputs, but the missing provenance prevents a claim of complete raw-data
-reproduction.
+The two EAS phenotype/count discrepancies require confirmation against the
+source GWAS documentation. Complete raw-data reproduction also requires the
+three unrecovered logs and the provider-controlled input files.

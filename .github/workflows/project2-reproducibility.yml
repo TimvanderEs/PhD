@@ -1,0 +1,64 @@
+name: Project 2 reproducibility
+
+on:
+  push:
+    paths:
+      - "Project2/**"
+      - ".github/workflows/project2-reproducibility.yml"
+  pull_request:
+    paths:
+      - "Project2/**"
+      - ".github/workflows/project2-reproducibility.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+      - name: Install R dependencies
+        run: Rscript -e 'install.packages("data.table")'
+      - name: Run and validate the synthetic example
+        run: bash Project2/tests/run_synthetic_test.sh
+      - name: Check publication terminology and references
+        run: |
+          python3 -m py_compile \
+            Project2/scripts/lava/postprocess_lava.py \
+            Project2/tests/test_lava_postprocessing.py \
+            Project2/tests/test_repository_consistency.py
+          python3 Project2/tests/test_lava_postprocessing.py
+          python3 Project2/tests/test_repository_consistency.py
+      - name: Check the SMR/HEIDI command-line workflow
+        run: |
+          python3 -m py_compile Project2/scripts/smr_heidi/reanalyse_smr_heidi.py
+          python3 Project2/scripts/smr_heidi/reanalyse_smr_heidi.py --help
+          bash -n Project2/scripts/smr_heidi/run_smr_reanalysis.sh
+      - name: Check upstream-analysis wrappers
+        run: |
+          bash -n Project2/scripts/ldsc/run_eas_clean_ldsc.sh
+          bash -n Project2/scripts/pleio/align_eur_pleio_inputs.sh
+          bash -n Project2/scripts/pleio/prepare_four_trait_inputs.sh
+          bash -n Project2/scripts/pleio/run_pleio.sh
+          Rscript Project2/scripts/ldsc/run_genomicsem_ldsc.R --help
+          Rscript Project2/scripts/lava/run_lava.R --help
+          Rscript Project2/scripts/pleio/derive_three_trait_inputs.R --help
+          Rscript Project2/tests/test_pleio_input_derivation.R Project2
+          bash Project2/tests/test_eur_pleio_alignment.sh Project2
+      - name: Validate archived enrichment analyses
+        run: |
+          python3 -m pip install -r Project2/scripts/fuma_magma/requirements.txt
+          python3 -m py_compile \
+            Project2/scripts/fuma_magma/extract_fuma_magma_gtex.py \
+            Project2/scripts/fuma_magma/compare_magma_single_vs_pleio.py \
+            Project2/scripts/gprofiler/consolidate_gprofiler_results.py \
+            Project2/tests/test_enrichment_archives.py
+          python3 Project2/tests/test_enrichment_archives.py Project2
+          Rscript Project2/scripts/gprofiler/plot_gprofiler_enrichment.R --help

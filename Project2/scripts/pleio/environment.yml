@@ -1,4 +1,4 @@
-name: project3-pleio-model
+name: project2-pleio-model
 channels:
   - defaults
 dependencies:

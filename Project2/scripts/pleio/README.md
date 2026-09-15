@@ -50,7 +50,7 @@ bash prepare_four_trait_inputs.sh \
   --sumstats-dir /path/to/EAS/analysis_ready_sumstats \
   --ref-ld-prefix /path/to/eas_ldscores/ \
   --out-dir /path/to/analysis/EAS_four_trait \
-  --python /path/to/project3-pleio-preprocess/bin/python
+  --python /path/to/project2-pleio-preprocess/bin/python
 
 bash prepare_four_trait_inputs.sh \
   --pleio-dir /path/to/pleio \
@@ -58,7 +58,7 @@ bash prepare_four_trait_inputs.sh \
   --sumstats-dir /path/to/EUR/pleio_full_aligned_hdr \
   --ref-ld-prefix /path/to/eur_ldscores/@ \
   --out-dir /path/to/analysis/EUR_four_trait \
-  --python /path/to/project3-pleio-preprocess/bin/python
+  --python /path/to/project2-pleio-preprocess/bin/python
 ```
 
 The wrapper saves the fully resolved manifest beside the output directory and
@@ -92,13 +92,13 @@ bash run_pleio.sh \
   --pleio-py /path/to/pleio/pleio.py \
   --input-dir /path/to/analysis/EAS_four_trait \
   --out-prefix /path/to/results/HELIOS_PLEIO_results \
-  --python /path/to/project3-pleio-model/bin/python
+  --python /path/to/project2-pleio-model/bin/python
 
 bash run_pleio.sh \
   --pleio-py /path/to/pleio/pleio.py \
   --input-dir /path/to/analysis/EAS_three_trait/MDD_EA_CF \
   --out-prefix /path/to/results/HELIOS_PLEIO_EAS_MDD_EA_CF_results \
-  --python /path/to/project3-pleio-model/bin/python
+  --python /path/to/project2-pleio-model/bin/python
 ```
 
 Repeat the second command for `SCZ_EA_CF` and for the EUR `MDD_EA_CF` and
