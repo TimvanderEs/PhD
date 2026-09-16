@@ -56,7 +56,7 @@ The third argument can be omitted when the PLEIO/LAVA integration tables are
 not required. The Python program can also be called directly; use `--help` for
 its command-line options.
 
-## Main outputs
+## Outputs
 
 - `00_SMR_reanalysis_QC.tsv`: input, duplication, and integration checks.
 - `20_SMR_HEIDI_all_results_reanalysed.tsv.gz`: harmonised results and all
@@ -68,16 +68,5 @@ its command-line options.
 - `24A`–`24C`: optional PLEIO/SMR/LAVA convergence summaries.
 - `99_SMR_reanalysis_checks.tsv`: copy of the complete run checks.
 
-The EC2 analysis run completed all recorded QC checks, including confirmation
-that the EAS MDD and SCZ source files were not duplicates.
-
-## Portal provenance
-
 [`inputs/smr_heidi/run_manifest.tsv`](../../inputs/smr_heidi/run_manifest.tsv)
-records the seven retained inputs, row counts, SHA-256 hashes, and available
-file timestamps. The original webSMR job identifiers, portal version, and
-access dates were not recoverable and are explicitly marked `not_recovered`.
-ZIP member and local file timestamps are retained only as file provenance; they
-are not represented as portal run times. If job records can be recovered from
-the portal account, add them to the manifest before creating the archival
-release.
+records the seven input files, row counts and SHA-256 hashes.

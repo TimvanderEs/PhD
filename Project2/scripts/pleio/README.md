@@ -1,9 +1,8 @@
 # PLEIO input preparation and model runs
 
-These wrappers reproduce the four-trait and nested three-trait PLEIO models.
-They do not redistribute PLEIO itself. The EC2 checkout reports that upstream
-software as unlicensed, so obtain it from
-[cuelee/pleio](https://github.com/cuelee/pleio) and check out the revision used:
+These scripts prepare and run the four-trait and nested three-trait PLEIO
+models. PLEIO is not redistributed. Obtain it from
+[cuelee/pleio](https://github.com/cuelee/pleio) and use the recorded revision:
 
 ```bash
 git clone https://github.com/cuelee/pleio.git
@@ -21,7 +20,7 @@ conda env create -f environment.yml
 
 ## 0. Align the EUR analysis-ready files
 
-The recovered EC2 alignment workflow standardises the source columns, finds
+The alignment workflow standardises the source columns, finds
 the shared SNP set, uses educational attainment as the allele anchor, removes
 A/T and C/G variants, and reverses Z scores when effect alleles are swapped:
 
@@ -34,9 +33,9 @@ bash align_eur_pleio_inputs.sh \
   /path/to/EUR/pleio_full_aligned_hdr
 ```
 
-The script validates the exact source headers before applying the original
-column mappings. In the retained EC2 run, the subsequent PLEIO preprocessing
-reported 4,930,902 shared variants and no allele mismatches.
+The script validates the source headers before applying the column mappings.
+PLEIO preprocessing reported 4,930,902 shared variants and no allele
+mismatches.
 
 ## 1. Prepare each four-trait model
 
@@ -121,7 +120,7 @@ importance-sampling approximation:
 
 Use `--ncores` to fix the worker count.
 
-## EC2 software provenance
+## Software
 
 - PLEIO Git commit `b18d507533ae39dcb6284573d3b36b91cdc13603`
 - PLEIO log version 2.0; `ldsc_preprocess` log version 1.0

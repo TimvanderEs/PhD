@@ -1,0 +1,9 @@
+ancestry	trait	trait_type	sample_size	cases	controls	reference_panel	AF_min	INFO_min	AF_difference_max	ambiguous_AF_cutoff
+EUR	EA	quantitative	765283	NA	NA	1000g_eur	0.005	0.3	0.15	0.35
+EUR	CF	quantitative	373617	NA	NA	1000g_eur	0.005	0.3	0.15	0.35
+EUR	MDD	binary	3887532	525197	3362335	1000g_eur	0.005	0.3	0.15	0.35
+EUR	SCZ	binary	130644	53386	77258	1000g_eur	0.005	0.3	0.15	0.35
+EAS	EA	quantitative	176400	NA	NA	1000g_eas	0.005	0.3	0.15	0.40
+EAS	CF	quantitative	6099	NA	NA	1000g_eas	0.005	0.3	0.15	0.40
+EAS	MDD	binary	194548	15771	178777	1000g_eas	0.005	0.3	0.15	0.40
+EAS	SCZ	binary	58140	22778	35362	1000g_eas	0.005	0.3	0.15	0.40

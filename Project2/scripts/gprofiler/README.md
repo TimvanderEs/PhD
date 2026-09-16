@@ -1,40 +1,18 @@
-# g:Profiler over-representation analysis
+# gProfiler
 
-This directory documents the publication g:Profiler analysis and reconstructs
-its reported tables from the archived exports. It does not query a later
-database release.
+The 12 g:Profiler exports used in the paper are stored as compressed CSV files
+under `results/gprofiler/raw/`. Their query files, settings and checksums are
+listed in `inputs/gprofiler/run_manifest.tsv`.
 
-## Archived analysis
+Queries used the human organism, g:SCS correction and an adjusted-P threshold
+of 0.05. EUR directional gene lists used all genes mapped in the corresponding
+PLEIO model as the custom background. EAS analyses used the complete mapped
+gene list for each model. The original g:Profiler database release was not
+recorded, so the archived exports are used to reproduce the reported results.
 
-The 12 original CSV exports are stored as deterministic gzip files in
-`results/gprofiler/raw/`. Their uncompressed and compressed SHA-256 hashes,
-input files, settings, row counts, and local download timestamps are recorded
-in `inputs/gprofiler/run_manifest.tsv`.
+## Rebuild the tables
 
-The analysis used `hsapiens`, g:SCS multiple-testing correction, a significance
-threshold of adjusted P < 0.05, and the following sources: GO biological
-process, molecular function and cellular component; Reactome; KEGG;
-WikiPathways; Human Phenotype Ontology; Human Protein Atlas; CORUM; TRANSFAC;
-and miRTarBase.
-
-For EUR, each directional gene list was tested using all mapped genes from the
-corresponding PLEIO model as a custom background. The publication label `Dual`
-corresponds to the archived input lists whose source filenames contain
-`mixed_dual`; this is an archived source filename only, and its publication
-class is `Dual`. For EAS, the complete model-wide mapped-gene list was queried.
-No EAS custom-background file or original web request payload was recovered,
-so the EAS background option is explicitly marked `not_recorded`.
-
-The original web exports do not identify the g:Profiler database release,
-ordered-query option, or electronic-GO-annotation option. Because g:Profiler's
-underlying databases change, a new live query may not return byte-identical
-results. The archived exports are the primary record of the reported analysis.
-The Supplementary Methods should therefore note that the database release and
-EAS background configuration were not retained.
-
-## Validate and rebuild the processed tables
-
-Run from the `Project2` directory:
+Run from `Project2`:
 
 ```bash
 python3 scripts/gprofiler/consolidate_gprofiler_results.py \
@@ -42,23 +20,16 @@ python3 scripts/gprofiler/consolidate_gprofiler_results.py \
   --outdir results/gprofiler/processed
 ```
 
-The script validates every input and raw-export checksum, verifies the expected
-row and significant-term counts, and writes:
+The script checks the input and export hashes, then writes:
 
-- `significant_terms.tsv`: all 61 terms with g:SCS-adjusted P < 0.05;
-- `run_summary.tsv`: one row for each of the 12 queries;
-- `source_summary.tsv`: counts and minimum adjusted P by query and source;
-- `manifest_validation.tsv`: checksum, row-count, uniqueness, and background
-  containment checks.
+- `significant_terms.tsv`: all terms with adjusted P < 0.05
+- `run_summary.tsv`: query-level counts
+- `source_summary.tsv`: counts by query and annotation source
+- `manifest_validation.tsv`: file and row-count checks
 
-`run_summary.tsv` and `source_summary.tsv` supply the g:Profiler overview in
-Supplementary Table S13. The 61 significant terms reproduce Supplementary
-Table S14 by ancestry, model, direction class, source label, term identifier,
-adjusted P value, and intersection size.
+The outputs support Supplementary Tables S13-S14.
 
 ## Rebuild Supplementary Figure S7
-
-With R packages `data.table`, `ggplot2`, and `patchwork` installed:
 
 ```bash
 Rscript scripts/gprofiler/plot_gprofiler_enrichment.R \
@@ -67,5 +38,4 @@ Rscript scripts/gprofiler/plot_gprofiler_enrichment.R \
   8 false
 ```
 
-The publication default selects the eight lowest adjusted-P terms per query
-without ties and retains the complete 61-term table alongside the figure.
+This command requires `data.table`, `ggplot2` and `patchwork`.

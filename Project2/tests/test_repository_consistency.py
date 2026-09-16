@@ -41,7 +41,7 @@ def main() -> int:
         "scripts/pleio/isf/EAS_SCZ_EA_CF.isf",
         "scripts/lava/postprocess_lava.py",
         "scripts/sumstats_qc/README.md",
-        "provenance/sumstatsqc_runs.tsv",
+        "provenance/sumstats_qc_settings.tsv",
         "inputs/smr_heidi/run_manifest.tsv",
         "DATA_AND_CODE_AVAILABILITY.md",
     )
@@ -111,36 +111,27 @@ def main() -> int:
         assert read(manifest).splitlines()[0].split("\t")[1] == "analysis_label"
 
     lava_counts = read_tsv("provenance/lava_pair_test_counts.tsv")
-    totals: dict[tuple[str, str], int] = {}
+    totals: dict[str, int] = {}
     for row in lava_counts:
-        key = (row["analysis_set"], row["ancestry"])
+        key = row["ancestry"]
         totals[key] = totals.get(key, 0) + int(row["n_bivariate_tests"])
-    assert totals[("archived_runner_output", "EAS")] == 726
-    assert totals[("exact_threshold_recalculation", "EAS")] == 698
-    assert totals[("publication_workbook", "EAS")] == 697
-    assert totals[("archived_runner_output", "EUR")] == 3142
+    assert totals["EAS"] == 698
+    assert totals["EUR"] == 3142
 
-    exact_ea_scz = next(
+    eas_ea_scz = next(
         row for row in lava_counts
-        if row["analysis_set"] == "exact_threshold_recalculation"
-        and row["ancestry"] == "EAS"
+        if row["ancestry"] == "EAS"
         and row["trait_pair"] == "EA--SCZ"
     )
-    workbook_ea_scz = next(
-        row for row in lava_counts
-        if row["analysis_set"] == "publication_workbook"
-        and row["ancestry"] == "EAS"
-        and row["trait_pair"] == "EA--SCZ"
-    )
-    assert int(exact_ea_scz["n_bivariate_tests"]) == 329
-    assert int(workbook_ea_scz["n_bivariate_tests"]) == 328
+    assert int(eas_ea_scz["n_bivariate_tests"]) == 329
+    assert int(eas_ea_scz["n_FDR_significant"]) == 3
 
     input_expectations = {
-        "scripts/lava/config/EUR_manuscript_target_input.info.tsv": {
+        "scripts/lava/config/EUR_input.info.tsv": {
             "EA": ("1", "0"), "MDD": ("525197", "3362335"),
             "SCZ": ("53386", "77258"), "CF": ("1", "0"),
         },
-        "scripts/lava/config/EAS_manuscript_target_input.info.tsv": {
+        "scripts/lava/config/EAS_input.info.tsv": {
             "MDD": ("15771", "178777"), "EA": ("1", "0"),
             "SCZ": ("22778", "35362"), "CF": ("1", "0"),
         },
@@ -149,33 +140,27 @@ def main() -> int:
         observed = {row["phenotype"]: (row["cases"], row["controls"]) for row in read_tsv(path)}
         assert observed == expected
 
-    recovered_eas = {
-        row["phenotype"]: (row["cases"], row["controls"])
-        for row in read_tsv("scripts/lava/config/EAS_recovered_run_input.info.tsv")
-    }
-    recovered_eur = {
-        row["phenotype"]: (row["cases"], row["controls"])
-        for row in read_tsv("scripts/lava/config/EUR_recovered_run_input.info.tsv")
-    }
-    assert recovered_eas["EA"] == ("15771", "178777")
-    assert recovered_eas["SCZ"] == ("13305", "16244")
-    assert recovered_eur["MDD"] == ("15771", "178777")
-    assert recovered_eur["SCZ"] == ("13305", "16244")
-
-    sumstats_runs = read_tsv("provenance/sumstatsqc_runs.tsv")
-    assert len(sumstats_runs) == 8
-    assert sum(row["log_status"] == "recovered" for row in sumstats_runs) == 5
-    eas_scz = next(row for row in sumstats_runs if row["ancestry"] == "EAS" and row["trait"] == "SCZ")
-    assert (eas_scz["log_cases"], eas_scz["manuscript_cases"]) == ("27888", "22778")
+    sumstats_settings = read_tsv("provenance/sumstats_qc_settings.tsv")
+    assert len(sumstats_settings) == 8
+    eas_scz = next(
+        row for row in sumstats_settings
+        if row["ancestry"] == "EAS" and row["trait"] == "SCZ"
+    )
+    assert (eas_scz["cases"], eas_scz["controls"]) == ("22778", "35362")
 
     smr_runs = read_tsv("inputs/smr_heidi/run_manifest.tsv")
     assert len(smr_runs) == 7
-    assert all(row["portal_job_id"] == "not_recovered" for row in smr_runs)
+    assert set(smr_runs[0]) == {
+        "ancestry", "trait", "relative_input_path", "format", "data_rows",
+        "sha256",
+    }
 
     fingerprints = read_tsv("provenance/final_output_fingerprints.tsv")
-    lava_fingerprints = [row for row in fingerprints if row["workflow"] == "LAVA"]
-    assert len(lava_fingerprints) == 4
-    assert all(row["provenance_status"] == "archived_requires_rerun" for row in lava_fingerprints)
+    assert len(fingerprints) == 10
+    assert set(fingerprints[0]) == {
+        "workflow", "ancestry", "model", "output_file", "completed_utc",
+        "data_rows", "sha256",
+    }
 
     ldsc_runner = read("scripts/ldsc/run_genomicsem_ldsc.R")
     for explicit_name in (

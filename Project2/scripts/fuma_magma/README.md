@@ -1,39 +1,22 @@
-# FUMA SNP2GENE, MAGMA, and GTEx v8 enrichment
+# FUMA MAGMA and GTEx enrichment
 
-This directory contains the Python scripts used to validate and consolidate the
-model-wide PLEIO and constituent single-trait FUMA/MAGMA results.
+The archived FUMA results are under
+`results/fuma_magma/raw/<ANCESTRY>/<MODEL>/`. Each run includes the FUMA
+settings, MAGMA competitive gene-set results and GTEx v8 tissue results used
+for the supplementary tables.
 
-## What is archived
+The seven single-trait runs used FUMA 1.5.2. The six PLEIO runs used FUMA
+1.8.2. All runs used MAGMA 1.08, GRCh37 coordinates, ancestry-matched 1000
+Genomes Phase 3 LD, Ensembl v102 protein-coding genes, MHC exclusion and a 10 kb
+positional-mapping window. The settings for each run are stored in
+`params.config`.
 
-`results/fuma_magma/raw/<ANCESTRY>/<MODEL>/` contains, for each selected run:
+GWAS summary statistics and third-party gene-set membership files are not
+included.
 
-- `params.config`: the complete FUMA web-run settings and software versions;
-- `magma.gsa.out`: raw MAGMA competitive gene-set results;
-- `magma_exp_gtex_v8_ts_avg_log2TPM.gsa.out`: raw GTEx v8 tissue-specific
-  gene-property results;
-- `magma_exp_gtex_v8_ts_general_avg_log2TPM.gsa.out`: raw GTEx v8 general-tissue
-  gene-property results.
+## Rebuild the tables
 
-These are the exact EC2 files used to build the publication tables. The source
-GWAS summary statistics are not redistributed. The large
-`magma.gsa.sets.genes.out` database-membership files are also omitted because
-they were not used by the reported term-level comparisons and may reproduce
-third-party gene-set database content.
-
-The seven available single-trait runs used FUMA v1.5.2. The six final PLEIO
-runs used FUMA v1.8.2. All used MAGMA v1.08, 1000 Genomes Phase 3 ancestry-
-matched LD, GRCh37 coordinates, protein-coding Ensembl v102 genes, MHC
-exclusion, a 10 kb positional-mapping window, no eQTL or chromatin-interaction
-mapping, and GTEx v8 expression panels. Exact per-run differences, including
-input field mappings and sample-size fields, remain in each `params.config`.
-These archived parameter files are the version authority for the reported
-runs; manuscript or supplement references to FUMA v2.0.0, FUMA v1.8.3, or
-MAGMA v1.10 would not describe these analyses.
-
-## Rebuild the extracted tables
-
-Create an environment with Python 3, NumPy, and pandas, then run these commands
-from the `Project2` directory:
+Install Python, NumPy and pandas, then run from `Project2`:
 
 ```bash
 python3 scripts/fuma_magma/extract_fuma_magma_gtex.py \
@@ -52,24 +35,10 @@ python3 scripts/fuma_magma/compare_magma_single_vs_pleio.py \
   --outdir work/fuma_single_vs_pleio
 ```
 
-The extractor applies Bonferroni and Benjamini-Hochberg corrections within each
-source file. Reported competitive gene-set and GTEx enrichments require both a
-corrected-significant result and a positive MAGMA beta.
+Multiple-testing correction is applied within each source file. Significant
+enrichments require a positive MAGMA coefficient and a corrected P value below
+0.05.
 
-Compact retained outputs are in `results/fuma_magma/processed/`. Absolute EC2
-paths in their provenance columns identify the original files; a local rerun
-will naturally record local paths instead.
-
-The analysis-level FUMA/MAGMA inventory corresponds to Supplementary Table
-S10, mapped-gene records to Supplementary Table S11, and GENE2FUNC run and
-input-gene records to Supplementary Tables S12A and S12B. Publication-facing
-labels use EA for educational attainment and CF for cognitive function.
-
-## Interpretation limit
-
-No EAS cognitive function single-trait SNP2GENE run was available. The EAS
-four-trait and nested three-trait comparisons are therefore explicitly marked
-incomplete in
-`results/fuma_magma/processed/comparison/11_missing_or_incomplete_comparisons.tsv`.
-`PLEIO_only_among_available_constituents` is a descriptive significance pattern,
-not evidence that an enrichment is biologically unique or causal.
+The retained tables are under `results/fuma_magma/processed/`. They support
+Supplementary Tables S10-S12. The EAS cognitive-function single-trait result
+was unavailable, so comparisons that require it are marked incomplete.

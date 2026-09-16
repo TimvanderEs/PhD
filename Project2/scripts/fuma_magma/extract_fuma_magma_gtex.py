@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Audit and extract FUMA/MAGMA competitive gene-set and GTEx v8 gene-property outputs.
+Extract FUMA/MAGMA competitive gene-set and GTEx v8 gene-property outputs.
 
 Expected tree:
   <BASE>/{EUR,EAS}/<RUN>/
@@ -64,7 +64,7 @@ ANALYSIS_LABELS = {
     "UNRESOLVED",
 }
 
-# Exact FUMA SNP2GENE directories to include for the single-trait audit.
+# Exact FUMA SNP2GENE directories to include for single-trait processing.
 # This deliberately avoids inferring scope from params.config or filenames.
 SINGLE_TRAIT_RUN_ALLOWLIST = {
     ("EUR", "EDU"): "EA",
@@ -77,7 +77,7 @@ SINGLE_TRAIT_RUN_ALLOWLIST = {
 }
 
 
-# Exact FUMA SNP2GENE directories for the model-wide PLEIO audit.
+# Exact FUMA SNP2GENE directories for model-wide PLEIO processing.
 # EAS/PLEIO remains unresolved until a reviewed --run-map assigns it.
 PLEIO_RUN_ALLOWLIST = {
     ("EUR", "PLEIO"): "FOURTRAIT",
@@ -127,7 +127,7 @@ def parse_args() -> argparse.Namespace:
         "--outdir",
         required=True,
         type=Path,
-        help="Writable output directory for audit and extracted TSV files.",
+        help="Writable output directory for inventories and extracted TSV files.",
     )
     parser.add_argument(
         "--run-map",
@@ -345,7 +345,7 @@ def discover_runs(base: Path) -> tuple[list[dict], list[dict]]:
 
 
 def runs_from_manifest(manifest_path: Path) -> tuple[list[dict], list[dict]]:
-    """Construct an explicit audited run list from a user-reviewed TSV manifest."""
+    """Construct an explicit run list from a user-reviewed TSV manifest."""
     if not manifest_path.exists():
         raise FileNotFoundError(f"Run manifest not found: {manifest_path}")
 
@@ -867,7 +867,7 @@ def main() -> int:
     )
     write_tsv(mapping_template, outdir / "00_run_mapping_template.tsv")
 
-    run_audit = pd.DataFrame(
+    run_inventory = pd.DataFrame(
         [
             {
                 k: v
@@ -877,7 +877,7 @@ def main() -> int:
             for r in runs
         ]
     )
-    write_tsv(run_audit, outdir / "00_run_audit.tsv")
+    write_tsv(run_inventory, outdir / "00_run_inventory.tsv")
     selected_manifest = pd.DataFrame(
         [
             {
@@ -1126,18 +1126,18 @@ def main() -> int:
         .drop_duplicates()
         .assign(observed_magma_gsa=True)
     )
-    expected_audit = expected.merge(
+    expected_inventory = expected.merge(
         observed,
         on=["ancestry", "analysis_label"],
         how="left",
     )
-    expected_audit["observed_magma_gsa"] = expected_audit[
+    expected_inventory["observed_magma_gsa"] = expected_inventory[
         "observed_magma_gsa"
     ].eq(True)
-    write_tsv(expected_audit, outdir / "12_expected_run_audit.tsv")
+    write_tsv(expected_inventory, outdir / "12_run_inventory.tsv")
 
-    unresolved_df = run_audit[
-        run_audit["analysis_label"].eq("UNRESOLVED")
+    unresolved_df = run_inventory[
+        run_inventory["analysis_label"].eq("UNRESOLVED")
     ].copy()
     write_tsv(unresolved_df, outdir / "12b_unresolved_run_labels.tsv")
 

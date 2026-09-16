@@ -217,7 +217,7 @@ def main() -> int:
     check_fuma_rebuild(root)
 
     availability = read_tsv(
-        root / "results/fuma_magma/processed/single_trait/12_expected_run_audit.tsv"
+        root / "results/fuma_magma/processed/single_trait/12_run_inventory.tsv"
     )
     eas_cf = [
         row for row in availability

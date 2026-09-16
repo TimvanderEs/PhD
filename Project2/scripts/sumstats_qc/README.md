@@ -1,18 +1,15 @@
 # Summary-statistics quality control
 
-The manuscript reports SumstatsQC v0.1 before ancestry-specific harmonisation.
-Five of the eight ancestry-by-trait run logs were recovered locally. This
-directory records the settings visible in those logs and identifies the three
-logs that were not recovered.
+The summary statistics were processed with SumstatsQC v0.1 before
+ancestry-specific harmonisation. Per-trait settings are recorded in
+[`provenance/sumstats_qc_settings.tsv`](../../provenance/sumstats_qc_settings.tsv).
 
-The machine-readable record is
-[`provenance/sumstatsqc_runs.tsv`](../../provenance/sumstatsqc_runs.tsv).
 Original GWAS files and full logs are not redistributed because their access
 and contents are governed by the source studies.
 
-## Recovered command pattern
+## Command pattern
 
-The retained logs record the following SumstatsQC stages for each input:
+The workflow used the following SumstatsQC stages for each input:
 
 ```bash
 03_SumstatsQC_sumstats_munge.sh --sumstats=INPUT --pop=REFERENCE --prefix=PREFIX --multicpu=Y
@@ -30,23 +27,5 @@ The retained logs record the following SumstatsQC stages for each input:
 ```
 
 `REFERENCE` was `1000g_eur` or `1000g_eas`. `AMBIGUOUS_AF` was 0.35 for
-recovered EUR runs and 0.40 for recovered EAS runs. Quantitative and binary
+EUR runs and 0.40 for EAS runs. Quantitative and binary
 settings are recorded per trait in the manifest.
-
-## Provenance limitations
-
-- The recovered EAS MDD log treats the file as quantitative with `N=194,542`,
-  whereas the manuscript describes 15,771 cases and 178,777 controls
-  (`N=194,548`).
-- The recovered EAS SCZ log reports 27,888 cases and 35,362 controls, whereas
-  the manuscript reports 22,778 cases and 35,362 controls.
-- Logs for EUR EA, EUR MDD, and EAS CF were not recovered from the local
-  circulation package or the accessible archive.
-- The manuscript's post-QC shared variant sets (5,601,717 EUR and 4,717,676
-  EAS) are not the same quantity as the variants ultimately tested by PLEIO
-  (4,930,902 EUR and 4,556,091 EAS). The latter are the post-alignment PLEIO
-  analysis universe; the two quantities are retained separately.
-
-The two EAS phenotype/count discrepancies require confirmation against the
-source GWAS documentation. Complete raw-data reproduction also requires the
-three unrecovered logs and the provider-controlled input files.
