@@ -1,0 +1,29 @@
+# Participant-level and genotype data
+data/
+private/
+working/
+*.bed
+*.bim
+*.fam
+*.pgen
+*.pvar
+*.pvar.zst
+*.psam
+*.pheno
+*.cov
+*.loco
+*.pred.list
+
+# Large or participant-linked analysis outputs
+*.regenie
+g_scores*.txt
+*Phenotype_File*.txt
+*Covariate_File*.txt
+residualized_cognitive_phenotypes*.txt
+final_phenotype_combined*.txt
+cognitive_factor_scores.tsv
+private_output/
+
+# Local document and spreadsheet review artefacts
+*.inspect.ndjson
+~$*

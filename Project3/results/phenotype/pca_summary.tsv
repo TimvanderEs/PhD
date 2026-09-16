@@ -1,0 +1,8 @@
+metric	value
+source_cognitive_sample_n	8299
+pca_sample_n	7403
+pc1_variance_explained	0.3448937052785348
+historical_score_correlation	0.9999999999999996
+historical_score_slope	0.9999999999999996
+historical_score_rmse	8.21e-13
+historical_score_max_absolute_difference	2.014832745089734e-12

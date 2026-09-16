@@ -1,0 +1,17 @@
+source_group	representative_file	assessment	action
+Phenotype	Final_Pheno_script_fixed.R	Byte-identical to the previously recovered historical 10k PCA source	Retain cleaned phenotype implementation
+Genotype QC	REGENIE_QC.sh; REGENIE_step1.sh	Thresholds and output prefixes match the 10k genotype naming, but no completed PLINK logs were supplied	Publish a labelled reconstruction pending verification
+10k REGENIE development	regenie_test.sh	Contains 10k Step 1 and Step 2 commands, but filenames, covariates, block size and output prefix do not match the completed Step 2 log	Do not treat as the final command
+10k input preparation	regenie_step2_no_cov_updated.R	Creates ancestry-specific 10k phenotype and PC files, but omits the age and sex covariates in the completed run	Use only as supporting evidence for the input reconstruction
+Legacy ancestry GWAS	Pritesh_legacy_scripts/	Earlier HPC workflow using QC2 inputs, 5-SD filtering and different covariate names	Archive as historical; exclude from retained workflow
+Generic three-ancestry runner	regenie_pipeline.sh	Does not select g_raw, uses different covariates and block size, and lacks the completed run's apply-rint and quantitative-trait flags	Exclude
+PLINK output	nohup.out	Contains failed pruning attempts and no successful QC record	Exclude
+METAL	4_metal_inputfile_g.txt; modified_metal.sh; post_metal_filtering.sh	Placeholder paths, genomic control enabled, and non-absolute allele-frequency filtering	Exclude and rebuild after ancestry GWAS verification
+Harmonisation	harm_test.sh; harm_tested.sh; simple_harm_test.sh	Development code; some files target non-10k outputs and do not provide a verified 10k run	Exclude
+SG100K LD reference	REGENIE/MISC/	Key pruning, relatedness, PCA and cov-LDSC scripts are byte-identical to previously recovered copies	Retain cleaned LD-reference implementation
+MTAG	MTAG/mtag_script.sh	Psychiatric-trait MTAG setup, not the recovered HELIOS 10k and educational-attainment run	Exclude
+Alternative GWAS	PYGEMMA/; GWAS_reinflation/	Not part of the retained REGENIE 10k workflow	Exclude
+Controlled inputs	Chinese_QC2.covariates.txt; Indian_QC2.covariates.txt; Malay_QC2.covariates.txt	Participant-level legacy covariate files	Never commit
+Completed 10k Chinese run	CHI_10k_step1.log; HELIOS_10k_Chinese_g.log	Matching phenotype, genotype, covariate columns and prediction-list name; both runs completed on 28 November 2025	Publish the recovered Step 1 and Step 2 commands
+Other 10k ancestry runs	HELIOS_10k_COG_Indian_QCrem_miss02_maf005_hwe1e06.log; HELIOS_10k_Indian_QCrem_miss02_maf005_hwe1e06.log; corresponding Malay logs	The September and October logs use different phenotype/sample sets; the September Malay log also contains an all-missing-predictions error	Do not label a run as final until matched to the retained meta-analysis
+Portable REGENIE bundle	regenie_repro_bundle/pipeline/	Later generic reconstruction with different phenotype construction, covariates and REGENIE flags from the completed 10k run	Exclude from the historical workflow

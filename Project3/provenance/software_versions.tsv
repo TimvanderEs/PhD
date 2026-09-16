@@ -1,0 +1,5 @@
+software	version	use
+REGENIE	4.1	Ancestry-specific association testing
+cov-LDSC	1.0.0	SG100K covariate-adjusted LD-score calculation
+LDSC	1.0.1	Heritability and genetic-correlation analyses
+MTAG	1.0.8	Exploratory 10k HELIOS and EAS educational-attainment analysis
