@@ -1,0 +1,6 @@
+parameter	value	description
+bootstrap_replicates	1000	Participant bootstrap replicates
+random_seed	20260917	Fixed seed for reproducibility
+outlier_threshold_sd	4	Historical task-specific SD mask
+pca_orientation	positive_higher_performance	PC1 is oriented so higher values indicate better performance
+primary_sample	complete_six_task_residuals	Common sample used by all Phase 1 PCA comparisons

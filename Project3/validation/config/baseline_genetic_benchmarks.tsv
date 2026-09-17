@@ -1,0 +1,26 @@
+analysis	metric	value	unit	source_record	note
+later_trans_ancestry_metal	output_rows	6686830	variants	Project3/results/trans_ancestry/meta_analysis_manifest.tsv	Later validated Chinese-Indian-Malay iteration
+later_trans_ancestry_metal	maximum_variant_n	7789	participants	Project3/results/trans_ancestry/meta_analysis_manifest.tsv	Maximum combined variant-level N
+later_trans_ancestry_metal	chinese_maximum_variant_n	5621	participants	Project3/results/trans_ancestry/meta_analysis_manifest.tsv	Inferred maximum ancestry-specific N
+later_trans_ancestry_metal	indian_maximum_variant_n	1329	participants	Project3/results/trans_ancestry/meta_analysis_manifest.tsv	Inferred maximum ancestry-specific N
+later_trans_ancestry_metal	malay_maximum_variant_n	839	participants	Project3/results/trans_ancestry/meta_analysis_manifest.tsv	Inferred maximum ancestry-specific N
+earlier_trans_ancestry_metal	output_rows	6688950	variants	Project3/results/trans_ancestry/meta_analysis_manifest.tsv	Earlier validated Chinese-Indian-Malay iteration
+earlier_trans_ancestry_metal	maximum_variant_n	7664	participants	Project3/results/trans_ancestry/meta_analysis_manifest.tsv	Maximum combined variant-level N
+final_chinese_regenie	participants_entering_step1	5700	participants	CHI_10k_step1.log	Refined Chinese-only freeze
+final_chinese_regenie	step1_variants	279546	variants	CHI_10k_step1.log	LD-pruned Step 1 set
+final_chinese_regenie	participants_entering_step2	5700	participants	HELIOS_10k_Chinese_g.log	Refined Chinese-only freeze
+final_chinese_regenie	modal_variant_n	5592	participants	Project3/results/summary_statistics/freeze_manifest.tsv	Modal N in released summary statistics
+final_chinese_regenie	step2_variants	7043723	variants	HELIOS_10k_Chinese_g.log	Variants read by REGENIE
+final_chinese_regenie	regenie_version	4.1	version	CHI_10k_step1.log	Same version in Step 2
+historical_10k_clean_ldsc	munged_snps	829913	variants	10k_clean.log	HapMap3-merged HELIOS summary statistics
+historical_10k_clean_ldsc	mean_chi_square	1.0631	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	HELIOS 10k_clean
+historical_10k_clean_ldsc	lambda_gc	1.0618	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	HELIOS 10k_clean
+historical_10k_clean_ldsc	snp_heritability	0.3048	observed_scale	10k_clean_vs_EDU_KOGES_1kgeas.log	SE 0.0949
+historical_10k_clean_ldsc	snp_heritability_se	0.0949	observed_scale	10k_clean_vs_EDU_KOGES_1kgeas.log	HELIOS 10k_clean
+historical_10k_clean_ldsc	ldsc_intercept	1.0257	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	SE 0.0081
+historical_10k_clean_ldsc	ldsc_intercept_se	0.0081	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	HELIOS 10k_clean
+historical_10k_clean_vs_koges_edu	shared_snps	798235	variants	10k_clean_vs_EDU_KOGES_1kgeas.log	1KG EAS LD scores
+historical_10k_clean_vs_koges_edu	genetic_correlation	-0.0502	rg	10k_clean_vs_EDU_KOGES_1kgeas.log	SE 0.0835
+historical_10k_clean_vs_koges_edu	genetic_correlation_se	0.0835	rg	10k_clean_vs_EDU_KOGES_1kgeas.log	P 0.5476
+historical_10k_clean_vs_koges_edu	genetic_correlation_p	0.5476	p_value	10k_clean_vs_EDU_KOGES_1kgeas.log	Two-sided LDSC test
+historical_10k_clean_vs_koges_edu	genetic_covariance_intercept	-0.004	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	SE 0.0052

@@ -1,0 +1,9 @@
+metric	value
+historical_score_overlap_n	7403
+historical_score_correlation	1
+historical_score_slope_through_origin	1
+historical_score_rmse_after_alignment	8.21161412387e-13
+historical_score_max_absolute_difference	2.02016181561e-12
+normalized_file_score_overlap_n	7403
+normalized_file_score_correlation	1
+normalized_file_score_max_absolute_difference	0

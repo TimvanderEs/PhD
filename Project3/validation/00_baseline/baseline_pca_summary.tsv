@@ -1,0 +1,13 @@
+metric	value
+source_cognitive_sample_n	8299
+deduplicated_covariate_sample_n	7772
+pca_sample_n	7403
+pc1_variance_explained	0.344893705279
+historical_score_overlap_n	7403
+historical_score_correlation	1
+historical_score_slope_through_origin	1
+historical_score_rmse_after_alignment	8.21161412387e-13
+historical_score_max_absolute_difference	2.02016181561e-12
+normalized_file_score_overlap_n	7403
+normalized_file_score_correlation	1
+normalized_file_score_max_absolute_difference	0

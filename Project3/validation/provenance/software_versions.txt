@@ -1,0 +1,7 @@
+phase1_validation_script	2bda5194af53bf9784d3c329b7d3a0c00d485e56631ef9379b0d25a7a5c37036
+python	3.12.14
+numpy	2.3.5
+pandas	2.2.3
+pillow	12.3.0
+regenie	4.1 (archived log)
+ldsc	1.0.1 (archived log)

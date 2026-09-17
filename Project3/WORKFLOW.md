@@ -10,6 +10,7 @@ is retained as a separate analysis track.
 | Step | Record |
 |---|---|
 | Cognitive factor | Reproduced from the historical script and saved score for 7,403 participants |
+| Cognitive validation | Measurement summaries, 1,000 bootstrap PCAs, leave-one-task-out and ancestry-specific checks |
 | Genotype QC | Portable ancestry-specific PLINK workflow for Chinese, Indian and Malay participants |
 | Ancestry-specific GWAS | REGENIE v4.1 commands and recovered Step 2 run records |
 | Trans-ancestry meta-analysis | METAL inverse-variance model and the exact post-analysis filters |
@@ -76,8 +77,7 @@ The completed Step 2 log from the same date records:
 The Step 1 and Step 2 logs use the same 25 covariate columns and report
 covariate data for 6,353 participants.
 
-The modal variant-level sample size was 5,592. The corresponding post-QC LDSC
-input had mean chi-square 1.063.
+The modal variant-level sample size was 5,592.
 
 ## Chinese-only summary-statistic freeze
 
@@ -96,7 +96,7 @@ listed in [`results/summary_statistics/freeze_manifest.tsv`](results/summary_sta
 
 ## Downstream analyses
 
-The April 2026 `10k_clean` LDSC analysis used an East Asian LD-score reference.
+The separately retained April 2026 `10k_clean` LDSC analysis used an East Asian LD-score reference.
 It reported observed-scale heritability of 0.3048 (SE 0.0949) and genetic
 correlation with East Asian educational attainment of -0.0502 (SE 0.0835,
 P=0.5476).

@@ -21,6 +21,8 @@ analyses and their trans-ancestry meta-analysis.
   trans-ancestry and Chinese-only summary statistics.
 - [`provenance`](provenance): run records, software versions and source-file
   checksums.
+- [`validation`](validation): Phase 1 reproduction, measurement checks and PCA
+  sensitivity analyses.
 
 The retained analysis is described in [`WORKFLOW.md`](WORKFLOW.md).
 

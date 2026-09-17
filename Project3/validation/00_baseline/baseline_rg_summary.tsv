@@ -1,0 +1,6 @@
+analysis	metric	value	unit	source_record	note
+historical_10k_clean_vs_koges_edu	shared_snps	798235	variants	10k_clean_vs_EDU_KOGES_1kgeas.log	1KG EAS LD scores
+historical_10k_clean_vs_koges_edu	genetic_correlation	-0.0502	rg	10k_clean_vs_EDU_KOGES_1kgeas.log	SE 0.0835
+historical_10k_clean_vs_koges_edu	genetic_correlation_se	0.0835	rg	10k_clean_vs_EDU_KOGES_1kgeas.log	P 0.5476
+historical_10k_clean_vs_koges_edu	genetic_correlation_p	0.5476	p_value	10k_clean_vs_EDU_KOGES_1kgeas.log	Two-sided LDSC test
+historical_10k_clean_vs_koges_edu	genetic_covariance_intercept	-0.004	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	SE 0.0052
