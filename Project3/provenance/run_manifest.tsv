@@ -1,5 +1,6 @@
 analysis	date	status	evidence	result
 HELIOS cognition validation Phase 1	2026-09-17	Completed	Exact PCA reproduction, task summaries and 1000 bootstrap replicates	Historical score reproduced; speed-heavy loading structure stable
+HELIOS 12k and combined 22k validation	2026-09-17	Completed	Exact residual and PCA reproduction, raw task summaries, 1000 bootstrap replicates and archived GWAS/LDSC logs	N=13774 archived 12k; N=22422 combined PCA; speed-heavy structure stable across ancestry and freeze
 10k six-task cognitive PCA	2025	Reproduced	Historical script, input extracts and saved score	N=7403; PC1 explained 34.489% of variance
 10k ancestry-specific genotype QC	2025	Documented	Historical PLINK commands and retained Chinese, Indian and Malay prefixes	Portable QC script with the recovered thresholds
 10k Chinese, Indian and Malay REGENIE Step 2	2025-09 to 2025-10	Completed	REGENIE v4.1 ancestry-specific logs	Completed ancestry-specific association tests for the recovered 10k phenotype iterations

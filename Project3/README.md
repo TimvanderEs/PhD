@@ -21,21 +21,21 @@ analyses and their trans-ancestry meta-analysis.
   trans-ancestry and Chinese-only summary statistics.
 - [`provenance`](provenance): run records, software versions and source-file
   checksums.
-- [`validation`](validation): Phase 1 reproduction, measurement checks and PCA
-  sensitivity analyses.
+- [`validation`](validation): 10k and expanded 22k phenotype reproduction,
+  measurement checks and PCA sensitivity analyses.
 
 The retained analysis is described in [`WORKFLOW.md`](WORKFLOW.md).
 
 ## Analysis scope
 
-The repository separates two 10k analysis tracks:
+The repository separates the following analysis tracks:
 
 1. the Chinese–Indian–Malay GWAS and trans-ancestry meta-analysis central to
    Project 3; and
 2. the refined Chinese-only freeze subsequently used in the downstream
-   Project 2 analyses.
-
-The 22k analyses are outside the scope of this release.
+   Project 2 analyses; and
+3. the 12k extension and combined 22k phenotype/GWAS validation, retained in
+   [`validation/22k`](validation/22k).
 
 ## Data availability
 

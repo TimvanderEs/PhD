@@ -1,0 +1,8 @@
+metric	value
+pca_sample_n	13774
+saved_score_overlap_n	13774
+pc1_variance_explained	0.389341391055
+saved_score_correlation	1
+saved_score_rmse	2.65087041668e-15
+saved_score_max_absolute_difference	9.23705556488e-14
+loading_congruence_with_combined_22k	0.999643358573

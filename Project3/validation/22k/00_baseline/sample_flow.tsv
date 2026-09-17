@@ -1,0 +1,6 @@
+stage	n	definition
+raw_cognitive_source	49452	Rows in the source task table before cohort restriction
+retained_analysis_table	22479	Rows with assembled phenotype/covariate data
+complete_residualisation_model	22422	Rows retained after complete model covariates
+recorded_ancestry_and_freeze	21565	PCA rows with recorded ancestry/freeze labels
+ancestry_specific_gwas	21518	Sum of participants used in the three REGENIE analyses

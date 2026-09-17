@@ -1,0 +1,7 @@
+22k_validation_script	88c0dcbd1a153e0cdd8e4b4cb7936191cb2e8397611f37649f0a1befc40c81ff
+python	3.12.14
+numpy	2.3.5
+pandas	2.2.3
+pillow	12.3.0
+regenie	4.1 (archived logs)
+ldsc	GenomicSEM/cov-LDSC archived log

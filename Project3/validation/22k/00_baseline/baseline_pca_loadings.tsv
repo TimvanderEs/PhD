@@ -1,0 +1,7 @@
+task	source_column	higher_performance_multiplier	loading_on_stored_g	correlation_with_stored_g	loading_higher_performance	correlation_higher_performance
+Reaction time	DC7R6_React_Avg	-1	0.438610852267	0.653829252114	0.438610852267	0.653829252114
+Stroop box	DC7R8_Stroopbox_Avg	-1	0.551188815514	0.821647182595	0.551188815514	0.821647182595
+Stroop ink	DC7R10_Stroopink_Avg	-1	0.486311388677	0.724935577653	0.486311388677	0.724935577653
+Quiz score	DC7R5_Quiz_Score	1	-0.32250237983	-0.480748455537	0.32250237983	0.480748455537
+Working memory	DC7R12_Wm_Score	1	-0.313958957464	-0.468012930579	0.313958957464	0.468012930579
+Pairing guesses	DC7R4_Pairing7_Guesses	-1	0.254430012381	0.3792742105	0.254430012381	0.3792742105

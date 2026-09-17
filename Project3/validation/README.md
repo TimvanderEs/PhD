@@ -1,8 +1,8 @@
-# HELIOS 10k cognition validation
+# HELIOS cognition validation
 
-This directory contains sensitivity checks for the six-task cognitive phenotype. The historical phenotype and GWAS remain unchanged.
+This directory contains sensitivity checks for the six-task cognitive phenotype. The historical phenotypes and GWAS outputs remain unchanged.
 
-Phase 1 covers:
+The original 10k validation covers:
 
 - exact reproduction of the historical PCA;
 - task-level measurement summaries;
@@ -26,3 +26,5 @@ Project3/validation/run_phase1.sh \
 ```
 
 The aggregate results and figures are version-controlled. Participant scores are neither written nor committed. See [phase1_summary.md](phase1_summary.md) for the findings.
+
+The expanded-cohort validation is in [`22k`](22k). It reproduces the archived 12k extension score and the current combined 22k residualisation/PCA, then repeats the measurement and PCA-structure checks in the larger sample. See [`22k/22k_summary.md`](22k/22k_summary.md) for the findings.

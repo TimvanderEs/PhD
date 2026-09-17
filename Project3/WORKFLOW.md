@@ -1,9 +1,10 @@
-# HELIOS 10k cognitive GWAS workflow
+# HELIOS cognitive GWAS workflow
 
-This repository documents the 10k HELIOS cognitive GWAS. Its main analysis is
-the ancestry-stratified GWAS in Chinese, Indian and Malay participants followed
-by trans-ancestry meta-analysis. A later Chinese-only freeze, used in Project 2,
-is retained as a separate analysis track.
+This repository documents the HELIOS cognitive GWAS. Its main analysis is the
+ancestry-stratified GWAS in Chinese, Indian and Malay participants followed by
+trans-ancestry meta-analysis. The original 10k analysis, expanded 22k
+validation and a later Chinese-only freeze used in Project 2 are kept as
+separate analysis records.
 
 ## Workflow
 
@@ -11,6 +12,7 @@ is retained as a separate analysis track.
 |---|---|
 | Cognitive factor | Reproduced from the historical script and saved score for 7,403 participants |
 | Cognitive validation | Measurement summaries, 1,000 bootstrap PCAs, leave-one-task-out and ancestry-specific checks |
+| Expanded-cohort validation | Exact 12k and combined 22k PCA checks, residual reconstruction, measurement and structural sensitivity analyses |
 | Genotype QC | Portable ancestry-specific PLINK workflow for Chinese, Indian and Malay participants |
 | Ancestry-specific GWAS | REGENIE v4.1 commands and recovered Step 2 run records |
 | Trans-ancestry meta-analysis | METAL inverse-variance model and the exact post-analysis filters |
@@ -31,6 +33,31 @@ The stored score has negative coefficients for the direction-aligned tasks, so
 higher stored `g` values indicate poorer performance. This is an arbitrary PCA
 sign. The aggregate tables also provide the sign-equivalent
 higher-performance orientation for presentation.
+
+## Expanded 22k validation
+
+The archived 12k extension PCA was reproduced in 13,774 participants. The
+combined phenotype residualisation and PCA were reproduced in 22,422
+participants; PC1 explained 37.04% of variance. All validation outputs use the
+sign-equivalent orientation in which higher values indicate better cognitive
+performance.
+
+The retained task residualisation model included age, sex, age squared,
+age-by-sex terms, ancestry indicators and education as a categorical
+covariate. Omitting education preserved the PC1 loading pattern (Tucker
+congruence 0.9999), although the resulting participant scores correlated
+r=0.981 with the retained score. The genetic effect of this choice requires a
+GWAS sensitivity analysis using the no-education phenotype.
+
+The three latency indicators remained the strongest PC1 contributors in 1,000
+bootstrap replicates. Loadings were consistent across Chinese, Indian and
+Malay participants and across the HELIOS10K and HELIOS20K freezes. The
+four-indicator PCA with one collapsed speed domain correlated r=0.931 with the
+six-task PC1. Full results are in [`validation/22k`](validation/22k).
+
+The ancestry-specific expanded GWAS used 17,966 Chinese, 2,310 Indian and
+1,242 Malay participants. Its LDSC record reported h2=0.0392 (SE 0.0202),
+intercept=1.0008 (SE 0.0058), mean chi-square=1.0175 and lambda GC=1.0245.
 
 ## Trans-ancestry association analysis
 

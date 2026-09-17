@@ -1,0 +1,5 @@
+ancestry	regenie_version	genotype_variants	genotype_samples	phenotyped_no_missing	covariate_records	analysis_n	minimum_mac	source_log	sha256
+Chinese	4.1	7043723	33392	17966	17991	17966	0.5	HELIOS_22k_COG_Chinese_QCrem_miss02_maf005_hwe1e06.log	72aa9764d56d9263a70b2d3198cd6a7c62c6de66ce4d11953024938d0c3da31f
+Indian	4.1	8387428	7449	2310	2320	2310	0.5	HELIOS_22k_COG_Indian_QCrem_miss02_maf005_hwe1e06.log	e620f041cba889160d3f0bad8dc8a12c9be41dd99ec1e7480a8b8a80abdf5dba
+Malay	4.1	7660514	5666	1242	1244	1242	0.5	HELIOS_22k_COG_Malay_QCrem_miss02_maf005_hwe1e06.log	d5d21f4f2eb6fccf714957de3d06349d46a0d9fe8594f927faef4d591468c191
+Total	4.1	NA	NA	21518	21555	21518	0.5	three ancestry-specific logs	see ancestry rows
