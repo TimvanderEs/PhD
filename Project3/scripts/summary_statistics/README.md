@@ -7,8 +7,10 @@
   rsIDs and build 37 positions using a project-specific Rosetta table. The copy
   here is byte-identical to the executed local and EC2 copies.
 
-The Rosetta table and raw association results are controlled analysis inputs
-and are not distributed in this repository.
+The final build-37 freeze and downstream exports are fingerprinted in
+[`../../results/summary_statistics/freeze_manifest.tsv`](../../results/summary_statistics/freeze_manifest.tsv).
+The Rosetta table and full summary statistics are not distributed in this code
+repository.
 
 ```bash
 ./convert_regenie_to_ldsc.sh input.regenie output.sumstats.tsv.gz

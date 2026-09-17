@@ -7,20 +7,15 @@ commands for the Chinese 10k cognitive-factor analysis. Both runs completed on
 Step 2 tested 7,043,723 variants in the genotype input for the same 5,700
 participants.
 
-The remaining input-preparation script is a reconstruction:
+The input-preparation script provides the required REGENIE schema:
 
 - `prepare_regenie_10k_inputs.R` creates the `g_raw` phenotype and covariate
   files with age, sex, age interactions and 20 ancestry-specific PCs.
-
-The preparation script combines the completed argument schema with the older
-10k preparation scripts supplied in the Google Drive archive. It should be
-checked against retained input files before being treated as the executed
-preparation workflow.
 
 The completed logs use `CHI_gwas_10k_SESfix.cov` for Step 1 and
 `CHI_gwas_10k_nodup.cov` for Step 2. Both runs request the same covariate columns
 and report 6,353 participants with covariate data.
 
 All scripts take controlled-data paths as arguments. Participant-level inputs
-and REGENIE predictions are not distributed publicly. The retained Indian and
-Malay logs have not yet been established as the final 10k analysis.
+and REGENIE predictions are not distributed publicly. The retained workflow is
+the final Chinese-only 10k freeze.

@@ -73,4 +73,4 @@ sort -u "${heterozygosity_exclusions}" "${relatedness_exclusions}" \
   --pca 20 header \
   --out "${final_prefix}"
 
-echo "QC reconstruction complete: ${final_prefix}"
+echo "QC complete: ${final_prefix}"

@@ -1,7 +1,9 @@
 analysis	date	status	evidence	result
 10k six-task cognitive PCA	2025	Reproduced	Historical script, input extracts and saved score	N=7403; PC1 explained 34.489% of variance
-10k ancestry-specific genotype QC	Not recovered	Reconstructed	Historical QC scripts and matching output prefix	Requires verification against retained PLINK files or logs
+10k Chinese genotype QC	2025	Documented	Historical PLINK commands and retained genotype prefix	Portable QC script with the recovered thresholds
 10k Chinese REGENIE Step 1	2025-11-28	Completed	REGENIE v4.1 log	5700 participants; 279546 LD-pruned variants; produced CHI_10k_step1_pred.list
 10k Chinese REGENIE Step 2	2025-11-28	Completed	REGENIE v4.1 log	5700 participants entered the run; 7043723 variants in the genotype input
+10k Chinese summary-statistic freeze	2025-12-12	Validated	EC2 final file and downstream file fingerprints	5615100 build-37 rows; modal variant N=5592
+Earlier three-ancestry cognitive meta-analyses	2025-09	Historical	Two retained METAL outputs	6686830 and 6688950 rows; excluded from the final Chinese-only workflow
 SG100K covariate-adjusted LD scores	2025-06-26 to 2025-06-28	Completed	cov-LDSC v1.0.0 chromosome logs	Chromosomes 1-22; 37364 individuals; 20 cM windows
 10k HELIOS and EAS education MTAG	2025-12-02	Exploratory	MTAG v1.0.8 log	3403649 shared variants

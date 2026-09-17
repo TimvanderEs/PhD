@@ -1,7 +1,8 @@
 # Provenance
 
-`run_manifest.tsv` distinguishes completed, reproduced, historical and
-exploratory analyses. `source_files.tsv` records checksums for the local source
-material used in the audit; those working files are not copied into the public
-repository. `software_versions.tsv` contains versions recoverable from logs or
-archived job settings.
+`run_manifest.tsv` records the retained and historical analyses.
+`source_files.tsv` records checksums for source material used to reconstruct
+the public scripts. `software_versions.tsv` lists versions recovered from logs
+or archived settings. Summary-statistic fingerprints are stored with the
+aggregate results in
+[`freeze_manifest.tsv`](../results/summary_statistics/freeze_manifest.tsv).
