@@ -9,6 +9,13 @@
 - Loading congruence between the archived 12k and combined 22k solutions: **1.000**.
 - The stored 22k score is higher-worse; all validation results reverse it so higher means better performance.
 
+## Genome-wide analysis
+
+- Ancestry-specific REGENIE analyses included **17,966 Chinese**, **2,310 Indian** and **1,242 Malay** participants (total **N = 21,518**).
+- The matching METAL output contained **10,286,285** variants before post-analysis filters and no variant reached P < 5 × 10⁻⁸ (minimum P = **8.17 × 10⁻⁸**).
+- The retained filters left **6,518,064** variants; none reached P < 5 × 10⁻⁸ (minimum P = **6.91 × 10⁻⁷**).
+- LDSC reported h² = **0.0392** (SE **0.0202**), intercept = **1.0008** (SE **0.0058**), mean χ² = **1.0175** and λGC = **1.0245**.
+
 ## Measurement
 
 - All six raw tasks are complete in the combined 22k PCA sample.

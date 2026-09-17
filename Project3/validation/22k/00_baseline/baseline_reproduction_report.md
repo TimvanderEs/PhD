@@ -10,4 +10,6 @@ Removing education from the residualisation model left the loading vector nearly
 
 The stored combined score is oriented so that higher values indicate poorer performance. It is multiplied by -1 in all higher-performance sensitivity outputs. PCA sign was fixed from the task directions before any genetic result was considered.
 
+The matching ancestry-specific REGENIE analyses included 21,518 participants. Their METAL output contained 10,286,285 variants before filtering and 6,518,064 variants after retaining results represented in at least two ancestry groups, with heterogeneity P > 0.05 and maximum allele-frequency difference < 0.5. No variant reached P < 5 × 10⁻⁸ before or after filtering. The corresponding minima were 8.17 × 10⁻⁸ and 6.91 × 10⁻⁷, respectively. Aggregate checks are recorded in `baseline_meta_analysis_qc.tsv`.
+
 Baseline status: **PASS**.

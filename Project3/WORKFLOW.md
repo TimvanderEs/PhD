@@ -58,6 +58,11 @@ six-task PC1. Full results are in [`validation/22k`](validation/22k).
 The ancestry-specific expanded GWAS used 17,966 Chinese, 2,310 Indian and
 1,242 Malay participants. Its LDSC record reported h2=0.0392 (SE 0.0202),
 intercept=1.0008 (SE 0.0058), mean chi-square=1.0175 and lambda GC=1.0245.
+The matching METAL output contained 10,286,285 variants before the retained
+two-ancestry, heterogeneity and allele-frequency filters and 6,518,064 after
+filtering. No variant reached P<5e-8; the minimum P values were 8.17e-8 before
+filtering and 6.91e-7 after filtering. The aggregate record is in
+[`validation/22k/00_baseline/baseline_meta_analysis_qc.tsv`](validation/22k/00_baseline/baseline_meta_analysis_qc.tsv).
 
 ## Trans-ancestry association analysis
 

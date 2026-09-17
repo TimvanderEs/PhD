@@ -1,0 +1,3 @@
+stage	data_rows	minimum_p	top_marker	top_marker_n	genome_wide_significant_rows	maximum_n	filter	source_file	sha256
+raw_METAL	10286285	8.17e-08	chr2:90389726:T:G	17932	0	21518	none	HELIOS_22k__new_cov_COG_HARMED_METAL_g1.sumstats.txt	a63e0e067ccf4a83f4f66e361a3968d3db536d792c948691ce44d020eaa0310d
+retained_METAL	6518064	6.906e-07	chr9:12271492:C:T	21518	0	21518	HetDf >= 1; HetPVal > 0.05; MaxFreq - MinFreq < 0.5	HELIOS_22k__new_cov_COG_HARMED_METAL_g1.sumstats.txt	a63e0e067ccf4a83f4f66e361a3968d3db536d792c948691ce44d020eaa0310d
