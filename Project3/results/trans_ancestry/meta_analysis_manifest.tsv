@@ -1,0 +1,3 @@
+iteration	file	data_rows	maximum_N	Chinese_max_N	Indian_max_N	Malay_max_N	minimum_P	sha256
+later 10k trans-ancestry iteration	HELIOS_COG_All_g_filt2studies_hetp05_AFdiff05.summary.txt	6686830	7789	5621	1329	839	7.543e-08	572945b037b67b431e75299f93065e5cfe5f03a9fef38c50f7eea944b94a83c1
+earlier 10k trans-ancestry iteration	HELIOS_OLD_COG_filt2studies_hetp05_AFdiff05.summary.txt	6688950	7664	5594	1330	740	1.962e-07	42b53bbfe1255f243bb4552db91609ed7f99c9a38e40042e6e424df24de62af7

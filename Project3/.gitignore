@@ -16,6 +16,7 @@ working/
 
 # Large or participant-linked analysis outputs
 *.regenie
+HELIOS*_filt2studies_hetp05_AFdiff05.summary.txt*
 g_scores*.txt
 *Phenotype_File*.txt
 *Covariate_File*.txt

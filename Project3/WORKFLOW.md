@@ -1,18 +1,20 @@
 # HELIOS 10k cognitive GWAS workflow
 
-This repository documents the final Chinese 10k GWAS freeze used in the
-downstream Project 2 analyses.
+This repository documents the 10k HELIOS cognitive GWAS. Its main analysis is
+the ancestry-stratified GWAS in Chinese, Indian and Malay participants followed
+by trans-ancestry meta-analysis. A later Chinese-only freeze, used in Project 2,
+is retained as a separate analysis track.
 
 ## Workflow
 
 | Step | Record |
 |---|---|
 | Cognitive factor | Reproduced from the historical script and saved score for 7,403 participants |
-| Genotype QC | Portable version of the recovered PLINK commands and retained output naming |
-| REGENIE Step 1 | Completed REGENIE v4.1 log and recovered command |
-| REGENIE Step 2 | Completed REGENIE v4.1 log and recovered command |
+| Genotype QC | Portable ancestry-specific PLINK workflow for Chinese, Indian and Malay participants |
+| Ancestry-specific GWAS | REGENIE v4.1 commands and recovered Step 2 run records |
+| Trans-ancestry meta-analysis | METAL inverse-variance model and the exact post-analysis filters |
 | Summary-statistic preparation | Recovered build conversion and rsID-mapping scripts |
-| Final freeze | EC2 checksums, row counts and cross-format comparisons |
+| Chinese-only freeze | EC2 checksums, row counts and cross-format comparisons |
 | SG100K LD reference | Recovered scripts and completed chromosome logs |
 
 ## Cognitive phenotype
@@ -20,14 +22,36 @@ downstream Project 2 analyses.
 Six cognitive tasks were directionally aligned, residualised and combined by
 principal-component analysis. The reproduced participant set exactly matches
 the 7,403 IDs in the historical score file. PC1 explained 34.489% of the total
-variance.
+variance. This is one of the 10k phenotype iterations; the retained
+meta-analysis outputs are identified separately by checksum because the
+phenotype was updated during the project.
 
 The stored score has negative coefficients for the direction-aligned tasks, so
 higher stored `g` values indicate poorer performance. This is an arbitrary PCA
 sign. The aggregate tables also provide the sign-equivalent
 higher-performance orientation for presentation.
 
-## Chinese association test
+## Trans-ancestry association analysis
+
+GWAS was run separately in the Chinese, Indian and Malay ancestry groups using
+REGENIE v4.1. The recovered 10k Step 2 records use the ancestry-specific
+genotype data, a precomputed `g` phenotype, 20 ancestry-specific principal
+components, block size 200 and minimum MAC 0.5. The genotype inputs contained
+7,043,723 Chinese, 8,387,428 Indian and 7,660,514 Malay variants.
+
+The three association results were combined with METAL using the standard-error
+scheme. The retained variants were present in at least two ancestry groups, had
+heterogeneity P > 0.05 and had a maximum between-ancestry allele-frequency
+difference < 0.5. The executable workflow is in
+[`scripts/meta_analysis`](scripts/meta_analysis).
+
+Two 10k trans-ancestry iterations were recovered and validated. The later file
+contains 6,686,830 variants and reaches a maximum combined N of 7,789; the
+earlier file contains 6,688,950 variants and reaches N = 7,664. Their
+fingerprints and ancestry-specific maximum sample sizes are listed in
+[`results/trans_ancestry/meta_analysis_manifest.tsv`](results/trans_ancestry/meta_analysis_manifest.tsv).
+
+## Refined Chinese-only association test
 
 The completed 28 November 2025 REGENIE v4.1 Step 1 log records 5,700
 participants and 279,546 LD-pruned variants. It produced the
@@ -55,7 +79,7 @@ covariate data for 6,353 participants.
 The modal variant-level sample size was 5,592. The corresponding post-QC LDSC
 input had mean chi-square 1.063.
 
-## Summary-statistic freeze
+## Chinese-only summary-statistic freeze
 
 The retained build-37 Chinese summary-statistic file,
 `HELIOS_10k_lifted_clean_with_stats_FINAL.txt.gz`, contains 5,615,100 rows. All
@@ -69,11 +93,6 @@ The LAVA and MiXeR exports have identical normalized chromosome, position,
 allele, Z and N fields. The 4,867,848-row MTAG and PLEIO exports likewise have
 identical normalized rsID, allele, Z and N fields. Exact file fingerprints are
 listed in [`results/summary_statistics/freeze_manifest.tsv`](results/summary_statistics/freeze_manifest.tsv).
-
-Two earlier Chinese–Indian–Malay METAL outputs were also checked. They contain
-6,686,830 and 6,688,950 variants, with maximum sample sizes of 7,789 and 7,664.
-These are historical analyses of earlier cognitive-phenotype versions and are
-not inputs to the retained Chinese-only freeze.
 
 ## Downstream analyses
 
