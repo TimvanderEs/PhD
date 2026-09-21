@@ -1,41 +1,54 @@
 # Project 3: HELIOS cognitive GWAS
 
-Code and aggregate reproducibility material for the HELIOS 10k cognitive
-GWAS. The project includes the Chinese, Indian and Malay ancestry-specific
-analyses and their trans-ancestry meta-analysis.
+> **WCPG 2026:** [poster results, methods, QC and references](WCPG_2026.md)
 
-## Contents
+This repository documents cognitive GWAS in Chinese, Indian and Malay HELIOS
+participants and their trans-ancestry meta-analysis. It preserves the
+historical 10k analysis, the expanded 22k analysis presented at WCPG 2026 and
+a later refined Chinese-only freeze used in downstream work.
 
-- [`scripts/phenotype`](scripts/phenotype): construction of the six-task
-  cognitive factor.
-- [`scripts/qc`](scripts/qc): ancestry-specific genotype quality control.
-- [`scripts/gwas`](scripts/gwas): REGENIE input preparation and
-  ancestry-specific association tests.
-- [`scripts/meta_analysis`](scripts/meta_analysis): inverse-variance-weighted
-  METAL analysis and post-meta-analysis filters.
-- [`scripts/summary_statistics`](scripts/summary_statistics): conversion and
-  build/identifier mapping of association results.
-- [`scripts/ld_reference`](scripts/ld_reference): preparation of the SG100K
-  covariates and covariate-adjusted LD scores.
-- [`results`](results): aggregate phenotype results and manifests for the
-  trans-ancestry and Chinese-only summary statistics.
-- [`provenance`](provenance): run records, software versions and source-file
-  checksums.
-- [`validation`](validation): 10k and expanded 22k phenotype reproduction,
-  measurement checks and PCA sensitivity analyses.
+## WCPG 2026 analysis
 
-The retained analysis is described in [`WORKFLOW.md`](WORKFLOW.md).
+| Metric | Result |
+|---|---:|
+| Cognitive PCA sample | 22,422 |
+| PC1 variance explained | 37.04% |
+| Chinese GWAS | 17,966 |
+| Indian GWAS | 2,310 |
+| Malay GWAS | 1,242 |
+| Total GWAS sample | 21,518 |
+| Retained METAL variants | 6,518,064 |
+| Genome-wide significant variants | 0 |
+| Minimum retained P | 6.906 × 10⁻⁷ |
 
-## Analysis scope
+The PCA loadings shown on the poster use the orientation in which higher scores
+indicate better performance. The archived score has the opposite, sign-equivalent
+orientation.
 
-The repository separates the following analysis tracks:
+The trans-ancestry analysis is a fixed-effect inverse-variance METAL analysis
+of the three ancestry-specific GWASs. It targets shared effects and does not
+model ancestry-heterogeneous effects explicitly. See the
+[expanded 22k summary](validation/22k/22k_summary.md).
 
-1. the Chinese–Indian–Malay GWAS and trans-ancestry meta-analysis central to
-   Project 3; and
-2. the refined Chinese-only freeze subsequently used in the downstream
-   Project 2 analyses; and
-3. the 12k extension and combined 22k phenotype/GWAS validation, retained in
-   [`validation/22k`](validation/22k).
+## Analysis records
+
+- [Expanded 22k phenotype validation and GWAS](validation/22k/README.md), the
+  analysis presented at WCPG 2026
+- [Historical 10k phenotype and trans-ancestry workflow](WORKFLOW.md)
+- [Refined Chinese-only summary-statistic freeze](results/summary_statistics/freeze_manifest.tsv)
+- [Cross-freeze genetic-signal audit](validation/22k/03_genetic_signal/genetic_signal_audit.md)
+
+## Code and documentation
+
+- [Phenotype construction](scripts/phenotype)
+- [Ancestry-specific genotype QC](scripts/qc)
+- [Historical 10k GWAS](scripts/gwas)
+- [Expanded 22k GWAS](scripts/gwas_22k)
+- [METAL meta-analysis](scripts/meta_analysis)
+- [Summary-statistic preparation](scripts/summary_statistics)
+- [SG100K covariate-adjusted LD reference](scripts/ld_reference)
+- [Software and cohort references](REFERENCES.md)
+- [Full workflow](WORKFLOW.md)
 
 ## Data availability
 
@@ -44,3 +57,9 @@ repository. Access is subject to the relevant cohort consent, data-access and
 institutional governance procedures. The public repository contains code,
 small aggregate results and provenance only. Summary-statistic access and
 release are handled separately under the relevant study approvals.
+
+## Citation
+
+The publication release will be archived with a DOI. Until then, cite the
+repository commit used for the analysis. Code is released under the
+[MIT License](../LICENSE).

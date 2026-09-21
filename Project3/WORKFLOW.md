@@ -2,9 +2,9 @@
 
 This repository documents the HELIOS cognitive GWAS. Its main analysis is the
 ancestry-stratified GWAS in Chinese, Indian and Malay participants followed by
-trans-ancestry meta-analysis. The original 10k analysis, expanded 22k
-validation and a later Chinese-only freeze used in Project 2 are kept as
-separate analysis records.
+trans-ancestry meta-analysis. The expanded 22k phenotype and GWAS analysis is
+the analysis presented at WCPG 2026. The original 10k analysis and a later
+Chinese-only freeze used in Project 2 remain separate records.
 
 ## Workflow
 
@@ -12,7 +12,7 @@ separate analysis records.
 |---|---|
 | Cognitive factor | Reproduced from the historical script and saved score for 7,403 participants |
 | Cognitive validation | Measurement summaries, 1,000 bootstrap PCAs, leave-one-task-out and ancestry-specific checks |
-| Expanded-cohort validation | Exact 12k and combined 22k PCA checks, residual reconstruction, measurement and structural sensitivity analyses |
+| Expanded 22k phenotype and GWAS | Exact 12k and combined 22k PCA checks, residual reconstruction, measurement checks and ancestry-specific association results |
 | Genotype QC | Portable ancestry-specific PLINK workflow for Chinese, Indian and Malay participants |
 | Ancestry-specific GWAS | REGENIE v4.1 commands and recovered Step 2 run records |
 | Trans-ancestry meta-analysis | METAL inverse-variance model and the exact post-analysis filters |
@@ -34,7 +34,7 @@ higher stored `g` values indicate poorer performance. This is an arbitrary PCA
 sign. The aggregate tables also provide the sign-equivalent
 higher-performance orientation for presentation.
 
-## Expanded 22k validation
+## Expanded 22k phenotype validation and GWAS
 
 The archived 12k extension PCA was reproduced in 13,774 participants. The
 combined phenotype residualisation and PCA were reproduced in 22,422
@@ -56,13 +56,23 @@ four-indicator PCA with one collapsed speed domain correlated r=0.931 with the
 six-task PC1. Full results are in [`validation/22k`](validation/22k).
 
 The ancestry-specific expanded GWAS used 17,966 Chinese, 2,310 Indian and
-1,242 Malay participants. Its LDSC record reported h2=0.0392 (SE 0.0202),
-intercept=1.0008 (SE 0.0058), mean chi-square=1.0175 and lambda GC=1.0245.
+1,242 Malay participants. The archived value reported on the WCPG poster was
+h2=0.0392 (SE 0.0202), intercept=1.0008 (SE 0.0058), mean chi-square=1.0175
+and lambda GC=1.0245. Its log does not identify the LD-score path. A later
+checksum-linked rerun using the frozen SG100K 20 cM cov-LDSC reference reported
+h2=0.0394 (SE 0.0188), intercept=1.0006 (SE 0.0061), mean chi-square=1.0158
+and lambda GC=1.0177.
 The matching METAL output contained 10,286,285 variants before the retained
 two-ancestry, heterogeneity and allele-frequency filters and 6,518,064 after
 filtering. No variant reached P<5e-8; the minimum P values were 8.17e-8 before
 filtering and 6.91e-7 after filtering. The aggregate record is in
 [`validation/22k/00_baseline/baseline_meta_analysis_qc.tsv`](validation/22k/00_baseline/baseline_meta_analysis_qc.tsv).
+
+The 12k extension had no detectable cov-LDSC signal. The combined 22k summary
+statistics closely matched an N-weighted reconstruction from the retained 10k
+and 12k components, ruling out a global effect-direction error. The matched
+cross-freeze results are in
+[`validation/22k/03_genetic_signal`](validation/22k/03_genetic_signal).
 
 ## Trans-ancestry association analysis
 
@@ -77,6 +87,11 @@ scheme. The retained variants were present in at least two ancestry groups, had
 heterogeneity P > 0.05 and had a maximum between-ancestry allele-frequency
 difference < 0.5. The executable workflow is in
 [`scripts/meta_analysis`](scripts/meta_analysis).
+
+The term trans-ancestry meta-analysis refers here to a fixed-effect
+inverse-variance combination of the ancestry-specific GWASs. It targets shared
+effects and should not be interpreted as an explicit model of
+ancestry-heterogeneous effects.
 
 Two 10k trans-ancestry iterations were recovered and validated. The later file
 contains 6,686,830 variants and reaches a maximum combined N of 7,789; the
@@ -129,9 +144,16 @@ listed in [`results/summary_statistics/freeze_manifest.tsv`](results/summary_sta
 ## Downstream analyses
 
 The separately retained April 2026 `10k_clean` LDSC analysis used an East Asian LD-score reference.
-It reported observed-scale heritability of 0.3048 (SE 0.0949) and genetic
+It is a later refined Chinese-only analysis, rather than the 10k
+trans-ancestry baseline of the expanded-cohort series. It reported
+observed-scale heritability of 0.3048 (SE 0.0949) and genetic
 correlation with East Asian educational attainment of -0.0502 (SE 0.0835,
 P=0.5476).
+
+The 10k and 22k heritability estimates arise from distinct analysis iterations.
+Direct comparison requires matched phenotype definition, SNP set, ancestry
+composition and LD-score reference; they should not be interpreted as a clean
+sample-size scaling experiment.
 
 The successful MTAG v1.0.8 run completed on 2 December 2025 and combined the
 10k HELIOS result with East Asian educational attainment. It retained

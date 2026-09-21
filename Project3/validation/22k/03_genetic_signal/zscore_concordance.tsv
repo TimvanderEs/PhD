@@ -1,0 +1,12 @@
+variant_rule	comparison	n_shared	pearson_r	slope_y_on_x	rmse	sign_concordance
+reference_overlap_and_maf_ge_0.01	10k_trans_ancestry_vs_12k_extension	1705459	0.013290	0.013204	1.405709	0.503406
+reference_overlap_and_maf_ge_0.01	10k_trans_ancestry_vs_22k_combined	1705586	0.505347	0.507339	1.000498	0.669759
+reference_overlap_and_maf_ge_0.01	12k_extension_vs_22k_combined	1946208	0.788819	0.796710	0.651368	0.789506
+reference_overlap_and_maf_ge_0.01	22k_observed_vs_N_weighted_components_as_recorded	1705457	0.936704	0.938341	0.358278	0.885930
+reference_overlap_and_maf_ge_0.01	22k_observed_vs_N_weighted_components_with_12k_reversed	1705457	-0.321252	-0.325962	1.626506	0.396888
+at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.50	22k_observed_vs_N_weighted_components_as_recorded	1576000	0.937703	0.939036	0.355131	0.886794
+at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.50	22k_observed_vs_N_weighted_components_with_12k_reversed	1576000	-0.322569	-0.328156	1.623551	0.396180
+at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.05	22k_observed_vs_N_weighted_components_as_recorded	240798	0.931882	0.932134	0.369270	0.882399
+at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.05	22k_observed_vs_N_weighted_components_with_12k_reversed	240798	-0.307821	-0.310257	1.611904	0.401602
+reference_overlap_and_maf_ge_0.01	10k_refined_Chinese_vs_10k_trans_ancestry	1598428	0.800525	0.798582	0.635620	0.795269
+reference_overlap_and_maf_ge_0.01	10k_refined_Chinese_vs_22k_combined	1695085	0.426855	0.417993	1.093002	0.642052

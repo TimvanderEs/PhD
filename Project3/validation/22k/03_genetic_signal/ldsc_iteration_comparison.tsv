@@ -1,0 +1,15 @@
+analysis	variant_rule	intercept_model	n_variants	h2_observed	h2_se	mean_chi_square	lambda_gc	intercept	intercept_se
+10k_trans_ancestry	reference_overlap_and_maf_ge_0.01	free	1705612	0.2023	0.0530	1.0078	1.0135	0.9751	0.0056
+12k_extension	reference_overlap_and_maf_ge_0.01	free	1946794	-0.0036	0.0276	0.9948	0.9931	0.9969	0.0051
+22k_combined	reference_overlap_and_maf_ge_0.01	free	1949236	0.0394	0.0188	1.0158	1.0177	1.0006	0.0061
+10k_trans_ancestry	reference_overlap_and_maf_ge_0.01	fixed_at_1	1705612	0.0541	0.0407	1.0078	1.0135	1	NA
+12k_extension	reference_overlap_and_maf_ge_0.01	fixed_at_1	1946794	-0.0124	0.0225	0.9943	0.9955	1	NA
+22k_combined	reference_overlap_and_maf_ge_0.01	fixed_at_1	1949236	0.0432	0.0150	1.0144	1.0165	1	NA
+10k_trans_ancestry	at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.50	free	1705612	0.1983	0.0532	1.0067	1.0122	0.9745	0.0058
+12k_extension	at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.50	free	1711432	-0.0079	0.0284	0.9943	0.9925	0.9976	0.0052
+22k_combined	at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.50	free	1705202	0.0380	0.0193	1.0164	1.0177	1.0018	0.0060
+10k_trans_ancestry	at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.05	free	314215	0.2786	0.1068	1.0021	1.0169	0.9683	0.0081
+12k_extension	at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.05	free	311049	-0.0153	0.0549	0.9923	0.9945	0.9941	0.0093
+22k_combined	at_least_2_ancestries_het_p_gt_0.05_afdiff_lt_0.05	free	314616	0.0520	0.0372	1.0049	1.0165	0.9919	0.0084
+10k_refined_Chinese	reference_overlap_and_maf_ge_0.01	free	1695121	0.2672	0.0911	1.0639	1.0634	1.0311	0.0069
+10k_refined_Chinese	reference_overlap_and_maf_ge_0.01	fixed_at_1	1695121	0.5433	0.0682	1.0639	1.0634	1	NA

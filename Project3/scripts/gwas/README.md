@@ -1,5 +1,15 @@
 # Ancestry-specific GWAS
 
+## Expanded 22k analysis
+
+The analysis presented at WCPG 2026 used ancestry-specific REGENIE 4.1 Step 2
+runs in 17,966 Chinese, 2,310 Indian and 1,242 Malay participants. The exact
+Step 2 options recovered from the three archived logs are represented in
+[`scripts/gwas_22k`](../gwas_22k). The original prediction lists were not
+retained with immutable Step 1 lineage.
+
+## Historical 10k analysis
+
 The Project 3 discovery analysis ran REGENIE separately in Chinese, Indian and
 Malay participants before meta-analysis. The recovered 10k Step 2 records use a
 precomputed `g` phenotype, ancestry-specific PC covariate files, block size 200
@@ -10,7 +20,7 @@ The genotype inputs recorded in the logs contain 7,043,723 Chinese, 8,387,428
 Indian and 7,660,514 Malay variants. Full genotype, phenotype, covariate and
 LOCO prediction files remain controlled.
 
-## Refined Chinese-only freeze
+## Later refined Chinese-only freeze
 
 `run_regenie_step1_10k_chinese.sh` and
 `run_regenie_step2_10k_chinese.sh` reproduce the completed REGENIE v4.1

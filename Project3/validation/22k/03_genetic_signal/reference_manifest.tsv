@@ -1,0 +1,3 @@
+item	file	count	sha256	note
+reference_checksum_manifest	CHECKSUMS.txt	68	e179de869a97d4f628868491a0d9c738912a65b9259ccc426af5b95816449d13	Checksums for the frozen chromosome 1-22 LD-score files and allele lists
+alignment_allele_list	ldscore_merge_alleles.clean.txt	2276646	0d9d808c63acb86deddd7fa9ec47cf97685a58a4a98b35d98494c2aa3c1880c0	Non-header variants used for summary-statistic alignment

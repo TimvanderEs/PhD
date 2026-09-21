@@ -2,6 +2,8 @@
 
 [![Reproducibility checks](https://github.com/TimvanderEs/PhD/actions/workflows/project2-reproducibility.yml/badge.svg)](https://github.com/TimvanderEs/PhD/actions/workflows/project2-reproducibility.yml)
 
+> **WCPG 2026:** [poster results and code guide](WCPG_2026.md)
+
 Code and non-sensitive results for analyses of genetic overlap between major
 depression, schizophrenia, educational attainment and cognitive function in
 European- and East Asian-ancestry data.

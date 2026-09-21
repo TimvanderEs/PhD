@@ -1,0 +1,4 @@
+analysis	Chinese_n	Indian_n	Malay_n	total_n	source
+10k_trans_ancestry	5621	1329	839	7789	retained_METAL_iteration
+12k_extension	12363	985	403	13751	ancestry_specific_REGENIE_logs
+22k_combined	17966	2310	1242	21518	ancestry_specific_REGENIE_logs

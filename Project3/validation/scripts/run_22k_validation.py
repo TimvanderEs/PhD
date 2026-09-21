@@ -779,17 +779,18 @@ def provenance_outputs(args: argparse.Namespace, root: Path) -> None:
         if not path.exists():
             raise FileNotFoundError(path)
         digest = sha256(path)
+        display_name = "HELIOS_cognition_validation_plan.md" if item == "validation_plan" else path.name
         rows.append(
             {
                 "item": item,
-                "file": path.name,
+                "file": display_name,
                 "role": role,
                 "bytes": path.stat().st_size,
                 "sha256": digest,
                 "status": "verified",
             }
         )
-        checksum_lines.append(f"{digest}  {path.name}")
+        checksum_lines.append(f"{digest}  {display_name}")
     tsv(pd.DataFrame(rows), provenance / "baseline_manifest.tsv")
     write_text("\n".join(checksum_lines), provenance / "input_checksums.sha256")
     versions = [

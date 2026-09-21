@@ -27,4 +27,17 @@ Project3/validation/run_phase1.sh \
 
 The aggregate results and figures are version-controlled. Participant scores are neither written nor committed. See [phase1_summary.md](phase1_summary.md) for the findings.
 
-The expanded-cohort validation is in [`22k`](22k). It reproduces the archived 12k extension score and the current combined 22k residualisation/PCA, then repeats the measurement and PCA-structure checks in the larger sample. See [`22k/22k_summary.md`](22k/22k_summary.md) for the findings.
+The expanded 22k phenotype validation and GWAS presented at WCPG 2026 are in
+[`22k`](22k). This record reproduces the archived 12k extension score and the
+combined 22k residualisation/PCA, repeats the measurement and PCA-structure
+checks, and compares the genetic signal across the retained 10k, 12k and 22k
+GWAS files. See [`22k/22k_summary.md`](22k/22k_summary.md) for the findings.
+
+The WCPG-focused audit of the near-zero HELIOS 10k cognition–KoGES education
+genetic correlation is in
+[`edu_local_cancellation`](edu_local_cancellation). The historical control and
+corrected quantitative-education LAVA runs are complete. The corrected result
+found 47 positive and 45 negative covariance estimates across 92 eligible
+regions, with 90.8% descriptive cancellation; no region survived FDR
+correction. The report explains why this is consistent with, but does not
+prove, genome-wide cancellation.

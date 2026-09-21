@@ -5,6 +5,12 @@ fixed-effect inverse-variance model (`SCHEME STDERR`). The study order is kept
 as Malay, Chinese, Indian to reproduce the `Direction` field in the retained
 outputs.
 
+This repository retains the term trans-ancestry meta-analysis for that
+fixed-effect combination of ancestry-specific GWASs. The model targets shared
+effects and does not explicitly estimate ancestry-heterogeneous effects in the
+way that methods such as MR-MEGA do. Variant heterogeneity was evaluated after
+meta-analysis through the filters below.
+
 Run the meta-analysis with:
 
 ```bash
