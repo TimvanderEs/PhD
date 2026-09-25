@@ -1,6 +1,9 @@
 software	version	use
 REGENIE	4.1	Ancestry-specific association testing
 METAL	2020-05-05 release	Chinese, Indian and Malay inverse-variance meta-analysis
-cov-LDSC	1.0.0	SG100K covariate-adjusted LD-score calculation
+cov-LDSC	1.0.0; commit 926bbbcdde8bac30a8b53c1e9ebf283b5934bda8	SG100K covariate-adjusted LD scores and cross-freeze heritability checks
 LDSC	1.0.1	Heritability and genetic-correlation analyses
+LAVA	0.1.5	Corrected HELIOS–KoGES local genetic-correlation and covariance audit
 MTAG	1.0.8	Exploratory 10k HELIOS and EAS educational-attainment analysis
+GenomicSEM	0.0.5	Six-task genetic covariance estimation and structural model comparison
+lavaan	0.6-19	Structural equation modelling used through GenomicSEM

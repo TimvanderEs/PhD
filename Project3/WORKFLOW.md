@@ -10,7 +10,9 @@ Chinese-only freeze used in Project 2 remain separate records.
 
 | Step | Record |
 |---|---|
-| Cognitive factor | Reproduced from the historical script and saved score for 7,403 participants |
+| Expanded cognitive factor | Education-adjusted pooled six-task PCA in 22,422 participants |
+| GWAS phenotype preparation | Ancestry split, within-group 5-SD mask and external Blom RINT |
+| Historical cognitive factor | Reproduced from the 10k script and saved score for 7,403 participants |
 | Cognitive validation | Measurement summaries, 1,000 bootstrap PCAs, leave-one-task-out and ancestry-specific checks |
 | Expanded 22k phenotype and GWAS | Exact 12k and combined 22k PCA checks, residual reconstruction, measurement checks and ancestry-specific association results |
 | Genotype QC | Portable ancestry-specific PLINK workflow for Chinese, Indian and Malay participants |
@@ -20,7 +22,7 @@ Chinese-only freeze used in Project 2 remain separate records.
 | Chinese-only freeze | EC2 checksums, row counts and cross-format comparisons |
 | SG100K LD reference | Recovered scripts and completed chromosome logs |
 
-## Cognitive phenotype
+## Historical 10k cognitive phenotype
 
 Six cognitive tasks were directionally aligned, residualised and combined by
 principal-component analysis. The reproduced participant set exactly matches
@@ -28,6 +30,12 @@ the 7,403 IDs in the historical score file. PC1 explained 34.489% of the total
 variance. This is one of the 10k phenotype iterations; the retained
 meta-analysis outputs are identified separately by checksum because the
 phenotype was updated during the project.
+
+After PCA, the saved factor was split into the three genetic-ancestry analysis
+groups. Values beyond five standard deviations within group were masked and
+the remaining values were Blom inverse-normal transformed within group before
+REGENIE Step 2. This final phenotype transformation is separate from the raw
+task transformations used before PCA.
 
 The stored score has negative coefficients for the direction-aligned tasks, so
 higher stored `g` values indicate poorer performance. This is an arbitrary PCA
@@ -41,6 +49,15 @@ combined phenotype residualisation and PCA were reproduced in 22,422
 participants; PC1 explained 37.04% of variance. All validation outputs use the
 sign-equivalent orientation in which higher values indicate better cognitive
 performance.
+
+For association testing, the retained PC1 was split into Chinese, Indian and
+Malay analysis groups, values beyond five within-group standard deviations
+were set to missing, and the remaining values were Blom inverse-normal
+transformed within group. REGENIE Step 2 therefore used an already transformed
+phenotype and did not include `--apply-rint`. The recovered preparation code,
+archived filenames and exact 10k/12k count checks support this lineage; the
+participant-level September 2025 phenotype files remain controlled and were
+not retained in the repository.
 
 The retained task residualisation model included age, sex, age squared,
 age-by-sex terms, ancestry indicators and education as a categorical
@@ -78,8 +95,8 @@ cross-freeze results are in
 
 GWAS was run separately in the Chinese, Indian and Malay ancestry groups using
 REGENIE v4.1. The recovered 10k Step 2 records use the ancestry-specific
-genotype data, a precomputed `g` phenotype, 20 ancestry-specific principal
-components, block size 200 and minimum MAC 0.5. The genotype inputs contained
+genotype data, an externally transformed `g` phenotype, 20 ancestry-specific
+principal components, block size 200 and minimum MAC 0.5. The genotype inputs contained
 7,043,723 Chinese, 8,387,428 Indian and 7,660,514 Malay variants.
 
 The three association results were combined with METAL using the standard-error
@@ -121,6 +138,12 @@ The completed Step 2 log from the same date records:
 - 5,700 participants entering Step 2; and
 - 7,043,723 variants in the genotype input.
 
+This later branch applied RINT only in Step 2, whereas the corresponding Step
+1 command did not use `--apply-rint`. It is retained as the exact historical
+implementation and is not presented as a matched Step 1/Step 2 RINT workflow.
+REGENIE recommends applying the option in both steps; a matched rerun is
+required if this branch is used as a primary inferential result.
+
 The Step 1 and Step 2 logs use the same 25 covariate columns and report
 covariate data for 6,353 participants.
 
@@ -154,6 +177,9 @@ The 10k and 22k heritability estimates arise from distinct analysis iterations.
 Direct comparison requires matched phenotype definition, SNP set, ancestry
 composition and LD-score reference; they should not be interpreted as a clean
 sample-size scaling experiment.
+
+The phenotype-lineage and pooled-versus-within-ancestry RINT checks are
+reported in [`validation/phenotype_pipeline`](validation/phenotype_pipeline).
 
 The successful MTAG v1.0.8 run completed on 2 December 2025 and combined the
 10k HELIOS result with East Asian educational attainment. It retained

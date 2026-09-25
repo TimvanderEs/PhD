@@ -1,0 +1,9 @@
+diff --git a/prep.py b/prep.py
+--- a/prep.py
++++ b/prep.py
+@@ -28,2 +28,3 @@
+-    df.where(pd.Series(((matched_alleles_x|reversed_alleles_x)&(matched_alleles_y|reversed_alleles_y))), inplace=True)
+-    df.dropna(inplace=True)
++    valid = (matched_alleles_x | reversed_alleles_x) & (matched_alleles_y | reversed_alleles_y)
++    df.drop(df.index[~valid], inplace=True)
++    df.dropna(inplace=True)

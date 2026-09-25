@@ -1,0 +1,7 @@
+model	n	pc1_variance_explained	formula
+Original full-sample coding	22422	0.370355413795686	~age + age2 + age_sex + age2_sex + indian + malay + factor(sex) +     factor(Edu)
+Seven-category GRID adjustment	22422	0.370425915008995	~age + age2 + age_sex + age2_sex + factor(genetic_ancestry) +     factor(sex) + factor(Edu)
+Core GRID groups only	21596	0.367678809389741	~age + age2 + age_sex + age2_sex + genetic_indian + genetic_malay +     factor(sex) + factor(Edu)
+Questionnaire subset: genetic ancestry	13102	0.388134169225542	~age + age2 + age_sex + age2_sex + genetic_indian + genetic_malay +     factor(sex) + factor(Edu)
+Questionnaire subset: genetic ancestry + self-description	13102	0.388094419658004	~age + age2 + age_sex + age2_sex + genetic_indian + genetic_malay +     factor(self_ethnicity) + factor(sex) + factor(Edu)
+Strictly concordant questionnaire subset	12989	0.387257766603522	~age + age2 + age_sex + age2_sex + genetic_indian + genetic_malay +     factor(sex) + factor(Edu)

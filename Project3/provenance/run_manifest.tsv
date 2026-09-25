@@ -1,6 +1,9 @@
 analysis	date	status	evidence	result
 HELIOS cognition validation Phase 1	2026-09-17	Completed	Exact PCA reproduction, task summaries and 1000 bootstrap replicates	Historical score reproduced; speed-heavy loading structure stable
 HELIOS 12k and combined 22k validation	2026-09-17	Completed	Exact residual and PCA reproduction, raw task summaries, 1000 bootstrap replicates and archived GWAS, METAL and LDSC records	N=13774 archived 12k; N=22422 combined PCA; N=21518 GWAS; no genome-wide significant variant in the matching trans-ancestry meta-analysis
+Phenotype-to-GWAS lineage and RINT sensitivity	2026-09-24	Completed	Recovered ancestry phenotype-preparation code, archived REGENIE logs and aggregate pooled-versus-within-ancestry Blom comparisons	External within-ancestry RINT identified for the retained 22k workflow; within-ancestry ranks unchanged in the sensitivity analysis
+10k, 12k and 22k genetic-signal audit	2026-09-17	Completed	Checksum-linked summary statistics, frozen SG100K 20 cM cov-LDSC reference and Z-score reconstruction	22k h2=0.0394 (SE 0.0188); 12k extension had no detectable signal; combined Z-score reconstruction r=0.937
+HELIOS–KoGES education local-cancellation audit	2026-09-19	Completed	Exact historical LAVA control, corrected quantitative-education run, covariance decomposition and chromosome/MHC/outlier sensitivity analyses	92 eligible regions; 47 positive and 45 negative covariance estimates; 90.8% descriptive cancellation; no FDR-significant region
 10k six-task cognitive PCA	2025	Reproduced	Historical script, input extracts and saved score	N=7403; PC1 explained 34.489% of variance
 10k ancestry-specific genotype QC	2025	Documented	Historical PLINK commands and retained Chinese, Indian and Malay prefixes	Portable QC script with the recovered thresholds
 10k Chinese, Indian and Malay REGENIE Step 2	2025-09 to 2025-10	Completed	REGENIE v4.1 ancestry-specific logs	Completed ancestry-specific association tests for the recovered 10k phenotype iterations
@@ -10,3 +13,4 @@ HELIOS 12k and combined 22k validation	2026-09-17	Completed	Exact residual and P
 10k Chinese summary-statistic freeze	2025-12-12	Validated	EC2 final file and downstream file fingerprints	5615100 build-37 rows; modal variant N=5592
 SG100K covariate-adjusted LD scores	2025-06-26 to 2025-06-28	Completed	cov-LDSC v1.0.0 chromosome logs	Chromosomes 1-22; 37364 individuals; 20 cM windows
 10k HELIOS and EAS education MTAG	2025-12-02	Exploratory	MTAG v1.0.8 log	3403649 shared variants
+10k and 22k six-task Genomic SEM validation	2026-09-24	Completed	Twelve checksum-audited task GWAS, LDSC v1.0.1 munging and GenomicSEM 0.0.5 DWLS models	10k covariance matrix unstable; 22k two-factor model did not improve on one factor (descriptive delta chi-square=1.830; approximate P=0.176)

@@ -1,7 +1,9 @@
 #!/usr/bin/env Rscript
 
-# Reconstruct the phenotype and covariate files required by the completed
-# HELIOS 10k REGENIE Step 2 command.
+# Reconstruct the phenotype and covariate schemas required by the later
+# refined Chinese-only HELIOS 10k REGENIE commands. The score input must
+# already contain the historically selected column named g_raw; this script
+# does not infer or rename a different cognitive-factor column.
 #
 # Usage:
 #   Rscript prepare_regenie_10k_inputs.R \
@@ -52,7 +54,16 @@ sample_covariates <- read_table(sample_covariate_file)
 pcs <- read_table(eigenvector_file)
 
 score_id <- first_column(names(scores), c("IID", "ID"), "score IID")
-score_value <- first_column(names(scores), c("g_raw", "g"), "cognitive score")
+if (!"g_raw" %in% names(scores)) {
+  stop(
+    paste(
+      "Score file must contain an explicit 'g_raw' column.",
+      "The upstream score used by this historical branch was not retained,",
+      "so another column must not be relabelled automatically."
+    ),
+    call. = FALSE
+  )
+}
 covariate_id <- first_column(names(sample_covariates), c("IID", "ID"), "covariate IID")
 age_column <- first_column(names(sample_covariates), c("Age", "FREG8_Age"), "age")
 sex_column <- first_column(names(sample_covariates), c("Sex", "FREG7_Gender"), "sex")
@@ -68,7 +79,7 @@ if (length(missing_pcs) > 0L) {
 }
 
 scores$IID <- trimws(as.character(scores[[score_id]]))
-scores$g_raw <- as.numeric(scores[[score_value]])
+scores$g_raw <- as.numeric(scores[["g_raw"]])
 sample_covariates$IID <- trimws(as.character(sample_covariates[[covariate_id]]))
 pcs$IID <- trimws(as.character(pcs[[pc_id]]))
 

@@ -1,0 +1,4 @@
+analysis_set	n_regions	n_positive_covariance	n_negative_covariance	n_zero_covariance	median_local_rg	local_rg_q1	local_rg_q3	median_local_covariance	local_covariance_q1	local_covariance_q3	aggregate_rg_eligible
+all_eligible	92	47	45	0	0.007709655	-0.1952495	0.171579	3.32195072011715e-05	-0.00082007226274956	0.000677308809342408	-0.0171488377560267
+nominal_significant	15	6	9	0	-0.325411	-0.461666	0.344566	-0.00167209608369554	-0.00186554070306486	0.00179127494232546	-0.0831114727545053
+fdr_significant	0	0	0	0	NA	NA	NA	NA	NA	NA	NA

@@ -1,0 +1,6 @@
+variable	definition	allowed_values	source_sheet
+FREG5_Race	Race As Indicated In Nric Chinese / Malay / Indian / Others	CHINESE / MALAY / INDIAN / OTHERS	SG100K - Data Dictionary
+FREG6_Race_Other	Race As Indicated In Nric (Not Chinese / Malay / Indian)	NA	SG100K - Data Dictionary
+FIAQ10_Demo1	How would you describe your ethnic heritage?	CHINESE/ MALAY/ INDIAN/ OTHER	SG100K - Data Dictionary
+FIAQ14_1_Demo6	How would you describe your father's ethnic heritage?	CHINESE/ MALAY/ INDIAN/ OTHER	SG100K - Data Dictionary
+FIAQ14_2_Demo7	How would you describe your mother's ethnic heritage?	CHINESE/ MALAY/ INDIAN/ OTHER	SG100K - Data Dictionary

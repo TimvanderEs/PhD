@@ -1,0 +1,13 @@
+metric	value	se	p	unit_or_scale	source	notes
+helios_h2	0.3048	0.0949	NA	observed scale	10k_clean_vs_EDU_KOGES_1kgeas.log	HELIOS phenotype 1
+helios_mean_chi_square	1.0631	NA	NA	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	NA
+helios_intercept	1.0257	0.0081	NA	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	NA
+edu_h2	0.0822	0.0044	NA	observed scale	10k_clean_vs_EDU_KOGES_1kgeas.log	KoGES EDU phenotype 2
+edu_mean_chi_square	1.3339	NA	NA	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	NA
+edu_intercept	1.0349	0.0088	NA	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	NA
+genetic_correlation	-0.0502	0.0835	0.5476	rg	10k_clean_vs_EDU_KOGES_1kgeas.log	Original higher-worse HELIOS orientation
+genetic_covariance	-0.0079	0.0131	NA	observed scale	10k_clean_vs_EDU_KOGES_1kgeas.log	Reported by LDSC
+genetic_covariance_derived	-0.00794597340685	NA	NA	observed scale	derived	rg * sqrt(helios_h2 * edu_h2)
+genetic_covariance_intercept	-0.0040	0.0052	NA	statistic	10k_clean_vs_EDU_KOGES_1kgeas.log	NA
+shared_snps	798235	NA	NA	variants	10k_clean_vs_EDU_KOGES_1kgeas.log	Allele-valid shared SNPs
+ld_reference	NA	NA	NA	1000 Genomes EAS LD scores	/home/ec2-user/input_files/reference/eas_ldscores/	22 autosomes

@@ -1,0 +1,2 @@
+freeze	comparison	delta_chisq	delta_df	p_chisq_difference_approx	delta_AIC_two_minus_one	delta_SRMR_two_minus_one
+10k	one_factor_vs_two_factor	0.69324753283431	1	0.405061966117797	1.3067524671657	-0.012041340979628

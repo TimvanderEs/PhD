@@ -1,0 +1,55 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--signed-sumstats Z,0 \
+--out /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score \
+--merge-alleles /home/ec2-user/input_files/reference/eas_ldscores/w_hm3.snplist \
+--N-col N \
+--chunksize 500000 \
+--a1 A1 \
+--a2 A2 \
+--snp SNP \
+--sumstats /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/prepared/10k_quiz_score.ldsc_input.tsv.gz \
+--p P 
+
+Interpreting column names as follows:
+N:	Sample size
+A1:	Allele 1, interpreted as ref allele for signed sumstat.
+P:	p-Value
+A2:	Allele 2, interpreted as non-ref allele for signed sumstat.
+SNP:	Variant ID (e.g., rs number)
+Z:	Directional summary statistic as specified by --signed-sumstats.
+
+Reading list of SNPs for allele merge from /home/ec2-user/input_files/reference/eas_ldscores/w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/prepared/10k_quiz_score.ldsc_input.tsv.gz into memory 500000 SNPs at a time.
+..... done
+Read 2280380 SNPs from --sumstats file.
+Removed 1397081 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 0 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+883299 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (883299 SNPs remain).
+Removed 47856 SNPs with N < 5204.0 (835443 SNPs remain).
+Median value of SIGNED_SUMSTATS was 0.0, which seems sensible.
+Removed 1 SNPs whose alleles did not match --merge-alleles (835442 SNPs remain).
+Writing summary statistics for 1217311 SNPs (835442 with nonmissing beta) to /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.003
+WARNING: mean chi^2 may be too small.
+Lambda GC = 1.001
+Max chi^2 = 26.629
+0 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Thu Sep 24 13:48:04 2026
+Total time elapsed: 25.44s

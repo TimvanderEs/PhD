@@ -1,0 +1,54 @@
+                               table                       metric        value
+                              <char>                       <char>        <num>
+ 1:                       univariate                archived_rows 1.105700e+04
+ 2:                       univariate                 control_rows 1.105700e+04
+ 3:                       univariate           archived_only_rows 0.000000e+00
+ 4:                       univariate            control_only_rows 0.000000e+00
+ 5:                       univariate       max_abs_difference_chr 0.000000e+00
+ 6:                       univariate     max_abs_difference_start 0.000000e+00
+ 7:                       univariate      max_abs_difference_stop 0.000000e+00
+ 8:                       univariate    max_abs_difference_n.snps 0.000000e+00
+ 9:                       univariate     max_abs_difference_n.pcs 0.000000e+00
+10:                       univariate    max_abs_difference_h2.obs 0.000000e+00
+11:                       univariate         max_abs_difference_p 0.000000e+00
+12:                        bivariate                archived_rows 7.260000e+02
+13:                        bivariate                 control_rows 7.260000e+02
+14:                        bivariate           archived_only_rows 0.000000e+00
+15:                        bivariate            control_only_rows 0.000000e+00
+16:                        bivariate       max_abs_difference_chr 0.000000e+00
+17:                        bivariate     max_abs_difference_start 0.000000e+00
+18:                        bivariate      max_abs_difference_stop 0.000000e+00
+19:                        bivariate    max_abs_difference_n.snps 0.000000e+00
+20:                        bivariate     max_abs_difference_n.pcs 0.000000e+00
+21:                        bivariate       max_abs_difference_rho 0.000000e+00
+22:                        bivariate        max_abs_difference_r2 0.000000e+00
+23:        bivariate_all_monte_carlo                         rows 7.260000e+02
+24:        bivariate_all_monte_carlo                p_correlation 9.999941e-01
+25:        bivariate_all_monte_carlo      p_median_abs_difference 5.505000e-04
+26:        bivariate_all_monte_carlo         p_max_abs_difference 4.031000e-03
+27:        bivariate_all_monte_carlo        rho_lower_correlation 9.995804e-01
+28:        bivariate_all_monte_carlo        rho_upper_correlation 9.995622e-01
+29:        bivariate_all_monte_carlo         r2_lower_correlation 9.986258e-01
+30:        bivariate_all_monte_carlo         r2_upper_correlation 9.990305e-01
+31:        bivariate_all_monte_carlo nominal_significant_archived 1.030000e+02
+32:        bivariate_all_monte_carlo  nominal_significant_control 1.030000e+02
+33:        bivariate_all_monte_carlo  nominal_decision_discordant 0.000000e+00
+34:        bivariate_all_monte_carlo     fdr_significant_archived 1.000000e+00
+35:        bivariate_all_monte_carlo      fdr_significant_control 1.000000e+00
+36:        bivariate_all_monte_carlo      fdr_decision_discordant 0.000000e+00
+37: bivariate_helios_edu_monte_carlo                         rows 9.200000e+01
+38: bivariate_helios_edu_monte_carlo                p_correlation 9.999932e-01
+39: bivariate_helios_edu_monte_carlo      p_median_abs_difference 6.405000e-04
+40: bivariate_helios_edu_monte_carlo         p_max_abs_difference 4.031000e-03
+41: bivariate_helios_edu_monte_carlo        rho_lower_correlation 9.995918e-01
+42: bivariate_helios_edu_monte_carlo        rho_upper_correlation 9.996843e-01
+43: bivariate_helios_edu_monte_carlo         r2_lower_correlation 9.989614e-01
+44: bivariate_helios_edu_monte_carlo         r2_upper_correlation 9.990741e-01
+45: bivariate_helios_edu_monte_carlo nominal_significant_archived 1.400000e+01
+46: bivariate_helios_edu_monte_carlo  nominal_significant_control 1.400000e+01
+47: bivariate_helios_edu_monte_carlo  nominal_decision_discordant 0.000000e+00
+48: bivariate_helios_edu_monte_carlo     fdr_significant_archived 0.000000e+00
+49: bivariate_helios_edu_monte_carlo      fdr_significant_control 0.000000e+00
+50: bivariate_helios_edu_monte_carlo      fdr_decision_discordant 0.000000e+00
+                               table                       metric        value
+Historical-control reproduction passed: exact deterministic outputs and concordant unseeded Monte Carlo inference.

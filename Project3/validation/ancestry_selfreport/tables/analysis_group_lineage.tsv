@@ -1,0 +1,78 @@
+analysis_source	genetic_ancestry	analysis_group	unique_participants_n
+Combined 22k retained analysis table	Chinese	Chinese	18050
+Combined 22k retained analysis table	Chinese	Indian	0
+Combined 22k retained analysis table	Chinese	Malay	0
+Combined 22k retained analysis table	Chinese	No ancestry-specific label	855
+Combined 22k retained analysis table	Indian	Chinese	0
+Combined 22k retained analysis table	Indian	Indian	2326
+Combined 22k retained analysis table	Indian	Malay	0
+Combined 22k retained analysis table	Indian	No ancestry-specific label	155
+Combined 22k retained analysis table	Malay	Chinese	0
+Combined 22k retained analysis table	Malay	Indian	0
+Combined 22k retained analysis table	Malay	Malay	1246
+Combined 22k retained analysis table	Malay	No ancestry-specific label	121
+Combined 22k retained analysis table	Chinese–Malay	Chinese	0
+Combined 22k retained analysis table	Chinese–Malay	Indian	0
+Combined 22k retained analysis table	Chinese–Malay	Malay	0
+Combined 22k retained analysis table	Chinese–Malay	No ancestry-specific label	386
+Combined 22k retained analysis table	Chinese–Indian	Chinese	0
+Combined 22k retained analysis table	Chinese–Indian	Indian	0
+Combined 22k retained analysis table	Chinese–Indian	Malay	0
+Combined 22k retained analysis table	Chinese–Indian	No ancestry-specific label	179
+Combined 22k retained analysis table	Indian–Malay	Chinese	0
+Combined 22k retained analysis table	Indian–Malay	Indian	0
+Combined 22k retained analysis table	Indian–Malay	Malay	0
+Combined 22k retained analysis table	Indian–Malay	No ancestry-specific label	181
+Combined 22k retained analysis table	Other	Chinese	0
+Combined 22k retained analysis table	Other	Indian	0
+Combined 22k retained analysis table	Other	Malay	0
+Combined 22k retained analysis table	Other	No ancestry-specific label	116
+Retained 10k merged covariate table	Chinese	Chinese	5600
+Retained 10k merged covariate table	Chinese	Indian	0
+Retained 10k merged covariate table	Chinese	Malay	0
+Retained 10k merged covariate table	Chinese	Not present	13305
+Retained 10k merged covariate table	Indian	Chinese	0
+Retained 10k merged covariate table	Indian	Indian	1332
+Retained 10k merged covariate table	Indian	Malay	0
+Retained 10k merged covariate table	Indian	Not present	1149
+Retained 10k merged covariate table	Malay	Chinese	0
+Retained 10k merged covariate table	Malay	Indian	0
+Retained 10k merged covariate table	Malay	Malay	840
+Retained 10k merged covariate table	Malay	Not present	527
+Retained 10k merged covariate table	Chinese–Malay	Chinese	0
+Retained 10k merged covariate table	Chinese–Malay	Indian	0
+Retained 10k merged covariate table	Chinese–Malay	Malay	0
+Retained 10k merged covariate table	Chinese–Malay	Not present	386
+Retained 10k merged covariate table	Chinese–Indian	Chinese	0
+Retained 10k merged covariate table	Chinese–Indian	Indian	0
+Retained 10k merged covariate table	Chinese–Indian	Malay	0
+Retained 10k merged covariate table	Chinese–Indian	Not present	179
+Retained 10k merged covariate table	Indian–Malay	Chinese	0
+Retained 10k merged covariate table	Indian–Malay	Indian	0
+Retained 10k merged covariate table	Indian–Malay	Malay	0
+Retained 10k merged covariate table	Indian–Malay	Not present	181
+Retained 10k merged covariate table	Other	Chinese	0
+Retained 10k merged covariate table	Other	Indian	0
+Retained 10k merged covariate table	Other	Malay	0
+Retained 10k merged covariate table	Other	Not present	116
+Current 22k Chinese covariate input	Chinese	Present in input	18666
+Current 22k Chinese covariate input	Indian	Present in input	0
+Current 22k Chinese covariate input	Malay	Present in input	0
+Current 22k Chinese covariate input	Chinese–Malay	Present in input	0
+Current 22k Chinese covariate input	Chinese–Indian	Present in input	0
+Current 22k Chinese covariate input	Indian–Malay	Present in input	0
+Current 22k Chinese covariate input	Other	Present in input	0
+Current 22k Indian covariate input	Chinese	Present in input	0
+Current 22k Indian covariate input	Indian	Present in input	2462
+Current 22k Indian covariate input	Malay	Present in input	0
+Current 22k Indian covariate input	Chinese–Malay	Present in input	0
+Current 22k Indian covariate input	Chinese–Indian	Present in input	0
+Current 22k Indian covariate input	Indian–Malay	Present in input	0
+Current 22k Indian covariate input	Other	Present in input	0
+Current 22k Malay covariate input	Chinese	Present in input	0
+Current 22k Malay covariate input	Indian	Present in input	0
+Current 22k Malay covariate input	Malay	Present in input	1355
+Current 22k Malay covariate input	Chinese–Malay	Present in input	0
+Current 22k Malay covariate input	Chinese–Indian	Present in input	0
+Current 22k Malay covariate input	Indian–Malay	Present in input	0
+Current 22k Malay covariate input	Other	Present in input	0

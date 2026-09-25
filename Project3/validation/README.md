@@ -41,3 +41,21 @@ found 47 positive and 45 negative covariance estimates across 92 eligible
 regions, with 90.8% descriptive cancellation; no region survived FDR
 correction. The report explains why this is consistent with, but does not
 prove, genome-wide cancellation.
+
+The comparison of GRID genetic ancestry, NRIC-recorded race and participant-
+described ethnic heritage is in
+[`ancestry_selfreport`](ancestry_selfreport). It verifies the lineage of the
+10k and 22k GWAS ancestry groups, quantifies concordance in the available
+questionnaire subset and provides disclosure-controlled PCA figures and
+aggregate tables.
+
+The task-level genetic-factor analysis is in
+[`genomic_sem_components`](genomic_sem_components). It audits all six 10k and
+22k task GWAS, reruns multivariable LDSC, and compares one-factor with
+latency/non-latency Genomic SEM models. The 10k matrix was unstable; the 22k
+analysis completed without smoothing but did not favour two factors.
+
+The phenotype-to-GWAS lineage is documented in
+[`phenotype_pipeline`](phenotype_pipeline). It distinguishes the retained 22k,
+historical 10k, nested 12k and refined Chinese-only versions and records the
+aggregate pooled-versus-within-ancestry RINT sensitivity analysis.

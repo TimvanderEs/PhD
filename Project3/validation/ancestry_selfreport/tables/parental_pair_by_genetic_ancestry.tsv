@@ -1,0 +1,51 @@
+parental_pair	genetic_ancestry	count	row_percentage	suppressed
+chinese-chinese	Chinese	12314	99.31446084361642	False
+chinese-chinese	Chinese–Malay	66	0.5323009920154851	False
+chinese-chinese	Chinese–Indian	16	0.12904266473102668	False
+chinese-chinese	Indian–Malay	<5		True
+chinese-chinese	Other	<5		True
+chinese-indian	Chinese	<5		True
+chinese-indian	Chinese–Malay	<5		True
+chinese-indian	Indian	5	11.11111111111111	False
+chinese-indian	Chinese–Indian	27	60.0	False
+chinese-indian	Indian–Malay	9	20.0	False
+chinese-malay	Chinese	15	34.09090909090909	False
+chinese-malay	Chinese–Malay	21	47.72727272727273	False
+chinese-malay	Chinese–Indian	<5		True
+chinese-malay	Malay	<5		True
+chinese-other	Chinese	16	33.333333333333336	False
+chinese-other	Chinese–Malay	17	35.416666666666664	False
+chinese-other	Chinese–Indian	10	20.833333333333332	False
+chinese-other	Indian–Malay	<5		True
+chinese-other	Other	<5		True
+indian-indian	Chinese	<5		True
+indian-indian	Indian	789	97.0479704797048	False
+indian-indian	Chinese–Indian	5	0.6150061500615006	False
+indian-indian	Malay	<5		True
+indian-indian	Indian–Malay	12	1.4760147601476015	False
+indian-indian	Other	<5		True
+indian-malay	Indian	7	25.925925925925927	False
+indian-malay	Chinese–Indian	<5		True
+indian-malay	Malay	<5		True
+indian-malay	Indian–Malay	14	51.851851851851855	False
+indian-other	Indian	5	50.0	False
+indian-other	Malay	<5		True
+indian-other	Indian–Malay	<5		True
+indian-other	Other	<5		True
+malay-malay	Chinese	6	1.6172506738544474	False
+malay-malay	Chinese–Malay	40	10.78167115902965	False
+malay-malay	Indian	<5		True
+malay-malay	Chinese–Indian	<5		True
+malay-malay	Malay	305	82.21024258760107	False
+malay-malay	Indian–Malay	14	3.7735849056603774	False
+malay-other	Indian	<5		True
+malay-other	Malay	10	62.5	False
+malay-other	Indian–Malay	<5		True
+malay-other	Other	<5		True
+other-other	Chinese	7	5.2631578947368425	False
+other-other	Chinese–Malay	5	3.7593984962406015	False
+other-other	Indian	51	38.34586466165413	False
+other-other	Chinese–Indian	<5		True
+other-other	Malay	16	12.030075187969924	False
+other-other	Indian–Malay	<5		True
+other-other	Other	48	36.090225563909776	False

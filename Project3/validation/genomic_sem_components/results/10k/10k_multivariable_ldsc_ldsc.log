@@ -1,0 +1,246 @@
+Multivariate ld-score regression of 6 traits (/home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz) began at: 2026-09-24 13:48:59.574204
+Reading in LD scores
+Read in summary statistics [1/6] from: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz
+Out of 835248 SNPs, 832449 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 832449 remain
+Read in summary statistics [2/6] from: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz
+Out of 834851 SNPs, 832025 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 832025 remain
+Read in summary statistics [3/6] from: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz
+Out of 835312 SNPs, 832488 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 832488 remain
+Read in summary statistics [4/6] from: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+Out of 835442 SNPs, 832623 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 832623 remain
+Read in summary statistics [5/6] from: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+Out of 836369 SNPs, 833552 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 833552 remain
+Read in summary statistics [6/6] from: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Out of 837147 SNPs, 834347 remain after merging with LD-score files
+Removing 0 SNPs with Chi^2 > 80; 834347 remain
+          
+Estimating heritability [1/21] for: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz
+Heritability Results for trait: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz
+Mean Chi^2 across remaining SNPs: 0.9965
+Lambda GC: 0.9985
+Intercept: 0.9853 (0.0056)
+Ratio: 4.2113 (-1.591)
+Total Observed Scale h2: 0.0697 (0.0505)
+h2 Z: 1.38
+     
+Calculating genetic covariance [2/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz
+796101 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz
+Mean Z*Z: 0.4638
+Cross trait Intercept: 0.4626 (0.0043)
+Total Observed Scale Genetic Covariance (g_cov): 0.0078 (0.0406)
+g_cov Z: 0.193
+g_cov P-value: 0.84707
+     
+Calculating genetic covariance [3/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz
+793984 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz
+Mean Z*Z: 0.29
+Cross trait Intercept: 0.2889 (0.0044)
+Total Observed Scale Genetic Covariance (g_cov): 0.0065 (0.0385)
+g_cov Z: 0.169
+g_cov P-value: 0.86564
+     
+Calculating genetic covariance [4/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+793062 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+Mean Z*Z: 0.1572
+Cross trait Intercept: 0.1556 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): 0.0099 (0.038)
+g_cov Z: 0.261
+g_cov P-value: 0.79445
+     
+Calculating genetic covariance [5/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+793940 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+Mean Z*Z: 0.1093
+Cross trait Intercept: 0.1188 (0.0044)
+Total Observed Scale Genetic Covariance (g_cov): -0.0589 (0.0341)
+g_cov Z: -1.73
+g_cov P-value: 0.084478
+     
+Calculating genetic covariance [6/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+794482 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_reaction_time.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Mean Z*Z: 0.1162
+Cross trait Intercept: 0.1144 (0.0046)
+Total Observed Scale Genetic Covariance (g_cov): 0.0112 (0.037)
+g_cov Z: 0.302
+g_cov P-value: 0.76234
+          
+Estimating heritability [7/21] for: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz
+Heritability Results for trait: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0219
+Lambda GC: 1.0224
+Intercept: 0.9984 (0.006)
+Ratio: -0.0713 (0.2739)
+Total Observed Scale h2: 0.1456 (0.0512)
+h2 Z: 2.84
+     
+Calculating genetic covariance [8/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz
+796602 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz
+Mean Z*Z: 0.5179
+Cross trait Intercept: 0.4998 (0.0054)
+Total Observed Scale Genetic Covariance (g_cov): 0.1131 (0.0416)
+g_cov Z: 2.72
+g_cov P-value: 0.0065328
+     
+Calculating genetic covariance [9/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+792768 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+Mean Z*Z: 0.2277
+Cross trait Intercept: 0.2146 (0.005)
+Total Observed Scale Genetic Covariance (g_cov): 0.0816 (0.0407)
+g_cov Z: 2.01
+g_cov P-value: 0.044954
+     
+Calculating genetic covariance [10/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+793533 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+Mean Z*Z: 0.1311
+Cross trait Intercept: 0.1225 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): 0.0527 (0.0411)
+g_cov Z: 1.28
+g_cov P-value: 0.19886
+     
+Calculating genetic covariance [11/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+793902 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_box.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Mean Z*Z: 0.1228
+Cross trait Intercept: 0.1148 (0.0045)
+Total Observed Scale Genetic Covariance (g_cov): 0.0499 (0.039)
+g_cov Z: 1.28
+g_cov P-value: 0.20032
+          
+Estimating heritability [12/21] for: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz
+Heritability Results for trait: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz
+Mean Chi^2 across remaining SNPs: 0.9943
+Lambda GC: 0.9956
+Intercept: 0.9867 (0.0067)
+Ratio: 2.3516 (-1.1765)
+Total Observed Scale h2: 0.0475 (0.0552)
+h2 Z: 0.861
+     
+Calculating genetic covariance [13/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+793013 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+Mean Z*Z: 0.147
+Cross trait Intercept: 0.1336 (0.0049)
+Total Observed Scale Genetic Covariance (g_cov): 0.0835 (0.0393)
+g_cov Z: 2.13
+g_cov P-value: 0.033501
+     
+Calculating genetic covariance [14/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+793567 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+Mean Z*Z: 0.0983
+Cross trait Intercept: 0.0894 (0.0044)
+Total Observed Scale Genetic Covariance (g_cov): 0.055 (0.0378)
+g_cov Z: 1.45
+g_cov P-value: 0.1458
+     
+Calculating genetic covariance [15/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+794368 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_stroop_ink.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Mean Z*Z: 0.0934
+Cross trait Intercept: 0.0865 (0.0042)
+Total Observed Scale Genetic Covariance (g_cov): 0.0425 (0.035)
+g_cov Z: 1.21
+g_cov P-value: 0.22462
+          
+Estimating heritability [16/21] for: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+Heritability Results for trait: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0027
+Lambda GC: 1.0015
+Intercept: 0.9931 (0.0062)
+Ratio: -2.5155 (2.2565)
+Total Observed Scale h2: 0.0597 (0.0511)
+h2 Z: 1.17
+     
+Calculating genetic covariance [17/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+794246 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+Mean Z*Z: 0.1411
+Cross trait Intercept: 0.127 (0.0042)
+Total Observed Scale Genetic Covariance (g_cov): 0.0872 (0.0332)
+g_cov Z: 2.63
+g_cov P-value: 0.0085506
+     
+Calculating genetic covariance [18/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+794414 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_quiz_score.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Mean Z*Z: 0.0894
+Cross trait Intercept: 0.0752 (0.0047)
+Total Observed Scale Genetic Covariance (g_cov): 0.0879 (0.04)
+g_cov Z: 2.2
+g_cov P-value: 0.028091
+          
+Estimating heritability [19/21] for: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+Heritability Results for trait: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz
+Mean Chi^2 across remaining SNPs: 0.9997
+Lambda GC: 1.0045
+Intercept: 0.9798 (0.0067)
+Ratio: 67.1448 (-22.0555)
+Total Observed Scale h2: 0.1231 (0.0622)
+h2 Z: 1.98
+     
+Calculating genetic covariance [20/21] for traits: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+795417 SNPs remain after merging /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz summary statistics
+Results for genetic covariance between: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_working_memory.sumstats.gz and /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Mean Z*Z: 0.0871
+Cross trait Intercept: 0.0855 (0.0047)
+Total Observed Scale Genetic Covariance (g_cov): 0.0104 (0.0393)
+g_cov Z: 0.264
+g_cov P-value: 0.79195
+          
+Estimating heritability [21/21] for: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Heritability Results for trait: /home/ec2-user/HELIOS_validation/genomic_sem_components_20260924/munged/10k_pairing_guesses.sumstats.gz
+Mean Chi^2 across remaining SNPs: 1.0015
+Lambda GC: 1.0134
+Intercept: 0.9926 (0.0066)
+Ratio: -5.0208 (4.519)
+Total Observed Scale h2: 0.0542 (0.0542)
+h2 Z: 1
+     
+      
+Genetic Correlation Results
+Genetic Correlation between reaction_time and stroop_box: 0.0776 (0.4026)
+     
+Genetic Correlation between reaction_time and stroop_ink: 0.1131 (0.6682)
+     
+Genetic Correlation between reaction_time and quiz_score: 0.1535 (0.5893)
+     
+Genetic Correlation between reaction_time and working_memory: -0.6358 (0.3685)
+     
+Genetic Correlation between reaction_time and pairing_guesses: 0.1818 (0.6012)
+     
+Genetic Correlation between stroop_box and stroop_ink: 1.3599 (0.5)
+     
+Genetic Correlation between stroop_box and quiz_score: 0.876 (0.4369)
+     
+Genetic Correlation between stroop_box and working_memory: 0.394 (0.3067)
+     
+Genetic Correlation between stroop_box and pairing_guesses: 0.5617 (0.4386)
+     
+Genetic Correlation between stroop_ink and quiz_score: 1.5671 (0.7371)
+     
+Genetic Correlation between stroop_ink and working_memory: 0.7187 (0.4941)
+     
+Genetic Correlation between stroop_ink and pairing_guesses: 0.837 (0.6893)
+     
+Genetic Correlation between quiz_score and working_memory: 1.0176 (0.387)
+     
+Genetic Correlation between quiz_score and pairing_guesses: 1.5465 (0.7042)
+     
+Genetic Correlation between working_memory and pairing_guesses: 0.1271 (0.4817)
+     
+     
+LDSC finished running at 2026-09-24 13:50:07.049508
+Running LDSC for all files took 1 minutes and 7 seconds
+     

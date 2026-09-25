@@ -20,6 +20,8 @@
   whole-genome regression for quantitative and binary traits. *Nature
   Genetics*, 53, 1097-1103.
   [doi:10.1038/s41588-021-00870-7](https://doi.org/10.1038/s41588-021-00870-7)
+  The [REGENIE option reference](https://github.com/rgcgithub/regenie/blob/master/docs/docs/options.md)
+  documents `--apply-rint` for use in both Step 1 and Step 2.
 - Willer CJ, Li Y, Abecasis GR. (2010). METAL: fast and efficient meta-analysis
   of genomewide association scans. *Bioinformatics*, 26, 2190-2191.
   [doi:10.1093/bioinformatics/btq340](https://doi.org/10.1093/bioinformatics/btq340)

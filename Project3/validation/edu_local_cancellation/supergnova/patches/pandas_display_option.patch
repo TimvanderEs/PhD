@@ -1,0 +1,6 @@
+diff --git a/supergnova.py b/supergnova.py
+--- a/supergnova.py
++++ b/supergnova.py
+@@ -36 +36 @@
+-pd.set_option('precision', 4)
++pd.set_option('display.precision', 4)

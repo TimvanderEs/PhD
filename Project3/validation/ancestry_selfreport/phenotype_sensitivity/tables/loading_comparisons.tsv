@@ -1,0 +1,37 @@
+model	n	task	loading_higher_performance	pc1_variance_explained
+Original full-sample coding	22422	Reaction time	0.438610852267434	0.370355413795686
+Original full-sample coding	22422	Stroop box	0.551188815514148	0.370355413795686
+Original full-sample coding	22422	Stroop ink	0.486311388677331	0.370355413795686
+Original full-sample coding	22422	Quiz score	0.322502379830065	0.370355413795686
+Original full-sample coding	22422	Working memory	0.313958957464144	0.370355413795686
+Original full-sample coding	22422	Pairing guesses	0.254430012380702	0.370355413795686
+Seven-category GRID adjustment	22422	Reaction time	0.438622899193719	0.370425915008995
+Seven-category GRID adjustment	22422	Stroop box	0.551113157432903	0.370425915008995
+Seven-category GRID adjustment	22422	Stroop ink	0.48621291164283	0.370425915008995
+Seven-category GRID adjustment	22422	Quiz score	0.322612120048512	0.370425915008995
+Seven-category GRID adjustment	22422	Working memory	0.313879925178482	0.370425915008995
+Seven-category GRID adjustment	22422	Pairing guesses	0.254719565653661	0.370425915008995
+Core GRID groups only	21596	Reaction time	0.435891795423728	0.367678809389741
+Core GRID groups only	21596	Stroop box	0.552685337141104	0.367678809389741
+Core GRID groups only	21596	Stroop ink	0.486878053260138	0.367678809389741
+Core GRID groups only	21596	Quiz score	0.326344603815218	0.367678809389741
+Core GRID groups only	21596	Working memory	0.310725669790688	0.367678809389741
+Core GRID groups only	21596	Pairing guesses	0.253842036981539	0.367678809389741
+Questionnaire subset: genetic ancestry	13102	Reaction time	0.436149348864728	0.388134169225542
+Questionnaire subset: genetic ancestry	13102	Stroop box	0.542665336290521	0.388134169225542
+Questionnaire subset: genetic ancestry	13102	Stroop ink	0.477154934259398	0.388134169225542
+Questionnaire subset: genetic ancestry	13102	Quiz score	0.340359131817352	0.388134169225542
+Questionnaire subset: genetic ancestry	13102	Working memory	0.318554772072704	0.388134169225542
+Questionnaire subset: genetic ancestry	13102	Pairing guesses	0.265122171015035	0.388134169225542
+Questionnaire subset: genetic ancestry + self-description	13102	Reaction time	0.436187983740333	0.388094419658004
+Questionnaire subset: genetic ancestry + self-description	13102	Stroop box	0.54263739846868	0.388094419658004
+Questionnaire subset: genetic ancestry + self-description	13102	Stroop ink	0.477080869682489	0.388094419658004
+Questionnaire subset: genetic ancestry + self-description	13102	Quiz score	0.34036254010427	0.388094419658004
+Questionnaire subset: genetic ancestry + self-description	13102	Working memory	0.318480039808039	0.388094419658004
+Questionnaire subset: genetic ancestry + self-description	13102	Pairing guesses	0.265334403996776	0.388094419658004
+Strictly concordant questionnaire subset	12989	Reaction time	0.436122638151676	0.387257766603522
+Strictly concordant questionnaire subset	12989	Stroop box	0.543067925902544	0.387257766603522
+Strictly concordant questionnaire subset	12989	Stroop ink	0.477423507721116	0.387257766603522
+Strictly concordant questionnaire subset	12989	Quiz score	0.340827657873441	0.387257766603522
+Strictly concordant questionnaire subset	12989	Working memory	0.318057455229408	0.387257766603522
+Strictly concordant questionnaire subset	12989	Pairing guesses	0.263850392124582	0.387257766603522

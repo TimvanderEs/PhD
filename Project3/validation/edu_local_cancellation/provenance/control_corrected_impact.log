@@ -1,0 +1,32 @@
+                                       metric        value
+                                       <char>        <num>
+ 1:        control_univariate_rows_all_traits 1.105700e+04
+ 2:      corrected_univariate_rows_all_traits 1.105100e+04
+ 3:          control_bivariate_rows_all_pairs 7.260000e+02
+ 4:        corrected_bivariate_rows_all_pairs 7.170000e+02
+ 5:   control_helios_locally_heritable_blocks 1.500000e+02
+ 6: corrected_helios_locally_heritable_blocks 1.500000e+02
+ 7:      control_edu_locally_heritable_blocks 1.148000e+03
+ 8:    corrected_edu_locally_heritable_blocks 1.120000e+03
+ 9:        control_helios_edu_eligible_blocks 9.200000e+01
+10:      corrected_helios_edu_eligible_blocks 9.200000e+01
+11:               helios_edu_eligible_in_both 9.200000e+01
+12:                   helios_edu_control_only 0.000000e+00
+13:                 helios_edu_corrected_only 0.000000e+00
+14:            helios_edu_eligibility_jaccard 1.000000e+00
+15:             common_target_rho_correlation 9.997147e-01
+16:   common_target_median_abs_rho_difference 2.558240e-03
+17:      common_target_max_abs_rho_difference 1.965310e-02
+18:        common_target_max_abs_p_difference 7.869300e-02
+19:             common_target_sign_discordant 0.000000e+00
+20:        control_target_nominal_significant 1.400000e+01
+21:      corrected_target_nominal_significant 1.500000e+01
+22: common_target_nominal_decision_discordant 1.000000e+00
+23:            control_target_fdr_significant 0.000000e+00
+24:          corrected_target_fdr_significant 0.000000e+00
+25:     common_target_fdr_decision_discordant 0.000000e+00
+26:   helios_univariate_max_abs_h2_difference 0.000000e+00
+27:    helios_univariate_max_abs_p_difference 0.000000e+00
+28:      edu_univariate_max_abs_h2_difference 8.785500e-05
+29:       edu_univariate_max_abs_p_difference 1.048790e-01
+                                       metric        value

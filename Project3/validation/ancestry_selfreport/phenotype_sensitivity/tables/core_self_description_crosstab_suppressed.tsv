@@ -1,0 +1,13 @@
+genetic_ancestry	self_ethnicity	row_total	row_percentage	suppressed	count
+chinese	chinese	11940	99.7738693467337	FALSE	11913
+indian	indian	835	92.6946107784431	FALSE	774
+indian	other	835		TRUE	suppressed
+malay	malay	327	92.3547400611621	FALSE	302
+chinese	other	11940		TRUE	suppressed
+chinese	indian	11940		TRUE	suppressed
+malay	other	327		TRUE	suppressed
+indian	chinese	835		TRUE	suppressed
+chinese	malay	11940	0.125628140703518	FALSE	15
+malay	chinese	327		TRUE	suppressed
+malay	indian	327		TRUE	suppressed
+indian	malay	835		TRUE	suppressed

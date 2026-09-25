@@ -1,0 +1,4 @@
+There were 25 warnings (use warnings() to see them)
+Warning: 'timedatectl' indicates the non-existent timezone name 'n/a'
+Warning: Your system is mis-configured: '/etc/localtime' is not a symlink
+Warning: '/etc/localtime' is not identical to any known timezone file

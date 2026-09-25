@@ -1,0 +1,4 @@
+source	role	raw_rows	HELIOS_rows	unique_HELIOS_participants	duplicate_identifier_rows	conflicting_identifier_n	sha256
+Sample_Annotation_r231.csv	GRID genetic ancestry, PC1-PC5, SG100K race metadata	49598	23615	23615	0	0	6cd84317644f46296c3b0625306e5c8c47a7d0a300b595150e1eb2ba5f8782db
+SG100K_Core_r1_v1_1.csv	NRIC-recorded race validation	23859	23468	23468	780	1	12340bc67d21bb4b66eade1ec7626bc0dbf3e6230ca86a9060158426c944b5ac
+SG100K_IAQ_anon_r1_v1_1.csv	Self-described and parental ethnic heritage	23835	13906	13906	754	0	8fb43e8465fb5afe37ebd25069069b49a224869ee6b0298681fcc6d0471df4cc

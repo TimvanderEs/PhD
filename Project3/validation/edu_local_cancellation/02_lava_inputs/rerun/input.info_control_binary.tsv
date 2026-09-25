@@ -1,0 +1,5 @@
+phenotype	cases	controls	filename
+MDD_EAS	NA	NA	/home/ec2-user/project2/inputfiles/EAS_raw/MDD_EAS_for_LAVA.sumstats.gz
+Edu_EAS	15771	178777	/home/ec2-user/project2/inputfiles/EAS_raw/Edu_EAS_for_LAVA.sumstats.gz
+SCZ_EAS	13305	16244	/home/ec2-user/project2/inputfiles/EAS_raw/SCZ_EAS_for_LAVA.sumstats.gz
+HEL10k_EAS	NA	NA	/home/ec2-user/project2/inputfiles/EAS_raw/HELIOS_10k_for_LAVA.sumstats.gz

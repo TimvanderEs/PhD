@@ -1,0 +1,22 @@
+parameter	value	evidence	status
+software	LAVA 0.1.5	Historical run log and surviving conda environment	verified
+phenotypes	MDD_EAS; Edu_EAS; SCZ_EAS; HEL10k_EAS	Historical run log	verified
+locus_file	EAS_LAVA.locfile	Runner snapshot and output coordinates	verified
+total_loci	3064	Locus file and run log	verified
+locus_overlap_count	0	Coordinate audit	verified
+mhc	included	Locus file contains contiguous chr6 blocks spanning 25-34 Mb	verified
+ld_reference	1000 Genomes EAS PLINK reference	Runner snapshot and recovered g1000_eas files	path moved after run
+ld_reference_samples	504	Recovered g1000_eas.fam	verified
+ld_reference_variants	22263023	Recovered g1000_eas.bim	verified
+common_aligned_snps	4717676	Historical run log	verified
+sample_overlap	4x4 LDSC-intercept matrix	Pre-run copy in /home/ec2-user/software/pleio/sample.overlap.txt	verified by identical checksum
+univariate_threshold	2e-5	Runner snapshot and exact reconstruction of all 726 bivariate rows	verified
+bivariate_multiple_testing	none in raw output	Raw bivariate file has P only	verified
+all_univariate_rows	11057	Historical univariate output	verified
+all_bivariate_rows	726	Historical bivariate output	verified
+expected_bivariate_rows	726	Reconstructed from univariate P < 2e-5	verified
+helios_edu_bivariate_rows	92	Historical bivariate output	verified
+helios_input_type	continuous	Historical run log	correct
+edu_input_type	binary	Historical run log	incorrect
+edu_case_control_values	15771 cases; 178777 controls	input.info_EAS.txt	incorrect values copied from a disease phenotype
+historical_output_use	provenance only	LAVA source inspection	must not be used for cancellation

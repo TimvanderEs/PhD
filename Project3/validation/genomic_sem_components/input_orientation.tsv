@@ -1,0 +1,7 @@
+trait_id	label	source_scale	higher_performance_multiplier	one_factor	two_factor
+reaction_time	Reaction time	milliseconds; lower is better	-1	g	latency
+stroop_box	Stroop box time	milliseconds; lower is better	-1	g	latency
+stroop_ink	Stroop ink time	milliseconds; lower is better	-1	g	latency
+quiz_score	Quiz score	higher is better	1	g	non_latency
+working_memory	Working-memory score	higher is better	1	g	non_latency
+pairing_guesses	Pairing guesses	count to completion; lower is better	-1	g	non_latency

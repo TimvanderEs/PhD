@@ -1,0 +1,13 @@
+HELIOS phenotype/ethnicity sensitivity
+Started: 2026-09-23 12:36:07 UTC
+Parsed annotation records: 10000 
+Parsed annotation records: 20000 
+Parsed annotation records: 30000 
+Parsed annotation records: 40000 
+Interview participant IDs with conflicting self-description: 0 
+Retained original PCA N: 22422 
+Core GRID N: 21596 
+Core with self-described ethnicity N: 13102 
+Strict genetic/self-description concordance N: 12989 
+Completed: 2026-09-23 12:36:16 UTC
+All validation checks passed.

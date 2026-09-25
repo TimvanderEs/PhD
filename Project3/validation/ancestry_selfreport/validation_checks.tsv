@@ -1,0 +1,5 @@
+check	status	detail
+HELIOS participant identifiers unique	PASS	N=23615
+GRID PC1-PC5 complete	PASS	missing=0
+Annotation race matches FREG5_Race	PASS	matched=23468/23468
+No participant-level output written	PASS	Only aggregate TSV, report and non-identifiable figures are produced

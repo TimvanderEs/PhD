@@ -10,6 +10,10 @@
 - The stored 22k score has higher values for poorer performance. Poster-facing
   loadings reverse the arbitrary PCA sign so higher values indicate better
   performance.
+- Before GWAS, PC1 was split by genetic-ancestry analysis group, values beyond
+  five within-group standard deviations were set to missing and the remaining
+  scores were Blom inverse-normal transformed within group. REGENIE Step 2 did
+  not apply a second RINT.
 
 ### Education covariate sensitivity
 
@@ -70,3 +74,8 @@ The 10k and 22k estimates arise from distinct phenotype and analysis
 iterations. They should not be interpreted as a clean sample-size scaling
 experiment without matching the phenotype definition, SNP set, ancestry
 composition and LD-score reference.
+
+At phenotype level, pooled and within-ancestry Blom scores preserved identical
+within-ancestry rank order (Spearman rho = 1) and correlated at r =
+0.9990–1.0000 in the reconstructed expanded sample. This is not a matched GWAS
+comparison; see [`../phenotype_pipeline`](../phenotype_pipeline).

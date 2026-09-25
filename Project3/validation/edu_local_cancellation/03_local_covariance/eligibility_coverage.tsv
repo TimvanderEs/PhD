@@ -1,0 +1,14 @@
+metric	value
+total_lava_blocks	3064
+helios_estimable_blocks	2509
+edu_estimable_blocks	2954
+helios_locally_heritable_blocks	150
+edu_locally_heritable_blocks	1120
+bivariate_eligible_blocks	92
+percentage_all_blocks_eligible	3.00261096605744
+helios_h2_all_estimable	17.38219083953
+helios_h2_bivariate_eligible	1.92475744
+helios_h2_coverage	0.110731579106978
+edu_h2_all_estimable	1.4207488625334
+edu_h2_bivariate_eligible	0.092002053
+edu_h2_coverage	0.0647560279132985

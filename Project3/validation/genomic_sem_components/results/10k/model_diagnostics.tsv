@@ -1,0 +1,2 @@
+freeze	minimum_genetic_covariance_eigenvalue	covariance_positive_semidefinite	one_factor_warning_file_nonempty	two_factor_warning_file_nonempty	one_factor_negative_residual_variance	two_factor_negative_residual_variance
+10k	-0.0586230182700233	FALSE	TRUE	TRUE	TRUE	TRUE

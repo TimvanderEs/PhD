@@ -1,0 +1,7 @@
+analysis	ancestry	n	pearson_r	spearman_rho	within_ancestry_rank_differences
+Historical 10k PCA reconstruction	Chinese	5324	0.9999429495	1.0000000000	0
+Historical 10k PCA reconstruction	Indian	1286	0.9995857704	1.0000000000	0
+Historical 10k PCA reconstruction	Malay	793	0.9988722257	1.0000000000	0
+Expanded 22k reconstruction	Chinese	17957	0.9999674407	1.0000000000	0
+Expanded 22k reconstruction	Indian	2310	0.9991507893	1.0000000000	0
+Expanded 22k reconstruction	Malay	1241	0.9989641935	1.0000000000	0

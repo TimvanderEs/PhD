@@ -1,0 +1,28 @@
+self_reported_ethnicity	genetic_ancestry	count	row_percentage	suppressed
+Chinese	Chinese	12333	98.86964886964887	False
+Chinese	Chinese–Malay	90	0.7215007215007215	False
+Chinese	Indian	<5		True
+Chinese	Chinese–Indian	35	0.28058361391694725	False
+Chinese	Malay	<5		True
+Chinese	Indian–Malay	6	0.0481000481000481	False
+Chinese	Other	<5		True
+Indian	Chinese	<5		True
+Indian	Indian	796	92.99065420560747	False
+Indian	Chinese–Indian	17	1.985981308411215	False
+Indian	Malay	5	0.5841121495327103	False
+Indian	Indian–Malay	29	3.3878504672897196	False
+Indian	Other	<5		True
+Malay	Chinese	15	3.588516746411483	False
+Malay	Chinese–Malay	53	12.679425837320574	False
+Malay	Indian	<5		True
+Malay	Chinese–Indian	6	1.4354066985645932	False
+Malay	Malay	317	75.83732057416267	False
+Malay	Indian–Malay	20	4.784688995215311	False
+Malay	Other	<5		True
+Other	Chinese	8	5.063291139240507	False
+Other	Chinese–Malay	9	5.69620253164557	False
+Other	Indian	56	35.44303797468354	False
+Other	Chinese–Indian	7	4.430379746835443	False
+Other	Malay	18	11.39240506329114	False
+Other	Indian–Malay	6	3.7974683544303796	False
+Other	Other	54	34.177215189873415	False

@@ -1,0 +1,22 @@
+Warning message:
+package 'ggplot2' was built under R version 4.2.3 
+                                              [,1]
+global_ldsc_rg_original_higher_worse -5.020000e-02
+global_ldsc_rg_higher_performance     5.020000e-02
+global_ldsc_rg_se                     8.350000e-02
+global_ldsc_p                         5.476000e-01
+n_lava_blocks_total                   3.064000e+03
+n_bivariate_eligible                  9.200000e+01
+n_positive_cov                        4.700000e+01
+n_negative_cov                        4.500000e+01
+n_fdr_positive                        0.000000e+00
+n_fdr_negative                        0.000000e+00
+sum_positive_cov                      3.560039e-02
+sum_negative_abs_cov                  4.281680e-02
+sum_signed_cov                       -7.216414e-03
+sum_absolute_cov                      7.841719e-02
+net_to_total_ratio                    9.202592e-02
+cancellation_fraction                 9.079741e-01
+rg_eligible                          -1.714884e-02
+helios_h2_coverage                    1.107316e-01
+edu_h2_coverage                       6.475603e-02

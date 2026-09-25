@@ -1,0 +1,5 @@
+file	original_orientation	evidence	presentation_orientation	action_required
+Historical six-task PCA score	higher score = poorer cognitive performance	All six direction-aligned tasks have negative loadings and correlations with stored g	higher score = better cognitive performance	multiply score by -1 for presentation
+HELIOS_10k_for_LAVA.sumstats.gz	positive effect = higher stored g = poorer cognitive performance	LAVA export traces to the g_raw Chinese-only GWAS without an intentional sign reversal	positive effect = better cognitive performance	multiply HELIOS-related local rho and covariance by -1
+10k_clean.sumstats.gz	positive effect = higher stored g = poorer cognitive performance	Munging used Z directly; aligned Z statistics agree positively with the LAVA export	positive effect = better cognitive performance	multiply HELIOS-related global rg and covariance by -1 when presenting direction
+Edu_EAS_for_LAVA.sumstats.gz	positive effect = higher educational attainment	Educational-attainment GWAS effect orientation preserved across LDSC and LAVA exports	positive effect = higher educational attainment	none

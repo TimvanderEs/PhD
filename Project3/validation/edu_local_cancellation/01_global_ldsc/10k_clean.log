@@ -1,0 +1,53 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--signed-sumstats Z,0 \
+--out 10k_clean \
+--merge-alleles /home/ec2-user/COV_LDSC_paper/w_hm3.snplist \
+--N-col N \
+--chunksize 500000 \
+--a1 A1 \
+--a2 A2 \
+--snp SNP \
+--sumstats 10k_clean_g.rsid37.tsv.gz \
+--p P 
+
+Interpreting column names as follows:
+N:	Sample size
+A1:	Allele 1, interpreted as ref allele for signed sumstat.
+P:	p-Value
+A2:	Allele 2, interpreted as non-ref allele for signed sumstat.
+SNP:	Variant ID (e.g., rs number)
+Z:	Directional summary statistic as specified by --signed-sumstats.
+
+Reading list of SNPs for allele merge from /home/ec2-user/COV_LDSC_paper/w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from 10k_clean_g.rsid37.tsv.gz into memory 500000 SNPs at a time.
+Read 1968631 SNPs from --sumstats file.
+Removed 1138717 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 0 SNPs with INFO <= 0.9.
+Removed 0 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+829914 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (829914 SNPs remain).
+Removed 0 SNPs with N < 3728.0 (829914 SNPs remain).
+Median value of SIGNED_SUMSTATS was 0.00411714857265, which seems sensible.
+Removed 1 SNPs whose alleles did not match --merge-alleles (829913 SNPs remain).
+Writing summary statistics for 1217311 SNPs (829913 with nonmissing beta) to 10k_clean.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 1.062
+Lambda GC = 1.06
+Max chi^2 = 24.65
+0 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Tue Apr 21 11:08:23 2026
+Total time elapsed: 28.06s

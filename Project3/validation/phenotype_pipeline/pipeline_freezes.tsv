@@ -1,0 +1,5 @@
+analysis	factor_construction	factor_n	final_phenotype_preparation	gwas_n	role
+Expanded 22k	Raw six-task residualisation with education adjustment; pooled PCA	22422	Within-ancestry 5-SD mask and external Blom RINT	21518	Primary WCPG 2026 analysis
+Historical 10k PCA reconstruction	Reciprocal transformation of four measures; pooled residualisation and PCA	7403	Within-ancestry 5-SD mask and external Blom RINT	7403	Historical factor/Step 2 lineage
+12k extension	Archived extension residual matrix and separate PCA	13774	Within-ancestry 5-SD mask and external Blom RINT	13751	Nested diagnostic analysis
+Refined Chinese-only 10k	Precomputed input labelled g_raw; exact upstream score file not retained	NA	REGENIE RINT in Step 2 only	5700	Separate downstream freeze

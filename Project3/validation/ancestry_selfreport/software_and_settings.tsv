@@ -1,0 +1,7 @@
+item	value
+python	3.12.14
+numpy	2.3.5
+pandas	2.2.3
+pillow	12.3.0
+minimum_cell_size	5
+platform	macOS-26.3-arm64-arm-64bit

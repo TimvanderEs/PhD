@@ -31,3 +31,24 @@ The fourth argument is optional and is used only to compare the reproduced
 score with the historical score. The three aggregate output tables may be
 shared; `cognitive_factor_scores.tsv` is participant-level data and must remain
 outside the repository.
+
+## Final GWAS phenotype preparation
+
+`prepare_ancestry_g_for_regenie.R` represents the post-PCA preparation used by
+the historical 10k and expanded 22k ancestry-specific analyses. For one
+ancestry group it:
+
+1. intersects the pooled cognitive-factor score with the ancestry analysis IDs;
+2. masks values beyond five within-group standard deviations; and
+3. applies the Blom inverse-normal transformation within that group.
+
+```bash
+Rscript prepare_ancestry_g_for_regenie.R \
+  /controlled/path/pooled_scores.tsv \
+  /controlled/path/Chinese_ids.tsv \
+  /controlled/path/Chinese_g.pheno \
+  g 5
+```
+
+Run the script separately for Chinese, Indian and Malay participants. Its
+output is participant-level controlled data and must not be committed.

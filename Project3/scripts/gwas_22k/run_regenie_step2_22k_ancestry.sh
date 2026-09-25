@@ -17,7 +17,9 @@ output_prefix=$6
   --step 2 \
   --bed "${bed_prefix}" \
   --covarFile "${covariate_file}" \
+  --covarColList PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10,PC11,PC12,PC13,PC14,PC15,PC16,PC17,PC18,PC19,PC20 \
   --phenoFile "${phenotype_file}" \
+  --phenoCol g \
   --bsize 200 \
   --minMAC 0.5 \
   --pred "${prediction_list}" \

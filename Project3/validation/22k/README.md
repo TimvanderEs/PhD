@@ -12,6 +12,8 @@ The validation covers:
 - exact reproduction of the archived 12k extension score;
 - exact reconstruction of all six combined-sample residuals;
 - exact reproduction and direction check of the combined 22k PC1;
+- reconstruction of the ancestry split, 5-SD mask and external Blom RINT used
+  to prepare the GWAS phenotype;
 - a residualisation sensitivity analysis omitting education;
 - raw task distributions, including ancestry and freeze summaries;
 - 1,000 participant bootstrap replicates;
@@ -30,6 +32,15 @@ which higher values indicate poorer cognitive performance. Figures and public
 interpretation reverse the sign so that higher values indicate better
 performance. This does not alter P values, heritability or model fit;
 association-effect signs reverse accordingly.
+
+## GWAS phenotype
+
+The saved pooled PC1 was not passed directly to REGENIE. It was split into the
+Chinese, Indian and Malay genetic-analysis groups, values beyond five
+within-group standard deviations were set to missing, and the remaining values
+were Blom inverse-normal transformed within group. The completed Step 2 runs
+therefore did not use `--apply-rint`. Aggregate pooled-versus-within-ancestry
+checks are in [`../phenotype_pipeline`](../phenotype_pipeline).
 
 ## Education covariate sensitivity
 
@@ -75,4 +86,5 @@ reference for each freeze and keep the trans-ancestry and refined Chinese-only
 
 The verified expanded-cohort REGENIE Step 2 wrapper is in
 [`scripts/gwas_22k`](../../scripts/gwas_22k). Exact Step 1 prediction-file
-lineage was not retained.
+lineage was not retained; the repository therefore does not claim that the
+Step 1 transformation state was independently verified.

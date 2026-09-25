@@ -1,0 +1,6 @@
+check	status	detail
+Exact task-residual reproduction	PASS	minimum r=1.000000000000
+Exact saved-score reproduction	PASS	absolute r=1.000000000000
+GRID ancestry complete in PCA sample	PASS	N=22422
+Questionnaire model participant sets identical	PASS	N=13102
+No participant-level output written	PASS	Only aggregate tables, figures and logs are written

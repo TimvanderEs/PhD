@@ -1,0 +1,2 @@
+global_ldsc_rg_original_higher_worse	global_ldsc_rg_higher_performance	global_ldsc_rg_se	global_ldsc_p	n_lava_blocks_total	n_bivariate_eligible	n_positive_cov	n_negative_cov	n_fdr_positive	n_fdr_negative	sum_positive_cov	sum_negative_abs_cov	sum_signed_cov	sum_absolute_cov	net_to_total_ratio	cancellation_fraction	rg_eligible	helios_h2_coverage	edu_h2_coverage
+-0.0502	0.0502	0.0835	0.5476	3064	92	47	45	0	0	0.0356003877872226	0.0428168020195042	-0.00721641423228161	0.0784171898067269	0.0920259225058658	0.907974077494134	-0.0171488377560267	0.110731579106978	0.0647560279132985

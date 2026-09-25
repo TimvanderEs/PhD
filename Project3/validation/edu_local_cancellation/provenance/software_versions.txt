@@ -1,0 +1,8 @@
+LAVA 0.1.5
+R 4.2.2
+data.table 1.17.8
+ggplot2 3.5.1
+LAVA environment: /home/ec2-user/miniconda3/envs/coloc_reporter
+LDSC 1.0.1
+Input-concordance checker: Python standard library only
+Audit completed: 2026-09-19
