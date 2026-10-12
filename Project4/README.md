@@ -86,8 +86,6 @@ The repository retains two earlier analysis stages for provenance:
 
 These analyses used different samples, variant sets, or specifications and should not be combined as a single performance benchmark. The final controlled experiment supersedes the earlier translated-row 1KG comparison for claims about Chinese panel performance.
 
-An early external-cohort benchmark labelled UKB, Pan-UKB, BBJ, CKB, and KoGES/TWB is excluded from interpretation because the archived download workflow mismatched several phenotype labels and accessions and substituted sample sizes. A corrected run using genuine Biobank Japan height data recovered strong signal (h2 = 0.3875, SE = 0.0188), confirming that the archived near-zero estimate was an input-provenance failure.
-
 ## Scope
 
 This repository addresses post-GWAS LDSC. REGENIE uses individual-level study genotypes to model polygenic effects and does not use an external LDSC reference panel. The Singapore panels are therefore not replacement inputs for the original REGENIE association analyses.
