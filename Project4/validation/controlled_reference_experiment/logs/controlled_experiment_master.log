@@ -1,0 +1,19 @@
+[2026-09-22T13:38:59+00:00] Waiting for controlled panel build PID 54100
+[2026-09-22T13:44:11+00:00] Waiting for controlled panel build PID 54100
+[2026-09-22T17:57:43+00:00] Waiting for controlled panel build PID 64083
+[2026-09-22T18:45:52+00:00] Waiting for controlled panel build PID 64083
+[2026-09-22T20:09:54+00:00] Recomputing the 1000 Genomes EAS comparator from raw genotypes on the exact shared SNP set
+[2026-09-22T20:13:56+00:00] Waiting for controlled panel build PID 64083
+[2026-09-22T20:13:56+00:00] Recomputing the 1000 Genomes EAS comparator from raw genotypes on the exact shared SNP set
+[2026-09-22T20:17:09+00:00] Waiting for controlled panel build PID 64083
+[2026-09-22T20:17:09+00:00] Recomputing the 1000 Genomes EAS comparator from raw genotypes on the exact shared SNP set
+[2026-09-22T20:20:11+00:00] Waiting for controlled panel build PID 64083
+[2026-09-22T20:20:11+00:00] Recomputing the 1000 Genomes EAS comparator from raw genotypes on the exact shared SNP set
+[2026-09-22T20:21:51+00:00] Controlled five-panel build validated
+[2026-09-22T20:21:51+00:00] Starting controlled real-GWAS LDSC and reference-size panel build
+[2026-09-22T21:15:05+00:00] Controlled real-GWAS estimates, paired jackknife, and reference-size panels complete
+[2026-09-22T21:15:05+00:00] Starting real-GWAS reference-size h2 sensitivity
+[2026-09-22T21:18:42+00:00] Real-GWAS reference-size h2 sensitivity complete
+[2026-09-22T21:18:42+00:00] Starting held-out genotype simulation
+[2026-09-22T21:24:46+00:00] Held-out genotype simulation complete
+[2026-09-22T21:24:47+00:00] All controlled reference analyses complete

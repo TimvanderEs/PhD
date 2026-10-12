@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "component": 1,
+      "l2_norm": 1.0,
+      "mean": 3.977694024198152e-21
+    },
+    {
+      "component": 2,
+      "l2_norm": 0.9999999999999999,
+      "mean": 9.073937323552601e-21
+    },
+    {
+      "component": 3,
+      "l2_norm": 1.0,
+      "mean": 2.933591984276897e-20
+    },
+    {
+      "component": 4,
+      "l2_norm": 0.9999999999999999,
+      "mean": -4.602319451404835e-21
+    },
+    {
+      "component": 5,
+      "l2_norm": 0.9999999999999999,
+      "mean": 4.6751087586399197e-20
+    },
+    {
+      "component": 6,
+      "l2_norm": 1.0,
+      "mean": 4.7624155540162487e-20
+    },
+    {
+      "component": 7,
+      "l2_norm": 1.0,
+      "mean": -3.608940676395666e-20
+    },
+    {
+      "component": 8,
+      "l2_norm": 1.0,
+      "mean": -2.679493566128083e-20
+    },
+    {
+      "component": 9,
+      "l2_norm": 1.0,
+      "mean": -7.242017469215172e-20
+    },
+    {
+      "component": 10,
+      "l2_norm": 0.9999999999999999,
+      "mean": 3.262482365225328e-20
+    },
+    {
+      "component": 11,
+      "l2_norm": 1.0,
+      "mean": -2.8024701098301397e-20
+    },
+    {
+      "component": 12,
+      "l2_norm": 1.0,
+      "mean": -5.536268039987349e-20
+    },
+    {
+      "component": 13,
+      "l2_norm": 1.0,
+      "mean": 6.534196481105481e-20
+    },
+    {
+      "component": 14,
+      "l2_norm": 1.0,
+      "mean": 6.434712728284919e-21
+    },
+    {
+      "component": 15,
+      "l2_norm": 0.9999999999999999,
+      "mean": -6.493494245304759e-20
+    },
+    {
+      "component": 16,
+      "l2_norm": 0.9999999999999999,
+      "mean": -2.2194645505313587e-21
+    },
+    {
+      "component": 17,
+      "l2_norm": 1.0,
+      "mean": -2.4519952943160676e-21
+    },
+    {
+      "component": 18,
+      "l2_norm": 1.0,
+      "mean": 7.813912954897612e-20
+    },
+    {
+      "component": 19,
+      "l2_norm": 1.0,
+      "mean": 2.9414043851230014e-21
+    },
+    {
+      "component": 20,
+      "l2_norm": 1.0,
+      "mean": -3.2955263958888174e-20
+    }
+  ],
+  "components": 20,
+  "output": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/pca_pooled_unrelated_20pc.eigenvec",
+  "samples": 37351,
+  "source": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/pca_pooled_unrelated.eigenvec"
+}

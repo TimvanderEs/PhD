@@ -1,0 +1,37 @@
+assigned_cohort	assigned_trait	accession	official_catalog_trait	label_matches	verdict	catalog_metadata
+UKB	height	GCST90000612	accession unavailable through current Catalog API	NA	unverifiable; exclude	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000612
+UKB	bmi	GCST90000615	Serum 25-Hydroxyvitamin D levels (BMI covariate)	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000615
+UKB	whr	GCST90000620	Serum 25-Hydroxyvitamin D levels (winter)	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000620
+UKB	ldl	GCST90000617	Serum 25-Hydroxyvitamin D levels (natural log-transformed)	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000617
+UKB	tg	GCST90000618	Serum 25-Hydroxyvitamin D levels	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000618
+UKB	sbp	GCST90000613	accession unavailable through current Catalog API	NA	unverifiable; exclude	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000613
+UKB	alt	GCST90000624	accession unavailable through current Catalog API	NA	unverifiable; exclude	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000624
+UKB	t2d	GCST90000614	Serum 25-Hydroxyvitamin D levels	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000614
+UKB	smoking	GCST90000621	Serum 25-Hydroxyvitamin D level variance	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90000621
+JBB	height	GCST90018907	Psoriasis vulgaris	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018907
+JBB	bmi	GCST90018908	Pulmonary fibrosis	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018908
+JBB	whr	GCST90018909	Pyelonephritis	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018909
+JBB	ldl	GCST90018917	Systemic lupus erythematosus	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018917
+JBB	tg	GCST90018919	Schizophrenia	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018919
+JBB	sbp	GCST90018914	Ringworm	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018914
+JBB	alt	GCST90018921	Skin cancer	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018921
+JBB	t2d	GCST90018925	Type 1 diabetes	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018925
+JBB	smoking	GCST90018928	Tatto pigmentation	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018928
+CBK	height	GCST90018961	LDL cholesterol	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018961
+CBK	bmi	GCST90018963	Mean arterial pressure	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018963
+CBK	whr	GCST90018967	Monocyte count	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018967
+CBK	ldl	GCST90018973	Total bilirubin	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018973
+CBK	tg	GCST90018975	Triglycerides	yes	trait matches; cohort/sample provenance not established	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018975
+CBK	sbp	GCST90018970	Pulse pressure	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018970
+CBK	alt	GCST90018977	Serum uric acid	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018977
+CBK	t2d	GCST90018981	Medication use (diabetes drugs)	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018981
+CBK	smoking	GCST90018984	Medication use (antihypertensives)	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018984
+KOGES_TWB	height	GCST90018949	Weight	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018949
+KOGES_TWB	bmi	GCST90018933	Ulcerative colitis	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018933
+KOGES_TWB	whr	GCST90018956	HDL cholesterol	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018956
+KOGES_TWB	ldl	GCST90018938	Uveitis	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018938
+KOGES_TWB	tg	GCST90018941	Zoster	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018941
+KOGES_TWB	sbp	GCST90018944	Aspartate aminotransferase levels	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018944
+KOGES_TWB	alt	GCST90018953	Eosinophil count	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018953
+KOGES_TWB	t2d	GCST90018946	Basophil count	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018946
+KOGES_TWB	smoking	GCST90018950	C-reactive protein levels	no	invalid	https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90018950

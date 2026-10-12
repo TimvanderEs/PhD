@@ -1,0 +1,25 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus
+  --chr 22
+  --freq counts
+  --out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/compact_chr22_smoke
+  --threads 4
+
+Hostname: ip-172-31-36-24.ap-southeast-1.compute.internal
+Working directory: /home/ec2-user
+Start time: Tue Sep 22 12:53:14 2026
+
+Random number seed: 1790081594
+32086 MB RAM detected; reserving 16043 MB for main workspace.
+13171 out of 925225 variants loaded from .bim file.
+46508 people (19794 males, 26714 females) loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 46508 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.962829.
+--freq counts: Allele frequencies (founders only) written to
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/compact_chr22_smoke.frq.counts
+.
+
+End time: Tue Sep 22 12:53:14 2026

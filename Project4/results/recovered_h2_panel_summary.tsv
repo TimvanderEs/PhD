@@ -1,0 +1,6 @@
+panel	n_traits	mean_h2	mean_h2_se	mean_h2_over_se	mean_intercept	interpretation
+1000 Genomes EAS 1 cM	6	0.12737	0.01290	8.9717	0.98028	Public 1 cM comparator for the trans-ancestry GWAS
+Singapore Chinese 1 cM	6	0.12525	0.01343	8.5026	0.98158	Similar h2; slightly lower mean h2/SE
+Singapore Indian 1 cM	6	0.12920	0.01560	7.5371	0.99277	Similar h2; larger mean SE
+Singapore Malay 1 cM	6	0.12372	0.01355	8.2985	0.98188	Similar h2; slightly lower mean h2/SE
+Pooled Singapore cov-LDSC 20 cM	6	0.05257	0.00605	7.8012	0.99558	Exploratory only; window and covariate specification differ

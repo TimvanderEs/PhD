@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "build": "GRCh38",
+  "m_mode": "all",
+  "n_blocks": 200,
+  "analyses": ["h2", "rg"],
+  "engine": {
+    "python": "/path/to/ldsc/environment/bin/python",
+    "script": "/path/to/cov-ldsc/ldsc.py",
+    "version": "REPLACE_WITH_VERIFIED_COMMIT"
+  },
+  "weights": {
+    "prefix": "/path/to/weights/{chr}",
+    "build": "GRCh38"
+  },
+  "panels": {
+    "singapore_chinese": {
+      "prefix": "/path/to/chinese_standard/{chr}",
+      "build": "GRCh38",
+      "ancestry": "Singapore Chinese",
+      "source": "REPLACE_WITH_PANEL_RELEASE_AND_CHECKSUM_MANIFEST"
+    },
+    "reference_eas": {
+      "prefix": "/path/to/exact_1kg_eas/{chr}",
+      "build": "GRCh38",
+      "ancestry": "1000 Genomes EAS",
+      "source": "REPLACE_WITH_PANEL_RELEASE_AND_CHECKSUM_MANIFEST"
+    }
+  },
+  "traits": {
+    "height": {
+      "sumstats": "/path/to/height.sumstats.gz",
+      "build": "GRCh38",
+      "ancestry": "Singapore Chinese",
+      "source": "REPLACE_WITH_GWAS_ACCESSION_AND_PHENOTYPE_DEFINITION",
+      "scale": "observed",
+      "max_n": 30000
+    },
+    "bmi": {
+      "sumstats": "/path/to/bmi.sumstats.gz",
+      "build": "GRCh38",
+      "ancestry": "Singapore Chinese",
+      "source": "REPLACE_WITH_GWAS_ACCESSION_AND_PHENOTYPE_DEFINITION",
+      "scale": "observed",
+      "max_n": 30000
+    }
+  }
+}

@@ -1,0 +1,39 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ld-wind-cm 1.0 \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/chinese_cov20pc/1 \
+--bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr1/chinese_cm \
+--cov /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/pca_chinese_unrelated_20pc.eigenvec \
+--l2  
+
+Beginning analysis at Tue Sep 22 18:06:48 2026
+Read list of 69347 SNPs from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr1/chinese_cm.bim
+Read list of 27178 individuals from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr1/chinese_cm.fam
+Reading genotypes from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr1/chinese_cm.bed
+After filtering, 69347 SNPs remain
+Estimating LD Score.
+Writing LD Scores for 69347 SNPs to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/chinese_cov20pc/1.l2.ldscore.gz
+
+Summary of LD Scores in /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/chinese_cov20pc/1.l2.ldscore.gz
+         MAF        L2
+mean  0.2404   16.9532
+std   0.1421   13.3669
+min   0.0100    1.0333
+25%   0.1170    8.2457
+50%   0.2325   13.6490
+75%   0.3616   21.5828
+max   0.5000  115.8969
+
+MAF/LD Score Correlation Matrix
+        MAF      L2
+MAF  1.0000  0.1806
+L2   0.1806  1.0000
+Analysis finished at Tue Sep 22 18:28:37 2026
+Total time elapsed: 21.0m:49.5s

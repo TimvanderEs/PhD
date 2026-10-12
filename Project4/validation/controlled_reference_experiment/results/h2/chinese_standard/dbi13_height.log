@@ -1,0 +1,36 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/dbi13_height.chinese.sumstats.gz \
+--ref-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/chinese_standard/ \
+--not-M-5-50  \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/h2/chinese_standard/dbi13_height \
+--w-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/1kgeas_matched/ \
+--print-delete-vals  
+
+Beginning analysis at Tue Sep 22 20:26:26 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/dbi13_height.chinese.sumstats.gz ...
+Read summary statistics for 827795 SNPs.
+Reading reference panel LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/chinese_standard/[1-22] ...
+Read reference panel LD Scores for 874025 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/1kgeas_matched/[1-22] ...
+Read regression weight LD Scores for 874025 SNPs.
+After merging with reference panel LD, 819145 SNPs remain.
+After merging with regression SNP LD, 819145 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Printing block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/h2/chinese_standard/dbi13_height.delete.
+Printing partitioned block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/h2/chinese_standard/dbi13_height.part_delete.
+Total Observed scale h2: 0.4105 (0.0324)
+Lambda GC: 1.1747
+Mean Chi^2: 1.2666
+Intercept: 1.0011 (0.0101)
+Ratio: 0.0041 (0.0377)
+Analysis finished at Tue Sep 22 20:26:34 2026
+Total time elapsed: 8.17s

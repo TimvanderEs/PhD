@@ -1,0 +1,5 @@
+gwas_ancestry	ld_panel	completed_traits	total_traits	mean_h2	median_h2	mean_h2_se	mean_h2_z	traits_h2_z_ge_1_96	mean_chi2	mean_intercept
+Chinese	1KG_EAS_1cM	6	6	0.123067	0.0864	0.0149333	7.54573	6	1.10735	1.00515
+Chinese	Singapore_Chinese_1cM	6	6	0.14515	0.10195	0.01825	7.2762	6	1.10733	1.00503
+Indian	Singapore_Indian_1cM	6	6	0.139483	0.0957	0.0673333	2.03122	2	1.0033	0.98455
+Malay	Singapore_Malay_1cM	6	6	0.1892	0.116	0.0798167	2.30849	2	1.00677	0.984567

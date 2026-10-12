@@ -1,0 +1,11 @@
+{
+  "environmental_variance_before_weight": 0.9999999999999998,
+  "genetic_environmental_covariance": 3.985557395813698e-19,
+  "genetic_variance_before_weight": 0.9999999999999998,
+  "pcs": 10,
+  "phenotype_variance": 0.9999999999999998,
+  "realized_h2": 0.2,
+  "samples": 17178,
+  "seed": 2026092303,
+  "target_h2": 0.2
+}

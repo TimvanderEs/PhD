@@ -1,0 +1,39 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ld-wind-cm 1.0 \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/pooled_cov20pc/6 \
+--bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr6/pooled_cm \
+--cov /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/pca_pooled_unrelated_20pc.eigenvec \
+--l2  
+
+Beginning analysis at Tue Sep 22 18:43:04 2026
+Read list of 55563 SNPs from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr6/pooled_cm.bim
+Read list of 37351 individuals from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr6/pooled_cm.fam
+Reading genotypes from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr6/pooled_cm.bed
+After filtering, 55563 SNPs remain
+Estimating LD Score.
+Writing LD Scores for 55563 SNPs to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/pooled_cov20pc/6.l2.ldscore.gz
+
+Summary of LD Scores in /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/pooled_cov20pc/6.l2.ldscore.gz
+         MAF       L2
+mean  0.2516  17.2123
+std   0.1372  12.8486
+min   0.0122   1.0959
+25%   0.1305   8.4650
+50%   0.2449  13.8591
+75%   0.3697  22.2232
+max   0.5000  93.4225
+
+MAF/LD Score Correlation Matrix
+       MAF     L2
+MAF  1.000  0.259
+L2   0.259  1.000
+Analysis finished at Tue Sep 22 19:04:49 2026
+Total time elapsed: 21.0m:45.13s

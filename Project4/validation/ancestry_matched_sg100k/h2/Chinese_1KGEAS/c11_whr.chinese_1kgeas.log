@@ -1,0 +1,32 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz \
+--ref-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/h2/Chinese_1KGEAS/c11_whr.chinese_1kgeas \
+--w-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/ 
+
+Beginning analysis at Tue Sep 22 07:10:45 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz ...
+Read summary statistics for 827772 SNPs.
+Reading reference panel LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/[1-22] ...
+Read reference panel LD Scores for 867103 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/[1-22] ...
+Read regression weight LD Scores for 867103 SNPs.
+After merging with reference panel LD, 827772 SNPs remain.
+After merging with regression SNP LD, 827772 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Total Observed scale h2: 0.0667 (0.0144)
+Lambda GC: 1.0618
+Mean Chi^2: 1.0775
+Intercept: 1.0231 (0.0088)
+Ratio: 0.2987 (0.1135)
+Analysis finished at Tue Sep 22 07:10:54 2026
+Total time elapsed: 8.81s

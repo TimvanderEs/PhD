@@ -1,0 +1,32 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 /home/ec2-user/COV_LDSC_paper/VALIDATION_20260918/BBJ_height/bbj_height_correct_hm3.sumstats.gz \
+--ref-ld-chr /home/ec2-user/input_files/reference/eas_ldscores/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260918/BBJ_height/bbj_height_correct_1kgeas \
+--w-ld-chr /home/ec2-user/input_files/reference/eas_ldscores/ 
+
+Beginning analysis at Fri Sep 18 09:48:34 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260918/BBJ_height/bbj_height_correct_hm3.sumstats.gz ...
+Read summary statistics for 943742 SNPs.
+Reading reference panel LD Score from /home/ec2-user/input_files/reference/eas_ldscores/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1208050 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/input_files/reference/eas_ldscores/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1208050 SNPs.
+After merging with reference panel LD, 941939 SNPs remain.
+After merging with regression SNP LD, 941939 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Total Observed scale h2: 0.3875 (0.0188)
+Lambda GC: 1.7648
+Mean Chi^2: 2.6432
+Intercept: 1.2478 (0.025)
+Ratio: 0.1508 (0.0152)
+Analysis finished at Fri Sep 18 09:48:42 2026
+Total time elapsed: 7.43s

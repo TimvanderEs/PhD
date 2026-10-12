@@ -1,0 +1,36 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c20_t2d.chinese.sumstats.gz \
+--ref-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/chinese_standard/ \
+--not-M-5-50  \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/h2/chinese_standard/c20_t2d \
+--w-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/1kgeas_matched/ \
+--print-delete-vals  
+
+Beginning analysis at Tue Sep 22 20:26:51 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c20_t2d.chinese.sumstats.gz ...
+Read summary statistics for 827801 SNPs.
+Reading reference panel LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/chinese_standard/[1-22] ...
+Read reference panel LD Scores for 874025 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/1kgeas_matched/[1-22] ...
+Read regression weight LD Scores for 874025 SNPs.
+After merging with reference panel LD, 819148 SNPs remain.
+After merging with regression SNP LD, 819148 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Printing block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/h2/chinese_standard/c20_t2d.delete.
+Printing partitioned block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/h2/chinese_standard/c20_t2d.part_delete.
+Total Observed scale h2: 0.0627 (0.0162)
+Lambda GC: 1.0436
+Mean Chi^2: 1.0515
+Intercept: 1.0116 (0.0069)
+Ratio: 0.2247 (0.1337)
+Analysis finished at Tue Sep 22 20:26:59 2026
+Total time elapsed: 8.0s

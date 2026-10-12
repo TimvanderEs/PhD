@@ -1,0 +1,32 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/c11_whr.indian.sumstats.gz \
+--ref-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/h2/Indian/c11_whr.indian_matched \
+--w-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/ 
+
+Beginning analysis at Tue Sep 22 06:55:16 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/c11_whr.indian.sumstats.gz ...
+Read summary statistics for 860162 SNPs.
+Reading reference panel LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/[1-22] ...
+Read reference panel LD Scores for 912313 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/[1-22] ...
+Read regression weight LD Scores for 912313 SNPs.
+After merging with reference panel LD, 859214 SNPs remain.
+After merging with regression SNP LD, 859214 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Total Observed scale h2: 0.0578 (0.0687)
+Lambda GC: 0.9898
+Mean Chi^2: 0.9905
+Intercept: 0.9828 (0.0067)
+Ratio: NA (mean chi^2 < 1)
+Analysis finished at Tue Sep 22 06:55:23 2026
+Total time elapsed: 7.09s

@@ -1,0 +1,11 @@
+{
+  "bim": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr11/sorted.bim",
+  "chromosome": "11",
+  "map": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/maps/GRCh38/no_chr_in_chrom_field/plink.chr11.GRCh38.map",
+  "map_markers": 168609,
+  "maximum_cm": 158.21865,
+  "minimum_cm": 0.0,
+  "variants": 44334,
+  "variants_above_map": 0,
+  "variants_below_map": 0
+}

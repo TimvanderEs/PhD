@@ -1,0 +1,65 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Chinese/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/rg/Chinese/c11_whr__c20_t2d.chinese_matched \
+--rg /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz,/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c20_t2d.chinese.sumstats.gz \
+--w-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Chinese/ 
+
+Beginning analysis at Tue Sep 22 06:53:51 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz ...
+Read summary statistics for 827772 SNPs.
+Reading reference panel LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Chinese/[1-22] ...
+Read reference panel LD Scores for 878093 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Chinese/[1-22] ...
+Read regression weight LD Scores for 878093 SNPs.
+After merging with reference panel LD, 826991 SNPs remain.
+After merging with regression SNP LD, 826991 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c20_t2d.chinese.sumstats.gz ...
+Read summary statistics for 867103 SNPs.
+After merging with summary statistics, 826991 SNPs remain.
+826990 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.0779 (0.0169)
+Lambda GC: 1.0618
+Mean Chi^2: 1.0775
+Intercept: 1.0237 (0.0089)
+Ratio: 0.3061 (0.1145)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.0547 (0.0146)
+Lambda GC: 1.0436
+Mean Chi^2: 1.0514
+Intercept: 1.0128 (0.0071)
+Ratio: 0.2493 (0.1391)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0429 (0.0104)
+Mean z1*z2: 0.2524
+Intercept: 0.2226 (0.0054)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.6566 (0.1485)
+Z-score: 4.4229
+P: 9.7363e-06
+
+
+Summary of Genetic Correlation Results
+p1                                                                                                                    p2      rg      se       z           p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz  /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c20_t2d.chinese.sumstats.gz  0.6566  0.1485  4.4229  9.7363e-06  0.0547     0.0146  1.0128     0.0071    0.2226       0.0054
+
+Analysis finished at Tue Sep 22 06:54:02 2026
+Total time elapsed: 10.79s

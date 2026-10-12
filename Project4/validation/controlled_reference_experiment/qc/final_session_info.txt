@@ -1,0 +1,8 @@
+completed_utc=2026-09-22T21:24:46+00:00
+host=ip-172-31-36-24.ap-southeast-1.compute.internal
+kernel=Linux 6.1.140-154.222.amzn2023.x86_64 x86_64 GNU/Linux
+ldsc_python=Python 2.7.18 :: Anaconda, Inc.
+plink=PLINK v1.90b6.21 64-bit (19 Oct 2020)
+plink2=PLINK v2.0.0-a.6.16LM 64-bit Intel (9 Jun 2025)
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1      500G  461G   39G  93% /

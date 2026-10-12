@@ -1,0 +1,37 @@
+PLINK v2.0.0-a.6.16LM 64-bit Intel (9 Jun 2025)
+Options in effect:
+  --bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus
+  --extract /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/king_prune.prune.in
+  --keep /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/pooled_unrelated.keep
+  --out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/pca_pooled_unrelated
+  --pca approx 20
+  --threads 8
+
+Hostname: ip-172-31-36-24.ap-southeast-1.compute.internal
+Working directory: /home/ec2-user
+Start time: Tue Sep 22 13:16:19 2026
+
+Random number seed: 1790082979
+32086 MiB RAM detected, ~31092 available; reserving 16043 MiB for main
+workspace.
+Using up to 8 compute threads.
+46508 samples (26714 females, 19794 males; 46508 founders) loaded from
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus.fam.
+925225 variants loaded from
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus.bim.
+Note: No phenotype data present.
+--extract: 101604 variants remaining.
+--keep: 37351 samples remaining.
+37351 samples (20895 females, 16456 males; 37351 founders) remaining after main
+filters.
+Calculating allele frequencies... done.
+101604 variants remaining after main filters.
+Computing SVD of Krylov matrix... done.
+Recovering top PCs from range approximation... done.
+--pca approx: Eigenvectors written to
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/pca_pooled_unrelated.eigenvec
+, and eigenvalues written to
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/pca_pooled_unrelated.eigenval
+.
+
+End time: Tue Sep 22 13:24:17 2026

@@ -1,0 +1,5 @@
+gwas_ancestry	ld_panel	completed_pairs	total_pairs	mean_rg	median_rg	mean_rg_se	nominal_p_lt_0_05	bh_fdr_lt_0_05
+Chinese	1KG_EAS_1cM	15	15	0.1209	-0.0198	0.105613	7	6
+Chinese	Singapore_Chinese_1cM	15	15	0.124807	-0.0231	0.116447	6	6
+Indian	Singapore_Indian_1cM	15	15	0.0697066	0.0445	0.690353	0	0
+Malay	Singapore_Malay_1cM	15	15	0.51034	0.5635	0.82296	1	0

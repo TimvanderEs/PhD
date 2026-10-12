@@ -1,0 +1,58 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus
+  --geno 0.02
+  --indep-pairwise 500 50 0.2
+  --keep /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/pooled.keep
+  --maf 0.01
+  --out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/king_prune
+  --threads 8
+
+Hostname: ip-172-31-36-24.ap-southeast-1.compute.internal
+Working directory: /home/ec2-user
+Start time: Tue Sep 22 12:59:19 2026
+
+Random number seed: 1790081959
+32086 MB RAM detected; reserving 16043 MB for main workspace.
+925225 variants loaded from .bim file.
+46508 people (19794 males, 26714 females) loaded from .fam.
+--keep: 46508 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 46508 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.96412.
+51042 variants removed due to missing genotype data (--geno).
+0 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+874183 variants and 46508 people pass filters and QC.
+Note: No phenotypes present.
+Pruned 61299 variants from chromosome 1, leaving 8052.
+Pruned 65848 variants from chromosome 2, leaving 7487.
+Pruned 54001 variants from chromosome 3, leaving 6793.
+Pruned 48433 variants from chromosome 4, leaving 6181.
+Pruned 49389 variants from chromosome 5, leaving 6092.
+Pruned 49721 variants from chromosome 6, leaving 5850.
+Pruned 42446 variants from chromosome 7, leaving 5478.
+Pruned 42617 variants from chromosome 8, leaving 5014.
+Pruned 36037 variants from chromosome 9, leaving 4825.
+Pruned 49487 variants from chromosome 10, leaving 5380.
+Pruned 39590 variants from chromosome 11, leaving 4749.
+Pruned 38633 variants from chromosome 12, leaving 5130.
+Pruned 29648 variants from chromosome 13, leaving 3860.
+Pruned 25612 variants from chromosome 14, leaving 3519.
+Pruned 23026 variants from chromosome 15, leaving 3391.
+Pruned 21602 variants from chromosome 16, leaving 3631.
+Pruned 18783 variants from chromosome 17, leaving 3444.
+Pruned 23229 variants from chromosome 18, leaving 3537.
+Pruned 12008 variants from chromosome 19, leaving 2661.
+Pruned 19666 variants from chromosome 20, leaving 3047.
+Pruned 10926 variants from chromosome 21, leaving 1652.
+Pruned 10578 variants from chromosome 22, leaving 1831.
+Pruning complete.  772579 of 874183 variants removed.
+Marker lists written to
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/king_prune.prune.in
+and
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/king_prune.prune.out
+.
+
+End time: Tue Sep 22 13:01:19 2026

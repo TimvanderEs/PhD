@@ -1,0 +1,32 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c8_bmi.malay.sumstats.gz \
+--ref-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/h2/Malay/c8_bmi.malay_matched \
+--w-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/ 
+
+Beginning analysis at Tue Sep 22 06:59:04 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c8_bmi.malay.sumstats.gz ...
+Read summary statistics for 857584 SNPs.
+Reading reference panel LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/[1-22] ...
+Read reference panel LD Scores for 909907 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/[1-22] ...
+Read regression weight LD Scores for 909907 SNPs.
+After merging with reference panel LD, 856920 SNPs remain.
+After merging with regression SNP LD, 856920 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Total Observed scale h2: 0.2788 (0.0748)
+Lambda GC: 1.0016
+Mean Chi^2: 0.9978
+Intercept: 0.9651 (0.0064)
+Ratio: NA (mean chi^2 < 1)
+Analysis finished at Tue Sep 22 06:59:12 2026
+Total time elapsed: 7.17s

@@ -1,0 +1,22 @@
+[2026-09-22T07:10:35+00:00] h2 Chinese GWAS with 1KG EAS: c1_sbp_avg
+[2026-09-22T07:10:45+00:00] h2 Chinese GWAS with 1KG EAS: c11_whr
+[2026-09-22T07:10:54+00:00] h2 Chinese GWAS with 1KG EAS: dbi13_height
+[2026-09-22T07:11:03+00:00] h2 Chinese GWAS with 1KG EAS: c8_bmi
+[2026-09-22T07:11:12+00:00] h2 Chinese GWAS with 1KG EAS: c37_dlab_ldl_mmol_l_log10
+[2026-09-22T07:11:22+00:00] h2 Chinese GWAS with 1KG EAS: c20_t2d
+[2026-09-22T07:11:31+00:00] rg Chinese GWAS with 1KG EAS: c1_sbp_avg vs c11_whr
+[2026-09-22T07:11:44+00:00] rg Chinese GWAS with 1KG EAS: c1_sbp_avg vs dbi13_height
+[2026-09-22T07:11:57+00:00] rg Chinese GWAS with 1KG EAS: c1_sbp_avg vs c8_bmi
+[2026-09-22T07:12:10+00:00] rg Chinese GWAS with 1KG EAS: c1_sbp_avg vs c37_dlab_ldl_mmol_l_log10
+[2026-09-22T07:12:23+00:00] rg Chinese GWAS with 1KG EAS: c1_sbp_avg vs c20_t2d
+[2026-09-22T07:12:36+00:00] rg Chinese GWAS with 1KG EAS: c11_whr vs dbi13_height
+[2026-09-22T07:12:49+00:00] rg Chinese GWAS with 1KG EAS: c11_whr vs c8_bmi
+[2026-09-22T07:13:02+00:00] rg Chinese GWAS with 1KG EAS: c11_whr vs c37_dlab_ldl_mmol_l_log10
+[2026-09-22T07:13:15+00:00] rg Chinese GWAS with 1KG EAS: c11_whr vs c20_t2d
+[2026-09-22T07:13:28+00:00] rg Chinese GWAS with 1KG EAS: dbi13_height vs c8_bmi
+[2026-09-22T07:13:41+00:00] rg Chinese GWAS with 1KG EAS: dbi13_height vs c37_dlab_ldl_mmol_l_log10
+[2026-09-22T07:13:54+00:00] rg Chinese GWAS with 1KG EAS: dbi13_height vs c20_t2d
+[2026-09-22T07:14:08+00:00] rg Chinese GWAS with 1KG EAS: c8_bmi vs c37_dlab_ldl_mmol_l_log10
+[2026-09-22T07:14:21+00:00] rg Chinese GWAS with 1KG EAS: c8_bmi vs c20_t2d
+[2026-09-22T07:14:34+00:00] rg Chinese GWAS with 1KG EAS: c37_dlab_ldl_mmol_l_log10 vs c20_t2d
+[2026-09-22T07:14:46+00:00] Chinese 1KG EAS comparison complete

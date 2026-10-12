@@ -1,0 +1,4 @@
+panel_1	panel_2	n_pairs	pearson_rg	same_direction	direction_concordance
+Chinese	Indian	15	0.9836562007769349	14	0.9333333333333333
+Chinese	Malay	15	0.9964670026282301	15	1.0
+Indian	Malay	15	0.9850062913812698	14	0.9333333333333333

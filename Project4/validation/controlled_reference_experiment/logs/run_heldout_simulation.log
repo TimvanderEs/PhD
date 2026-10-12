@@ -1,0 +1,35 @@
+PLINK v2.0.0-a.6.16LM 64-bit Intel (9 Jun 2025)    cog-genomics.org/plink/2.0/
+(C) 2005-2025 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/heldout_gwas_pca.log.
+Options in effect:
+  --bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus
+  --extract /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/king_prune.prune.in
+  --keep /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/downsamples/simulation_gwas.keep
+  --out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/heldout_gwas_pca
+  --pca approx 10
+  --threads 8
+
+Start time: Tue Sep 22 21:18:59 2026
+32086 MiB RAM detected, ~31073 available; reserving 16043 MiB for main
+workspace.
+Using up to 8 compute threads.
+46508 samples (26714 females, 19794 males; 46508 founders) loaded from
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus.fam.
+925225 variants loaded from
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus.bim.
+Note: No phenotype data present.
+--extract: 101604 variants remaining.
+--keep: 17178 samples remaining.
+17178 samples (9751 females, 7427 males; 17178 founders) remaining after main
+filters.
+Calculating allele frequencies... 0%6%13%19%26%33%40%47%53%59%66%73%81%89%99%done.
+101604 variants remaining after main filters.
+Projecting random vectors (8 compute threads)... Projecting random vectors (8 compute threads)... 1/11Projecting random vectors (8 compute threads)... 2/11Projecting random vectors (8 compute threads)... 3/11Projecting random vectors (8 compute threads)... 4/11Projecting random vectors (8 compute threads)... 5/11Projecting random vectors (8 compute threads)... 6/11Projecting random vectors (8 compute threads)... 7/11Projecting random vectors (8 compute threads)... 8/11Projecting random vectors (8 compute threads)... 9/11Projecting random vectors (8 compute threads)... 10/11Projecting random vectors (8 compute threads)... 11/11.
+Computing SVD of Krylov matrix... done.
+Recovering top PCs from range approximation... done.
+--pca approx: Eigenvectors written to
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/heldout_gwas_pca.eigenvec
+, and eigenvalues written to
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/heldout_gwas_pca.eigenval
+.
+End time: Tue Sep 22 21:20:25 2026

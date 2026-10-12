@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "build": "GRCh38",
+  "ancestry": "Singapore Chinese",
+  "source": "REPLACE_WITH_APPROVED_GENOTYPE_RELEASE_AND_QC_RECORD",
+  "qc_complete": true,
+  "bfile": "/path/to/qcd_genotypes/chr{chr}",
+  "covariates": null,
+  "window_cm": 1,
+  "engine": {
+    "python": "/path/to/ldsc/environment/bin/python",
+    "script": "/path/to/cov-ldsc/ldsc.py",
+    "version": "REPLACE_WITH_VERIFIED_COMMIT"
+  }
+}

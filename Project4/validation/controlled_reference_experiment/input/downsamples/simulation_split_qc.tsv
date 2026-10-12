@@ -1,0 +1,5 @@
+metric	value
+full_unrelated_chinese	27178
+reference_samples	10000
+held_out_gwas_samples	17178
+reference_gwas_overlap	0

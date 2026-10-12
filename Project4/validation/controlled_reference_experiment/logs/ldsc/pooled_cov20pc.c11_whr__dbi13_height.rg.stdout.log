@@ -1,0 +1,73 @@
+/home/ec2-user/software/cov-ldsc/ldscore/irwls.py:161: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  coef = np.linalg.lstsq(x, y)
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/pooled_cov20pc/ \
+--not-M-5-50  \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/rg/pooled_cov20pc/c11_whr__dbi13_height \
+--rg /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz,/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/dbi13_height.chinese.sumstats.gz \
+--w-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/1kgeas_matched/ \
+--print-delete-vals  
+
+Beginning analysis at Tue Sep 22 20:40:16 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz ...
+Read summary statistics for 827772 SNPs.
+Reading reference panel LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/pooled_cov20pc/[1-22] ...
+Read reference panel LD Scores for 874025 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/1kgeas_matched/[1-22] ...
+Read regression weight LD Scores for 874025 SNPs.
+After merging with reference panel LD, 819138 SNPs remain.
+After merging with regression SNP LD, 819138 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/dbi13_height.chinese.sumstats.gz ...
+Read summary statistics for 867103 SNPs.
+After merging with summary statistics, 819138 SNPs remain.
+819135 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.0935 (0.0198)
+Lambda GC: 1.0618
+Mean Chi^2: 1.078
+Intercept: 1.0238 (0.009)
+Ratio: 0.3053 (0.1153)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.4459 (0.0385)
+Lambda GC: 1.1747
+Mean Chi^2: 1.2666
+Intercept: 0.9967 (0.0115)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0155 (0.0164)
+Mean z1*z2: -0.0468
+Intercept: -0.0364 (0.006)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: -0.0758 (0.0796)
+Z-score: -0.9512
+P: 0.3415
+
+Printing block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/rg/pooled_cov20pc/c11_whr__dbi13_heightc11_whr.chinese.sumstats.gz_dbi13_height.chinese.sumstats.gz.hsq1.delete.
+Printing block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/rg/pooled_cov20pc/c11_whr__dbi13_heightc11_whr.chinese.sumstats.gz_dbi13_height.chinese.sumstats.gz.hsq2.delete.
+Printing block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/rg/pooled_cov20pc/c11_whr__dbi13_heightc11_whr.chinese.sumstats.gz_dbi13_height.chinese.sumstats.gz.gencov.delete.
+
+Summary of Genetic Correlation Results
+p1                                                                                                                         p2      rg      se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c11_whr.chinese.sumstats.gz  /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/dbi13_height.chinese.sumstats.gz -0.0758  0.0796 -0.9512  0.3415  0.4459     0.0385  0.9967     0.0115   -0.0364        0.006
+
+Analysis finished at Tue Sep 22 20:40:27 2026
+Total time elapsed: 11.3s

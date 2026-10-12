@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "component": 1,
+      "l2_norm": 1.0,
+      "mean": -7.589479721277434e-20
+    },
+    {
+      "component": 2,
+      "l2_norm": 0.9999999999999999,
+      "mean": -3.2285392175637826e-20
+    },
+    {
+      "component": 3,
+      "l2_norm": 0.9999999999999999,
+      "mean": -3.8003915574126857e-20
+    },
+    {
+      "component": 4,
+      "l2_norm": 1.0,
+      "mean": -9.592017987563616e-20
+    },
+    {
+      "component": 5,
+      "l2_norm": 0.9999999999999999,
+      "mean": 4.4311696655899877e-20
+    },
+    {
+      "component": 6,
+      "l2_norm": 1.0,
+      "mean": 7.569853243588805e-20
+    },
+    {
+      "component": 7,
+      "l2_norm": 1.0,
+      "mean": 1.4579535515363038e-19
+    },
+    {
+      "component": 8,
+      "l2_norm": 1.0,
+      "mean": 1.514852883803286e-21
+    },
+    {
+      "component": 9,
+      "l2_norm": 1.0,
+      "mean": 1.786975522148371e-19
+    },
+    {
+      "component": 10,
+      "l2_norm": 1.0,
+      "mean": 1.1358849771741275e-20
+    },
+    {
+      "component": 11,
+      "l2_norm": 1.0,
+      "mean": -9.386532931711077e-20
+    },
+    {
+      "component": 12,
+      "l2_norm": 1.0,
+      "mean": 7.486581301854457e-20
+    },
+    {
+      "component": 13,
+      "l2_norm": 0.9999999999999999,
+      "mean": -1.3590011190362777e-19
+    },
+    {
+      "component": 14,
+      "l2_norm": 1.0,
+      "mean": 1.105027124035016e-19
+    },
+    {
+      "component": 15,
+      "l2_norm": 1.0,
+      "mean": 4.26523235283054e-20
+    },
+    {
+      "component": 16,
+      "l2_norm": 1.0,
+      "mean": 2.1610602813433184e-20
+    },
+    {
+      "component": 17,
+      "l2_norm": 1.0,
+      "mean": -1.2936446615073986e-19
+    },
+    {
+      "component": 18,
+      "l2_norm": 0.9999999999999999,
+      "mean": -1.100159812888108e-19
+    },
+    {
+      "component": 19,
+      "l2_norm": 1.0,
+      "mean": 6.931840199483787e-20
+    },
+    {
+      "component": 20,
+      "l2_norm": 0.9999999999999999,
+      "mean": 4.706978252154219e-20
+    }
+  ],
+  "components": 20,
+  "output": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/pca_chinese_unrelated_20pc.eigenvec",
+  "samples": 27178,
+  "source": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/qc/pca_chinese_unrelated.eigenvec"
+}

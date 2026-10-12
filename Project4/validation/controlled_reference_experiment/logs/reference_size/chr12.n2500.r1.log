@@ -1,0 +1,42 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ld-wind-cm 1.0 \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/reference_size_raw/chinese_n2500/12 \
+--bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/reference_size/chr12/chinese_cm \
+--keep /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/downsamples/chinese_n2500_r1.keep \
+--l2  
+
+Beginning analysis at Tue Sep 22 21:03:46 2026
+Read list of 43754 SNPs from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/reference_size/chr12/chinese_cm.bim
+Read list of 27178 individuals from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/reference_size/chr12/chinese_cm.fam
+Read list of 2500 individuals to include from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/downsamples/chinese_n2500_r1.keep
+After merging, 2500 individuals remain
+Reading genotypes from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/reference_size/chr12/chinese_cm.bed
+After filtering, 2500 individuals remain
+After filtering, 43754 SNPs remain
+Estimating LD Score.
+Writing LD Scores for 43754 SNPs to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/reference_size_raw/chinese_n2500/12.l2.ldscore.gz
+
+Summary of LD Scores in /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/reference_size_raw/chinese_n2500/12.l2.ldscore.gz
+         MAF       L2
+mean  0.2411  16.5298
+std   0.1431  11.4770
+min   0.0074   1.0867
+25%   0.1150   8.1408
+50%   0.2340  13.3685
+75%   0.3644  21.8982
+max   0.5000  68.0369
+
+MAF/LD Score Correlation Matrix
+        MAF      L2
+MAF  1.0000  0.1942
+L2   0.1942  1.0000
+Analysis finished at Tue Sep 22 21:04:12 2026
+Total time elapsed: 26.12s

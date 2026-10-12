@@ -1,0 +1,25 @@
+gwas_ancestry	ld_panel	trait_id	scale	status	h2	h2_se	h2_ci_lower	h2_ci_upper	h2_z	lambda_gc	mean_chi2	intercept	intercept_se	ratio	ratio_se	n_snps	log
+Chinese	Singapore_Chinese_1cM	c1_sbp_avg	observed	complete	0.126	0.0164	0.093856	0.158144	7.68293	1.071	1.0807	0.9934	0.0072	NA	NA	826999	h2/Chinese/c1_sbp_avg.chinese_matched.log
+Chinese	Singapore_Chinese_1cM	c11_whr	observed	complete	0.0779	0.0171	0.044384	0.111416	4.55556	1.0618	1.0775	1.0237	0.0089	0.3058	0.1145	826991	h2/Chinese/c11_whr.chinese_matched.log
+Chinese	Singapore_Chinese_1cM	dbi13_height	observed	complete	0.37	0.0293	0.312572	0.427428	12.628	1.1715	1.2649	1.0002	0.0099	0.0007	0.0373	826998	h2/Chinese/dbi13_height.chinese_matched.log
+Chinese	Singapore_Chinese_1cM	c8_bmi	observed	complete	0.1794	0.0162	0.147648	0.211152	11.0741	1.0988	1.1202	0.995	0.0074	NA	NA	826998	h2/Chinese/c8_bmi.chinese_matched.log
+Chinese	Singapore_Chinese_1cM	c37_dlab_ldl_mmol_l_log10	observed	complete	0.0609	0.016	0.02954	0.09226	3.80625	1.0375	1.0493	1.0064	0.008	0.1289	0.1619	826992	h2/Chinese/c37_dlab_ldl_mmol_l_log10.chinese_matched.log
+Chinese	Singapore_Chinese_1cM	c20_t2d	observed	complete	0.0567	0.0145	0.02828	0.08512	3.91034	1.0436	1.0514	1.0115	0.0069	0.223	0.1337	827002	h2/Chinese/c20_t2d.chinese_matched.log
+Indian	Singapore_Indian_1cM	c1_sbp_avg	observed	complete	0.0688	0.0668	-0.062128	0.199728	1.02994	0.9957	0.9993	0.99	0.0066	NA	mean chi^2 < 1	859219	h2/Indian/c1_sbp_avg.indian_matched.log
+Indian	Singapore_Indian_1cM	c11_whr	observed	complete	0.0578	0.0687	-0.076852	0.192452	0.841339	0.9898	0.9905	0.9828	0.0067	NA	mean chi^2 < 1	859214	h2/Indian/c11_whr.indian_matched.log
+Indian	Singapore_Indian_1cM	dbi13_height	observed	complete	0.3885	0.0729	0.245616	0.531384	5.32922	1.0105	1.0213	0.9689	0.0074	NA	NA	859218	h2/Indian/dbi13_height.indian_matched.log
+Indian	Singapore_Indian_1cM	c8_bmi	observed	complete	0.1643	0.062	0.04278	0.28582	2.65	0.9868	0.9887	0.9669	0.0064	NA	mean chi^2 < 1	859216	h2/Indian/c8_bmi.indian_matched.log
+Indian	Singapore_Indian_1cM	c37_dlab_ldl_mmol_l_log10	observed	complete	0.1226	0.0679	-0.010484	0.255684	1.8056	0.9927	0.9981	0.9816	0.0066	NA	mean chi^2 < 1	859215	h2/Indian/c37_dlab_ldl_mmol_l_log10.indian_matched.log
+Indian	Singapore_Indian_1cM	c20_t2d	observed	complete	0.0349	0.0657	-0.093872	0.163672	0.531202	1.0285	1.0219	1.0171	0.0067	0.7826	0.3069	859221	h2/Indian/c20_t2d.indian_matched.log
+Malay	Singapore_Malay_1cM	c1_sbp_avg	observed	complete	0.0321	0.077	-0.11882	0.18302	0.416883	1.0016	1.0062	1.0025	0.0065	0.4033	1.0473	856937	h2/Malay/c1_sbp_avg.malay_matched.log
+Malay	Singapore_Malay_1cM	c11_whr	observed	complete	0.1071	0.0777	-0.045192	0.259392	1.37838	0.9898	0.9946	0.982	0.0067	NA	mean chi^2 < 1	856925	h2/Malay/c11_whr.malay_matched.log
+Malay	Singapore_Malay_1cM	dbi13_height	observed	complete	0.5127	0.0883	0.339632	0.685768	5.80634	1.0165	1.019	0.9586	0.0071	NA	NA	856899	h2/Malay/dbi13_height.malay_matched.log
+Malay	Singapore_Malay_1cM	c8_bmi	observed	complete	0.2788	0.0748	0.132192	0.425408	3.72727	1.0016	0.9978	0.9651	0.0064	NA	mean chi^2 < 1	856920	h2/Malay/c8_bmi.malay_matched.log
+Malay	Singapore_Malay_1cM	c37_dlab_ldl_mmol_l_log10	observed	complete	0.1249	0.0834	-0.038564	0.288364	1.4976	0.9986	0.9992	0.9848	0.0073	NA	mean chi^2 < 1	856931	h2/Malay/c37_dlab_ldl_mmol_l_log10.malay_matched.log
+Malay	Singapore_Malay_1cM	c20_t2d	observed	complete	0.0796	0.0777	-0.072692	0.231892	1.02445	1.0315	1.0238	1.0144	0.0067	0.6045	0.2812	856913	h2/Malay/c20_t2d.malay_matched.log
+Chinese	1KG_EAS_1cM	c1_sbp_avg	observed	complete	0.1061	0.0136	0.079444	0.132756	7.80147	1.071	1.0807	0.9939	0.0072	NA	NA	827793	h2/Chinese_1KGEAS/c1_sbp_avg.chinese_1kgeas.log
+Chinese	1KG_EAS_1cM	c11_whr	observed	complete	0.0667	0.0144	0.038476	0.094924	4.63194	1.0618	1.0775	1.0231	0.0088	0.2987	0.1135	827772	h2/Chinese_1KGEAS/c11_whr.chinese_1kgeas.log
+Chinese	1KG_EAS_1cM	dbi13_height	observed	complete	0.3136	0.0237	0.267148	0.360052	13.2321	1.1715	1.265	1.0011	0.0094	0.004	0.0355	827795	h2/Chinese_1KGEAS/dbi13_height.chinese_1kgeas.log
+Chinese	1KG_EAS_1cM	c8_bmi	observed	complete	0.1463	0.0133	0.120232	0.172368	11	1.0988	1.1202	0.9998	0.007	NA	NA	827795	h2/Chinese_1KGEAS/c8_bmi.chinese_1kgeas.log
+Chinese	1KG_EAS_1cM	c37_dlab_ldl_mmol_l_log10	observed	complete	0.0542	0.013	0.02872	0.07968	4.16923	1.0375	1.0492	1.0041	0.0074	0.0826	0.1505	827776	h2/Chinese_1KGEAS/c37_dlab_ldl_mmol_l_log10.chinese_1kgeas.log
+Chinese	1KG_EAS_1cM	c20_t2d	observed	complete	0.0515	0.0116	0.028764	0.074236	4.43966	1.0436	1.0515	1.0089	0.0065	0.1733	0.1265	827801	h2/Chinese_1KGEAS/c20_t2d.chinese_1kgeas.log

@@ -1,0 +1,65 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/rg/Malay/c8_bmi__c37_dlab_ldl_mmol_l_log10.malay_matched \
+--rg /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c8_bmi.malay.sumstats.gz,/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c37_dlab_ldl_mmol_l_log10.malay.sumstats.gz \
+--w-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/ 
+
+Beginning analysis at Tue Sep 22 07:01:41 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c8_bmi.malay.sumstats.gz ...
+Read summary statistics for 857584 SNPs.
+Reading reference panel LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/[1-22] ...
+Read reference panel LD Scores for 909907 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Malay/[1-22] ...
+Read regression weight LD Scores for 909907 SNPs.
+After merging with reference panel LD, 856920 SNPs remain.
+After merging with regression SNP LD, 856920 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c37_dlab_ldl_mmol_l_log10.malay.sumstats.gz ...
+Read summary statistics for 867103 SNPs.
+After merging with summary statistics, 856920 SNPs remain.
+856916 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.2783 (0.0762)
+Lambda GC: 1.0016
+Mean Chi^2: 0.9978
+Intercept: 0.9652 (0.0064)
+Ratio: NA (mean chi^2 < 1)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.0971 (0.0925)
+Lambda GC: 0.9986
+Mean Chi^2: 0.9992
+Intercept: 0.988 (0.0089)
+Ratio: NA (mean chi^2 < 1)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.1294 (0.0518)
+Mean z1*z2: 0.1117
+Intercept: 0.0965 (0.0046)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.7871 (0.4612)
+Z-score: 1.7067
+P: 0.0879
+
+
+Summary of Genetic Correlation Results
+p1                                                                                                                                  p2      rg      se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c8_bmi.malay.sumstats.gz  /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/malay/c37_dlab_ldl_mmol_l_log10.malay.sumstats.gz  0.7871  0.4612  1.7067  0.0879  0.0971     0.0925   0.988     0.0089    0.0965       0.0046
+
+Analysis finished at Tue Sep 22 07:01:52 2026
+Total time elapsed: 10.77s

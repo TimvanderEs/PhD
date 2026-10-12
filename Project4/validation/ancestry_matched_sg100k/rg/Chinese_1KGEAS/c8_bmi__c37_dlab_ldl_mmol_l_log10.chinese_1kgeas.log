@@ -1,0 +1,65 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/rg/Chinese_1KGEAS/c8_bmi__c37_dlab_ldl_mmol_l_log10.chinese_1kgeas \
+--rg /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c8_bmi.chinese.sumstats.gz,/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c37_dlab_ldl_mmol_l_log10.chinese.sumstats.gz \
+--w-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/ 
+
+Beginning analysis at Tue Sep 22 07:14:08 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c8_bmi.chinese.sumstats.gz ...
+Read summary statistics for 827795 SNPs.
+Reading reference panel LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/[1-22] ...
+Read reference panel LD Scores for 867103 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/1kgeas_singapore_ids/[1-22] ...
+Read regression weight LD Scores for 867103 SNPs.
+After merging with reference panel LD, 827795 SNPs remain.
+After merging with regression SNP LD, 827795 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c37_dlab_ldl_mmol_l_log10.chinese.sumstats.gz ...
+Read summary statistics for 867103 SNPs.
+After merging with summary statistics, 827795 SNPs remain.
+827761 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.1462 (0.0135)
+Lambda GC: 1.0988
+Mean Chi^2: 1.1202
+Intercept: 0.9999 (0.0072)
+Ratio < 0 (usually indicates GC correction).
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.0439 (0.0184)
+Lambda GC: 1.0375
+Mean Chi^2: 1.0492
+Intercept: 1.0122 (0.0144)
+Ratio: 0.249 (0.2928)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0092 (0.0095)
+Mean z1*z2: 0.0622
+Intercept: 0.07 (0.0048)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: -0.1146 (0.1197)
+Z-score: -0.9574
+P: 0.3384
+
+
+Summary of Genetic Correlation Results
+p1                                                                                                                                      p2      rg      se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c8_bmi.chinese.sumstats.gz  /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c37_dlab_ldl_mmol_l_log10.chinese.sumstats.gz -0.1146  0.1197 -0.9574  0.3384  0.0439     0.0184  1.0122     0.0144      0.07       0.0048
+
+Analysis finished at Tue Sep 22 07:14:21 2026
+Total time elapsed: 12.69s

@@ -1,0 +1,6 @@
+dataset_label	planned_traits	original_input_status	corrected_traits_available	current_status	next_requirement
+UKB	9	Six accessions map to unrelated phenotypes; three were unavailable for verification	0	unresolved	Build a new trait manifest from verified UKB sources with source-specific sample sizes
+Pan-UKB	9	Phenotype field IDs are plausible, but the formatter selected beta_meta_hq rather than beta_EAS and substituted N=420531	0	unresolved	Choose the intended ancestry and prepare its matching effect, SE, frequency, and sample-size fields
+JBB/BBJ	9	All nine historical accessions map to unrelated phenotypes	1 (height)	partially_rebuilt	Acquire and validate the remaining eight genuine BioBank Japan traits
+CKB	9	Eight accessions map to unrelated phenotypes; triglycerides matches the trait but cohort provenance is unconfirmed	0	unresolved	Acquire verified China Kadoorie Biobank files and confirm phenotype and sample definitions
+KoGES/TWB	9	All nine historical accessions map to unrelated phenotypes	0	unresolved	Separate KoGES and Taiwan Biobank provenance and acquire verified files

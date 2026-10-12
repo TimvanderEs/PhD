@@ -1,0 +1,7 @@
+trait_id	Chinese_N	Indian_N	Malay_N	note
+c1_sbp_avg	33230	7430	5647	Quantitative trait
+c11_whr	33216	7416	5637	Quantitative trait
+dbi13_height	33230	7433	5651	Quantitative trait
+c8_bmi	33230	7429	5650	Quantitative trait
+c37_dlab_ldl_mmol_l_log10	33154	7425	5637	Quantitative trait
+c20_t2d	33251	7438	5653	Observed-scale binary-trait analysis; Chinese 3037 cases/30214 controls, Indian 1546/5892, Malay 903/4750

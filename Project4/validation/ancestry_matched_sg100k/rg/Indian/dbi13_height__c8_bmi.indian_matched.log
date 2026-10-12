@@ -1,0 +1,65 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/ \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/rg/Indian/dbi13_height__c8_bmi.indian_matched \
+--rg /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/dbi13_height.indian.sumstats.gz,/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/c8_bmi.indian.sumstats.gz \
+--w-ld-chr /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/ 
+
+Beginning analysis at Tue Sep 22 06:57:35 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/dbi13_height.indian.sumstats.gz ...
+Read summary statistics for 860169 SNPs.
+Reading reference panel LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/[1-22] ...
+Read reference panel LD Scores for 912313 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/project3/sg100k_ancestry_ldscores_1cm/Indian/[1-22] ...
+Read regression weight LD Scores for 912313 SNPs.
+After merging with reference panel LD, 859218 SNPs remain.
+After merging with regression SNP LD, 859218 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/c8_bmi.indian.sumstats.gz ...
+Read summary statistics for 867103 SNPs.
+After merging with summary statistics, 859218 SNPs remain.
+859216 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.3878 (0.0743)
+Lambda GC: 1.0105
+Mean Chi^2: 1.0213
+Intercept: 0.969 (0.0074)
+Ratio < 0 (usually indicates GC correction).
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.1643 (0.0629)
+Lambda GC: 0.9868
+Mean Chi^2: 0.9887
+Intercept: 0.9669 (0.0064)
+Ratio: NA (mean chi^2 < 1)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0233 (0.0528)
+Mean z1*z2: -0.0213
+Intercept: -0.0246 (0.0051)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.0924 (0.2144)
+Z-score: 0.4312
+P: 0.6663
+
+
+Summary of Genetic Correlation Results
+p1                                                                                                                 p2      rg      se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/dbi13_height.indian.sumstats.gz  /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/indian/c8_bmi.indian.sumstats.gz  0.0924  0.2144  0.4312  0.6663  0.1643     0.0629  0.9669     0.0064   -0.0246       0.0051
+
+Analysis finished at Tue Sep 22 06:57:46 2026
+Total time elapsed: 10.59s

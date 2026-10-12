@@ -1,0 +1,7 @@
+trait_id	singapore_chinese_h2	singapore_chinese_se	onekg_eas_h2	onekg_eas_se	h2_difference_singapore_minus_1kg	relative_difference_percent	singapore_intercept	onekg_eas_intercept	note
+c11_whr	0.0779	0.0171	0.0667	0.0144	0.0112	16.7916	1.0237	1.0231	Paired point-estimate comparison; no difference P value because cross-panel estimate covariance is unavailable.
+c1_sbp_avg	0.126	0.0164	0.1061	0.0136	0.0199	18.7559	0.9934	0.9939	Paired point-estimate comparison; no difference P value because cross-panel estimate covariance is unavailable.
+c20_t2d	0.0567	0.0145	0.0515	0.0116	0.0052	10.0971	1.0115	1.0089	Paired point-estimate comparison; no difference P value because cross-panel estimate covariance is unavailable.
+c37_dlab_ldl_mmol_l_log10	0.0609	0.016	0.0542	0.013	0.0067	12.3616	1.0064	1.0041	Paired point-estimate comparison; no difference P value because cross-panel estimate covariance is unavailable.
+c8_bmi	0.1794	0.0162	0.1463	0.0133	0.0331	22.6247	0.995	0.9998	Paired point-estimate comparison; no difference P value because cross-panel estimate covariance is unavailable.
+dbi13_height	0.37	0.0293	0.3136	0.0237	0.0564	17.9847	1.0002	1.0011	Paired point-estimate comparison; no difference P value because cross-panel estimate covariance is unavailable.

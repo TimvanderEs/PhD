@@ -1,0 +1,4 @@
+panel_1	panel_2	n_trait_pairs	pearson_r	same_direction_n	interpretation
+Singapore Chinese 1 cM	Singapore Indian 1 cM	15	0.9837	14	High cross-panel concordance
+Singapore Chinese 1 cM	Singapore Malay 1 cM	15	0.9965	15	High cross-panel concordance
+Singapore Indian 1 cM	Singapore Malay 1 cM	15	0.9850	14	High cross-panel concordance

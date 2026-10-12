@@ -1,0 +1,29 @@
+PLINK v2.0.0-a.6.16LM 64-bit Intel (9 Jun 2025)    cog-genomics.org/plink/2.0/
+(C) 2005-2025 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/sorted_pgen.log.
+Options in effect:
+  --bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/renamed
+  --make-pgen
+  --out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/sorted_pgen
+  --sort-vars
+  --threads 1
+
+Start time: Tue Sep 22 20:20:45 2026
+32086 MiB RAM detected, ~31032 available; reserving 16043 MiB for main
+workspace.
+Using 1 compute thread.
+504 samples (260 females, 244 males; 504 founders) loaded from
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/renamed.fam.
+40856 variants loaded from
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/renamed.bim.
+Note: No phenotype data present.
+Writing
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/sorted_pgen.pvar
+... 0%done.
+Writing
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/sorted_pgen.psam
+... done.
+Writing
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/exact_1kgeas/chr9/sorted_pgen.pgen
+... 0%done.
+End time: Tue Sep 22 20:20:45 2026

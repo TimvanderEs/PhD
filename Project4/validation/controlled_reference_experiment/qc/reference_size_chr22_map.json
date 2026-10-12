@@ -1,0 +1,11 @@
+{
+  "bim": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/reference_size/chr22/chinese.bim",
+  "chromosome": "22",
+  "map": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/maps/GRCh38/no_chr_in_chrom_field/plink.chr22.GRCh38.map",
+  "map_markers": 45141,
+  "maximum_cm": 74.109562,
+  "minimum_cm": 1.457757,
+  "variants": 12407,
+  "variants_above_map": 0,
+  "variants_below_map": 0
+}

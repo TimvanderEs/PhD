@@ -1,0 +1,56 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./munge_sumstats.py \
+--signed-sumstats BETA,0 \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260918/BBJ_height/bbj_height_correct_hm3 \
+--merge-alleles /home/ec2-user/COV_LDSC_paper/w_hm3.snplist \
+--frq A1FREQ \
+--chunksize 500000 \
+--N 159095.0 \
+--a1 ALLELE1 \
+--a2 ALLELE0 \
+--snp SNP \
+--info INFO \
+--sumstats /home/ec2-user/COV_LDSC_paper/VALIDATION_20260918/BBJ_height/GWASsummary_Height_Japanese_SakaueKanai2020.auto.txt.gz \
+--p P_BOLT_LMM_INF 
+
+Interpreting column names as follows:
+INFO:	INFO score (imputation quality; higher --> better imputation)
+ALLELE0:	Allele 2, interpreted as non-ref allele for signed sumstat.
+ALLELE1:	Allele 1, interpreted as ref allele for signed sumstat.
+P_BOLT_LMM_INF:	p-Value
+BETA:	Directional summary statistic as specified by --signed-sumstats.
+SNP:	Variant ID (e.g., rs number)
+A1FREQ:	Allele frequency
+
+Reading list of SNPs for allele merge from /home/ec2-user/COV_LDSC_paper/w_hm3.snplist
+Read 1217311 SNPs for allele merge.
+Reading sumstats from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260918/BBJ_height/GWASsummary_Height_Japanese_SakaueKanai2020.auto.txt.gz into memory 500000 SNPs at a time.
+Read 13236464 SNPs from --sumstats file.
+Removed 12217879 SNPs not in --merge-alleles.
+Removed 0 SNPs with missing values.
+Removed 41386 SNPs with INFO <= 0.9.
+Removed 33457 SNPs with MAF <= 0.01.
+Removed 0 SNPs with out-of-bounds p-values.
+Removed 0 variants that were not SNPs or were strand-ambiguous.
+943742 SNPs remain.
+Removed 0 SNPs with duplicated rs numbers (943742 SNPs remain).
+Using N = 159095.0
+Median value of SIGNED_SUMSTATS was -3.70499e-06, which seems sensible.
+Removed 0 SNPs whose alleles did not match --merge-alleles (943742 SNPs remain).
+Writing summary statistics for 1217311 SNPs (943742 with nonmissing beta) to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260918/BBJ_height/bbj_height_correct_hm3.sumstats.gz.
+
+Metadata:
+Mean chi^2 = 2.644
+Lambda GC = 1.767
+Max chi^2 = 712.579
+9572 Genome-wide significant SNPs (some may have been removed by filtering).
+
+Conversion finished at Fri Sep 18 09:48:13 2026
+Total time elapsed: 1.0m:1.22s

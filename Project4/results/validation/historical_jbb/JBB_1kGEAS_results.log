@@ -1,0 +1,254 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--ref-ld-chr /home/ec2-user/software/eas_ldscores/ \
+--out /home/ec2-user/COV_LDSC_paper/LDSC_RESULTS_1kGEAS/JBB_1kGEAS_results \
+--rg /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_bmi_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_height_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_ldl_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_sbp_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_smoking_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_t2d_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_tg_hm3.sumstats.gz,/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_whr_hm3.sumstats.gz \
+--w-ld-chr /home/ec2-user/software/eas_ldscores/ 
+
+Beginning analysis at Wed Mar 25 17:14:12 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz ...
+Read summary statistics for 1193451 SNPs.
+Reading reference panel LD Score from /home/ec2-user/software/eas_ldscores/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1208050 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/software/eas_ldscores/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1208050 SNPs.
+After merging with reference panel LD, 1088621 SNPs remain.
+After merging with regression SNP LD, 1088621 SNPs remain.
+Computing rg for phenotype 2/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_bmi_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1088621 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.018 (0.0037)
+Lambda GC: 1.1175
+Mean Chi^2: 1.2149
+Intercept: 1.0649 (0.0128)
+Ratio: 0.3019 (0.0598)
+
+Heritability of phenotype 2/9
+-----------------------------
+Total Observed scale h2: 0.0009 (0.001)
+Lambda GC: 1.0135
+Mean Chi^2: 1.0187
+Intercept: 1.0111 (0.0071)
+Ratio: 0.5931 (0.3799)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0004 (0.0008)
+Mean z1*z2: -0.0072
+Intercept: -0.0039 (0.0046)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: -0.1072 (0.2001)
+Z-score: -0.5357
+P: 0.5922
+
+Computing rg for phenotype 3/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_height_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1088621 SNPs with valid alleles.
+
+Heritability of phenotype 3/9
+-----------------------------
+Total Observed scale h2: 0.0067 (0.0026)
+Lambda GC: 1.0466
+Mean Chi^2: 1.0792
+Intercept: 1.023 (0.0104)
+Ratio: 0.2908 (0.1319)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0004 (0.0011)
+Mean z1*z2: -0.0055
+Intercept: -0.0108 (0.0052)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.0406 (0.1029)
+Z-score: 0.395
+P: 0.6929
+
+Computing rg for phenotype 4/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_ldl_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1088621 SNPs with valid alleles.
+
+Heritability of phenotype 4/9
+-----------------------------
+Total Observed scale h2: 0.002 (0.0016)
+Lambda GC: 1.0225
+Mean Chi^2: 1.0226
+Intercept: 1.0055 (0.0068)
+Ratio: 0.244 (0.3027)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0001 (0.0009)
+Mean z1*z2: -0.0069
+Intercept: -0.006 (0.0046)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: -0.0181 (0.1633)
+Z-score: -0.1108
+P: 0.9118
+
+Computing rg for phenotype 5/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_sbp_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1087752 SNPs with valid alleles.
+
+Heritability of phenotype 5/9
+-----------------------------
+Total Observed scale h2: 0.0003 (0.0009)
+Lambda GC: 1.0046
+Mean Chi^2: 1.0014
+Intercept: 0.9992 (0.0052)
+Ratio < 0 (usually indicates GC correction).
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 9.0211e-05 (0.0008)
+Mean z1*z2: 0.0025
+Intercept: 0.0026 (0.0044)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.04 (0.39)
+Z-score: 0.1025
+P: 0.9184
+
+Computing rg for phenotype 6/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_smoking_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1087752 SNPs with valid alleles.
+
+Heritability of phenotype 6/9
+-----------------------------
+Total Observed scale h2: 0.0017 (0.0009)
+Lambda GC: 1.0165
+Mean Chi^2: 1.015
+Intercept: 1.0014 (0.0057)
+Ratio: 0.0939 (0.3779)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.0021 (0.001)
+Mean z1*z2: 0.0688
+Intercept: 0.0515 (0.0052)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.3845 (0.1987)
+Z-score: 1.9353
+P: 0.0529
+
+Computing rg for phenotype 7/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_t2d_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1088621 SNPs with valid alleles.
+
+Heritability of phenotype 7/9
+-----------------------------
+Total Observed scale h2: 0.0127 (0.0066)
+Lambda GC: 1.0618
+Mean Chi^2: 1.1175
+Intercept: 1.0085 (0.017)
+Ratio: 0.0722 (0.1443)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0021 (0.001)
+Mean z1*z2: -0.0276
+Intercept: -0.0101 (0.0052)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: -0.1369 (0.0651)
+Z-score: -2.1019
+P: 0.0356
+
+Computing rg for phenotype 8/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_tg_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1088621 SNPs with valid alleles.
+
+Heritability of phenotype 8/9
+-----------------------------
+Total Observed scale h2: 0.0052 (0.0012)
+Lambda GC: 1.0649
+Mean Chi^2: 1.0627
+Intercept: 1.0197 (0.0081)
+Ratio: 0.314 (0.1293)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0014 (0.0009)
+Mean z1*z2: -0.0077
+Intercept: 0.0029 (0.0052)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: -0.142 (0.0908)
+Z-score: -1.5638
+P: 0.1179
+
+Computing rg for phenotype 9/9
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_whr_hm3.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1088621 SNPs remain.
+1088621 SNPs with valid alleles.
+
+Heritability of phenotype 9/9
+-----------------------------
+Total Observed scale h2: 0.0005 (0.001)
+Lambda GC: 1.0165
+Mean Chi^2: 1.0182
+Intercept: 1.0136 (0.0067)
+Ratio: 0.7479 (0.3712)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: -0.0006 (0.0008)
+Mean z1*z2: -0.0086
+Intercept: -0.0031 (0.005)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: -0.1954 (0.2977)
+Z-score: -0.6563
+P: 0.5116
+
+
+Summary of Genetic Correlation Results
+p1                                                                                         p2      rg      se       z       p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz      /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_bmi_hm3.sumstats.gz -0.1072  0.2001 -0.5357  0.5922  0.0009     0.0010  1.0111     0.0071   -0.0039       0.0046
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz   /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_height_hm3.sumstats.gz  0.0406  0.1029  0.3950  0.6929  0.0067     0.0026  1.0230     0.0104   -0.0108       0.0052
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz      /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_ldl_hm3.sumstats.gz -0.0181  0.1633 -0.1108  0.9118  0.0020     0.0016  1.0055     0.0068   -0.0060       0.0046
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz      /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_sbp_hm3.sumstats.gz  0.0400  0.3900  0.1025  0.9184  0.0003     0.0009  0.9992     0.0052    0.0026       0.0044
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz  /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_smoking_hm3.sumstats.gz  0.3845  0.1987  1.9353  0.0529  0.0017     0.0009  1.0014     0.0057    0.0515       0.0052
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz      /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_t2d_hm3.sumstats.gz -0.1369  0.0651 -2.1019  0.0356  0.0127     0.0066  1.0085     0.0170   -0.0101       0.0052
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz       /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_tg_hm3.sumstats.gz -0.1420  0.0908 -1.5638  0.1179  0.0052     0.0012  1.0197     0.0081    0.0029       0.0052
+/home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_alt_hm3.sumstats.gz      /home/ec2-user/COV_LDSC_paper/PREP_1KGEAS/MUNGED_SUMSTATS/JBB/jbb_whr_hm3.sumstats.gz -0.1954  0.2977 -0.6563  0.5116  0.0005     0.0010  1.0136     0.0067   -0.0031       0.0050
+
+Analysis finished at Wed Mar 25 17:15:06 2026
+Total time elapsed: 53.2s

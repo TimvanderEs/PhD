@@ -1,0 +1,7 @@
+trait_id	trait_label	trait_type	transformation	chinese_n	indian_n	malay_n	total_n	case_control_definition	source_release
+c1_sbp_avg	Average systolic blood pressure	quantitative	rank inverse normal	33230	7430	5647	46307	NA	SG100K genomic data release 2.3.1
+c11_whr	Waist-to-hip ratio	quantitative	rank inverse normal	33216	7416	5637	46269	NA	SG100K genomic data release 2.3.1
+dbi13_height	Height	quantitative	rank inverse normal	33230	7433	5651	46314	NA	SG100K genomic data release 2.3.1
+c8_bmi	Body mass index	quantitative	rank inverse normal	33230	7429	5650	46309	NA	SG100K genomic data release 2.3.1
+c37_dlab_ldl_mmol_l_log10	LDL cholesterol	quantitative	log10	33154	7425	5637	46216	NA	SG100K genomic data release 2.3.1
+c20_t2d	Type 2 diabetes	binary	0/1	33251	7438	5653	46342	5486 cases / 40856 controls	SG100K genomic data release 2.3.1

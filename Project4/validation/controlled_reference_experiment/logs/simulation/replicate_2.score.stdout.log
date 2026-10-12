@@ -1,0 +1,25 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)          www.cog-genomics.org/plink/1.9/
+(C) 2005-2020 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/replicate_2/polygenic_score.log.
+Options in effect:
+  --bfile /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/sg100k_consensus
+  --extract /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/simulation_common.snplist
+  --keep /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/input/downsamples/simulation_gwas.keep
+  --out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/replicate_2/polygenic_score
+  --score /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/replicate_2/effects.tsv 1 2 3 header sum
+
+32086 MB RAM detected; reserving 16043 MB for main workspace.
+925225 variants loaded from .bim file.
+46508 people (19794 males, 26714 females) loaded from .fam.
+--extract: 874025 variants remaining.
+--keep: 17178 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 17178 founders and 0 nonfounders present.
+Calculating allele frequencies... 0%1%2%3%4%5%6%7%8%9%10%11%12%13%14%15%16%17%18%19%20%21%22%23%24%25%26%27%28%29%30%31%32%33%34%35%36%37%38%39%40%41%42%43%44%45%46%47%48%49%50%51%52%53%54%55%56%57%58%59%60%61%62%63%64%65%66%67%68%69%70%71%72%73%74%75%76%77%78%79%80%81%82%83%84%85%86%87%88%89%90%91%92%93%94%95%96%97%98%99% done.
+Total genotyping rate in remaining samples is 0.99999.
+874025 variants and 17178 people pass filters and QC.
+Note: No phenotypes present.
+--score: 10000 valid predictors loaded.
+--score: Results written to
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/simulation/replicate_2/polygenic_score.profile
+.

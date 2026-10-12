@@ -1,0 +1,2 @@
+original	candidate	rows	max_absolute_difference	mean_absolute_difference	exact_equal_at_stored_precision
+/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/covldsc_smoke/cov20pc.l2.ldscore.gz	/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/covldsc_smoke/cov20pc_vectorized2.l2.ldscore.gz	1256	0.0	0.0	1

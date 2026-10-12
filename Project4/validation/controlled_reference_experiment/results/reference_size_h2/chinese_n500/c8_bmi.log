@@ -1,0 +1,36 @@
+*********************************************************************
+* covariance adjusted LD Score Regression (cov-LDSC)
+* Version 1.0.0
+* (C) 2018 Yang Luo and Xinyi Li
+* modified based on LDSC https://github.com/bulik/ldsc
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--h2 /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c8_bmi.chinese.sumstats.gz \
+--ref-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/reference_size_matched/chinese_n500/ \
+--not-M-5-50  \
+--out /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/reference_size_h2/chinese_n500/c8_bmi \
+--w-ld-chr /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/reference_size_matched/1kgeas/ \
+--print-delete-vals  
+
+Beginning analysis at Tue Sep 22 21:16:11 2026
+Reading summary statistics from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260921/SG100K_ancestry_matched/munged/chinese/c8_bmi.chinese.sumstats.gz ...
+Read summary statistics for 827795 SNPs.
+Reading reference panel LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/reference_size_matched/chinese_n500/[1-22] ...
+Read reference panel LD Scores for 874025 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/panels/reference_size_matched/1kgeas/[1-22] ...
+Read regression weight LD Scores for 874025 SNPs.
+After merging with reference panel LD, 819145 SNPs remain.
+After merging with regression SNP LD, 819145 SNPs remain.
+Using two-step estimator with cutoff at 30.
+Printing block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/reference_size_h2/chinese_n500/c8_bmi.delete.
+Printing partitioned block jackknife delete values to /home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/results/reference_size_h2/chinese_n500/c8_bmi.part_delete.
+Total Observed scale h2: 0.1979 (0.0181)
+Lambda GC: 1.0988
+Mean Chi^2: 1.1208
+Intercept: 0.9962 (0.0074)
+Ratio < 0 (usually indicates GC correction).
+Analysis finished at Tue Sep 22 21:16:18 2026
+Total time elapsed: 6.75s

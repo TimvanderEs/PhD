@@ -1,0 +1,11 @@
+{
+  "bim": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/work/panel_build/chr16/chinese.bim",
+  "chromosome": "16",
+  "map": "/home/ec2-user/COV_LDSC_paper/VALIDATION_20260922/controlled_reference_experiment/maps/GRCh38/no_chr_in_chrom_field/plink.chr16.GRCh38.map",
+  "map_markers": 92994,
+  "maximum_cm": 134.037726,
+  "minimum_cm": 0.0,
+  "variants": 25230,
+  "variants_above_map": 0,
+  "variants_below_map": 0
+}

@@ -1,0 +1,11 @@
+captured_utc=2026-09-22T07:30:10+00:00
+host=ip-172-31-36-24.ap-southeast-1.compute.internal
+kernel=Linux 6.1.140-154.222.amzn2023.x86_64 x86_64 GNU/Linux
+python=Python 2.7.18 :: Anaconda, Inc.
+ldsc_commit=926bbbcdde8bac30a8b53c1e9ebf283b5934bda8
+ldsc_status=23 modified_or_untracked_files
+Singapore_Chinese_ldscore_chromosomes=22
+Singapore_Indian_ldscore_chromosomes=22
+Singapore_Malay_ldscore_chromosomes=22
+1KG_EAS_ldscore_chromosomes=22
+1KG_EAS_translated_ldscore_chromosomes=22

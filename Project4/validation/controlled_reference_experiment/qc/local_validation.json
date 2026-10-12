@@ -1,0 +1,36 @@
+{
+  "completion_timestamp": "2026-09-22T21:24:46+00:00",
+  "reader_copies_identical": {
+    "controlled_h2.tsv": true,
+    "controlled_h2_panel_summary.tsv": true,
+    "controlled_rg.tsv": true,
+    "controlled_rg_concordance.tsv": true,
+    "paired_h2_differences.tsv": true,
+    "reference_size_h2.tsv": true,
+    "reference_size_h2_panel_summary.tsv": true,
+    "reference_size_ldscore_summary.tsv": true,
+    "reference_size_paired.tsv": true,
+    "simulation_accuracy_summary.tsv": true,
+    "simulation_replicates.tsv": true
+  },
+  "result_rows": {
+    "controlled_h2.tsv": 30,
+    "controlled_h2_panel_summary.tsv": 5,
+    "controlled_rg.tsv": 75,
+    "controlled_rg_concordance.tsv": 4,
+    "paired_h2_differences.tsv": 36,
+    "reference_size_h2.tsv": 30,
+    "reference_size_h2_panel_summary.tsv": 5,
+    "reference_size_ldscore_summary.tsv": 3,
+    "reference_size_paired.tsv": 24,
+    "simulation_accuracy_summary.tsv": 3,
+    "simulation_replicates.tsv": 15
+  },
+  "shared_variants": 874025,
+  "status": "pass",
+  "status_rows": {
+    "controlled_ldsc_status.tsv": 105,
+    "reference_size_h2_status.tsv": 30,
+    "simulation_ldsc_status.tsv": 15
+  }
+}

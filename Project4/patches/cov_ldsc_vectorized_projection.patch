@@ -1,0 +1,59 @@
+--- a/ldscore/ldscore.py
++++ b/ldscore/ldscore.py
+@@ -397,7 +397,8 @@
+         X = np.array(slice.decode(self._bedcode), dtype="float64").reshape((b, nru)).T
+         X = X[0:n, :]
+         Y = np.zeros(X.shape)
+-        
++        nonmissing = []
++
+ 
+         for j in xrange(0, b):
+             newsnp = X[:, j]
+             ii = newsnp != 9
++            nonmissing.append(ii.copy())
+             avg = np.mean(newsnp[ii])
+             newsnp[np.logical_not(ii)] = avg
+             denom = np.std(newsnp)
+@@ -412,32 +413,25 @@
+                 denom = denom*-1
+ 
+             Y[:, j] = (newsnp - avg) / denom
+-            '''
+-            Z[:, j] = Y[:, j]-np.dot(pca,Y[:,j])
+-            Z[:, j] = np.mean(Z[:])
+-            '''
+-
+-            if cov is not None:  
+-                
+-                #should match to the indiv? 
+-
+-                T=np.zeros(len(Y[:,j]))
+-                for i in range(2,cov.shape[1]): 
+-                    T= T+np.dot(cov.iloc[:,i],Y[:,j])*cov.iloc[:,i] 
+-                newsnp=Y[:,j]-T
+-
+-            #newsnp = Z
+-                #ii = newsnp != 9
++
++        if cov is not None:
++            # The original implementation computes the same projection one SNP and
++            # one PC at a time.  Matrix multiplication is algebraically equivalent
++            # for the centered, unit-length PC columns required by cov-LDSC.
++            covariates = np.asarray(cov.iloc[:, 2:], dtype="float64")
++            Y = Y - np.dot(covariates, np.dot(covariates.T, Y))
++            for j in xrange(0, b):
++                newsnp = Y[:, j]
++                ii = nonmissing[j]
+                 avg = np.mean(newsnp[ii])
+                 newsnp[np.logical_not(ii)] = avg
+                 denom = np.std(newsnp)
+                 if denom == 0:
+                     denom = 1
+ 
+                 if minorRef is not None and self.freq[self._currentSNP + j] > 0.5:
+-                    denom = denom*-1
++                    denom = denom * -1
+ 
+                 Y[:, j] = (newsnp - avg) / denom
+ 
