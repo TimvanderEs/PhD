@@ -72,7 +72,7 @@ Complete results and run records are in [`validation/controlled_reference_experi
 - [`results/controlled_reference/`](results/controlled_reference/): reader-facing final aggregate tables.
 - [`validation/controlled_reference_experiment/`](validation/controlled_reference_experiment/): final controlled outputs, logs, QC records, and software information.
 - [`results/ancestry_matched/`](results/ancestry_matched/): earlier Chinese, Indian, and Malay ancestry-matched validation.
-- [`results/recovered/`](results/recovered/): recovered historical Singapore analyses.
+- [`results/historical/`](results/historical/): historical Singapore analyses.
 - [`PROJECT4_AUDIT.md`](PROJECT4_AUDIT.md): provenance audit and interpretation boundaries.
 - [`CHAPTER3_GUIDE.md`](CHAPTER3_GUIDE.md): guide to the Chapter 3 study and its repository materials.
 - [`CHAPTER_DRAFT.md`](CHAPTER_DRAFT.md): extended working text for the LD-reference study.

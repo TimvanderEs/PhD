@@ -19,7 +19,7 @@ The validation covers:
 - 1,000 participant bootstrap replicates;
 - leave-one-task-out and collapsed-speed PCAs;
 - ancestry- and freeze-specific correlation and loading checks;
-- sample sizes and settings recovered from the three REGENIE logs;
+- sample sizes and settings reported in the three REGENIE logs;
 - baseline LDSC quality-control metrics; and
 - a checksum-linked comparison of the 10k, 12k and 22k genetic signal.
 

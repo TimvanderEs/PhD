@@ -1,6 +1,6 @@
 # Trans-ancestry results
 
-`meta_analysis_manifest.tsv` identifies the two recovered 10k
+`meta_analysis_manifest.tsv` identifies the two documented 10k
 Chinese–Indian–Malay meta-analysis iterations. The full summary statistics are
 not stored in this repository; the checksums identify the validated files.
 

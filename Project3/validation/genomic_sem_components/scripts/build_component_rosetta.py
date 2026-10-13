@@ -39,7 +39,7 @@ def main() -> None:
             raise SystemExit(f"Build map lacks required columns: {sorted(required)}")
         for row in reader:
             if row["SNP"] in selected_rsids:
-                # This recovered legacy file has misleading headers: direct
+                # This documented legacy file has misleading headers: direct
                 # checks against known variants show that BP is the original
                 # hg38 coordinate and BP_38 is the lifted hg19 coordinate.
                 coordinates[row["SNP"]] = (row["CHR"], row["BP_38"], row["BP"])

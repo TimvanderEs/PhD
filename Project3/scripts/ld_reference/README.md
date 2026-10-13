@@ -1,6 +1,6 @@
 # SG100K covariate-adjusted LD reference
 
-These scripts capture the recovered workflow used to construct the SG100K
+These scripts capture the documented workflow used to construct the SG100K
 covariates and calculate covariate-adjusted LD scores.
 
 `prepare_sg100k_covariates.sh` performs the recorded preparation steps:

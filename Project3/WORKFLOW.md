@@ -16,11 +16,11 @@ Chinese-only freeze used in Project 2 remain separate records.
 | Cognitive validation | Measurement summaries, 1,000 bootstrap PCAs, leave-one-task-out and ancestry-specific checks |
 | Expanded 22k phenotype and GWAS | Exact 12k and combined 22k PCA checks, residual reconstruction, measurement checks and ancestry-specific association results |
 | Genotype QC | Portable ancestry-specific PLINK workflow for Chinese, Indian and Malay participants |
-| Ancestry-specific GWAS | REGENIE v4.1 commands and recovered Step 2 run records |
+| Ancestry-specific GWAS | REGENIE v4.1 commands and documented Step 2 run records |
 | Trans-ancestry meta-analysis | METAL inverse-variance model and the exact post-analysis filters |
-| Summary-statistic preparation | Recovered build conversion and rsID-mapping scripts |
+| Summary-statistic preparation | Documented build conversion and rsID-mapping scripts |
 | Chinese-only freeze | EC2 checksums, row counts and cross-format comparisons |
-| SG100K LD reference | Recovered scripts and completed chromosome logs |
+| SG100K LD reference | Documented scripts and completed chromosome logs |
 
 ## Historical 10k cognitive phenotype
 
@@ -54,7 +54,7 @@ For association testing, the retained PC1 was split into Chinese, Indian and
 Malay analysis groups, values beyond five within-group standard deviations
 were set to missing, and the remaining values were Blom inverse-normal
 transformed within group. REGENIE Step 2 therefore used an already transformed
-phenotype and did not include `--apply-rint`. The recovered preparation code,
+phenotype and did not include `--apply-rint`. The documented preparation code,
 archived filenames and exact 10k/12k count checks support this lineage; the
 participant-level September 2025 phenotype files remain controlled and were
 not retained in the repository.
@@ -94,7 +94,7 @@ cross-freeze results are in
 ## Trans-ancestry association analysis
 
 GWAS was run separately in the Chinese, Indian and Malay ancestry groups using
-REGENIE v4.1. The recovered 10k Step 2 records use the ancestry-specific
+REGENIE v4.1. The documented 10k Step 2 records use the ancestry-specific
 genotype data, an externally transformed `g` phenotype, 20 ancestry-specific
 principal components, block size 200 and minimum MAC 0.5. The genotype inputs contained
 7,043,723 Chinese, 8,387,428 Indian and 7,660,514 Malay variants.
@@ -110,7 +110,7 @@ inverse-variance combination of the ancestry-specific GWASs. It targets shared
 effects and should not be interpreted as an explicit model of
 ancestry-heterogeneous effects.
 
-Two 10k trans-ancestry iterations were recovered and validated. The later file
+Two 10k trans-ancestry iterations were documented and validated. The later file
 contains 6,686,830 variants and reaches a maximum combined N of 7,789; the
 earlier file contains 6,688,950 variants and reaches N = 7,664. Their
 fingerprints and ancestry-specific maximum sample sizes are listed in

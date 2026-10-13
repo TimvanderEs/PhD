@@ -22,7 +22,7 @@ coding is in [input_orientation.tsv](input_orientation.tsv).
 
 ## Processing
 
-The recovered allele-aware SG100K marker map is linked to rsIDs and hg19
+The documented allele-aware SG100K marker map is linked to rsIDs and hg19
 coordinates before HapMap3 munging. Reproduction against the archived 22k
 working-memory conversion yielded the same 2,627,227 mapped variants and an
 identical SHA-256 over every field consumed by LDSC (`SNP`, `A1`, `A2`, `N`,

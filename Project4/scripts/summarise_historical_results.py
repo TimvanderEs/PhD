@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Recalculate the aggregate Project 4 LDSC summaries from recovered tables."""
+"""Recalculate the aggregate Project 4 LDSC summaries from documented tables."""
 
 from __future__ import annotations
 
@@ -96,12 +96,12 @@ def main() -> None:
     parser.add_argument(
         "--h2",
         type=Path,
-        default=Path("Project4/results/recovered/helios_h2_panel_comparison_long.tsv"),
+        default=Path("Project4/results/historical/helios_h2_panel_comparison_long.tsv"),
     )
     parser.add_argument(
         "--rg",
         type=Path,
-        default=Path("Project4/results/recovered/helios_rg_summary.tsv"),
+        default=Path("Project4/results/historical/helios_rg_summary.tsv"),
     )
     args = parser.parse_args()
     summarise_h2(read_tsv(args.h2))

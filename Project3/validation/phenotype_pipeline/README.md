@@ -21,7 +21,7 @@ The archived PC1 is oriented so that higher values indicate poorer cognitive
 performance. Figures reverse this arbitrary sign so that higher values indicate
 better performance.
 
-The transformation lineage is supported by the recovered phenotype-preparation
+The transformation lineage is supported by the documented phenotype-preparation
 script, the phenotype filenames in the completed REGENIE logs, and exact sample
 count reconstruction for the historical 10k and nested 12k runs. The exact
 participant-level September 2025 phenotype files are controlled data and were

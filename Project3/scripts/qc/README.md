@@ -1,10 +1,10 @@
 # Genotype quality control
 
-The recovered Chinese genotype prefix records the filters
+The documented Chinese genotype prefix records the filters
 `--geno 0.02`, `--maf 0.005` and `--hwe 1e-6`. Equivalent Chinese, Indian and
 Malay prefixes were named in the historical scripts.
 
-`run_ancestry_genotype_qc.sh` consolidates the recovered commands into a
+`run_ancestry_genotype_qc.sh` consolidates the documented commands into a
 path-independent workflow. It applies:
 
 - genotype and sample missingness below 2%;

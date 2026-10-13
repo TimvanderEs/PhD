@@ -25,4 +25,4 @@ Type 2 diabetes h2 is on the observed scale. No liability-scale conversion was p
 - [`CHECKSUMS.sha256`](CHECKSUMS.sha256): checksums for this result directory.
 
 Raw logs and run provenance are stored under [`../../validation/ancestry_matched_sg100k/`](../../validation/ancestry_matched_sg100k/).
-Trait labels, transformations, and sample sizes are defined in [`../../metadata/recovered_benchmark_traits.tsv`](../../metadata/recovered_benchmark_traits.tsv).
+Trait labels, transformations, and sample sizes are defined in [`../../metadata/historical_benchmark_traits.tsv`](../../metadata/historical_benchmark_traits.tsv).

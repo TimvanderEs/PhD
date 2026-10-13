@@ -1,4 +1,4 @@
-# Recovered aggregate results
+# Historical aggregate results
 
 These tables were copied from the EC2 analysis archive on 18 September 2026. They contain aggregate LDSC results only; no participant-level data are included.
 

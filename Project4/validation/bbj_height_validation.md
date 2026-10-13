@@ -41,7 +41,7 @@ The exact parameterised commands are in [`scripts/run_bbj_height_validation.sh`]
 /home/ec2-user/input_files/reference/eas_ldscores/
 ```
 
-The alternative recovered `1kgeas_consensus_867k` and `1kgeas_consensus_930k` directories were not used because chromosome 10 contained only a header (34-byte compressed file). The selected reference contained 64,243 chromosome 10 variants plus its header.
+The alternative `1kgeas_consensus_867k` and `1kgeas_consensus_930k` directories were not used because chromosome 10 contained only a header (34-byte compressed file). The selected reference contained 64,243 chromosome 10 variants plus its header.
 
 ## Results
 

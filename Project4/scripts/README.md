@@ -28,7 +28,7 @@ to try validation and command planning without controlled data.
   and `summarise_sg100k_ancestry_matched.py` support the earlier
   [ancestry-matched analyses](../validation/ancestry_matched_sg100k/).
 
-Earlier recovery and translated-1KG scripts are retained to explain archived
+Earlier summary and translated-1KG scripts are retained to explain archived
 outputs. The primary comparison uses the exact 1KG reconstruction, as described
 in the [controlled-analysis report](../validation/controlled_reference_experiment/FINAL_REPORT.md).
 

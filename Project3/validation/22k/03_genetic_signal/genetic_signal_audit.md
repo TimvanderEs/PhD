@@ -67,7 +67,7 @@ The exact Step 1 prediction files used by the September 2025 12k and 22k Step
 2 runs were not retained with immutable names. Later logs using the same generic
 prediction-list names have different dates and participant counts. This does
 not explain the results above, but it prevents an exact Step 1 audit from the
-recovered files alone.
+available files alone.
 
 ## Reporting decision
 

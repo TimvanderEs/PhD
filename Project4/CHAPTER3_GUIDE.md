@@ -22,7 +22,7 @@ of better performance.
 | Paired heritability and genetic-correlation comparisons | [Paired jackknife summary](scripts/summarise_paired_h2_jackknife.py), [genetic-correlation summary](scripts/summarise_controlled_rg.py), [final report](validation/controlled_reference_experiment/FINAL_REPORT.md) |
 | Reference-size sensitivity | [Panel subsampling and construction](scripts/build_reference_size_panels.sh), [heritability analyses](scripts/run_reference_size_h2.sh), [LD-score stability results](results/controlled_reference/reference_size_ldscore_summary.tsv) |
 | Held-out simulation | [Simulation runner](scripts/run_heldout_simulation.sh), [replicate results](results/controlled_reference/simulation_replicates.tsv) |
-| Earlier ancestry-specific and HELIOS analyses | [Ancestry-matched results](results/ancestry_matched/), [recovered HELIOS comparisons](results/recovered/), [provenance audit](PROJECT4_AUDIT.md) |
+| Earlier ancestry-specific and HELIOS analyses | [Ancestry-matched results](results/ancestry_matched/), [historical HELIOS comparisons](results/historical/), [provenance audit](PROJECT4_AUDIT.md) |
 
 ## Current interpretation
 

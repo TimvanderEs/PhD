@@ -2,13 +2,13 @@
 
 ## Draft status
 
-This evidence-constrained working draft replaces the unsupported performance claims in the earlier manuscript with conclusions traced to scripts, logs, and result tables. The recovered merge log identifies the 46,508-person genotype resource as PRECISE-SG100K-derived rather than HELIOS-only.
+This evidence-constrained working draft replaces the unsupported performance claims in the earlier manuscript with conclusions traced to scripts, logs, and result tables. The merge log identifies the 46,508-person genotype resource as PRECISE-SG100K-derived rather than HELIOS-only.
 
 ## Abstract
 
 Linkage disequilibrium score regression (LDSC) depends on LD estimates that adequately represent the ancestry and variant structure of the genome-wide association study under analysis. Public panels are convenient, but broad continental groupings may not fully represent genetically heterogeneous populations such as Singapore, where people of Chinese, Malay, and Indian ancestry live within the same national setting. We developed LD-score resources from a large multi-ancestry Singapore genomic dataset and evaluated how reference construction affected SNP-heritability and genetic-correlation estimates.
 
-The recovered work comprised a pooled 20 cM cov-LDSC panel and standard 1 cM panels calculated separately in Chinese, Indian, and Malay participants. Six SG100K release 2.3.1 traits were evaluated: systolic blood pressure, waist-to-hip ratio, height, body mass index, LDL cholesterol, and type 2 diabetes. A final controlled experiment analysed the Chinese GWAS with five 1 cM panels: exact 1000 Genomes East Asian LD scores, standard and 20-PC-adjusted Singapore Chinese scores, and standard and 20-PC-adjusted pooled Singapore scores. All panels used the same GRCh38 map, 874,025 variants in the same order, 1000 Genomes regression weights, and 200 jackknife blocks.
+The earlier work comprised a pooled 20 cM cov-LDSC panel and standard 1 cM panels calculated separately in Chinese, Indian, and Malay participants. Six SG100K release 2.3.1 traits were evaluated: systolic blood pressure, waist-to-hip ratio, height, body mass index, LDL cholesterol, and type 2 diabetes. A final controlled experiment analysed the Chinese GWAS with five 1 cM panels: exact 1000 Genomes East Asian LD scores, standard and 20-PC-adjusted Singapore Chinese scores, and standard and 20-PC-adjusted pooled Singapore scores. All panels used the same GRCh38 map, 874,025 variants in the same order, 1000 Genomes regression weights, and 200 jackknife blocks.
 
 In the final controlled experiment, mean SNP-heritability was 0.1618 with the standard Singapore Chinese panel and 0.1601 with exact 1000 Genomes EAS; mean SE was 0.02035 and 0.02022. None of the six paired h2 differences was nominally significant. Genetic-correlation estimates were nearly identical across the two panels (r = 0.99945; mean absolute difference 0.00736; 15/15 directions concordant). Increasing the Chinese reference from 500 to 27,178 participants improved LD-score stability but had little effect on h2 or SE. Five held-out simulated traits also did not distinguish the panels. PC adjustment had little effect within Chinese participants but materially shifted estimates in the pooled multi-ancestry panel.
 
@@ -34,7 +34,7 @@ Reference mismatch can arise through differences in ancestry, allele frequencies
 
 Singapore includes substantial Chinese, Malay, and Indian ancestry groups. These groups broadly connect to East, South-East, and South Asian genetic diversity, but continental labels do not capture all local structure. A single public East Asian panel is not an obvious match for Indian-ancestry participants and may also incompletely represent Malay or locally admixed haplotypes.
 
-The recovered genotype resource initially contained 46,508 participants. This exceeds the published 10,004-participant HELIOS cohort, and the original merge log records the prefix `precise_sg100k`. This chapter therefore uses *PRECISE-SG100K-derived reference resource* rather than HELIOS-only.
+The genotype resource initially contained 46,508 participants. This exceeds the published 10,004-participant HELIOS cohort, and the original merge log records the prefix `precise_sg100k`. This chapter therefore uses *PRECISE-SG100K-derived reference resource* rather than HELIOS-only.
 
 ### 2.3 Covariate-adjusted and ancestry-specific LD scores
 
@@ -60,21 +60,21 @@ The evaluation was reconstructed from code, execution logs, aggregate result tab
 
 ### 3.2 Reference samples and relatedness filtering
 
-The pooled genotype merge log contained 46,508 participants. A June 2025 pooled cov-LDSC workflow retained 37,364 unrelated participants. A later recovered ancestry-specific workflow retained 27,181 Chinese, 5,848 Indian, and 4,327 Malay participants. The final controlled rebuild started from 33,392 Chinese, 7,450 Indian, and 5,666 Malay participants and retained 27,178 Chinese and 37,351 pooled participants after KING filtering. Counts are reported by workflow rather than silently reconciled.
+The pooled genotype merge log contained 46,508 participants. A June 2025 pooled cov-LDSC workflow retained 37,364 unrelated participants. A later documented ancestry-specific workflow retained 27,181 Chinese, 5,848 Indian, and 4,327 Malay participants. The final controlled rebuild started from 33,392 Chinese, 7,450 Indian, and 5,666 Malay participants and retained 27,178 Chinese and 37,351 pooled participants after KING filtering. Counts are reported by workflow rather than silently reconciled.
 
-The eight-person difference between the pooled and summed ancestry-specific unrelated samples reflects different recovered workflows and should not be silently reconciled. The pooled analysis is reported with N = 37,364; the ancestry-specific panels are reported with their individual counts.
+The eight-person difference between the pooled and summed ancestry-specific unrelated samples reflects different documented workflows and should not be silently reconciled. The pooled analysis is reported with N = 37,364; the ancestry-specific panels are reported with their individual counts.
 
 ### 3.3 Variant quality control
 
-For the recovered ancestry-specific panels, the recorded construction commands retained biallelic SNPs with minor-allele frequency at least 0.01, genotype missingness at most 0.02, and Hardy-Weinberg equilibrium P at least 1 x 10^-6. The final controlled rebuild applied those SNP, frequency, missingness, and Hardy-Weinberg filters within Chinese participants; Hardy-Weinberg filtering was not applied to the pooled multi-ancestry sample to avoid a Wahlund-effect filter. Variants were aligned to a GRCh38 genetic map. One marker requested through the public-panel crosswalk was absent from the raw 1KG genotype release, leaving an exact final intersection of 874,025 variants across all five panels.
+For the ancestry-specific panels, the recorded construction commands retained biallelic SNPs with minor-allele frequency at least 0.01, genotype missingness at most 0.02, and Hardy-Weinberg equilibrium P at least 1 x 10^-6. The final controlled rebuild applied those SNP, frequency, missingness, and Hardy-Weinberg filters within Chinese participants; Hardy-Weinberg filtering was not applied to the pooled multi-ancestry sample to avoid a Wahlund-effect filter. Variants were aligned to a GRCh38 genetic map. One marker requested through the public-panel crosswalk was absent from the raw 1KG genotype release, leaving an exact final intersection of 874,025 variants across all five panels.
 
 ### 3.4 Pooled covariate-adjusted panel
 
-The exploratory pooled panel used the cov-LDSC implementation and a 20 cM window. The recovered runner supplied 50 principal components as covariates; it did not supply age or sex. Statements in the earlier manuscript that age and sex were included are therefore unsupported by the recovered command. Genome-build labels in the archived documentation are inconsistent, so this historical panel is retained as development provenance and is not used for the primary controlled comparison.
+The exploratory pooled panel used the cov-LDSC implementation and a 20 cM window. The runner supplied 50 principal components as covariates; it did not supply age or sex. Statements in the earlier manuscript that age and sex were included are therefore unsupported by the command. Genome-build labels in the archived documentation are inconsistent, so this historical panel is retained as development provenance and is not used for the primary controlled comparison.
 
 ### 3.5 Ancestry-specific standard panels
 
-The later workflow calculated LD scores separately in the Chinese, Indian, and Malay samples using a 1 cM window and no covariate file. Although the command used the `ldsc.py` file from a cov-LDSC installation, this invocation corresponds to standard, unadjusted LD-score calculation. Complete `.l2.ldscore.gz`, `.l2.M`, and `.l2.M_5_50` outputs were recovered for all 22 autosomes in each group.
+The later workflow calculated LD scores separately in the Chinese, Indian, and Malay samples using a 1 cM window and no covariate file. Although the command used the `ldsc.py` file from a cov-LDSC installation, this invocation corresponds to standard, unadjusted LD-score calculation. Complete `.l2.ldscore.gz`, `.l2.M`, and `.l2.M_5_50` outputs were available for all 22 autosomes in each group.
 
 The Chinese, Indian, and Malay panels contained 878,093, 912,313, and 909,907 LD-score variants, respectively. Their overlaps with the munged benchmark summary statistics were 827,024, 859,224, and 856,937 variants.
 
@@ -82,7 +82,7 @@ The Chinese, Indian, and Malay panels contained 878,093, 912,313, and 909,907 LD
 
 The controlled-window comparison used six SG100K genomic data release 2.3.1 GWAS. Quantitative traits were analysed within ancestry using REGENIE v3.4 after the transformations stated by the provider, with age, sex, cohort, subcohort, and the top 20 ancestry-specific principal components as covariates. Ancestry-specific results were combined by fixed-effect meta-analysis using METAL. The traits were average systolic blood pressure, waist-to-hip ratio, height, body mass index, log10-transformed LDL cholesterol, and type 2 diabetes.
 
-Although the provider files retain separate Chinese, Indian, and Malay association columns, the recovered LDSC preparation script selected only the fixed-effect trans-ancestry columns. The same six trans-ancestry files were used with each ancestry-specific LD panel. These analyses therefore assess sensitivity to LD-panel choice; they are not ancestry-matched GWAS analyses.
+Although the provider files retain separate Chinese, Indian, and Malay association columns, the LDSC preparation script selected only the fixed-effect trans-ancestry columns. The same six trans-ancestry files were used with each ancestry-specific LD panel. These analyses therefore assess sensitivity to LD-panel choice; they are not ancestry-matched GWAS analyses.
 
 The five quantitative-trait sample sizes ranged from 46,216 to 46,314. The type 2 diabetes GWAS included 5,486 cases and 40,856 controls. These are SG100K trans-ancestry results and must not be described as HELIOS-only GWAS.
 
@@ -90,7 +90,7 @@ The five quantitative-trait sample sizes ranged from 46,216 to 46,314. The type 
 
 Univariate LDSC was run with each of the three Singapore 1 cM panels and with the 1000 Genomes East Asian comparator. For each trait and panel, the evaluation should retain SNP heritability, its standard error, the LDSC intercept and standard error, mean chi-square, ratio where defined, SNP count, and completion status.
 
-Bivariate LDSC was run for all 15 pairwise combinations of the six traits with each Singapore panel, producing 45 completed runs. The recovered summary compared point estimates across panels using Pearson correlation and agreement in direction. These recovered trans-ancestry results are described as nominal where multiple-testing correction was not retained.
+Bivariate LDSC was run for all 15 pairwise combinations of the six traits with each Singapore panel, producing 45 completed runs. The summary compared point estimates across panels using Pearson correlation and agreement in direction. These documented trans-ancestry results are described as nominal where multiple-testing correction was not retained.
 
 Panel usefulness was not defined by the absolute magnitude of h2. The primary criteria were agreement under matched analytical conditions, precision conditional on calibration, stability across panels, and transparent retention of failed or implausible results.
 
@@ -122,7 +122,7 @@ The ancestry-specific workflow produced complete autosomal LD-score panels for 2
 
 Across the six traits, mean h2 was 0.127 with 1000 Genomes East Asian LD scores, compared with 0.125 for the Singapore Chinese panel, 0.129 for the Singapore Indian panel, and 0.124 for the Singapore Malay panel. Relative differences from the public comparator were -1.7%, +1.4%, and -2.9%, respectively. These differences were small at the aggregate level.
 
-Mean standard errors were 0.0129, 0.0134, 0.0156, and 0.0136 for the 1000 Genomes East Asian, Singapore Chinese, Indian, and Malay panels. Corresponding mean h2/SE ratios were 8.97, 8.50, 7.54, and 8.30. The recovered controlled-window results therefore do not show a general precision advantage for the Singapore panels.
+Mean standard errors were 0.0129, 0.0134, 0.0156, and 0.0136 for the 1000 Genomes East Asian, Singapore Chinese, Indian, and Malay panels. Corresponding mean h2/SE ratios were 8.97, 8.50, 7.54, and 8.30. The controlled-window results therefore do not show a general precision advantage for the Singapore panels.
 
 Mean intercepts were close to one for all four panel choices. Type 2 diabetes was an exception: its mean chi-square was below one and its intercept was approximately 0.897 across the 1 cM analyses. This panel-invariant pattern points to the GWAS input or statistical scale rather than a particular LD reference and should be investigated before the type 2 diabetes results are used as confirmatory evidence.
 
@@ -180,7 +180,7 @@ The direction of that shift does not identify the more accurate pooled model. Ad
 
 Strengths include the large local reference sample, representation of three major Singapore ancestry groups, an exact raw-genotype 1KG comparator, identical variant order across five panels, paired 200-block uncertainty estimates, reference-size sensitivity, and held-out simulation. The reconstruction also prevents an analytical development artifact from becoming an overstated biological conclusion.
 
-Several limitations remain. The retained merge log identifies the resource as PRECISE-SG100K-derived, but its exact data release and contributing-cohort composition still require confirmation. Only six provider packages were available; ALT, smoking, and triglycerides were not recovered. T2D estimates remain on the observed scale. The Indian and Malay GWAS were too weak for stable rg inference, and no suitable public comparators were available for them. The simulation used only five replicates and showed panel-invariant upward bias, so it cannot establish small performance differences. Finally, the early external benchmark is invalid and the historical 20 cM comparison remains confounded by multiple design changes.
+Several limitations remain. The retained merge log identifies the resource as PRECISE-SG100K-derived, but its exact data release and contributing-cohort composition still require confirmation. Only six provider packages were available; ALT, smoking, and triglycerides were not available. T2D estimates remain on the observed scale. The Indian and Malay GWAS were too weak for stable rg inference, and no suitable public comparators were available for them. The simulation used only five replicates and showed panel-invariant upward bias, so it cannot establish small performance differences. Finally, the early external benchmark is invalid and the historical 20 cM comparison remains confounded by multiple design changes.
 
 ### 5.5 Implications and next steps
 

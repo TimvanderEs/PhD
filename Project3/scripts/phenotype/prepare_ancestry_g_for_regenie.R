@@ -102,7 +102,7 @@ if (!is.finite(score_sd) || score_sd == 0) {
 outlier <- observed & abs(analysis$score - score_mean) > sd_cutoff * score_sd
 analysis$score[outlier] <- NA_real_
 
-# Blom rank-based inverse-normal transformation used in the recovered
+# Blom rank-based inverse-normal transformation used in the documented
 # ancestry-specific phenotype-preparation workflow.
 remaining <- is.finite(analysis$score)
 n_remaining <- sum(remaining)

@@ -9,10 +9,10 @@ The minimum controlled rerun has two stages, both in a new directory.
 Run all four historical phenotypes (`MDD_EAS`, `Edu_EAS`, `SCZ_EAS`, and
 `HEL10k_EAS`) with:
 
-- the recovered LAVA v0.1.5 environment;
+- the documented LAVA v0.1.5 environment;
 - the same four summary-statistic files;
 - the same 3,064-locus file;
-- the recovered 1000 Genomes EAS PLINK reference;
+- the documented 1000 Genomes EAS PLINK reference;
 - the complete historical 4 x 4 sample-overlap matrix;
 - `univ.thresh = 2e-5`; and
 - the historical, incorrect EDU case/control declaration.

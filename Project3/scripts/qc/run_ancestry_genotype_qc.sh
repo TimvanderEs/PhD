@@ -22,7 +22,7 @@ relatedness_exclusions="${output_directory}/${ancestry}_relatedness_exclusions.t
 sample_exclusions="${output_directory}/${ancestry}_sample_exclusions.txt"
 final_prefix="${output_directory}/HELIOS_${ancestry}_QCrem_miss02_maf005_hwe1e06"
 
-# Variant and sample missingness, allele frequency and HWE filters recovered
+# Variant and sample missingness, allele frequency and HWE filters documented
 # from the historical QC scripts.
 "${plink}" \
   --bfile "${input_prefix}" \

@@ -1,6 +1,6 @@
 # SG100K ancestry-matched validation
 
-This validation uses the Chinese, Indian, and Malay association columns retained in the six SG100K release 2.3.1 provider packages. It is separate from the recovered analysis in which the same trans-ancestry GWAS was paired with three different Singapore LD panels.
+This validation uses the Chinese, Indian, and Malay association columns retained in the six SG100K release 2.3.1 provider packages. It is separate from the historical analysis in which the same trans-ancestry GWAS was paired with three different Singapore LD panels.
 
 ## Design
 

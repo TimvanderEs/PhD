@@ -4,7 +4,7 @@
 
 The analysis presented at WCPG 2026 used ancestry-specific REGENIE 4.1 Step 2
 runs in 17,966 Chinese, 2,310 Indian and 1,242 Malay participants. The exact
-Step 2 options recovered from the three archived logs are represented in
+Step 2 options documented in the three archived logs are represented in
 [`scripts/gwas_22k`](../gwas_22k). The input `g` phenotype had already been
 Blom inverse-normal transformed within ancestry, so Step 2 did not use
 `--apply-rint`. The original prediction lists were not retained with immutable
@@ -13,7 +13,7 @@ Step 1 lineage.
 ## Historical 10k analysis
 
 The Project 3 discovery analysis ran REGENIE separately in Chinese, Indian and
-Malay participants before meta-analysis. The recovered 10k Step 2 records use a
+Malay participants before meta-analysis. The documented 10k Step 2 records use a
 precomputed `g` phenotype, ancestry-specific PC covariate files, block size 200
 and minimum MAC 0.5. The score was prepared by a within-ancestry 5-SD mask and
 external Blom RINT. `run_regenie_step2_10k_ancestry.sh` provides the association

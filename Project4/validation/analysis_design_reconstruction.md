@@ -4,9 +4,9 @@ Verified against the EC2 archive on 21 September 2026; ancestry-matched and fina
 
 ## Conclusion
 
-The recovered archive did not contain an ancestry-matched GWAS analysis for the Chinese, Indian, and Malay Singapore LD panels. Each panel had been applied to the same six fixed-effect trans-ancestry SG100K summary-statistic files.
+The analysis archive did not contain an ancestry-matched GWAS analysis for the Chinese, Indian, and Malay Singapore LD panels. Each panel had been applied to the same six fixed-effect trans-ancestry SG100K summary-statistic files.
 
-A new validation used the Chinese, Indian, and Malay association columns from the provider files. All 63 matched analyses completed, together with 21 preliminary Chinese-GWAS/1KG-EAS comparator analyses. A subsequent controlled experiment recalculated the 1KG comparator from raw genotypes and matched five reference panels on window, genetic map, SNP universe, order, and regression weights. These are explicitly labelled as new validation work rather than recovered analyses.
+A new validation used the Chinese, Indian, and Malay association columns from the provider files. All 63 matched analyses completed, together with 21 preliminary Chinese-GWAS/1KG-EAS comparator analyses. A subsequent controlled experiment recalculated the 1KG comparator from raw genotypes and matched five reference panels on window, genetic map, SNP universe, order, and regression weights. These are explicitly labelled as new validation work rather than historical analyses.
 
 ## What was actually run
 
@@ -19,17 +19,17 @@ A new validation used the Chinese, Indian, and Malay association columns from th
 - HELIOS/SG100K was not one of these five dataset labels.
 - This benchmark is excluded because the archived accession-to-phenotype mapping and substituted sample sizes were invalid.
 
-The five-dataset issue has not been resolved. Only genuine BioBank Japan height has been rebuilt and validated. Pan-UKB phenotype field IDs are plausible, but the recovered formatter selected the trans-ancestry `beta_meta_hq` and `se_meta_hq` fields rather than the EAS fields and substituted a fixed N of 420,531. The current status of every dataset is recorded in [`five_cohort_rebuild_status.tsv`](five_cohort_rebuild_status.tsv).
+The five-dataset issue has not been resolved. Only genuine BioBank Japan height has been rebuilt and validated. Pan-UKB phenotype field IDs are plausible, but the formatter selected the trans-ancestry `beta_meta_hq` and `se_meta_hq` fields rather than the EAS fields and substituted a fixed N of 420,531. The current status of every dataset is recorded in [`five_cohort_rebuild_status.tsv`](five_cohort_rebuild_status.tsv).
 
 ### Six-trait Singapore benchmark
 
 - Six SG100K release 2.3.1 traits: systolic blood pressure, waist-to-hip ratio, height, BMI, LDL cholesterol, and type 2 diabetes.
 - The provider files contain `FREQ`, `BETA`, `SE`, `P`, and `N` fields for Chinese, Indian, Malay, and trans-ancestry results.
-- The recovered preparation script selects only `FREQ_trans`, `BETA_trans`, `SE_trans`, `P_trans`, and `N_trans`.
+- The preparation script selects only `FREQ_trans`, `BETA_trans`, `SE_trans`, `P_trans`, and `N_trans`.
 - The resulting six munged files have total sample sizes of approximately 46,200--46,300, rather than ancestry-specific sample sizes.
 - The same six munged files were analysed with the Chinese, Indian, and Malay 1 cM LD panels. The same trans-ancestry files were also used in the earlier pooled-Singapore and 1000 Genomes EAS comparisons.
 
-Only these six SG100K provider packages were recovered on EC2 and in the local project archives. SG100K packages for ALT, smoking, and triglycerides were not found. Files with those trait labels exist only in the excluded external-dataset archive. A nine-trait SG100K analysis therefore requires the three additional provider packages, or a separately specified and documented new GWAS for those phenotypes.
+Only these six SG100K provider packages were available on EC2 and in the local project archives. SG100K packages for ALT, smoking, and triglycerides were not found. Files with those trait labels exist only in the excluded external-dataset archive. A nine-trait SG100K analysis therefore requires the three additional provider packages, or a separately specified and documented new GWAS for those phenotypes.
 
 ## Evidence on EC2
 
@@ -50,7 +50,7 @@ A targeted search of the pre-validation EC2 archive found no munged SG100K files
 
 ## Correct interpretation
 
-The recovered comparison tests the sensitivity of trans-ancestry SG100K LDSC estimates to LD-reference choice. The ancestry-matched validation adds:
+The documented comparison tests the sensitivity of trans-ancestry SG100K LDSC estimates to LD-reference choice. The ancestry-matched validation adds:
 
 1. Chinese GWAS with Singapore Chinese and 1000 Genomes EAS panels;
 2. Indian GWAS with the Singapore Indian panel; and

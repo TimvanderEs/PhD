@@ -2,7 +2,7 @@
 
 - `convert_regenie_to_ldsc.sh` converts one REGENIE association file to the
   column format used for LDSC preparation. It is a path-independent version of
-  the recovered EC2 script.
+  the documented EC2 script.
 - `convert_helios_b38_to_rsid37.py` maps HELIOS build 38 variant identifiers to
   rsIDs and build 37 positions using a project-specific Rosetta table. The copy
   here is byte-identical to the executed local and EC2 copies.

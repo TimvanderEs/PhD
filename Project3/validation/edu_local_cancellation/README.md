@@ -37,7 +37,7 @@ The concise report and suggested manuscript wording are in
 
 ## Corrected LAVA run
 
-The recovered historical configuration had declared quantitative KoGES
+The historical configuration had declared quantitative KoGES
 education as binary. Two isolated four-trait LAVA 0.1.5 runs were therefore
 performed with identical summary statistics, overlap matrix, LD reference,
 3,064 blocks and univariate threshold (P < 2e-5):

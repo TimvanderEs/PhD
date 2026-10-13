@@ -1,4 +1,4 @@
-analysis_stage	gwas_datasets	traits	gwas_ancestry	ld_references	recovered_status	interpretation
+analysis_stage	gwas_datasets	traits	gwas_ancestry	ld_references	availability_status	interpretation
 historical_external_benchmark	UKB;Pan-UKB;JBB;CKB;KoGES_TWB	ALT;BMI;height;LDL;SBP;smoking;T2D;TG;WHR	mixed across labelled datasets	pooled_Singapore_20cM;1KG_EAS_1cM;1KG_EUR_1cM	completed_but_invalid	Excluded because phenotype accessions and sample sizes were not valid
 singapore_pooled_comparison	SG100K_release_2.3.1	SBP;WHR;height;BMI;LDL;T2D	fixed_effect_trans_ancestry	pooled_Singapore_covLDSC_20cM;1KG_EAS_1cM	completed	Confounded by simultaneous changes in window and panel construction
 singapore_ancestry_panel_sensitivity	SG100K_release_2.3.1	SBP;WHR;height;BMI;LDL;T2D	fixed_effect_trans_ancestry	Singapore_Chinese_1cM;Singapore_Indian_1cM;Singapore_Malay_1cM	completed	Tests LD-panel sensitivity for pooled GWAS; not ancestry matched

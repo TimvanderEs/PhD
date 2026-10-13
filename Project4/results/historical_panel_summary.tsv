@@ -1,5 +1,5 @@
 analysis_stage	panel	ld_window_cm	covariate_adjusted	reference_n	ldscore_snps	sumstat_ld_overlap	status
-exploratory	Pooled Singapore	20	yes	37364	NA	NA	Recovered; confounded against 1 cM comparator
+exploratory	Pooled Singapore	20	yes	37364	NA	NA	Historical; confounded against 1 cM comparator
 controlled_1cm_transGWAS	1000 Genomes EAS	1	no	NA	NA	NA	Public comparator
 controlled_1cm_transGWAS	Singapore Chinese	1	no	27181	878093	827024	22 autosomes complete
 controlled_1cm_transGWAS	Singapore Indian	1	no	5848	912313	859224	22 autosomes complete

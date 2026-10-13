@@ -6,7 +6,7 @@ This audit covers:
 
 - the current five-page manuscript draft;
 - the `precise-covldsc-main` code archive;
-- the recovered pooled 20 cM cov-LDSC outputs;
+- the documented pooled 20 cM cov-LDSC outputs;
 - the invalid 40- to 45-row external-cohort benchmark and its input provenance; and
 - the later Chinese, Indian, and Malay 1 cM LD-score panels and LDSC results on EC2; and
 - the final controlled five-panel comparison, reference-size sensitivity, and held-out simulation completed on 22 September 2026.
@@ -17,7 +17,7 @@ The purpose of this document is to distinguish results that are ready to report 
 
 The historical manuscript headline must be replaced because its main quantitative claims came from an invalid external-cohort benchmark. The archived download script assigned trait names to unrelated GWAS Catalog accessions, and its formatters substituted fixed sample sizes. Those rows are excluded. A controlled rerun using genuine Biobank Japan height summary statistics produced h2 = 0.3875 (SE = 0.0188), compared with 0.0067 (SE = 0.0026) for the historical file labelled as BBJ height. The input audit is in [`validation/`](validation/).
 
-The latest recovered SG100K analysis is separate from the invalid accession-based benchmark. It constructs Chinese, Indian, and Malay Singapore panels with a 1 cM window and uses six semantically identified SG100K release 2.3.1 GWAS. The GWAS inputs in the recovered pipeline are fixed-effect trans-ancestry estimates.
+The latest documented SG100K analysis is separate from the invalid accession-based benchmark. It constructs Chinese, Indian, and Malay Singapore panels with a 1 cM window and uses six semantically identified SG100K release 2.3.1 GWAS. The GWAS inputs in the documented pipeline are fixed-effect trans-ancestry estimates.
 
 A preliminary ancestry-matched validation completed 63 local-panel runs and 21 Chinese-GWAS/1KG-EAS comparisons. Its translated-row 1KG comparator was subsequently superseded by an exact comparator recalculated from raw 1KG EAS genotypes.
 
@@ -27,7 +27,7 @@ The strongest defensible chapter narrative is therefore:
 
 > A population-specific LD-reference development study showing that pooled multi-ancestry LD scores are sensitive to covariate specification, whereas a standard Singapore Chinese panel and 1000 Genomes EAS give nearly equivalent LDSC results under a controlled 1 cM design.
 
-## Recovered analyses
+## Historical analyses
 
 ### Pooled Singapore 20 cM cov-LDSC panel
 
@@ -35,7 +35,7 @@ The strongest defensible chapter narrative is therefore:
 - Recorded unrelated sample in the chromosome-level cov-LDSC logs: 37,364 participants.
 - LD-score window: 20 cM.
 - Covariates supplied to cov-LDSC: 50 principal components.
-- The recovered runner does not include age or sex.
+- The runner does not include age or sex.
 - The archived code and README disagree about GRCh37 versus GRCh38.
 - The external benchmark compared this 20 cM panel with 1 cM 1000 Genomes panels.
 
@@ -43,7 +43,7 @@ This panel is suitable as an exploratory or sensitivity analysis until window-si
 
 ### Ancestry-specific Singapore 1 cM panels
 
-The latest recovered workflow created complete autosomal panels for three groups:
+The latest documented workflow created complete autosomal panels for three groups:
 
 | Panel | Unrelated participants | LD-score SNPs | Sumstat–LD overlap | Files complete |
 | --- | ---: | ---: | ---: | --- |
@@ -53,13 +53,13 @@ The latest recovered workflow created complete autosomal panels for three groups
 
 Construction used ancestry-specific genotype files whose filenames contain `HELIOS`, the KING unrelated-sample keep list, SNP-only variants, MAF >= 0.01, genotype missingness <= 0.02, HWE P >= 1e-6, genetic-map cM positions, and a 1 cM LDSC window. No covariate file was supplied, so these are standard rather than covariate-adjusted LD scores, even though the cov-LDSC fork of `ldsc.py` was used to calculate them.
 
-The chromosome logs and outputs are complete. The original panel-construction script and exact extraction list for this historical workflow were not recovered; a similarly named surviving file contains 925,225 unique variants despite the `867k` label. This limitation applies to the recovered panels only. The final controlled experiment uses reconstructed scripts and an exact 874,025-variant manifest.
+The chromosome logs and outputs are complete. The original panel-construction script and exact extraction list for this historical workflow were not available; a similarly named surviving file contains 925,225 unique variants despite the `867k` label. This limitation applies to the documented panels only. The final controlled experiment uses reconstructed scripts and an exact 874,025-variant manifest.
 
 ### GWAS-to-panel pairing
 
-The provider files contain separate Chinese, Indian, Malay, and trans-ancestry result columns. However, `/home/ec2-user/sg100K_sumstats/prep_for_munge.sh` explicitly selects only the `FREQ_trans`, `BETA_trans`, `SE_trans`, `P_trans`, and `N_trans` fields. All recovered h2 and rg logs then reuse those six trans-ancestry files with the Chinese, Indian, and Malay LD panels. No ancestry-specific munged file or matching LDSC run was recovered.
+The provider files contain separate Chinese, Indian, Malay, and trans-ancestry result columns. However, `/home/ec2-user/sg100K_sumstats/prep_for_munge.sh` explicitly selects only the `FREQ_trans`, `BETA_trans`, `SE_trans`, `P_trans`, and `N_trans` fields. All documented h2 and rg logs then reuse those six trans-ancestry files with the Chinese, Indian, and Malay LD panels. No ancestry-specific munged file or matching LDSC run was available.
 
-The recovered results are therefore a panel-sensitivity analysis for trans-ancestry GWAS, not an ancestry-matched benchmark. The new validation is reported separately under [`results/ancestry_matched/`](results/ancestry_matched/) and [`validation/ancestry_matched_sg100k/`](validation/ancestry_matched_sg100k/). The full design reconstruction is in [`validation/analysis_design_reconstruction.md`](validation/analysis_design_reconstruction.md).
+The documented results are therefore a panel-sensitivity analysis for trans-ancestry GWAS, not an ancestry-matched benchmark. The new validation is reported separately under [`results/ancestry_matched/`](results/ancestry_matched/) and [`validation/ancestry_matched_sg100k/`](validation/ancestry_matched_sg100k/). The full design reconstruction is in [`validation/analysis_design_reconstruction.md`](validation/analysis_design_reconstruction.md).
 
 ### Preliminary ancestry-matched validation
 
@@ -95,7 +95,7 @@ PC adjustment had little effect within the Chinese panel: mean h2 changed by 0.0
 
 ### Cohort and naming provenance
 
-The recovered evidence supports identifying the 46,508-person reference as PRECISE-SG100K-derived rather than HELIOS-only:
+The evidence supports identifying the 46,508-person reference as PRECISE-SG100K-derived rather than HELIOS-only:
 
 - the published HELIOS cohort contains 10,004 participants;
 - the merged genotype log contains 46,508 participants and records the prefix `precise_sg100k`;
@@ -105,7 +105,7 @@ The recovered evidence supports identifying the 46,508-person reference as PRECI
 
 The internal genotype prefix `HELIOS_*` is therefore not evidence that the panels use HELIOS participants alone. The manuscript should use **PRECISE-SG100K-derived reference panel** and identify the data release. HELIOS should be reserved for analyses that use the 10,004-participant HELIOS cohort.
 
-## Recovered trans-ancestry 1 cM results
+## Historical trans-ancestry 1 cM results
 
 ### Heritability
 
@@ -127,7 +127,7 @@ T2D requires separate caution: mean chi-square was below one and intercepts were
 
 ### Genetic correlation
 
-All 45 planned runs were recovered: 15 trait pairs evaluated with each of the three ancestry-specific Singapore panels.
+All 45 planned runs were available: 15 trait pairs evaluated with each of the three ancestry-specific Singapore panels.
 
 | Panel comparison | Pearson correlation of rg | Same direction |
 | --- | ---: | ---: |
@@ -163,12 +163,12 @@ The terms `95.3% increase in heritability`, `70.5% improvement in discovery powe
 | GWAS-panel matching | Result directories are named Chinese, Indian, and Malay | Those labels identify the LD panel only; every run used the same trans-ancestry SG100K GWAS files |
 | Primary method | Draft describes a pooled cov-LDSC resource; an author comment says the analysis switched back to standard LDSC | Use the final controlled 1 cM five-panel experiment as the primary comparison; retain the historical 20 cM result as development provenance |
 | Genome build | GRCh38 in the title/methods; GRCh37 in part of the README; hg19 high-LD file named in logs | Verify genotype, genetic-map, exclusion-region, and GWAS builds separately and record conversions |
-| Final unrelated N | Different workflows produced different counts | Use 37,364 for the June 2025 historical pooled panel; 27,181/5,848/4,327 for the recovered ancestry panels; and 27,178 Chinese plus 37,351 pooled for the final controlled experiment |
-| Covariates | Draft says age, sex, and 50 PCs | Recovered 20 cM runner supplies 50 PCs only; 1 cM panels supply no covariates |
+| Final unrelated N | Different workflows produced different counts | Use 37,364 for the June 2025 historical pooled panel; 27,181/5,848/4,327 for the documented ancestry panels; and 27,178 Chinese plus 37,351 pooled for the final controlled experiment |
+| Covariates | Draft says age, sex, and 50 PCs | Documented 20 cM runner supplies 50 PCs only; 1 cM panels supply no covariates |
 | Window | Draft presents 20 cM as the panel setting and compares it with standard panels | Treat 20 cM versus 1 cM as a confounded historical comparison; use the matched 1 cM experiment for panel claims |
 | External benchmark | Draft says 45 trait–cohort combinations | Accession audit shows incorrect phenotype labels and fixed-N substitution; exclude all accession-derived UKB/JBB/CBK/KOGES_TWB rows and rebuild only from independently verified sources |
 | Headline h2 | 0.166 versus 0.085 | Derived from mislabeled inputs and invalid; remove rather than reinterpret |
-| Intercepts | Draft reports means below one | Recovered external benchmark means are approximately 1.30; the latest six-trait analysis is near one except T2D |
+| Intercepts | Draft reports means below one | Documented external benchmark means are approximately 1.30; the latest six-trait analysis is near one except T2D |
 | Software citation | README cites Luo and Li, Bioinformatics 2018 | Cite Luo et al., Human Molecular Genetics 2021, DOI 10.1093/hmg/ddab130; 2018 is the code copyright date |
 | Code completeness | The source archive was incomplete | Use the reconstructed, parameterised scripts and retained controlled run records in this repository |
 

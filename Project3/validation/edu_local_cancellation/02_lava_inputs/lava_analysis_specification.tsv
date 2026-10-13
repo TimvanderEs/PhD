@@ -5,9 +5,9 @@ locus_file	EAS_LAVA.locfile	Runner snapshot and output coordinates	verified
 total_loci	3064	Locus file and run log	verified
 locus_overlap_count	0	Coordinate audit	verified
 mhc	included	Locus file contains contiguous chr6 blocks spanning 25-34 Mb	verified
-ld_reference	1000 Genomes EAS PLINK reference	Runner snapshot and recovered g1000_eas files	path moved after run
-ld_reference_samples	504	Recovered g1000_eas.fam	verified
-ld_reference_variants	22263023	Recovered g1000_eas.bim	verified
+ld_reference	1000 Genomes EAS PLINK reference	Runner snapshot and documented g1000_eas files	path moved after run
+ld_reference_samples	504	Documented g1000_eas.fam	verified
+ld_reference_variants	22263023	Documented g1000_eas.bim	verified
 common_aligned_snps	4717676	Historical run log	verified
 sample_overlap	4x4 LDSC-intercept matrix	Pre-run copy in /home/ec2-user/software/pleio/sample.overlap.txt	verified by identical checksum
 univariate_threshold	2e-5	Runner snapshot and exact reconstruction of all 726 bivariate rows	verified
